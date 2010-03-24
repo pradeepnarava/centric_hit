@@ -1,0 +1,36 @@
+<h1>Listing employees</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Birthdate</th>
+    <th>Phone</th>
+    <th>Mobile</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%=h employee.first_name %></td>
+    <td><%=h employee.last_name %></td>
+    <td><%=h employee.birthdate %></td>
+    <td><%=h employee.phone %></td>
+    <td><%=h employee.mobile %></td>
+    <td><%=h employee.street %></td>
+    <td><%=h employee.city %></td>
+    <td><%=h employee.state %></td>
+    <td><%=h employee.zipcode %></td>
+    <td><%= link_to 'Show', employee %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New employee', new_employee_path %>

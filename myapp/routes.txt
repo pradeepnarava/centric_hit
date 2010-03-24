@@ -1,0 +1,39 @@
+(in /home/liviadev001/hitesh/auth_samples/myapp)
+            roles GET    /roles(.:format)                   {:action=>"index", :controller=>"roles"}
+                  POST   /roles(.:format)                   {:action=>"create", :controller=>"roles"}
+         new_role GET    /roles/new(.:format)               {:action=>"new", :controller=>"roles"}
+        edit_role GET    /roles/:id/edit(.:format)          {:action=>"edit", :controller=>"roles"}
+             role GET    /roles/:id(.:format)               {:action=>"show", :controller=>"roles"}
+                  PUT    /roles/:id(.:format)               {:action=>"update", :controller=>"roles"}
+                  DELETE /roles/:id(.:format)               {:action=>"destroy", :controller=>"roles"}
+        employees GET    /employees(.:format)               {:action=>"index", :controller=>"employees"}
+                  POST   /employees(.:format)               {:action=>"create", :controller=>"employees"}
+     new_employee GET    /employees/new(.:format)           {:action=>"new", :controller=>"employees"}
+    edit_employee GET    /employees/:id/edit(.:format)      {:action=>"edit", :controller=>"employees"}
+         employee GET    /employees/:id(.:format)           {:action=>"show", :controller=>"employees"}
+                  PUT    /employees/:id(.:format)           {:action=>"update", :controller=>"employees"}
+                  DELETE /employees/:id(.:format)           {:action=>"destroy", :controller=>"employees"}
+      departments GET    /departments(.:format)             {:action=>"index", :controller=>"departments"}
+                  POST   /departments(.:format)             {:action=>"create", :controller=>"departments"}
+   new_department GET    /departments/new(.:format)         {:action=>"new", :controller=>"departments"}
+  edit_department GET    /departments/:id/edit(.:format)    {:action=>"edit", :controller=>"departments"}
+       department GET    /departments/:id(.:format)         {:action=>"show", :controller=>"departments"}
+                  PUT    /departments/:id(.:format)         {:action=>"update", :controller=>"departments"}
+                  DELETE /departments/:id(.:format)         {:action=>"destroy", :controller=>"departments"}
+ new_user_session GET    /user_session/new(.:format)        {:action=>"new", :controller=>"user_sessions"}
+edit_user_session GET    /user_session/edit(.:format)       {:action=>"edit", :controller=>"user_sessions"}
+     user_session GET    /user_session(.:format)            {:action=>"show", :controller=>"user_sessions"}
+                  PUT    /user_session(.:format)            {:action=>"update", :controller=>"user_sessions"}
+                  DELETE /user_session(.:format)            {:action=>"destroy", :controller=>"user_sessions"}
+                  POST   /user_session(.:format)            {:action=>"create", :controller=>"user_sessions"}
+             root        /                                  {:action=>"new", :controller=>"user_sessions"}
+            users GET    /users(.:format)                   {:action=>"index", :controller=>"users"}
+                  POST   /users(.:format)                   {:action=>"create", :controller=>"users"}
+         new_user GET    /users/new(.:format)               {:action=>"new", :controller=>"users"}
+        edit_user GET    /users/:id/edit(.:format)          {:action=>"edit", :controller=>"users"}
+             user GET    /users/:id(.:format)               {:action=>"show", :controller=>"users"}
+                  PUT    /users/:id(.:format)               {:action=>"update", :controller=>"users"}
+                  DELETE /users/:id(.:format)               {:action=>"destroy", :controller=>"users"}
+           logout        /logout                            {:action=>"destroy", :controller=>"user_sessions"}
+                         /:controller/:action/:id           
+                         /:controller/:action/:id(.:format) 
