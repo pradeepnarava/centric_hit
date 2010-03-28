@@ -1,26 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-map.resources :deliverychallans
-
+  map.resources :deliverychallans
   map.resources :taxinvoices
-
   map.resources :predespatchtcs
-
   map.resources :uncoiler_reports
-
   map.resources :tube_mill_performance_reports
-
   map.resources :tube_mill_stoppage_reports
-
   map.resources :slittingproductions
-
   map.resources :slittings  
-map.resources :roles
-
+  map.resources :roles
   map.resources :employees
-
   map.resources :departments
-
-#map.root  :controller => "rawmaterials", :action => "index"
   map.resources :rawmaterials
   map.resources :rawmaterial_categories
   map.resources :salesplans
@@ -29,7 +18,6 @@ map.resources :roles
   map.resources :customers
   map.resource :user_session
   map.root :controller => "user_sessions", :action => "new" # optional, this just sets the root route
-  #map.resource :account, :controller => "users"
   map.resources :users
   map.logout  "logout",  :controller => "user_sessions", :action => "destroy"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -62,7 +50,7 @@ map.resources :roles
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
-#centric
+  #centric
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
 

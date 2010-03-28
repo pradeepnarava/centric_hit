@@ -11,6 +11,7 @@
     <th>City</th>
     <th>State</th>
     <th>Zipcode</th>
+    <th>Department Name</th>
   </tr>
 
 <% @employees.each do |employee| %>
@@ -24,6 +25,7 @@
     <td><%=h employee.city %></td>
     <td><%=h employee.state %></td>
     <td><%=h employee.zipcode %></td>
+     <td><%=h employee.department.name %></td>
     <td><%= link_to 'Show', employee %></td>
     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
     <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>

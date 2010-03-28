@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100327070027) do
+ActiveRecord::Schema.define(:version => 20100328124057) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -92,10 +92,10 @@ ActiveRecord::Schema.define(:version => 20100327070027) do
     t.string   "state"
     t.string   "zipcode"
     t.integer  "user_id"
-    t.integer  "department_id"
     t.integer  "mgr_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "department_id"
   end
 
   create_table "predespatchtcs", :force => true do |t|

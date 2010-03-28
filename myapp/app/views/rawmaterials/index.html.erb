@@ -29,7 +29,7 @@
     <td><%=h rawmaterial.coil_weight %></td>
     <td><%=h rawmaterial.grade %></td>
     <td><%=h rawmaterial.type %></td>
-    <td><%=h rawmaterial.rawmaterial_category_id %></td>
+    <td><%=h rawmaterial.rawmaterial_category.name %></td>
     <td>
         <div class="fr">
           <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_rawmaterial_path(rawmaterial))%>
