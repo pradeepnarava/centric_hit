@@ -20,26 +20,13 @@ map.resources :roles
 
   map.resources :departments
 
-
 #map.root  :controller => "rawmaterials", :action => "index"
   map.resources :rawmaterials
-
-  
-
-
-
   map.resources :rawmaterial_categories
-
-
-
   map.resources :salesplans
-
   map.resources :customer_orders
-
   map.resources :serializes
-
   map.resources :customers
-
   map.resource :user_session
   map.root :controller => "user_sessions", :action => "new" # optional, this just sets the root route
   #map.resource :account, :controller => "users"
