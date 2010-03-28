@@ -3,6 +3,7 @@
 <% form_for(@slitting) do |f| %>
   <%= f.error_messages %>
 
+Rawmaterial
  <%=f.collection_select( :rawmaterial_id, Rawmaterial.all,:id,:name,{:include_blank => "----------Select----------"})%>
   <p>
     <%= f.label :slitting_coil_no %><br />

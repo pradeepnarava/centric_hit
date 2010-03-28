@@ -1,9 +1,10 @@
 class AddDepartmentIdToEmployees < ActiveRecord::Migration
   def self.up
-    add_column :employees, :department_id, :integer
+    add_column :serializes, :customer_id, :integer
   end
 
   def self.down
+    remove_column :serializes, :customer_id
   end
-     remove_column :employees, :department_id
+     
 end

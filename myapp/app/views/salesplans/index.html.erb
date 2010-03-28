@@ -10,8 +10,7 @@
 <table cellspacing="0" cellpadding="0" width="100%">
   <tr>
     <th>Po no</th>
-    <th>Customer name</th>
-    <th>Customer</th>
+    <th>Customer name</th>  
     <th>Tube size</th>
     <th>Serialize</th>
     <th>Quantity</th>
@@ -25,8 +24,7 @@
 <% for salesplan in @salesplans %>
   <tr>
     <td><%=h salesplan.po_no %></td>
-    <td><%=h salesplan.customer_name %></td>
-    <td><%=h salesplan.customer_id %></td>
+    <td><%=h salesplan.customer.name %></td>
     <td><%=h salesplan.tube_size %></td>
     <td><%=h salesplan.serialize_id %></td>
     <td><%=h salesplan.quantity %></td>

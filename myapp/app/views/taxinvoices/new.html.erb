@@ -3,6 +3,9 @@
 <% form_for(@taxinvoice) do |f| %>
   <%= f.error_messages %>
 
+Customer name
+  <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+
   <p>
     <%= f.label :od %><br />
     <%= f.text_field :od %>

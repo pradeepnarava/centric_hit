@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Customer name</th>
     <th>Od</th>
     <th>Thickness</th>
     <th>Length</th>
@@ -55,6 +56,7 @@
 
 <% for taxinvoice in @taxinvoices %>
   <tr>
+     <td><%=h taxinvoice.customer.name %></td>
     <td><%=h taxinvoice.od %></td>
     <td><%=h taxinvoice.thickness %></td>
     <td><%=h taxinvoice.length %></td>
