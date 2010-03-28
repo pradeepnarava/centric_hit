@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  address: MyString
+  contact_person: MyString
+  phone: 1
+  mobile: 1
+  email: MyString
+  excise_registration_no: MyString
+  vat_no: MyString
+  tin_no: MyString
+  pan_no: MyString
+  payment_terms: MyString
+  bankers: MyString
+
+two:
+  name: MyString
+  address: MyString
+  contact_person: MyString
+  phone: 1
+  mobile: 1
+  email: MyString
+  excise_registration_no: MyString
+  vat_no: MyString
+  tin_no: MyString
+  pan_no: MyString
+  payment_terms: MyString
+  bankers: MyString

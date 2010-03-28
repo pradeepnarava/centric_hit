@@ -12,6 +12,42 @@ ActionController::Routing::Routes.draw do |map|
   map.logout  "logout",  :controller => "user_sessions", :action => "destroy"
   # The priority is based upon order of creation: first created -> highest priority.
 
+  map.resources :tube_mill_performance_reports
+
+  map.resources :tube_mill_stoppage_reports
+
+  map.resources :slittingproductions
+
+  map.resources :slittings
+
+  #map.root  :controller => "rawmaterials", :action => "index"
+  map.resources :rawmaterials
+
+  map.resources :rawmaterials
+map.resources :deliverychallans
+
+ map.resources :taxinvoices
+  map.resources :rawmaterial_categories
+ map.resources :uncoiler_reports
+ map.resources :predespatchtcs
+
+  map.resources :salesplans
+
+  map.resources :customer_orders
+
+  map.resources :serializes
+
+  map.resources :customers
+
+
+
+
+
+  map.resources :users
+
+  # The priority is based upon order of creation: first created -> highest priority.
+map.login "login", :controller => "user_sessions", :action => "new"
+map.logout "logout", :controller => "user_sessions", :action => "destroy"
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action

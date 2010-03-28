@@ -1,0 +1,79 @@
+<div class="gridDiv">
+  <div class="titleHead">New customer</div>
+  <div class="formMain">
+    <% form_for(@customer) do |f| %>
+      <%= f.error_messages %>
+      <div>
+        <!--BOX 1-->
+        <div class="mt5">
+        </div> 
+        <div class="fl w48" style="width: 48%;" >
+          <div>
+            <p>
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+            </p>
+            <p>
+              <%= f.label :address %>
+              <%= f.text_field :address %>
+            </p>
+            <p>
+              <%= f.label :contact_person %>
+              <%= f.text_field :contact_person %>
+            </p>
+            <p>
+              <%= f.label :phone %>
+              <%= f.text_field :phone %>
+            </p>
+          </div>
+          <div>
+            <p>
+              <%= f.label :mobile %>
+              <%= f.text_field :mobile %>
+            </p>
+            <p>
+              <%= f.label :email %>
+              <%= f.text_field :email %>
+            </p>
+            <p>
+                <%= f.label :excise_registration_no %>
+              <%= f.text_field :excise_registration_no %>
+            </p>
+            <p>
+              <%= f.label :vat_no %>
+              <%= f.text_field :vat_no %>
+            </p>
+          </div>
+        </div>
+        <div style="width: 52%;" class="fr">
+          <div>
+            <p>
+              <%= f.label :tin_no %>
+              <%= f.text_field :tin_no %>
+            </p>
+            <p>
+              <%= f.label :pan_no %>
+              <%= f.text_field :pan_no %>
+            </p>
+            <p>
+              <%= f.label :payment_terms %>
+              <%= f.text_field :payment_terms %>
+            </p>
+            <p>
+              <%= f.label :bankers %>
+              <%= f.text_field :bankers %>
+            </p>
+          </div>
+        </div>
+        <br class="clear"/>
+        <div class="txtC" id="submit_div">
+
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+          <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
+
+        </div>
+        <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+</div>

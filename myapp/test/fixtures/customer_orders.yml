@@ -1,0 +1,39 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tube_size: MyString
+  grade: MyString
+  specification: MyString
+  unit_price: 1
+  customer_id: 1
+  serialize_id: 1
+  quantity: 1
+  unit_of_measure: MyString
+  tital_weight: MyString
+  rate_per_kilo: 9.99
+  total_amount: 9.99
+  email: MyString
+  office_address: MyString
+  vat_no: MyString
+  ecc_no: MyString
+  delivery_address: MyString
+  po_no: MyString
+
+two:
+  tube_size: MyString
+  grade: MyString
+  specification: MyString
+  unit_price: 1
+  customer_id: 1
+  serialize_id: 1
+  quantity: 1
+  unit_of_measure: MyString
+  tital_weight: MyString
+  rate_per_kilo: 9.99
+  total_amount: 9.99
+  email: MyString
+  office_address: MyString
+  vat_no: MyString
+  ecc_no: MyString
+  delivery_address: MyString
+  po_no: MyString

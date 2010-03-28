@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  delivery_challan_no: MyString
+  date: 2010-03-27 12:30:27
+  vehicle_no: MyString
+  od: 9.99
+  length: 9.99
+  thickness: 9.99
+  quantity_pcs: 1
+  quantity_mtrs: 1
+  remark: MyString
+  vat_tin: MyString
+  cst_tin: MyString
+  from: MyString
+  to: MyString
+
+two:
+  delivery_challan_no: MyString
+  date: 2010-03-27 12:30:27
+  vehicle_no: MyString
+  od: 9.99
+  length: 9.99
+  thickness: 9.99
+  quantity_pcs: 1
+  quantity_mtrs: 1
+  remark: MyString
+  vat_tin: MyString
+  cst_tin: MyString
+  from: MyString
+  to: MyString

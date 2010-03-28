@@ -1,0 +1,44 @@
+<h1>Listing deliverychallans</h1>
+
+<table>
+  <tr>
+    <th>Delivery challan no</th>
+    <th>Date</th>
+    <th>Vehicle no</th>
+    <th>Od</th>
+    <th>Length</th>
+    <th>Thickness</th>
+    <th>Quantity pcs</th>
+    <th>Quantity mtrs</th>
+    <th>Remark</th>
+    <th>Vat tin</th>
+    <th>Cst tin</th>
+    <th>From</th>
+    <th>To</th>
+  </tr>
+
+<% for deliverychallan in @deliverychallans %>
+  <tr>
+    <td><%=h deliverychallan.delivery_challan_no %></td>
+    <td><%=h deliverychallan.date %></td>
+    <td><%=h deliverychallan.vehicle_no %></td>
+    <td><%=h deliverychallan.od %></td>
+    <td><%=h deliverychallan.length %></td>
+    <td><%=h deliverychallan.thickness %></td>
+    <td><%=h deliverychallan.quantity_pcs %></td>
+    <td><%=h deliverychallan.quantity_mtrs %></td>
+    <td><%=h deliverychallan.remark %></td>
+    <td><%=h deliverychallan.vat_tin %></td>
+    <td><%=h deliverychallan.cst_tin %></td>
+    <td><%=h deliverychallan.from %></td>
+    <td><%=h deliverychallan.to %></td>
+    <td><%= link_to 'Show', deliverychallan %></td>
+    <td><%= link_to 'Edit', edit_deliverychallan_path(deliverychallan) %></td>
+    <td><%= link_to 'Destroy', deliverychallan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New deliverychallan', new_deliverychallan_path %>

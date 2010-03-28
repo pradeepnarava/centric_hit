@@ -1,0 +1,96 @@
+<h1>Editing tube_mill_stoppage_report</h1>
+
+<% form_for(@tube_mill_stoppage_report) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.label :shift %><br />
+    <%= f.datetime_select :shift %>
+  </p>
+  <p>
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.label :customer %><br />
+    <%= f.text_field :customer %>
+  </p>
+  <p>
+    <%= f.label :description_of_breakdown %><br />
+    <%= f.text_field :description_of_breakdown %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.label :stoppage_code %><br />
+    <%= f.text_field :stoppage_code %>
+  </p>
+  <p>
+    <%= f.label :from %><br />
+    <%= f.datetime_select :from %>
+  </p>
+  <p>
+    <%= f.label :to %><br />
+    <%= f.datetime_select :to %>
+  </p>
+  <p>
+    <%= f.label :total_time %><br />
+    <%= f.text_field :total_time %>
+  </p>
+  <p>
+    <%= f.label :remarks %><br />
+    <%= f.text_field :remarks %>
+  </p>
+  <p>
+    <%= f.label :electrical_maintainence %><br />
+    <%= f.text_field :electrical_maintainence %>
+  </p>
+  <p>
+    <%= f.label :mechanical_maintainence %><br />
+    <%= f.text_field :mechanical_maintainence %>
+  </p>
+  <p>
+    <%= f.label :operational %><br />
+    <%= f.text_field :operational %>
+  </p>
+  <p>
+    <%= f.label :roll_change %><br />
+    <%= f.text_field :roll_change %>
+  </p>
+  <p>
+    <%= f.label :raw_material_shortage %><br />
+    <%= f.text_field :raw_material_shortage %>
+  </p>
+  <p>
+    <%= f.label :man_power_shortage %><br />
+    <%= f.text_field :man_power_shortage %>
+  </p>
+  <p>
+    <%= f.label :crane_delay %><br />
+    <%= f.text_field :crane_delay %>
+  </p>
+  <p>
+    <%= f.label :power_failure %><br />
+    <%= f.text_field :power_failure %>
+  </p>
+  <p>
+    <%= f.label :remarks_last %><br />
+    <%= f.text_field :remarks_last %>
+  </p>
+  <p>
+    <%= f.label :shift_incharge %><br />
+    <%= f.text_field :shift_incharge %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tube_mill_stoppage_report %> |
+<%= link_to 'Back', tube_mill_stoppage_reports_path %>

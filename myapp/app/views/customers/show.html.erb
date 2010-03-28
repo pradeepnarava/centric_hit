@@ -1,0 +1,63 @@
+<p>
+  <b>Name:</b>
+  <%=h @customer.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @customer.address %>
+</p>
+
+<p>
+  <b>Contact person:</b>
+  <%=h @customer.contact_person %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @customer.phone %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%=h @customer.mobile %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @customer.email %>
+</p>
+
+<p>
+  <b>Excise registration no:</b>
+  <%=h @customer.excise_registration_no %>
+</p>
+
+<p>
+  <b>Vat no:</b>
+  <%=h @customer.vat_no %>
+</p>
+
+<p>
+  <b>Tin no:</b>
+  <%=h @customer.tin_no %>
+</p>
+
+<p>
+  <b>Pan no:</b>
+  <%=h @customer.pan_no %>
+</p>
+
+<p>
+  <b>Payment terms:</b>
+  <%=h @customer.payment_terms %>
+</p>
+
+<p>
+  <b>Bankers:</b>
+  <%=h @customer.bankers %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

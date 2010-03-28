@@ -1,0 +1,2 @@
+module TaxinvoicesHelper
+end

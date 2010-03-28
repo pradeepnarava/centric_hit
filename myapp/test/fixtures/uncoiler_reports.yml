@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2010-03-25 01:20:40
+  shift: 2010-03-25 01:20:40
+  operator_name: MyString
+  slittingproduction_id: 1
+  tube_od: 9.99
+  width: 9.99
+  thickness: 9.99
+  grade: MyString
+  type: MyString
+  width_actual: 9.99
+  thickness_actual: 9.99
+  grade_actual: MyString
+  type_actual: MyString
+
+two:
+  date: 2010-03-25 01:20:40
+  shift: 2010-03-25 01:20:40
+  operator_name: MyString
+  slittingproduction_id: 1
+  tube_od: 9.99
+  width: 9.99
+  thickness: 9.99
+  grade: MyString
+  type: MyString
+  width_actual: 9.99
+  thickness_actual: 9.99
+  grade_actual: MyString
+  type_actual: MyString

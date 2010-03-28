@@ -1,0 +1,70 @@
+<div class="gridDiv">
+  <div class="titleHead">Listing Tube Mill Stoppage Reports</div>
+  <div class="gryBox">
+    <div class="linkOuter w45 fr txtR mt5">
+      <%= link_to 'New RawMaterial Category', new_tube_mill_stoppage_report_path %>
+    </div><br class="clear" />
+    <div id="contacts">
+      <div id="contact_list" class="contactsDIV">
+        <div class="gridTable">
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Shift</th>
+    <th>Size</th>
+    <th>Customer</th>
+    <th>Description of breakdown</th>
+    <th>Type</th>
+    <th>Stoppage code</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Total time</th>
+    <th>Remarks</th>
+    <th>Electrical maintainence</th>
+    <th>Mechanical maintainence</th>
+    <th>Operational</th>
+    <th>Roll change</th>
+    <th>Raw material shortage</th>
+    <th>Man power shortage</th>
+    <th>Crane delay</th>
+    <th>Power failure</th>
+    <th>Remarks last</th>
+    <th>Shift incharge</th>
+    <th>Action</th>
+  </tr>
+
+<% for tube_mill_stoppage_report in @tube_mill_stoppage_reports %>
+  <tr>
+    <td><%=h tube_mill_stoppage_report.date %></td>
+    <td><%=h tube_mill_stoppage_report.shift %></td>
+    <td><%=h tube_mill_stoppage_report.size %></td>
+    <td><%=h tube_mill_stoppage_report.customer %></td>
+    <td><%=h tube_mill_stoppage_report.description_of_breakdown %></td>
+    <td><%=h tube_mill_stoppage_report.type %></td>
+    <td><%=h tube_mill_stoppage_report.stoppage_code %></td>
+    <td><%=h tube_mill_stoppage_report.from %></td>
+    <td><%=h tube_mill_stoppage_report.to %></td>
+    <td><%=h tube_mill_stoppage_report.total_time %></td>
+    <td><%=h tube_mill_stoppage_report.remarks %></td>
+    <td><%=h tube_mill_stoppage_report.electrical_maintainence %></td>
+    <td><%=h tube_mill_stoppage_report.mechanical_maintainence %></td>
+    <td><%=h tube_mill_stoppage_report.operational %></td>
+    <td><%=h tube_mill_stoppage_report.roll_change %></td>
+    <td><%=h tube_mill_stoppage_report.raw_material_shortage %></td>
+    <td><%=h tube_mill_stoppage_report.man_power_shortage %></td>
+    <td><%=h tube_mill_stoppage_report.crane_delay %></td>
+    <td><%=h tube_mill_stoppage_report.power_failure %></td>
+    <td><%=h tube_mill_stoppage_report.remarks_last %></td>
+    <td><%=h tube_mill_stoppage_report.shift_incharge %></td>
+    <td>
+      <div class="fr" style="float:left;">
+          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_tube_mill_stoppage_report_path(tube_mill_stoppage_report) )%>
+          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}),tube_mill_stoppage_report, :confirm => 'Are you sure?', :method => :delete ) %>
+        </div>
+</td>
+  </tr>
+<% end %>
+</table>
+</div>
+      </div></div></div></div>
+<br />

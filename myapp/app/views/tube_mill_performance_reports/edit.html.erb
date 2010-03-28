@@ -1,0 +1,124 @@
+<h1>Editing tube_mill_performance_report</h1>
+
+<% form_for(@tube_mill_performance_report) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :lot_no %><br />
+    <%= f.text_field :lot_no %>
+  </p>
+  <p>
+    <%= f.label :customer_id %><br />
+    <%= f.text_field :customer_id %>
+  </p>
+  <p>
+    <%= f.label :od_width %><br />
+    <%= f.text_field :od_width %>
+  </p>
+  <p>
+    <%= f.label :id_height %><br />
+    <%= f.text_field :id_height %>
+  </p>
+  <p>
+    <%= f.label :thickness %><br />
+    <%= f.text_field :thickness %>
+  </p>
+  <p>
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.label :id_fin_height %><br />
+    <%= f.text_field :id_fin_height %>
+  </p>
+  <p>
+    <%= f.label :drifting %><br />
+    <%= f.text_field :drifting %>
+  </p>
+  <p>
+    <%= f.label :flattening %><br />
+    <%= f.text_field :flattening %>
+  </p>
+  <p>
+    <%= f.label :specification %><br />
+    <%= f.text_field :specification %>
+  </p>
+  <p>
+    <%= f.label :rm_grade %><br />
+    <%= f.text_field :rm_grade %>
+  </p>
+  <p>
+    <%= f.label :slitting_production_id %><br />
+    <%= f.text_field :slitting_production_id %>
+  </p>
+  <p>
+    <%= f.label :spl_requirement %><br />
+    <%= f.text_field :spl_requirement %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.label :shift %><br />
+    <%= f.datetime_select :shift %>
+  </p>
+  <p>
+    <%= f.label :operator_name %><br />
+    <%= f.text_field :operator_name %>
+  </p>
+  <p>
+    <%= f.label :inspector_name %><br />
+    <%= f.text_field :inspector_name %>
+  </p>
+  <p>
+    <%= f.label :open %><br />
+    <%= f.text_field :open %>
+  </p>
+  <p>
+    <%= f.label :joint %><br />
+    <%= f.text_field :joint %>
+  </p>
+  <p>
+    <%= f.label :tool_mark %><br />
+    <%= f.text_field :tool_mark %>
+  </p>
+  <p>
+    <%= f.label :roll_mark %><br />
+    <%= f.text_field :roll_mark %>
+  </p>
+  <p>
+    <%= f.label :pick_up %><br />
+    <%= f.text_field :pick_up %>
+  </p>
+  <p>
+    <%= f.label :scratch %><br />
+    <%= f.text_field :scratch %>
+  </p>
+  <p>
+    <%= f.label :week_weld %><br />
+    <%= f.text_field :week_weld %>
+  </p>
+  <p>
+    <%= f.label :bend %><br />
+    <%= f.text_field :bend %>
+  </p>
+  <p>
+    <%= f.label :nf_c %><br />
+    <%= f.text_field :nf_c %>
+  </p>
+  <p>
+    <%= f.label :remarks %><br />
+    <%= f.text_field :remarks %>
+  </p>
+  <p>
+    <%= f.label :lot_numbers %><br />
+    <%= f.text_field :lot_numbers %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tube_mill_performance_report %> |
+<%= link_to 'Back', tube_mill_performance_reports_path %>

@@ -1,0 +1,19 @@
+<h1>New rawmaterial_category</h1>
+
+<% form_for(@rawmaterial_category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', rawmaterial_categories_path %>

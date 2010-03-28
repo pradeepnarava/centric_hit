@@ -1,0 +1,62 @@
+<h1>New uncoiler_report</h1>
+
+<% form_for(@uncoiler_report) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.label :shift %><br />
+    <%= f.datetime_select :shift %>
+  </p>
+  <p>
+    <%= f.label :operator_name %><br />
+    <%= f.text_field :operator_name %>
+  </p>
+  Slitting coil no
+  <%=f.collection_select( :slittingproduction_id, Slittingproduction.all,:id,:slitting_coil_no,{:include_blank => "----------Select----------"})%>
+
+  <p>
+    <%= f.label :tube_od %><br />
+    <%= f.text_field :tube_od %>
+  </p>
+  <p>
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  </p>
+  <p>
+    <%= f.label :thickness %><br />
+    <%= f.text_field :thickness %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.label :width_actual %><br />
+    <%= f.text_field :width_actual %>
+  </p>
+  <p>
+    <%= f.label :thickness_actual %><br />
+    <%= f.text_field :thickness_actual %>
+  </p>
+  <p>
+    <%= f.label :grade_actual %><br />
+    <%= f.text_field :grade_actual %>
+  </p>
+  <p>
+    <%= f.label :type_actual %><br />
+    <%= f.text_field :type_actual %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', uncoiler_reports_path %>

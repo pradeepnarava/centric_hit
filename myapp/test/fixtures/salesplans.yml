@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  po_no: MyString
+  customer_name: MyString
+  customer_id: 1
+  tube_size: MyString
+  serialize_id: 1
+  quantity: 1
+  customer_code: MyString
+  pieces: 1
+  meter: 1
+  kilos: 1
+
+two:
+  po_no: MyString
+  customer_name: MyString
+  customer_id: 1
+  tube_size: MyString
+  serialize_id: 1
+  quantity: 1
+  customer_code: MyString
+  pieces: 1
+  meter: 1
+  kilos: 1

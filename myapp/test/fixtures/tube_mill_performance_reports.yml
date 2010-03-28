@@ -1,0 +1,61 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lot_no: MyString
+  customer_id: 1
+  od_width: MyString
+  id_height: 9.99
+  thickness: 9.99
+  length: 9.99
+  id_fin_height: 9.99
+  drifting: MyString
+  flattening: MyString
+  specification: MyString
+  rm_grade: MyString
+  slitting_production_id: 1
+  spl_requirement: MyString
+  date: 2010-03-24 23:35:42
+  shift: 2010-03-24 23:35:42
+  operator_name: MyString
+  inspector_name: MyString
+  open: 9.99
+  joint: 9.99
+  tool_mark: 9.99
+  roll_mark: 9.99
+  pick_up: 9.99
+  scratch: 9.99
+  week_weld: 9.99
+  bend: 9.99
+  nf_c: 9.99
+  remarks: MyString
+  lot_numbers: 1
+
+two:
+  lot_no: MyString
+  customer_id: 1
+  od_width: MyString
+  id_height: 9.99
+  thickness: 9.99
+  length: 9.99
+  id_fin_height: 9.99
+  drifting: MyString
+  flattening: MyString
+  specification: MyString
+  rm_grade: MyString
+  slitting_production_id: 1
+  spl_requirement: MyString
+  date: 2010-03-24 23:35:42
+  shift: 2010-03-24 23:35:42
+  operator_name: MyString
+  inspector_name: MyString
+  open: 9.99
+  joint: 9.99
+  tool_mark: 9.99
+  roll_mark: 9.99
+  pick_up: 9.99
+  scratch: 9.99
+  week_weld: 9.99
+  bend: 9.99
+  nf_c: 9.99
+  remarks: MyString
+  lot_numbers: 1

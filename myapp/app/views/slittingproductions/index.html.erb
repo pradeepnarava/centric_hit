@@ -1,0 +1,62 @@
+<div class="gridDiv">
+  <div class="titleHead">Listing Slitting Productions</div>
+  <div class="gryBox">
+    <div class="linkOuter w45 fr txtR mt5">
+      <%= link_to 'New rawmaterial_category',  new_slittingproduction_path %>
+    </div><br class="clear" />
+    <div id="contacts">
+      <div id="contact_list" class="contactsDIV">
+        <div class="gridTable">
+          <table width="100%">
+  <tr>
+    <th>Rawmaterial</th>
+     <th>Slitting Coil NO</th>
+    <th>Slitting</th>
+    <th>Shift</th>
+    <th>Operator name</th>
+    <th>Source</th>
+    <th>Input weight</th>
+    <th>Width</th>
+    <th>Thickness</th>
+    <th>Grade</th>
+    <th>Type</th>
+    <th>Width slitting</th>
+    <th>No of slits slitting</th>
+    <th>Slit coil weight</th>
+    <th>Slit weight</th>
+    <th>Scrap weight</th>
+    <th>Remarks</th>
+    <th>Action</th>
+  </tr>
+
+<% for slittingproduction in @slittingproductions %>
+  <tr class="<%=cycle("bg1", "bg2")%>">
+    <td><%=h slittingproduction.rawmaterial.name %></td>
+       <td><%=h slittingproduction.slitting_coil_no %></td>
+    <td><%=h slittingproduction.slitting.slitting_coil_no %></td>
+    <td><%=h slittingproduction.shift %></td>
+    <td><%=h slittingproduction.operator_name %></td>
+    <td><%=h slittingproduction.source %></td>
+    <td><%=h slittingproduction.input_weight %></td>
+    <td><%=h slittingproduction.width %></td>
+    <td><%=h slittingproduction.thickness %></td>
+    <td><%=h slittingproduction.grade %></td>
+    <td><%=h slittingproduction.type %></td>
+    <td><%=h slittingproduction.width_slitting %></td>
+    <td><%=h slittingproduction.no_of_slits_slitting %></td>
+    <td><%=h slittingproduction.slit_coil_weight %></td>
+    <td><%=h slittingproduction.slit_weight %></td>
+    <td><%=h slittingproduction.scrap_weight %></td>
+    <td><%=h slittingproduction.remarks %></td>
+    <td>
+      <div class="fr" style="float:left;">
+          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_slittingproduction_path(slittingproduction))%>
+          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}),slittingproduction, :confirm => 'Are you sure?', :method => :delete) %>
+        </div>
+    </td>
+  </tr>
+<% end %>
+</table>
+</div>
+      </div></div></div></div>
+<br />

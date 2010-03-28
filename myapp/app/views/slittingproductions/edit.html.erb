@@ -1,0 +1,76 @@
+<h1>Editing slittingproduction</h1>
+
+<% form_for(@slittingproduction) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :rawmaterial_id %><br />
+    <%= f.text_field :rawmaterial_id %>
+  </p>
+  <p>
+    <%= f.label :slitting_id %><br />
+    <%= f.text_field :slitting_id %>
+  </p>
+  <p>
+    <%= f.label :shift %><br />
+    <%= f.datetime_select :shift %>
+  </p>
+  <p>
+    <%= f.label :operator_name %><br />
+    <%= f.text_field :operator_name %>
+  </p>
+  <p>
+    <%= f.label :source %><br />
+    <%= f.text_field :source %>
+  </p>
+  <p>
+    <%= f.label :input_weight %><br />
+    <%= f.text_field :input_weight %>
+  </p>
+  <p>
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  </p>
+  <p>
+    <%= f.label :thickness %><br />
+    <%= f.text_field :thickness %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.label :width_slitting %><br />
+    <%= f.text_field :width_slitting %>
+  </p>
+  <p>
+    <%= f.label :no_of_slits_slitting %><br />
+    <%= f.text_field :no_of_slits_slitting %>
+  </p>
+  <p>
+    <%= f.label :slit_coil_weight %><br />
+    <%= f.text_field :slit_coil_weight %>
+  </p>
+  <p>
+    <%= f.label :slit_weight %><br />
+    <%= f.text_field :slit_weight %>
+  </p>
+  <p>
+    <%= f.label :scrap_weight %><br />
+    <%= f.text_field :scrap_weight %>
+  </p>
+  <p>
+    <%= f.label :remarks %><br />
+    <%= f.text_field :remarks %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @slittingproduction %> |
+<%= link_to 'Back', slittingproductions_path %>

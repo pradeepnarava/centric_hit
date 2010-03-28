@@ -1,0 +1,144 @@
+<h1>Listing predespatchtcs</h1>
+
+<table>
+  <tr>
+    <th>Test certificate no</th>
+    <th>Invoice</th>
+    <th>Customer</th>
+    <th>Date</th>
+    <th>Od</th>
+    <th>Thickness</th>
+    <th>Length</th>
+    <th>Quantity</th>
+    <th>Specification</th>
+    <th>Grade</th>
+    <th>Fin condition</th>
+    <th>Uann ann</th>
+    <th>C spec</th>
+    <th>C obs</th>
+    <th>Mn spec</th>
+    <th>Mn obs</th>
+    <th>S spec</th>
+    <th>S obs</th>
+    <th>P spec</th>
+    <th>P obs</th>
+    <th>Si spec</th>
+    <th>Si obs</th>
+    <th>Al spec</th>
+    <th>Al obs</th>
+    <th>Ni spec</th>
+    <th>Ni obs</th>
+    <th>Cr spec</th>
+    <th>Cr obs</th>
+    <th>Ys spec</th>
+    <th>Ys obs</th>
+    <th>Ts obs</th>
+    <th>Ts spec</th>
+    <th>El spec</th>
+    <th>El obs</th>
+    <th>Gl hardness spec</th>
+    <th>El hardness obs</th>
+    <th>Od spec</th>
+    <th>Od obs</th>
+    <th>Id spec</th>
+    <th>Id obs</th>
+    <th>Thick spec</th>
+    <th>Thick obs</th>
+    <th>Length spec</th>
+    <th>Length obs</th>
+    <th>Scratch mark</th>
+    <th>Roll pick up</th>
+    <th>Pits dents</th>
+    <th>Bend</th>
+    <th>Corner radius</th>
+    <th>Squareness</th>
+    <th>Twist</th>
+    <th>Flaring spec</th>
+    <th>Flaring obs</th>
+    <th>Flattening obs</th>
+    <th>Flattening spec</th>
+    <th>Bending spec</th>
+    <th>Bending obs</th>
+    <th>Crushing spec</th>
+    <th>Crushing obs</th>
+    <th>Slittingproduction</th>
+    <th>Inspected by</th>
+    <th>Approved by</th>
+    <th>Tube mill performance report</th>
+  </tr>
+
+  <% for predespatchtc in @predespatchtcs %>
+    <tr>
+      <td><%=h predespatchtc.test_certificate_no %></td>
+      <td><%=h predespatchtc.taxinvoice.invoice_no %></td>
+      <td><%=h predespatchtc.customer.name %></td>
+      <td><%=h predespatchtc.date %></td>
+      <td><%=h predespatchtc.od %></td>
+      <td><%=h predespatchtc.thickness %></td>
+      <td><%=h predespatchtc.length %></td>
+      <td><%=h predespatchtc.quantity %></td>
+      <td><%=h predespatchtc.specification %></td>
+      <td><%=h predespatchtc.grade %></td>
+      <td><%=h predespatchtc.fin_condition %></td>
+      <td><%=h predespatchtc.uann_ann %></td>
+      <td><%=h predespatchtc.c_spec %></td>
+      <td><%=h predespatchtc.c_obs %></td>
+      <td><%=h predespatchtc.mn_spec %></td>
+      <td><%=h predespatchtc.mn_obs %></td>
+      <td><%=h predespatchtc.s_spec %></td>
+      <td><%=h predespatchtc.s_obs %></td>
+      <td><%=h predespatchtc.p_spec %></td>
+      <td><%=h predespatchtc.p_obs %></td>
+      <td><%=h predespatchtc.si_spec %></td>
+      <td><%=h predespatchtc.si_obs %></td>
+      <td><%=h predespatchtc.al_spec %></td>
+      <td><%=h predespatchtc.al_obs %></td>
+      <td><%=h predespatchtc.ni_spec %></td>
+      <td><%=h predespatchtc.ni_obs %></td>
+      <td><%=h predespatchtc.cr_spec %></td>
+      <td><%=h predespatchtc.cr_obs %></td>
+      <td><%=h predespatchtc.ys_spec %></td>
+      <td><%=h predespatchtc.ys_obs %></td>
+      <td><%=h predespatchtc.ts_obs %></td>
+      <td><%=h predespatchtc.ts_spec %></td>
+      <td><%=h predespatchtc.el_spec %></td>
+      <td><%=h predespatchtc.el_obs %></td>
+      <td><%=h predespatchtc.gl_hardness_spec %></td>
+      <td><%=h predespatchtc.el_hardness_obs %></td>
+      <td><%=h predespatchtc.od_spec %></td>
+      <td><%=h predespatchtc.od_obs %></td>
+      <td><%=h predespatchtc.id_spec %></td>
+      <td><%=h predespatchtc.id_obs %></td>
+      <td><%=h predespatchtc.thick_spec %></td>
+      <td><%=h predespatchtc.thick_obs %></td>
+      <td><%=h predespatchtc.length_spec %></td>
+      <td><%=h predespatchtc.length_obs %></td>
+      <td><%=h predespatchtc.scratch_mark %></td>
+      <td><%=h predespatchtc.roll_pick_up %></td>
+      <td><%=h predespatchtc.pits_dents %></td>
+      <td><%=h predespatchtc.bend %></td>
+      <td><%=h predespatchtc.corner_radius %></td>
+      <td><%=h predespatchtc.squareness %></td>
+      <td><%=h predespatchtc.twist %></td>
+      <td><%=h predespatchtc.flaring_spec %></td>
+      <td><%=h predespatchtc.flaring_obs %></td>
+      <td><%=h predespatchtc.flattening_obs %></td>
+      <td><%=h predespatchtc.flattening_spec %></td>
+      <td><%=h predespatchtc.bending_spec %></td>
+      <td><%=h predespatchtc.bending_obs %></td>
+      <td><%=h predespatchtc.crushing_spec %></td>
+      <td><%=h predespatchtc.crushing_obs %></td>
+      <td><%=h predespatchtc.slittingproduction.slitting_coil_no %></td>
+      <td><%=h predespatchtc.inspected_by %></td>
+      <td><%=h predespatchtc.approved_by %></td>
+      <td><%=h predespatchtc.tube_mill_performance_report.lot_no %></td>
+      <td><%= link_to 'Show', predespatchtc %></td>
+      <td><%= link_to 'Edit', edit_predespatchtc_path(predespatchtc) %></td>
+      <td><%= link_to 'Destroy', predespatchtc, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New predespatchtc', new_predespatchtc_path %>

@@ -1,0 +1,47 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2010-03-24 23:07:27
+  shift: 2010-03-24 23:07:27
+  size: 9.99
+  customer: MyString
+  description_of_breakdown: MyString
+  type: MyString
+  stoppage_code: MyString
+  from: 2010-03-24 23:07:27
+  to: 2010-03-24 23:07:27
+  total_time: MyString
+  remarks: MyString
+  electrical_maintainence: MyString
+  mechanical_maintainence: MyString
+  operational: MyString
+  roll_change: MyString
+  raw_material_shortage: MyString
+  man_power_shortage: MyString
+  crane_delay: MyString
+  power_failure: MyString
+  remarks_last: MyString
+  shift_incharge: MyString
+
+two:
+  date: 2010-03-24 23:07:27
+  shift: 2010-03-24 23:07:27
+  size: 9.99
+  customer: MyString
+  description_of_breakdown: MyString
+  type: MyString
+  stoppage_code: MyString
+  from: 2010-03-24 23:07:27
+  to: 2010-03-24 23:07:27
+  total_time: MyString
+  remarks: MyString
+  electrical_maintainence: MyString
+  mechanical_maintainence: MyString
+  operational: MyString
+  roll_change: MyString
+  raw_material_shortage: MyString
+  man_power_shortage: MyString
+  crane_delay: MyString
+  power_failure: MyString
+  remarks_last: MyString
+  shift_incharge: MyString

@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rawmaterial_id: 1
+  slitting_id: 1
+  shift: 2010-03-24 22:07:39
+  operator_name: MyString
+  source: MyString
+  input_weight: 9.99
+  width: 9.99
+  thickness: 9.99
+  grade: MyString
+  type: MyString
+  width_slitting: 1
+  no_of_slits_slitting: 1
+  slit_coil_weight: 9.99
+  slit_weight: 9.99
+  scrap_weight: 9.99
+  remarks: MyString
+
+two:
+  rawmaterial_id: 1
+  slitting_id: 1
+  shift: 2010-03-24 22:07:39
+  operator_name: MyString
+  source: MyString
+  input_weight: 9.99
+  width: 9.99
+  thickness: 9.99
+  grade: MyString
+  type: MyString
+  width_slitting: 1
+  no_of_slits_slitting: 1
+  slit_coil_weight: 9.99
+  slit_weight: 9.99
+  scrap_weight: 9.99
+  remarks: MyString

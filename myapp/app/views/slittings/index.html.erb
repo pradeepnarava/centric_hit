@@ -1,0 +1,54 @@
+<div class="gridDiv">
+  <div class="titleHead">Listing Slittings</div>
+  <div class="gryBox">
+    <div class="linkOuter w45 fr txtR mt5">
+      <%= link_to 'New rawmaterial_category', new_slitting_path %>
+    </div><br class="clear" />
+    <div id="contacts">
+      <div id="contact_list" class="contactsDIV">
+        <div class="gridTable">
+
+          <table width="100%">
+  <tr>
+    <th>Rawmaterial</th>
+     <th>Slitting Coil No </th>
+    <th>Coil width</th>
+    <th>Coil weight</th>
+    <th>Side trim</th>
+    <th>Thickness</th>
+    <th>Scrap</th>
+    <th>Slit width</th>
+    <th>Slit weight</th>
+    <th>No of slits</th>
+    <th>Weight</th>
+    <th>Remarks</th>
+     <th>Action</th>
+  </tr>
+
+<% for slitting in @slittings %>
+  <tr class="<%=cycle("bg1", "bg2")%>">
+    <td><%=h slitting.rawmaterial.name %></td>
+    <td><%=h slitting.slitting_coil_no %></td>
+    <td><%=h slitting.coil_width %></td>
+    <td><%=h slitting.coil_weight %></td>
+    <td><%=h slitting.side_trim %></td>
+    <td><%=h slitting.thickness %></td>
+    <td><%=h slitting.scrap %></td>
+    <td><%=h slitting.slit_width %></td>
+    <td><%=h slitting.slit_weight %></td>
+    <td><%=h slitting.no_of_slits %></td>
+    <td><%=h slitting.weight %></td>
+    <td><%=h slitting.remarks %></td>
+    <td>
+      <div class="fr" style="float:left;">
+          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_slitting_path(slitting) )%>
+          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}),slitting, :confirm => 'Are you sure?', :method => :delete ) %>
+        </div>
+</td>
+  </tr>
+<% end %>
+</table>
+</div>
+      </div></div></div></div>
+<br />
+

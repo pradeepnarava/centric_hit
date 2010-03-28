@@ -1,0 +1,53 @@
+<h1>New salesplan</h1>
+
+<% form_for(@salesplan) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :po_no %><br />
+    <%= f.text_field :po_no %>
+  </p>
+  <p>
+    <%= f.label :customer_name %><br />
+    <%= f.text_field :customer_name %>
+  </p>
+
+  <p>
+    <%= f.label :tube_size %><br />
+    <%= f.text_field :tube_size %>
+  </p>
+
+  <p>
+    Customer Name
+   <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+  </p>
+  <p>
+    <%= f.label :serialize_id %><br />
+    <%= f.text_field :serialize_id %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :customer_code %><br />
+    <%= f.text_field :customer_code %>
+  </p>
+  <p>
+    <%= f.label :pieces %><br />
+    <%= f.text_field :pieces %>
+  </p>
+  <p>
+    <%= f.label :meter %><br />
+    <%= f.text_field :meter %>
+  </p>
+  <p>
+    <%= f.label :kilos %><br />
+    <%= f.text_field :kilos %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', salesplans_path %>

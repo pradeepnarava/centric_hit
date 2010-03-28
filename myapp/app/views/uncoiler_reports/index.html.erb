@@ -1,0 +1,44 @@
+<h1>Listing uncoiler_reports</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Shift</th>
+    <th>Operator name</th>
+    <th>Slitting coil no</th>
+    <th>Tube od</th>
+    <th>Width</th>
+    <th>Thickness</th>
+    <th>Grade</th>
+    <th>Type</th>
+    <th>Width actual</th>
+    <th>Thickness actual</th>
+    <th>Grade actual</th>
+    <th>Type actual</th>
+  </tr>
+
+<% for uncoiler_report in @uncoiler_reports %>
+  <tr>
+    <td><%=h uncoiler_report.date %></td>
+    <td><%=h uncoiler_report.shift %></td>
+    <td><%=h uncoiler_report.operator_name %></td>
+    <td><%=h uncoiler_report.slittingproduction.slitting_coil_no %></td>
+    <td><%=h uncoiler_report.tube_od %></td>
+    <td><%=h uncoiler_report.width %></td>
+    <td><%=h uncoiler_report.thickness %></td>
+    <td><%=h uncoiler_report.grade %></td>
+    <td><%=h uncoiler_report.type %></td>
+    <td><%=h uncoiler_report.width_actual %></td>
+    <td><%=h uncoiler_report.thickness_actual %></td>
+    <td><%=h uncoiler_report.grade_actual %></td>
+    <td><%=h uncoiler_report.type_actual %></td>
+    <td><%= link_to 'Show', uncoiler_report %></td>
+    <td><%= link_to 'Edit', edit_uncoiler_report_path(uncoiler_report) %></td>
+    <td><%= link_to 'Destroy', uncoiler_report, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New uncoiler_report', new_uncoiler_report_path %>

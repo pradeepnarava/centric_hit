@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  grade: MyString
+  width: MyString
+  thickness: MyString
+  coil_weight: MyString
+  grade: MyString
+  type: MyString
+
+two:
+  name: MyString
+  grade: MyString
+  width: MyString
+  thickness: MyString
+  coil_weight: MyString
+  grade: MyString
+  type: MyString

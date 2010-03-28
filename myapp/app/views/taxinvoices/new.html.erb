@@ -1,0 +1,207 @@
+<h1>New taxinvoice</h1>
+
+<% form_for(@taxinvoice) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :od %><br />
+    <%= f.text_field :od %>
+  </p>
+  <p>
+    <%= f.label :thickness %><br />
+    <%= f.text_field :thickness %>
+  </p>
+  <p>
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :average_content_packets %><br />
+    <%= f.text_field :average_content_packets %>
+  </p>
+  <p>
+    <%= f.label :pieces %><br />
+    <%= f.text_field :pieces %>
+  </p>
+  <p>
+    <%= f.label :meters %><br />
+    <%= f.text_field :meters %>
+  </p>
+  <p>
+    <%= f.label :rs_mtrs %><br />
+    <%= f.text_field :rs_mtrs %>
+  </p>
+  <p>
+    <%= f.label :rs_mtrs %><br />
+    <%= f.text_field :rs_mtrs %>
+  </p>
+  <p>
+    <%= f.label :total_tariff_value %><br />
+    <%= f.text_field :total_tariff_value %>
+  </p>
+  <p>
+    <%= f.label :rate_of_duty %><br />
+    <%= f.text_field :rate_of_duty %>
+  </p>
+  <p>
+    <%= f.label :total_duty %><br />
+    <%= f.text_field :total_duty %>
+  </p>
+  <p>
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.label :total_all %><br />
+    <%= f.text_field :total_all %>
+  </p>
+  <p>
+    <%= f.label :excise_duty %><br />
+    <%= f.text_field :excise_duty %>
+  </p>
+  <p>
+    <%= f.label :ed_cess %><br />
+    <%= f.text_field :ed_cess %>
+  </p>
+  <p>
+    <%= f.label :sah_ed_cess %><br />
+    <%= f.text_field :sah_ed_cess %>
+  </p>
+  <p>
+    <%= f.label :vat_cst %><br />
+    <%= f.text_field :vat_cst %>
+  </p>
+  <p>
+    <%= f.label :packing_forwarding %><br />
+    <%= f.text_field :packing_forwarding %>
+  </p>
+  <p>
+    <%= f.label :grand_total %><br />
+    <%= f.text_field :grand_total %>
+  </p>
+  <p>
+    <%= f.label :vat_tin_no %><br />
+    <%= f.text_field :vat_tin_no %>
+  </p>
+  <p>
+    <%= f.label :cst_tin_no %><br />
+    <%= f.text_field :cst_tin_no %>
+  </p>
+  <p>
+    <%= f.label :part_vat_no %><br />
+    <%= f.text_field :part_vat_no %>
+  </p>
+  <p>
+    <%= f.label :party_cst_no %><br />
+    <%= f.text_field :party_cst_no %>
+  </p>
+  <p>
+    <%= f.label :pan_entry_no %><br />
+    <%= f.text_field :pan_entry_no %>
+  </p>
+  <p>
+    <%= f.label :date_of_debit_entry_no %><br />
+    <%= f.text_field :date_of_debit_entry_no %>
+  </p>
+  <p>
+    <%= f.label :entry_of_duty_entry_no %><br />
+    <%= f.text_field :entry_of_duty_entry_no %>
+  </p>
+  <p>
+    <%= f.label :date_and_time_of_goods %><br />
+    <%= f.datetime_select :date_and_time_of_goods %>
+  </p>
+  <p>
+    <%= f.label :range %><br />
+    <%= f.text_field :range %>
+  </p>
+  <p>
+    <%= f.label :range_two %><br />
+    <%= f.text_field :range_two %>
+  </p>
+  <p>
+    <%= f.label :ecc_no %><br />
+    <%= f.text_field :ecc_no %>
+  </p>
+  <p>
+    <%= f.label :notification_no %><br />
+    <%= f.text_field :notification_no %>
+  </p>
+  <p>
+    <%= f.label :date_of_preparation_invoice %><br />
+    <%= f.datetime_select :date_of_preparation_invoice %>
+  </p>
+  <p>
+    <%= f.label :timeof_invoice %><br />
+    <%= f.datetime_select :timeof_invoice %>
+  </p>
+  <p>
+    <%= f.label :po_no %><br />
+    <%= f.text_field :po_no %>
+  </p>
+  <p>
+    <%= f.label :invoice_no %><br />
+    <%= f.text_field :invoice_no %>
+  </p>
+  <p>
+    <%= f.label :challan_no %><br />
+    <%= f.text_field :challan_no %>
+  </p>
+  <p>
+    <%= f.label :vehicle_no %><br />
+    <%= f.text_field :vehicle_no %>
+  </p>
+  <p>
+    <%= f.label :lr_no %><br />
+    <%= f.text_field :lr_no %>
+  </p>
+  <p>
+    <%= f.label :date_po %><br />
+    <%= f.datetime_select :date_po %>
+  </p>
+  <p>
+    <%= f.label :date_invoice_no %><br />
+    <%= f.datetime_select :date_invoice_no %>
+  </p>
+  <p>
+    <%= f.label :date_challan_no %><br />
+    <%= f.datetime_select :date_challan_no %>
+  </p>
+  <p>
+    <%= f.label :name_and_adress_of_buyor %><br />
+    <%= f.text_field :name_and_adress_of_buyor %>
+  </p>
+  <p>
+    <%= f.label :name_and_adress_of_consignee %><br />
+    <%= f.text_field :name_and_adress_of_consignee %>
+  </p>
+  <p>
+    <%= f.label :chapter_heading_no %><br />
+    <%= f.text_field :chapter_heading_no %>
+  </p>
+  <p>
+    <%= f.label :name_of_deliver_goods %><br />
+    <%= f.text_field :name_of_deliver_goods %>
+  </p>
+  <p>
+    <%= f.label :pan_no %><br />
+    <%= f.text_field :pan_no %>
+  </p>
+  <p>
+    <%= f.label :commissionarate %><br />
+    <%= f.text_field :commissionarate %>
+  </p>
+  <p>
+    <%= f.label :in_words %><br />
+    <%= f.text_field :in_words %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', taxinvoices_path %>

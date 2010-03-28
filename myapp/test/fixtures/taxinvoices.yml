@@ -1,0 +1,103 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  od: 9.99
+  thickness: 9.99
+  length: 9.99
+  description: MyString
+  average_content_packets: MyString
+  pieces: 1
+  meters: 9.99
+  rs_mtrs: 9.99
+  rs_mtrs: 9.99
+  total_tariff_value: 9.99
+  rate_of_duty: 9.99
+  total_duty: 9.99
+  amount: 9.99
+  total_all: 9.99
+  excise_duty: 9.99
+  ed_cess: 9.99
+  sah_ed_cess: 9.99
+  vat_cst: 9.99
+  packing_forwarding: 9.99
+  grand_total: 9.99
+  vat_tin_no: MyString
+  cst_tin_no: MyString
+  part_vat_no: MyString
+  party_cst_no: MyString
+  pan_entry_no: MyString
+  date_of_debit_entry_no: MyString
+  entry_of_duty_entry_no: MyString
+  date_and_time_of_goods: 2010-03-27 11:56:37
+  range: MyString
+  range_two: MyString
+  ecc_no: MyString
+  notification_no: MyString
+  date_of_preparation_invoice: 2010-03-27 11:56:37
+  timeof_invoice: 2010-03-27 11:56:37
+  po_no: MyString
+  invoice_no: MyString
+  challan_no: MyString
+  vehicle_no: MyString
+  lr_no: MyString
+  date_po: 2010-03-27 11:56:37
+  date_invoice_no: 2010-03-27 11:56:37
+  date_challan_no: 2010-03-27 11:56:37
+  name_and_adress_of_buyor: MyString
+  name_and_adress_of_consignee: MyString
+  chapter_heading_no: 1
+  name_of_deliver_goods: MyString
+  pan_no: MyString
+  commissionarate: MyString
+  in_words: MyString
+
+two:
+  od: 9.99
+  thickness: 9.99
+  length: 9.99
+  description: MyString
+  average_content_packets: MyString
+  pieces: 1
+  meters: 9.99
+  rs_mtrs: 9.99
+  rs_mtrs: 9.99
+  total_tariff_value: 9.99
+  rate_of_duty: 9.99
+  total_duty: 9.99
+  amount: 9.99
+  total_all: 9.99
+  excise_duty: 9.99
+  ed_cess: 9.99
+  sah_ed_cess: 9.99
+  vat_cst: 9.99
+  packing_forwarding: 9.99
+  grand_total: 9.99
+  vat_tin_no: MyString
+  cst_tin_no: MyString
+  part_vat_no: MyString
+  party_cst_no: MyString
+  pan_entry_no: MyString
+  date_of_debit_entry_no: MyString
+  entry_of_duty_entry_no: MyString
+  date_and_time_of_goods: 2010-03-27 11:56:37
+  range: MyString
+  range_two: MyString
+  ecc_no: MyString
+  notification_no: MyString
+  date_of_preparation_invoice: 2010-03-27 11:56:37
+  timeof_invoice: 2010-03-27 11:56:37
+  po_no: MyString
+  invoice_no: MyString
+  challan_no: MyString
+  vehicle_no: MyString
+  lr_no: MyString
+  date_po: 2010-03-27 11:56:37
+  date_invoice_no: 2010-03-27 11:56:37
+  date_challan_no: 2010-03-27 11:56:37
+  name_and_adress_of_buyor: MyString
+  name_and_adress_of_consignee: MyString
+  chapter_heading_no: 1
+  name_of_deliver_goods: MyString
+  pan_no: MyString
+  commissionarate: MyString
+  in_words: MyString

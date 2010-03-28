@@ -1,0 +1,44 @@
+<h1>Editing rawmaterial</h1>
+
+<% form_for(@rawmaterial) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </p>
+  <p>
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  </p>
+  <p>
+    <%= f.label :thickness %><br />
+    <%= f.text_field :thickness %>
+  </p>
+  <p>
+    <%= f.label :coil_weight %><br />
+    <%= f.text_field :coil_weight %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.label :rawmaterial_category_id %><br />
+    <%= f.text_field :rawmaterial_category_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @rawmaterial %> |
+<%= link_to 'Back', rawmaterials_path %>
