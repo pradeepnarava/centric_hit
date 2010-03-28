@@ -20,7 +20,7 @@
           </div>
           <div>
             <p><label>Customer Name</label><%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%> </p>
-            <p><%= f.label :quantity %><%= f.text_field :quantity %></p><%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+            <p><%= f.label :quantity %><%= f.text_field :quantity %></p>
             <p><%= f.label :unit_of_measure %><%= f.text_field :unit_of_measure %></p>
             <p>
               <%= f.label :tital_weight %>

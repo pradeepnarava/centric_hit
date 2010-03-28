@@ -45,7 +45,7 @@ class RawmaterialCategoriesController < ApplicationController
     respond_to do |format|
       if @rawmaterial_category.save
         flash[:notice] = 'RawmaterialCategory was successfully created.'
-        format.html { redirect_to(@rawmaterial_category) }
+        format.html { redirect_to rawmaterial_categories_url }
         format.xml  { render :xml => @rawmaterial_category, :status => :created, :location => @rawmaterial_category }
       else
         format.html { render :action => "new" }
