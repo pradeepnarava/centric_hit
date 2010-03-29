@@ -1,4 +1,5 @@
 class SalesplansController < ApplicationController
+  load_and_authorize_resource
   # GET /salesplans
   # GET /salesplans.xml
   def index

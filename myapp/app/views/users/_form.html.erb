@@ -1,5 +1,20 @@
+<%if @user.new_record?%>
+<p>
+  <label> Employee </label><br />
+  <%= collection_select(:employee, :id, @employees, :id, :full_name, {:include_blank => 'Please select'})%>
+</p>
+<%end%>
 <%= form.label :email %><br />
 <%= form.text_field :email %><br />
+<p>
+  <label> Role </label><br />
+  <%if @user.new_record?%>
+    <%= collection_select(:role, :id, @roles, :id, :name, {:include_blank => 'Please select'})%>
+  <%else%>
+    <%= collection_select(:role, :id, @roles, :id, :name, {:include_blank => 'Please select',:selected => @user.role.id})%>  
+  <%end%>
+</p>
+<%if @user.new_record?%>
 <br />
 <%= form.label :login %><br />
 <%= form.text_field :login %><br />
@@ -9,3 +24,4 @@
 <br />
 <%= form.label :password_confirmation %><br />
 <%= form.password_field :password_confirmation %><br />
+<%end%>

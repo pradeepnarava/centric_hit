@@ -1,4 +1,5 @@
 class RawmaterialsController < ApplicationController
+  before_filter :require_user
   # GET /rawmaterials
   # GET /rawmaterials.xml
   def index
