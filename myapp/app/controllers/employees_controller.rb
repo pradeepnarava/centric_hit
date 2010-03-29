@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.xml
+  before_filter :require_user
   def index
     @employees = Employee.all
 
