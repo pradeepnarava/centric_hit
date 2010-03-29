@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Login</title>
+  <%=stylesheet_link_tag "login.css"%>
+  
+</head>
+<body>
+
+  <div class="loginBox">
+    <div style="width:420px;">
+        <p style="color: green"><%= flash[:notice] %></p>
+    </div>
+    <div class="blueBar"></div>
+    <div class="contentBox">
+      <div class="login_box_heading">
+        <div class="logoDiv" align="center">CENTRIC INDIA</div>
+      </div>
+        <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>

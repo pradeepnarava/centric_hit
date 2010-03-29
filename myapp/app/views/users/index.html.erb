@@ -1,0 +1,32 @@
+<h1>Listing Users</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Login</th>
+    <th>Email</th>
+    <th>Department Name</th>
+    <th>Role</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.employee.first_name rescue "-"%></td>
+    <td><%=h user.employee.last_name rescue "-"%></td>
+    <td><%=h user.login rescue "-"%></td>
+    <td><%=h user.email rescue "-"%></td>
+    <td><%=h user.employee.department.name rescue "-"%></td>
+    <td><%=h user.role.name rescue "-"%></td>
+    <%unless user.role?(:admin)%>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

@@ -16,11 +16,13 @@
     <!--LAWYER NAME-->
 
     <!--LOGIN INFO-->
+    <%if current_user%>
     <div class="loginDetails">
-      <div class=""></div>
+      <div class=""><%= link_to "Logout" ,logout_url %></div>
       <div class="txtR ">
       </div>
     </div>
+    <%end%>
     <!--LOGIN INFO-->
     <br class="clear"/>
   </div>

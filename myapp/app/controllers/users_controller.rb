@@ -1,33 +1,50 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
+  load_and_authorize_resource
   before_filter :require_user, :only => [:show, :edit, :update]
   
+  def index
+    @users = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @users }
+    end
+  end
+  
   def new
+    @employees = Employee.non_user_employee
     @user = User.new
+    @roles = Role.all
   end
   
   def create
     @user = User.new(params[:user])
+    @employee = Employee.find(params[:employee][:id])
     if @user.save
-      flash[:notice] = "Account registered!"
-      redirect_back_or_default new_users_url
+      @employee.update_attributes(:user_id => @user.id)
+      @assignment = Assignment.create(:role_id => params[:role][:id],:user_id =>@user.id)
+      flash[:notice] = "User Login Created!"
+      redirect_back_or_default users_url
     else
       render :action => :new
     end
   end
   
   def show
-    @user = @current_user
+    @user = User.find(params[:id])
   end
  
   def edit
-    @user = @current_user
+    @user = User.find(params[:id])
+    @employees = Employee.non_user_employee
+    @roles = Role.all
   end
   
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    @user = User.find(params[:id]) # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated!"
+      @assignment = @user.assignment.update_attributes(:role_id => params[:role][:id])
+      flash[:notice] = "User updated!"
       redirect_to users_url
     else
       render :action => :edit
