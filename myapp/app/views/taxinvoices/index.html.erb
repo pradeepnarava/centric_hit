@@ -1,6 +1,13 @@
-<h1>Listing taxinvoices</h1>
-
-<table>
+<div class="gridDiv">
+  <div class="titleHead">Listing taxinvoices</div>
+  <div class="gryBox">
+    <div class="linkOuter w45 fr txtR mt5">
+     <%= link_to 'New taxinvoice', new_taxinvoice_path %>
+    </div><br class="clear" />
+    <div id="contacts">
+      <div id="contact_list" class="contactsDIV">
+        <div class="gridTable">
+          <table width="100%">
   <tr>
     <th>Customer name</th>
     <th>Od</th>
@@ -10,8 +17,7 @@
     <th>Average content packets</th>
     <th>Pieces</th>
     <th>Meters</th>
-    <th>Rs mtrs</th>
-    <th>Rs mtrs</th>
+   <!-- <th>Rs mtrs</th>
     <th>Total tariff value</th>
     <th>Rate of duty</th>
     <th>Total duty</th>
@@ -44,6 +50,7 @@
     <th>Lr no</th>
     <th>Date po</th>
     <th>Date invoice no</th>
+   <th>In words</th>-->
     <th>Date challan no</th>
     <th>Name and adress of buyor</th>
     <th>Name and adress of consignee</th>
@@ -51,7 +58,8 @@
     <th>Name of deliver goods</th>
     <th>Pan no</th>
     <th>Commissionarate</th>
-    <th>In words</th>
+    
+     <th>Action</th>
   </tr>
 
 <% for taxinvoice in @taxinvoices %>
@@ -64,7 +72,7 @@
     <td><%=h taxinvoice.average_content_packets %></td>
     <td><%=h taxinvoice.pieces %></td>
     <td><%=h taxinvoice.meters %></td>
-    <td><%=h taxinvoice.rs_mtrs %></td>
+    <!--<td><%=h taxinvoice.rs_mtrs %></td>
     <td><%=h taxinvoice.rs_mtrs %></td>
     <td><%=h taxinvoice.total_tariff_value %></td>
     <td><%=h taxinvoice.rate_of_duty %></td>
@@ -98,6 +106,7 @@
     <td><%=h taxinvoice.lr_no %></td>
     <td><%=h taxinvoice.date_po %></td>
     <td><%=h taxinvoice.date_invoice_no %></td>
+    <td><%=h taxinvoice.in_words %></td>-->
     <td><%=h taxinvoice.date_challan_no %></td>
     <td><%=h taxinvoice.name_and_adress_of_buyor %></td>
     <td><%=h taxinvoice.name_and_adress_of_consignee %></td>
@@ -105,14 +114,18 @@
     <td><%=h taxinvoice.name_of_deliver_goods %></td>
     <td><%=h taxinvoice.pan_no %></td>
     <td><%=h taxinvoice.commissionarate %></td>
-    <td><%=h taxinvoice.in_words %></td>
-    <td><%= link_to 'Show', taxinvoice %></td>
-    <td><%= link_to 'Edit', edit_taxinvoice_path(taxinvoice) %></td>
-    <td><%= link_to 'Destroy', taxinvoice, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <td>
+     <div class="fr" style="float:left;">
+          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_taxinvoice_path(taxinvoice)  )%>
+          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}),taxinvoice, :confirm => 'Are you sure?', :method => :delete ) %>
+        </div>
+</td>
   </tr>
 <% end %>
 </table>
-
+</div>
+      </div></div></div></div>
 <br />
 
-<%= link_to 'New taxinvoice', new_taxinvoice_path %>
+

@@ -1,71 +1,90 @@
-<h1>New slittingproduction</h1>
-
-<% form_for(@slittingproduction) do |f| %>
+<div class="gridDiv">
+  <div class="titleHead">New slittingproduction</div>
+  <div class="formMain">
+    <% form_for(@slittingproduction) do |f| %>
   <%= f.error_messages %>
-
-  <p><label>Raw  Material</label><%=f.collection_select( :rawmaterial_id, Rawmaterial.all,:id,:name,{:include_blank => "----------Select----------"})%>
-
-  <p><label>Slitting coil no </label><%=f.collection_select( :slitting_id, Slitting.all,:id,:slitting_coil_no,{:include_blank => "----------Select----------"})%>
-
+      <div>
+        <!--BOX 1-->
+        <div class="mt5">
+        </div>
+        <div class="fl w48" style="width: 48%;" >
+          <div>
+  <p><label>Raw  Material</label>
+<%=f.collection_select( :rawmaterial_id, Rawmaterial.all,:id,:name,{:include_blank => "----------Select----------"})%>
+  </p>
   <p>
-    <%= f.label :shift %><br />
+    <label>Slitting coil no </label>
+    <%=f.collection_select( :slitting_id, Slitting.all,:id,:slitting_coil_no,{:include_blank => "----------Select----------"})%>
+ </p> 
+ <p style="width:100%">
+    <%= f.label :shift %>
     <%= f.datetime_select :shift %>
   </p>
   <p>
-    <%= f.label :operator_name %><br />
+    <%= f.label :operator_name %>
     <%= f.text_field :operator_name %>
   </p>
   <p>
-    <%= f.label :source %><br />
+    <%= f.label :source %>
     <%= f.text_field :source %>
   </p>
   <p>
-    <%= f.label :input_weight %><br />
+    <%= f.label :input_weight %>
     <%= f.text_field :input_weight %>
   </p>
   <p>
-    <%= f.label :width %><br />
+    <%= f.label :width %>
     <%= f.text_field :width %>
   </p>
   <p>
-    <%= f.label :thickness %><br />
+    <%= f.label :thickness %>
     <%= f.text_field :thickness %>
   </p>
+   </div>
+        </div>
+        <div style="width: 52%;" class="fr">
+          <div>
+  
   <p>
-    <%= f.label :grade %><br />
+    <%= f.label :grade %>
     <%= f.text_field :grade %>
   </p>
   <p>
-    <%= f.label :type %><br />
+    <%= f.label :type %>
     <%= f.text_field :type %>
   </p>
   <p>
-    <%= f.label :width_slitting %><br />
+    <%= f.label :width_slitting %>
     <%= f.text_field :width_slitting %>
   </p>
   <p>
-    <%= f.label :no_of_slits_slitting %><br />
+    <%= f.label :no_of_slits_slitting %>
     <%= f.text_field :no_of_slits_slitting %>
   </p>
   <p>
-    <%= f.label :slit_coil_weight %><br />
+    <%= f.label :slit_coil_weight %>
     <%= f.text_field :slit_coil_weight %>
   </p>
   <p>
-    <%= f.label :slit_weight %><br />
+    <%= f.label :slit_weight %>
     <%= f.text_field :slit_weight %>
   </p>
   <p>
-    <%= f.label :scrap_weight %><br />
+    <%= f.label :scrap_weight %>
     <%= f.text_field :scrap_weight %>
   </p>
   <p>
-    <%= f.label :remarks %><br />
+    <%= f.label :remarks %>
     <%= f.text_field :remarks %>
   </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', slittingproductions_path %>
+   </div>
+        </div>
+        <br class="clear"/>
+        <div class="txtC" id="submit_div">
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+        </div>
+        <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,65 +1,84 @@
-<h1>New deliverychallan</h1>
-
-<% form_for(@deliverychallan) do |f| %>
+<div class="gridDiv">
+  <div class="titleHead">New deliverychallan</div>
+  <div class="formMain">
+   <% form_for(@deliverychallan) do |f| %>
   <%= f.error_messages %>
-Customer Name
+      <div>
+        <!--BOX 1-->
+        <div class="mt5">
+        </div>
+        <div class="fl w48" style="width: 52%;" >
+          <div>
+            <p>
+ <%= f.label "Customer Name" %>
     <%= f.collection_select(:customer_id, Customer.all, :id, :name, {:include_blank => 'Please select'})%>
-
+</p>
   <p>
-    <%= f.label :delivery_challan_no %><br />
+    <%= f.label :delivery_challan_no %>
     <%= f.text_field :delivery_challan_no %>
   </p>
-  <p>
-    <%= f.label :date %><br />
+  <p style="width:110%">
+    <%= f.label :date %>
     <%= f.datetime_select :date %>
   </p>
   <p>
-    <%= f.label :vehicle_no %><br />
+    <%= f.label :vehicle_no %>
     <%= f.text_field :vehicle_no %>
   </p>
   <p>
-    <%= f.label :od %><br />
+    <%= f.label :od %>
     <%= f.text_field :od %>
   </p>
-  <p>
-    <%= f.label :length %><br />
+   <p>
+    <%= f.label :length %>
     <%= f.text_field :length %>
   </p>
   <p>
-    <%= f.label :thickness %><br />
+    <%= f.label :thickness %>
     <%= f.text_field :thickness %>
   </p>
-  <p>
-    <%= f.label :quantity_pcs %><br />
+  
+  </div>
+        </div>
+        <div style="width: 48%;" class="fr">
+          <div>
+
+            <p>
+    <%= f.label :quantity_pcs %>
     <%= f.text_field :quantity_pcs %>
   </p>
   <p>
-    <%= f.label :quantity_mtrs %><br />
+    <%= f.label :quantity_mtrs %>
     <%= f.text_field :quantity_mtrs %>
   </p>
   <p>
-    <%= f.label :remark %><br />
+    <%= f.label :remark %>
     <%= f.text_field :remark %>
   </p>
   <p>
-    <%= f.label :vat_tin %><br />
+    <%= f.label :vat_tin %>
     <%= f.text_field :vat_tin %>
   </p>
   <p>
-    <%= f.label :cst_tin %><br />
+    <%= f.label :cst_tin %>
     <%= f.text_field :cst_tin %>
   </p>
   <p>
-    <%= f.label :from %><br />
+    <%= f.label :from %>
     <%= f.text_field :from %>
   </p>
   <p>
-    <%= f.label :to %><br />
+    <%= f.label :to %>
     <%= f.text_field :to %>
   </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', deliverychallans_path %>
+  </div>
+        </div>
+        <br class="clear"/>
+        <div class="txtC" id="submit_div">
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+        </div>
+        <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+</div>

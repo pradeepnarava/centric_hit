@@ -1,242 +1,256 @@
-<h1>New predespatchtc</h1>
-
-<% form_for(@predespatchtc) do |f| %>
+<div class="gridDiv">
+  <div class="titleHead">New predespatchtc</div>
+  <div class="formMain">
+   <% form_for(@predespatchtc) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :test_certificate_no %><br />
-    <%= f.text_field :test_certificate_no %>
-  </p>
-
-  Invoice no
-   <%=f.collection_select( :taxinvoice_id, Taxinvoice.all,:id,:invoice_no,{:include_blank => "----------Select----------"})%>
-
-
-  Customers
-  <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
-
-  <p>
-    <%= f.label :date %><br />
+      <div>
+        <!--BOX 1-->
+        <div class="mt5">
+        </div>
+        <div class="fl w48" style="width: 52%;" >
+          <div>
+            <p style="width:100%">
+    <%= f.label :date %>
     <%= f.datetime_select :date %>
   </p>
   <p>
-    <%= f.label :od %><br />
+    <%= f.label :test_certificate_no %>
+    <%= f.text_field :test_certificate_no %>
+  </p>
+ <p>
+   <%= f.label "Invoice no" %>
+  
+   <%=f.collection_select( :taxinvoice_id, Taxinvoice.all,:id,:invoice_no,{:include_blank => "----------Select----------"})%>
+
+ </p> <p>
+   <%= f.label "Customers" %>
+  
+  <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+</p>
+
+  <p>
+    <%= f.label :od %>
     <%= f.text_field :od %>
   </p>
   <p>
-    <%= f.label :thickness %><br />
+    <%= f.label :thickness %>
     <%= f.text_field :thickness %>
   </p>
   <p>
-    <%= f.label :length %><br />
+    <%= f.label :length %>
     <%= f.text_field :length %>
   </p>
   <p>
-    <%= f.label :quantity %><br />
+    <%= f.label :quantity %>
     <%= f.text_field :quantity %>
   </p>
   <p>
-    <%= f.label :specification %><br />
+    <%= f.label :specification %>
     <%= f.text_field :specification %>
   </p>
   <p>
-    <%= f.label :grade %><br />
+    <%= f.label :grade %>
     <%= f.text_field :grade %>
   </p>
   <p>
-    <%= f.label :fin_condition %><br />
+    <%= f.label :fin_condition %>
     <%= f.text_field :fin_condition %>
   </p>
   <p>
-    <%= f.label :uann_ann %><br />
+    <%= f.label :uann_ann %>
     <%= f.text_field :uann_ann %>
   </p>
   <p>
-    <%= f.label :c_spec %><br />
+    <%= f.label :c_spec %>
     <%= f.text_field :c_spec %>
   </p>
   <p>
-    <%= f.label :c_obs %><br />
+    <%= f.label :c_obs %>
     <%= f.text_field :c_obs %>
   </p>
   <p>
-    <%= f.label :mn_spec %><br />
+    <%= f.label :mn_spec %>
     <%= f.text_field :mn_spec %>
   </p>
   <p>
-    <%= f.label :mn_obs %><br />
+    <%= f.label :mn_obs %>
     <%= f.text_field :mn_obs %>
   </p>
   <p>
-    <%= f.label :s_spec %><br />
+    <%= f.label :s_spec %>
     <%= f.text_field :s_spec %>
   </p>
   <p>
-    <%= f.label :s_obs %><br />
+    <%= f.label :s_obs %>
     <%= f.text_field :s_obs %>
   </p>
   <p>
-    <%= f.label :p_spec %><br />
+    <%= f.label :p_spec %>
     <%= f.text_field :p_spec %>
   </p>
   <p>
-    <%= f.label :p_obs %><br />
+    <%= f.label :p_obs %>
     <%= f.text_field :p_obs %>
   </p>
   <p>
-    <%= f.label :si_spec %><br />
+    <%= f.label :si_spec %>
     <%= f.text_field :si_spec %>
   </p>
   <p>
-    <%= f.label :si_obs %><br />
+    <%= f.label :si_obs %>
     <%= f.text_field :si_obs %>
   </p>
   <p>
-    <%= f.label :al_spec %><br />
+    <%= f.label :al_spec %>
     <%= f.text_field :al_spec %>
   </p>
   <p>
-    <%= f.label :al_obs %><br />
+    <%= f.label :al_obs %>
     <%= f.text_field :al_obs %>
   </p>
   <p>
-    <%= f.label :ni_spec %><br />
+    <%= f.label :ni_spec %>
     <%= f.text_field :ni_spec %>
   </p>
-  <p>
-    <%= f.label :ni_obs %><br />
+   <p>
+    <%= f.label :ni_obs %>
     <%= f.text_field :ni_obs %>
   </p>
   <p>
-    <%= f.label :cr_spec %><br />
+    <%= f.label :cr_spec %>
     <%= f.text_field :cr_spec %>
   </p>
   <p>
-    <%= f.label :cr_obs %><br />
+    <%= f.label :cr_obs %>
     <%= f.text_field :cr_obs %>
   </p>
   <p>
-    <%= f.label :ys_spec %><br />
+    <%= f.label :ys_spec %>
     <%= f.text_field :ys_spec %>
   </p>
   <p>
-    <%= f.label :ys_obs %><br />
+    <%= f.label :ys_obs %>
     <%= f.text_field :ys_obs %>
   </p>
   <p>
-    <%= f.label :ts_obs %><br />
+    <%= f.label :ts_obs %>
     <%= f.text_field :ts_obs %>
   </p>
+  </div>
+        </div>
+        <div style="width: 48%;" class="fr">
+          <div>
+ 
   <p>
-    <%= f.label :ts_spec %><br />
+    <%= f.label :ts_spec %>
     <%= f.text_field :ts_spec %>
   </p>
   <p>
-    <%= f.label :el_spec %><br />
+    <%= f.label :el_spec %>
     <%= f.text_field :el_spec %>
   </p>
   <p>
-    <%= f.label :el_obs %><br />
+    <%= f.label :el_obs %>
     <%= f.text_field :el_obs %>
   </p>
   <p>
-    <%= f.label :gl_hardness_spec %><br />
+    <%= f.label :gl_hardness_spec %>
     <%= f.text_field :gl_hardness_spec %>
   </p>
   <p>
-    <%= f.label :el_hardness_obs %><br />
+    <%= f.label :el_hardness_obs %>
     <%= f.text_field :el_hardness_obs %>
   </p>
   <p>
-    <%= f.label :od_spec %><br />
+    <%= f.label :od_spec %>
     <%= f.text_field :od_spec %>
   </p>
   <p>
-    <%= f.label :od_obs %><br />
+    <%= f.label :od_obs %>
     <%= f.text_field :od_obs %>
   </p>
   <p>
-    <%= f.label :id_spec %><br />
+    <%= f.label :id_spec %>
     <%= f.text_field :id_spec %>
   </p>
   <p>
-    <%= f.label :id_obs %><br />
+    <%= f.label :id_obs %>
     <%= f.text_field :id_obs %>
   </p>
   <p>
-    <%= f.label :thick_spec %><br />
+    <%= f.label :thick_spec %>
     <%= f.text_field :thick_spec %>
   </p>
   <p>
-    <%= f.label :thick_obs %><br />
+    <%= f.label :thick_obs %>
     <%= f.text_field :thick_obs %>
   </p>
   <p>
-    <%= f.label :length_spec %><br />
+    <%= f.label :length_spec %>
     <%= f.text_field :length_spec %>
   </p>
   <p>
-    <%= f.label :length_obs %><br />
+    <%= f.label :length_obs %>
     <%= f.text_field :length_obs %>
   </p>
   <p>
-    <%= f.label :scratch_mark %><br />
+    <%= f.label :scratch_mark %>
     <%= f.text_field :scratch_mark %>
   </p>
   <p>
-    <%= f.label :roll_pick_up %><br />
+    <%= f.label :roll_pick_up %>
     <%= f.text_field :roll_pick_up %>
   </p>
   <p>
-    <%= f.label :pits_dents %><br />
+    <%= f.label :pits_dents %>
     <%= f.text_field :pits_dents %>
   </p>
   <p>
-    <%= f.label :bend %><br />
+    <%= f.label :bend %>
     <%= f.text_field :bend %>
   </p>
   <p>
-    <%= f.label :corner_radius %><br />
+    <%= f.label :corner_radius %>
     <%= f.text_field :corner_radius %>
   </p>
   <p>
-    <%= f.label :squareness %><br />
+    <%= f.label :squareness %>
     <%= f.text_field :squareness %>
   </p>
   <p>
-    <%= f.label :twist %><br />
+    <%= f.label :twist %>
     <%= f.text_field :twist %>
   </p>
   <p>
-    <%= f.label :flaring_spec %><br />
+    <%= f.label :flaring_spec %>
     <%= f.text_field :flaring_spec %>
   </p>
   <p>
-    <%= f.label :flaring_obs %><br />
+    <%= f.label :flaring_obs %>
     <%= f.text_field :flaring_obs %>
   </p>
   <p>
-    <%= f.label :flattening_obs %><br />
+    <%= f.label :flattening_obs %>
     <%= f.text_field :flattening_obs %>
   </p>
   <p>
-    <%= f.label :flattening_spec %><br />
+    <%= f.label :flattening_spec %>
     <%= f.text_field :flattening_spec %>
   </p>
   <p>
-    <%= f.label :bending_spec %><br />
+    <%= f.label :bending_spec %>
     <%= f.text_field :bending_spec %>
   </p>
   <p>
-    <%= f.label :bending_obs %><br />
+    <%= f.label :bending_obs %>
     <%= f.text_field :bending_obs %>
   </p>
   <p>
-    <%= f.label :crushing_spec %><br />
+    <%= f.label :crushing_spec %>
     <%= f.text_field :crushing_spec %>
   </p>
   <p>
-    <%= f.label :crushing_obs %><br />
+    <%= f.label :crushing_obs %>
     <%= f.text_field :crushing_obs %>
   </p>
 
@@ -244,35 +258,42 @@
    <%#=f.collection_select( :uncoiler_report_id, UncoilerReports.all,:id,:name,{:include_blank => "----------Select----------"})%>
 
   <p>
-    <%= f.label :uncoiler_report_id %><br />
+    <%= f.label :uncoiler_report_id %>
     <%= f.text_field :uncoiler_report_id %>
   </p>
-
-  Slitting coil No
+  <p>
+    <%= f.label "Slitting coil No" %>
+  
      <%=f.collection_select( :slittingproduction_id, Slittingproduction.all,:id,:slitting_coil_no,{:include_blank => "----------Select----------"})%>
-
+</p>
 
 
 
   <p>
-    <%= f.label :inspected_by %><br />
+    <%= f.label :inspected_by %>
     <%= f.text_field :inspected_by %>
   </p>
   <p>
-    <%= f.label :approved_by %><br />
+    <%= f.label :approved_by %>
     <%= f.text_field :approved_by %>
   </p>
-
-  Coil NO
-       <%=f.collection_select( :tube_mill_performance_report_id, TubeMillPerformanceReport.all,:id,:lot_no,{:include_blank => "----------Select----------"})%>
-
   <p>
-    <%= f.label :tube_mill_performance_report_id %><br />
+    <%= f.label "Coil NO" %>
+  
+       <%=f.collection_select( :tube_mill_performance_report_id, TubeMillPerformanceReport.all,:id,:lot_no,{:include_blank => "----------Select----------"})%>
+</p>
+  <p>
+    <%= f.label :tube_mill_performance_report_id %>
     <%= f.text_field :tube_mill_performance_report_id %>
   </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', predespatchtcs_path %>
+ </div>
+        </div>
+        <br class="clear"/>
+        <div class="txtC" id="submit_div">
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+        </div>
+        <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+</div>
