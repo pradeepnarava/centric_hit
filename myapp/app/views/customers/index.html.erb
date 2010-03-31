@@ -1,15 +1,14 @@
-<div class="gridDiv">
-  <div class="titleHead">Listing Customers</div>
-  <div class="gryBox">
-    <div class="linkOuter w45 fr txtR mt5">
-      <%= link_to 'New Customer', new_customer_path %>
-    </div><br class="clear" />
-    <div id="contacts">
-      <div id="contact_list" class="contactsDIV">
-        <div class="gridTable">
-<table cellspacing="0" cellpadding="0" width="100%">
+<div class="top-bar">
+				<%= link_to 'New Customer', new_customer_path,:class=>"button" %>
+				<h1>Customers</h1>
+				
+			</div><br />
+			<div class="table">
+                           <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+                          <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+                                <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <th>Name</th>
+    <th class="first" >Name</th>
     <th>Address</th>
     <th>Contact person</th>
     <th>Phone</th>
@@ -21,7 +20,7 @@
     <th>Pan no</th>
     <th>Payment terms</th>
     <th>Bankers</th>
-    <th>Action</th>
+    <th style=" width:50px;">Action</th>
   </tr>
 <% for customer in @customers %>
   <tr class="<%=cycle("bg1", "bg2")%>">
@@ -47,7 +46,6 @@
 <% end %>
 </table>
  </div>
-      </div></div></div></div>
 <br />
 
 

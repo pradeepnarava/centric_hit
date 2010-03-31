@@ -1,24 +1,8 @@
- <div class="navTabs">
-    <ul>
-      <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'current' : ''%>'><%=link_to("<span>Raw Materials</span>", rawmaterials_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('rawmaterial_categories')? 'current' : ''%>'><%=link_to("<span>Rawmaterial Categories</span>", rawmaterial_categories_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('customers')? 'current' : ''%>'><%=link_to("<span>Customers</span>",customers_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('customer_orders')? 'current' : ''%>'><%=link_to("<span>Customer Order</span>", customer_orders_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('serializes')? 'current' : ''%>'><%=link_to("<span>Serialize</span>",serializes_path)%></li>
-      <%if can? :manage, Salesplan%><li class ='<%=controller.controller_name.eql?('salesplans')? 'current' : ''%>'><%=link_to("<span>Sales Plan</span>",salesplans_path)%></li><%end%>
-      <li class ='<%=controller.controller_name.eql?('slittings')? 'current' : ''%>'><%=link_to("<span>Slitting</span>",slittings_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('slittingproductions')? 'current' : ''%>'><%=link_to("<span>Slitting Production Report</span>",slittingproductions_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('tube_mill_stoppage_reports')? 'current' : ''%>'><%=link_to("<span>Tube Mill Stoppage Reports</span>",tube_mill_stoppage_reports_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports')? 'current' : ''%>'><%=link_to("<span>Tube Mill Performance Reports</span>",tube_mill_performance_reports_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('uncoiler_reports')? 'current' : ''%>'><%=link_to("<span>Uncoiler Reports</span>",uncoiler_reports_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('predespatchtcs')? 'current' : ''%>'><%=link_to("<span>Predespatch Tc</span>",predespatchtcs_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('taxinvoices')? 'current' : ''%>'><%=link_to("<span>Taxinvoice</span>",taxinvoices_path)%></li>
-      <li class ='<%=controller.controller_name.eql?('deliverychallans')? 'current' : ''%>'><%=link_to("<span>Delivery challan</span>",deliverychallans_path)%></li>
-      <%if can? :manage, Role%><li class ='<%=controller.controller_name.eql?('roles')? 'current' : ''%>'><%=link_to("<span>Roles</span>",roles_path)%></li><%end%>
-      <%if can? :manage, Department%><li class ='<%=controller.controller_name.eql?('departments')? 'current' : ''%>'><%=link_to("<span>Departments</span>",departments_path)%></li><%end%>
-      <%if can? :manage, Employee%><li class ='<%=controller.controller_name.eql?('employees')? 'current' : ''%>'><%=link_to("<span>Employees</span>",employees_path)%></li><%end%>
-      <%if can? :manage, User%><li class ='<%=controller.controller_name.eql?('users')? 'current' : ''%>'><%=link_to("<span>Users</span>",users_path)%></li><%end%>
-
+    <ul id="top-navigation">
+      <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'active' : ''%>'><span><span><%=link_to("Raw Materials", rawmaterials_path)%></span></span></li>
+      <li class ='<%=controller.controller_name.eql?('rawmaterial_categories')? 'active' : ''%>'><span><span><%=link_to("Rawmaterial Categories", rawmaterial_categories_path)%></span></span></li>
+      <li class ='<%=controller.controller_name.eql?('customers')? 'active' : ''%>'><span><span><%=link_to("Customers",customers_path)%></span></span></li>
+      <li class ='<%=controller.controller_name.eql?('customer_orders')? 'active' : ''%>'><span><span><%=link_to("Customer Order", customer_orders_path)%></span></span></li>
+      
     </ul>
-  </div>
 
