@@ -1,81 +1,39 @@
 <div class="gridDiv">
   <div class="titleHead">New Customer Order</div>
-  <div class="formMain">
+  <div class="formOrder">
     <% form_for(@customer_order) do |f| %>
       <%= f.error_messages %>
       <div>
         <!--BOX 1-->
-          <div class="mt5">
+          <div class="fl3row">
+            <label>Customer Name</label><%=f.collection_select(:customer_id, @customers,:id,:name,{:include_blank => "---Select---"},{:onchange => "customerdetail(this.value);"})%>
+            <label>E-mail</label><%=text_field_tag "customer_order_email" %>
+            <label>VAT No</label><%=text_field_tag "customer_order_vat_no" %>
           </div>
-          <div class="fl w48">
-          <div>
-            <p><%= f.label :tube_size %><%= f.text_field :tube_size %></p>
-            <p><%= f.label :grade %><%= f.text_field :grade %></p>
-            <p><%= f.label :specification %><%= f.text_field :specification %></p>
-            <p><%= f.label :unit_price %><%= f.text_field :unit_price %></p>
-            <p>
-              <label>Serial</label>
-              <%=f.collection_select(:serialize_id, Serialize.all,:id,:name,{:include_blank => "----------Select----------"})%>
-            </p>
-          </div>
-          <div>
-            <p><label>Customer Name</label><%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%> </p>
-            <p><%= f.label :quantity %><%= f.text_field :quantity %></p>
-            <p><%= f.label :unit_of_measure %><%= f.text_field :unit_of_measure %></p>
-            <p>
-              <%= f.label :tital_weight %>
-              <%= f.text_field :tital_weight %>
-            </p>
+        <br class="clear"/>        
+            <table>
+              <tr>
+                <td><label>Office Address</label></td>
+                <td><%= text_area_tag "customer_order_office_address",nil, :cols => 30, :rows => 5 %></td>
+                <td><%= f.label :delivery_address %> <%=link_to "Same as Office","#",:onclick => "copyaddress();"%></td>
+                <td><%= f.text_area :delivery_address, :cols => 30, :rows => 5 %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :ecc_no %></td>
+                <td><%= f.text_field :ecc_no %></td>
+                <td><%= f.label :po_no %></td>
+                <td><%= f.text_field :po_no %></td>
+              </tr>            
+            </table>        
+        <div id="detail"></div>
 
-          </div>
-          </div>
-          <div style="width: 52%;" class="fr">
-          <div>
-            <p>
-              <%= f.label :rate_per_kilo %>
-              <%= f.text_field :rate_per_kilo %>
-            </p>
-            <p>
-              <%= f.label :total_amount %>
-              <%= f.text_field :total_amount %>
-            </p>
-            <p>
-              <%= f.label :email %>
-              <%= f.text_field :email %>
-            </p>
-            <p>
-              <%= f.label :office_address %>
-              <%= f.text_field :office_address %>
-            </p>
-          </div>
-          <div>
-            <p>
-              <%= f.label :vat_no %>
-              <%= f.text_field :vat_no %>
-            </p>
-            <p>
-              <%= f.label :ecc_no %>
-              <%= f.text_field :ecc_no %>
-            </p>
-            <p>
-              <%= f.label :delivery_address %>
-              <%= f.text_field :delivery_address %>
-            </p>
-            <p>
-              <%= f.label :po_no %>
-              <%= f.text_field :po_no %>
-            </p>
-            
-              
-          </div>
-          
-        </div>
+
         <br class="clear"/>
   <div class="txtC" id="submit_div">
 
   <%= f.submit "Create" , :class=>'button submit_buttons'%>
     <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
-   
+ 
       </div>
        <br class="clear"/>
       </div>

@@ -1,0 +1,29 @@
+
+<%unless @serials.size<1%>             
+             <table class="formOrdertable">
+               <tr>
+                 <td>S.No</td>
+                 <td>Serial</td>
+                 <td>Tube Size</td>
+                 <td>Specification</td>          
+                 <td>Rate/kg</td>
+                 <td>Qty</td>     
+                 <td>Total Weight</td>               
+                 <td>Total Amount</td>               
+               </tr>
+               <%for customerorder in 1..@serials.size%>
+               <tr>
+                 <td><%=customerorder%></td>
+                 <td><%=collection_select("#{customerorder}[customer_order]",:serialize_id, @serials,:id,:name,{:include_blank => "---Select---"},{:onchange => "serialdetail(this.value,#{customerorder});"})%></td>
+                 <td><%= text_field_tag "#{customerorder}[customer_order][tube_size]" %></td>
+                 <td><%= text_field_tag "#{customerorder}[customer_order][specification]" %></td>            
+                 <td><%= text_field_tag "#{customerorder}[customer_order][rate_per_kilo]" %></td>
+                 <td><%= text_field_tag "#{customerorder}[customer_order][quantity]" %></td>           
+                 <td><%= text_field_tag "#{customerorder}[customer_order][total_weight]" %></td>               
+                 <td><%= text_field_tag "#{customerorder}[customer_order][total_amount]" %></td>               
+               </tr>
+               <%end%>
+             </table>   
+<%else%>
+No Serials, Please Create Serial First.
+<%end%>

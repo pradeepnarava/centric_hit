@@ -25,7 +25,8 @@ class CustomerOrdersController < ApplicationController
   # GET /customer_orders/new.xml
   def new
     @customer_order = CustomerOrder.new
-
+    @customers = Customer.all
+    @serials = Serialize.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @customer_order }
@@ -40,20 +41,40 @@ class CustomerOrdersController < ApplicationController
   # POST /customer_orders
   # POST /customer_orders.xml
   def create
-    @customer_order = CustomerOrder.new(params[:customer_order])
-
-    respond_to do |format|
-      if @customer_order.save
-        flash[:notice] = 'CustomerOrder was successfully created.'
-        format.html { redirect_to(@customer_order) }
-        format.xml  { render :xml => @customer_order, :status => :created, :location => @customer_order }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @customer_order.errors, :status => :unprocessable_entity }
+    data=params
+    @error = 0
+    @save_order = data.rehash.each_pair do |key,value|
+      @customer_order = CustomerOrder.new(value[:customer_order])
+      if @customer_order.valid?
+        @customer_order.customer_id = data[:customer_order][:customer_id]
+        @customer_order.serialize_id = data[:customer_order][:serialize_id]
+        @customer_order.delivery_address = data[:customer_order][:delivery_address]
+        @customer_order.ecc_no = data[:customer_order][:ecc_no]
+        @customer_order.po_no = data[:customer_order][:po_no]  
+        if @customer_order.save
+          flash[:notice] = 'CustomerOrder was successfully created.'
+        else
+          @error = 1
+        end
       end
+    end
+    if @error == 0
+      redirect_to(@customer_order)
+    else
+      render :action => "new"
     end
   end
 
+  def customer_detail
+    @customer = Customer.find(params[:id])
+    @serials = @customer.serializes
+  end
+
+  def serial_detail
+    @serial = Serialize.find(params[:id])
+  end
+  
+  
   # PUT /customer_orders/1
   # PUT /customer_orders/1.xml
   def update

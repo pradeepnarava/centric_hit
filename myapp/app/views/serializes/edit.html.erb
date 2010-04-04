@@ -8,6 +8,30 @@
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label :specification %>
+    <%= f.text_area :specification,:rows =>4, :cols => 15 %>
+  </p>                 
+  <p>
+    <%= f.label :grade %>
+    <%= f.text_field :grade%>
+  </p>                   
+  <p>
+    <%= f.label :unit_of_measure %>
+    <%= f.text_field :unit_of_measure %>
+  </p>         
+  <p>
+    <%= f.label :od %>
+    <%= f.text_field :od %>
+  </p>            
+  <p>
+    <%= f.label :thikness %>
+    <%= f.text_field :thikness %>
+  </p>            
+  <p>
+    <%= f.label :length %>
+    <%= f.text_field :length %>
+  </p>      
+  <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>

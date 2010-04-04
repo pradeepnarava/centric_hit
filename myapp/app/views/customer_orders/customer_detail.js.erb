@@ -1,0 +1,4 @@
+jQuery('#customer_order_email').val("<%=@customer.email%>");
+jQuery('#customer_order_vat_no').val("<%=@customer.vat_no%>");
+jQuery('#customer_order_office_address').val("<%=@customer.address%>");
+jQuery('#detail').html("<%=escape_javascript(render(:partial => 'detail'))%>");

@@ -35,8 +35,8 @@
                 <td><%=h customer_order.grade %></td>
                 <td><%=h customer_order.specification %></td>
                 <td><%=h customer_order.unit_price %></td>
-                <td><%=h customer_order.customer.name %></td>
-                <td><%=h customer_order.serialize.name %></td>
+                <td><%=h customer_order.customer.name rescue "-" %></td>
+                <td><%=h customer_order.serialize.name rescue "-"%></td>
                 <td><%=h customer_order.quantity %></td>
                 <td><%=h customer_order.unit_of_measure %></td>
                 <td><%=h customer_order.tital_weight %></td>

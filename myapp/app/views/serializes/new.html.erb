@@ -3,32 +3,53 @@
   <div class="formMain">
     <% form_for(@serialize) do |f| %>
       <%= f.error_messages %>
-      <div style="width: 70%">
+      <div>
         <!--BOX 1-->
         <div class="mt5">
         </div>
         <div class="fl w48" >
-          <div>
             <p>
               <%= f.label "Customer name"%>
-              <%=f.collection_select(:customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+              <%=f.collection_select(:customer_id, Customer.all,:id,:name,{:include_blank => "---Select---"})%>
             </p>
             <p>
               <%= f.label :name %>
               <%= f.text_field :name %>
             </p>
-          </div>
+            <p>
+              <%= f.label :specification %>
+              <%= f.text_area :specification,:rows =>4, :cols => 15 %>
+            </p>                 
+            <p>
+              <%= f.label :grade %>
+              <%= f.text_field :grade%>
+            </p>                    
         </div>
 
         <div class="fl w48" >
+            <p>
+              <%= f.label :unit_of_measure %>
+              <%= f.text_field :unit_of_measure %>
+            </p>             
+            <p>
+              <%= f.label :od %>
+              <%= f.text_field :od %>
+            </p>            
+            <p>
+              <%= f.label :thikness %>
+              <%= f.text_field :thikness %>
+            </p>            
+            <p>
+              <%= f.label :length %>
+              <%= f.text_field :length %>
+            </p>              
+            
           <div class="txtC" id="submit_div" >
             <%= f.submit "Create" , :class=>'button submit_buttons'%>
             <%=link_to 'Cancel',rawmaterial_categories_path, :class=>'button submit_buttons cancelbutton' %>
           </div>
         </div>
       </div>
-
-      <br class="clear"/>
     </div>
   <% end %>
 </div>
