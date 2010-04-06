@@ -3,7 +3,6 @@ class CustomerOrdersController < ApplicationController
   # GET /customer_orders.xml
   def index
     @customer_orders = CustomerOrder.find(:all)
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @customer_orders }
@@ -47,7 +46,6 @@ class CustomerOrdersController < ApplicationController
       @customer_order = CustomerOrder.new(value[:customer_order])
       if @customer_order.valid?
         @customer_order.customer_id = data[:customer_order][:customer_id]
-        @customer_order.serialize_id = data[:customer_order][:serialize_id]
         @customer_order.delivery_address = data[:customer_order][:delivery_address]
         @customer_order.ecc_no = data[:customer_order][:ecc_no]
         @customer_order.po_no = data[:customer_order][:po_no]  

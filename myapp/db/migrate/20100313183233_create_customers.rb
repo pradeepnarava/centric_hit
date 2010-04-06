@@ -4,8 +4,8 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :name
       t.string :address
       t.string :contact_person
-      t.integer :phone
-      t.integer :mobile
+      t.string :phone
+      t.string :mobile
       t.string :email
       t.string :excise_registration_no
       t.string :vat_no

@@ -16,10 +16,10 @@
                  <td><%=customerorder%></td>
                  <td><%=collection_select("#{customerorder}[customer_order]",:serialize_id, @serials,:id,:name,{:include_blank => "---Select---"},{:onchange => "serialdetail(this.value,#{customerorder});"})%></td>
                  <td><%= text_field_tag "#{customerorder}[customer_order][tube_size]" %></td>
-                 <td><%= text_field_tag "#{customerorder}[customer_order][specification]" %></td>            
+                 <td><%= text_field_tag "#{customerorder}[order][specification]" %></td>            
                  <td><%= text_field_tag "#{customerorder}[customer_order][rate_per_kilo]" %></td>
                  <td><%= text_field_tag "#{customerorder}[customer_order][quantity]" %></td>           
-                 <td><%= text_field_tag "#{customerorder}[customer_order][total_weight]" %></td>               
+                 <td><%= text_field_tag "#{customerorder}[customer_order][total_weight]" ,nil,:onblur => "total_price(#{customerorder});"%></td>               
                  <td><%= text_field_tag "#{customerorder}[customer_order][total_amount]" %></td>               
                </tr>
                <%end%>

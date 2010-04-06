@@ -10,44 +10,30 @@
           <table cellspacing="0" cellpadding="0" width="100%">
             <tr>
               <th>Tube size</th>
-              <th>Grade</th>
               <th>Specification</th>
-              <th>Unit price</th>
               <th>Customer name</th>
               <th>Serialize code</th>
               <th>Quantity</th>
-              <th>Unit of measure</th>
-              <th>Tital weight</th>
               <th>Rate per kilo</th>
               <th>Total amount</th>
               <th>Email</th>
-              <th>Office address</th>
               <th>Vat no</th>
-              <th>Ecc no</th>
               <th>Delivery address</th>
-              <th>Po no</th>
               <th>Action</th>
             </tr>
 
             <% for customer_order in @customer_orders %>
               <tr class="<%=cycle("bg1", "bg2")%>">
                 <td><%=h customer_order.tube_size %></td>
-                <td><%=h customer_order.grade %></td>
-                <td><%=h customer_order.specification %></td>
-                <td><%=h customer_order.unit_price %></td>
+                <td><%=h customer_order.serialize.specification rescue "-" %></td>
                 <td><%=h customer_order.customer.name rescue "-" %></td>
                 <td><%=h customer_order.serialize.name rescue "-"%></td>
                 <td><%=h customer_order.quantity %></td>
-                <td><%=h customer_order.unit_of_measure %></td>
-                <td><%=h customer_order.tital_weight %></td>
                 <td><%=h customer_order.rate_per_kilo %></td>
                 <td><%=h customer_order.total_amount %></td>
-                <td><%=h customer_order.email %></td>
-                <td><%=h customer_order.office_address %></td>
-                <td><%=h customer_order.vat_no %></td>
-                <td><%=h customer_order.ecc_no %></td>
+                <td><%=h customer_order.customer.email rescue "-" %></td>
+                <td><%=h customer_order.customer.vat_no rescue "-"  %></td>
                 <td><%=h customer_order.delivery_address %></td>
-                <td><%=h customer_order.po_no %></td>
                 <td>
                   <div class="fr">
                     <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}), edit_customer_order_path(customer_order))%>

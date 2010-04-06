@@ -32,3 +32,10 @@ function serialdetail(id,row){
      success: function(){loader.remove();}
      });        
 }
+
+function total_price(row){
+ 
+ rpkg  = jQuery("#"+row+"_customer_order_rate_per_kilo").val();
+ twt  = jQuery("#"+row+"_customer_order_total_weight").val();
+ jQuery("#"+row+"_customer_order_total_amount").val(rpkg*twt);
+}
