@@ -1,13 +1,11 @@
-<div class="gridDiv">
-  <div class="titleHead">Listing Tube Mill Stoppage Reports</div>
-  <div class="gryBox">
-    <div class="linkOuter w45 fr txtR mt5">
-      <%= link_to 'New RawMaterial Category', new_tube_mill_stoppage_report_path %>
-    </div><br class="clear" />
-    <div id="contacts">
-      <div id="contact_list" class="contactsDIV">
-        <div class="gridTable">
-<table>
+<div class="top-bar">
+  <%= link_to 'New', new_tube_mill_stoppage_report_path,:class=>"button" %>
+  <h1>Listing Tube Mill Stoppage Reports</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <th>Date</th>
     <th>Shift</th>
@@ -16,17 +14,17 @@
     <th>Description of breakdown</th>
     <th>Type</th>
     <th>Stoppage code</th>
-    <th>From</th>
+    <!--<th>From</th>
     <th>To</th>
     <th>Total time</th>
-    <th>Remarks</th>
+    <th>Remarks</th> -->
     <th>Electrical maintainence</th>
     <th>Mechanical maintainence</th>
     <th>Operational</th>
-    <th>Roll change</th>
+ <!--   <th>Roll change</th>
     <th>Raw material shortage</th>
     <th>Man power shortage</th>
-    <th>Crane delay</th>
+    <th>Crane delay</th> -->
     <th>Power failure</th>
     <th>Remarks last</th>
     <th>Shift incharge</th>
@@ -42,17 +40,17 @@
     <td><%=h tube_mill_stoppage_report.description_of_breakdown %></td>
     <td><%=h tube_mill_stoppage_report.type %></td>
     <td><%=h tube_mill_stoppage_report.stoppage_code %></td>
-    <td><%=h tube_mill_stoppage_report.from %></td>
+   <!-- <td><%=h tube_mill_stoppage_report.from %></td>
     <td><%=h tube_mill_stoppage_report.to %></td>
     <td><%=h tube_mill_stoppage_report.total_time %></td>
-    <td><%=h tube_mill_stoppage_report.remarks %></td>
+    <td><%=h tube_mill_stoppage_report.remarks %></td> -->
     <td><%=h tube_mill_stoppage_report.electrical_maintainence %></td>
     <td><%=h tube_mill_stoppage_report.mechanical_maintainence %></td>
     <td><%=h tube_mill_stoppage_report.operational %></td>
-    <td><%=h tube_mill_stoppage_report.roll_change %></td>
+  <!--  <td><%=h tube_mill_stoppage_report.roll_change %></td>
     <td><%=h tube_mill_stoppage_report.raw_material_shortage %></td>
     <td><%=h tube_mill_stoppage_report.man_power_shortage %></td>
-    <td><%=h tube_mill_stoppage_report.crane_delay %></td>
+    <td><%=h tube_mill_stoppage_report.crane_delay %></td> -->
     <td><%=h tube_mill_stoppage_report.power_failure %></td>
     <td><%=h tube_mill_stoppage_report.remarks_last %></td>
     <td><%=h tube_mill_stoppage_report.shift_incharge %></td>
@@ -66,5 +64,4 @@
 <% end %>
 </table>
 </div>
-      </div></div></div></div>
 <br />

@@ -1,13 +1,11 @@
-<div class="gridDiv">
-  <div class="titleHead">Listing taxinvoices</div>
-  <div class="gryBox">
-    <div class="linkOuter w45 fr txtR mt5">
-     <%= link_to 'New taxinvoice', new_taxinvoice_path %>
-    </div><br class="clear" />
-    <div id="contacts">
-      <div id="contact_list" class="contactsDIV">
-        <div class="gridTable">
-          <table width="100%">
+<div class="top-bar">
+  <%= link_to 'New', new_taxinvoice_path,:class=>"button" %>
+  <h1>Listing taxinvoices</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <th>Customer name</th>
     <th>Od</th>
@@ -57,7 +55,7 @@
     <th>Chapter heading no</th>
     <th>Name of deliver goods</th>
     <th>Pan no</th>
-    <th>Commissionarate</th>
+    <th>Commissiona Rate</th>
     
      <th>Action</th>
   </tr>
@@ -125,7 +123,6 @@
 <% end %>
 </table>
 </div>
-      </div></div></div></div>
 <br />
 
 

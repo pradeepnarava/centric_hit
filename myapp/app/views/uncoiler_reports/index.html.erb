@@ -1,13 +1,11 @@
-<div class="gridDiv">
-  <div class="titleHead">Listing Uncoiler Reports</div>
-  <div class="gryBox">
-    <div class="linkOuter w45 fr txtR mt5">
-      <%= link_to 'New uncoiler_report', new_uncoiler_report_path %>
-    </div><br class="clear" />
-    <div id="contacts">
-      <div id="contact_list" class="contactsDIV">
-        <div class="gridTable">
-          <table width="100%">
+<div class="top-bar">
+  <%= link_to 'New',  new_uncoiler_report_path,:class=>"button" %>
+  <h1>Listing Uncoiler Reports</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
             <tr>
               <th>Date</th>
               <th>Shift</th>
@@ -50,5 +48,4 @@
             <% end %>
           </table>
         </div>
-      </div></div></div></div>
 <br />

@@ -1,51 +1,50 @@
 <div class="top-bar">
-				<%= link_to 'New Customer', new_customer_path,:class=>"button" %>
-				<h1>Customers</h1>
-				
-			</div><br />
-			<div class="table">
-                           <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
-                          <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
-                                <table class="listing" cellpadding="0" cellspacing="0" width="100%">
-  <tr>
-    <th class="first" >Name</th>
-    <th>Address</th>
-    <th>Contact person</th>
-    <th>Phone</th>
-    <th>Mobile</th>
-    <th>Email</th>
-    <th>Excise registration no</th>
-    <th>Vat no</th>
-    <th>Tin no</th>
-    <th>Pan no</th>
-    <th>Payment terms</th>
-    <th>Bankers</th>
-    <th style=" width:50px;">Action</th>
-  </tr>
-<% for customer in @customers %>
-  <tr class="<%=cycle("bg1", "bg2")%>">
-    <td><%=h customer.name %></td>
-    <td><%=h customer.address %></td>
-    <td><%=h customer.contact_person %></td>
-    <td><%=h customer.phone %></td>
-    <td><%=h customer.mobile %></td>
-    <td><%=h customer.email %></td>
-    <td><%=h customer.excise_registration_no %></td>
-    <td><%=h customer.vat_no %></td>
-    <td><%=h customer.tin_no %></td>
-    <td><%=h customer.pan_no %></td>
-    <td><%=h customer.payment_terms %></td>
-    <td><%=h customer.bankers %></td>
-    <td>
-        <div class="fr">
-          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_customer_path(customer))%>
-          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}), :method => :delete) %>
-        </div>
-      </td>
-  </tr>
-<% end %>
-</table>
- </div>
+  <%= link_to 'New', new_customer_path,:class=>"button" %>
+  <h1>Customers</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <th class="first" >Name</th>
+      <th>Address</th>
+      <th>Contact person</th>
+      <th>Phone</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Excise registration no</th>
+      <th>Vat no</th>
+      <th>Tin no</th>
+      <th>Pan no</th>
+      <th>Payment terms</th>
+      <th>Bankers</th>
+      <th style=" width:50px;">Action</th>
+    </tr>
+    <% for customer in @customers %>
+      <tr class="<%=cycle("bg1", "bg2")%>">
+        <td><%=h customer.name %></td>
+        <td><%=h customer.address %></td>
+        <td><%=h customer.contact_person %></td>
+        <td><%=h customer.phone %></td>
+        <td><%=h customer.mobile %></td>
+        <td><%=h customer.email %></td>
+        <td><%=h customer.excise_registration_no %></td>
+        <td><%=h customer.vat_no %></td>
+        <td><%=h customer.tin_no %></td>
+        <td><%=h customer.pan_no %></td>
+        <td><%=h customer.payment_terms %></td>
+        <td><%=h customer.bankers %></td>
+        <td>
+          <div class="fr">
+            <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_customer_path(customer))%>
+            <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}), :method => :delete) %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 <br />
 
 
