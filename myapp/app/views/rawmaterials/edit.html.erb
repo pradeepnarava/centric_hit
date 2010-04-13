@@ -2,14 +2,13 @@
 
 <% form_for(@rawmaterial) do |f| %>
   <%= f.error_messages %>
-
+  <p>
+    <%= f.label :rawmaterial_category_id %><br />
+    <%= f.collection_select( :rawmaterial_category_id, @rawmaterialcategory,:id,:name,{:include_blank => "--- Select ---"})%>
+  </p>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :grade %><br />
-    <%= f.text_field :grade %>
   </p>
   <p>
     <%= f.label :width %><br />
@@ -22,18 +21,6 @@
   <p>
     <%= f.label :coil_weight %><br />
     <%= f.text_field :coil_weight %>
-  </p>
-  <p>
-    <%= f.label :grade %><br />
-    <%= f.text_field :grade %>
-  </p>
-  <p>
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </p>
-  <p>
-    <%= f.label :rawmaterial_category_id %><br />
-    <%= f.text_field :rawmaterial_category_id %>
   </p>
   <p>
     <%= f.submit "Update" %>

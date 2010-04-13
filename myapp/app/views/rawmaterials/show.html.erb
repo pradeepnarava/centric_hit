@@ -2,10 +2,13 @@
   <b>Name:</b>
   <%=h @rawmaterial.name %>
 </p>
-
+<p>
+  <b>Rawmaterial category:</b>
+  <%=h @rawmaterial.rawmaterial_category.name %>
+</p>
 <p>
   <b>Grade:</b>
-  <%=h @rawmaterial.grade %>
+  <%=h @rawmaterial.rawmaterial_category.grade %>
 </p>
 
 <p>
@@ -23,20 +26,7 @@
   <%=h @rawmaterial.coil_weight %>
 </p>
 
-<p>
-  <b>Grade:</b>
-  <%=h @rawmaterial.grade %>
-</p>
 
-<p>
-  <b>Type:</b>
-  <%=h @rawmaterial.type %>
-</p>
-
-<p>
-  <b>Rawmaterial category:</b>
-  <%=h @rawmaterial.rawmaterial_category_id %>
-</p>
 
 
 <%= link_to 'Edit', edit_rawmaterial_path(@rawmaterial) %> |

@@ -1,57 +1,59 @@
 <div class="gridDiv">
-  <div class="titleHead">New rawmaterial</div>
+  <div class="titleHead">New Rawmaterial</div>
   <div class="formMain">
     <% form_for(@rawmaterial) do |f| %>
-      <%= f.error_messages %>
-      <div>
-        <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" style="width: 48%;" >
-          <div>
-            <p>
-              <%= f.label :name %>
-              <%= f.text_field :name %>
-            </p>
-            <p>
-              <%= f.label :grade %>
-              <%= f.text_field :grade %>
-            </p>
-            <p>
-              <%= f.label :width %>
-              <%= f.text_field :width %>
-            </p>
-            <p>
-              <%= f.label :thickness %>
-              <%= f.text_field :thickness %>
-            </p>
-          </div></div>
-        <div class="fl w48" style="width: 48%;" >
-          <div>
-            <p>
-              <%= f.label :coil_weight %>
-              <%= f.text_field :coil_weight %>
-            </p>
-            <p>
-              <%= f.label :grade %>
-              <%= f.text_field :grade %>
-            </p>
-            <p>
-              <%= f.label :type %>
-              <%= f.text_field :type %>
-            </p>
-            <p>
-              <%= f.label "Rawmaterial" %>
-
-              <%=f.collection_select( :rawmaterial_category_id, RawmaterialCategory.all,:id,:name,{:include_blank => "----------Select----------"})%>
-            </p>
-          </div></div>
-        <br class="clear"/>
-        <div class="txtC" id="submit_div">
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
-          <%=link_to 'Cancel',rawmaterials_path, :class=>'button submit_buttons cancelbutton' %>
-        </div>
-        <br class="clear"/>
-      </div>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <%if(@rawmaterial.errors.length > 0)%>
+              <div class='errorCont'>
+                <%=f.error_messages %>
+                <div class="clear"></div>
+              </div>
+            <%end%>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="center">
+            <div style="padding-left:100px;">
+              <table width="50%" border="0" cellspacing="0" cellpadding="2">
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label "Rawmaterial Category" %><span class="text_red">*</span></td>
+                  <td><%=f.collection_select( :rawmaterial_category_id, @rawmaterialcategory,:id,:name,{:include_blank => "--- Select ---"})%></td>
+                </tr>
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label :name %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :name %></td>
+                </tr>                
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label :width %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :width %></td>
+                </tr>
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label :thickness %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :thickness %></td>
+                </tr>
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label :coil_weight %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :coil_weight %></td>
+                </tr>                
+              </table>
+            </div>
+          </td>
+        </tr>     
+        <tr>
+          <td>
+            <br class="clear" />
+            <div class="txtC">
+              <%= f.submit "Create" , :class=>'button submit_buttons'%>
+              <%=link_to 'Cancel',rawmaterials_path, :class=>'linkbutton' %>
+            </div>
+          </td>
+        </tr>
+      </table>
     <% end %>
-  </div></div>
+    <br class="clear" />
+  </div>
+</div>
+
+

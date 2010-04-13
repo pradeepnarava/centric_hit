@@ -26,7 +26,7 @@ class RawmaterialsController < ApplicationController
   # GET /rawmaterials/new.xml
   def new
     @rawmaterial = Rawmaterial.new
-
+    @rawmaterialcategory = RawmaterialCategory.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @rawmaterial }
@@ -36,13 +36,13 @@ class RawmaterialsController < ApplicationController
   # GET /rawmaterials/1/edit
   def edit
     @rawmaterial = Rawmaterial.find(params[:id])
+    @rawmaterialcategory = RawmaterialCategory.all
   end
 
   # POST /rawmaterials
   # POST /rawmaterials.xml
   def create
     @rawmaterial = Rawmaterial.new(params[:rawmaterial])
-p params[:rawmaterial][:rawmaterial_category_id]
     respond_to do |format|
       if @rawmaterial.save
         flash[:notice] = 'Rawmaterial was successfully created.'
