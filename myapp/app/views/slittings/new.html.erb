@@ -1,72 +1,41 @@
 <div class="gridDiv">
-  <div class="titleHead">New slitting</div>
-  <div class="formMain">
+  <div class="titleHead">New Slitting Plan</div>
+  <div class="formOrder">
     <% form_for(@slitting) do |f| %>
       <%= f.error_messages %>
       <div>
         <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" style="width: 48%;" >
-          <div>
-            <p><%= f.label "Rawmaterial" %>
-            <%=f.collection_select( :rawmaterial_id, Rawmaterial.all,:id,:name,{:include_blank => "----------Select----------"})%>
-            </p><p>
-              <%= f.label :slitting_coil_no %>
-              <%= f.text_field :slitting_coil_no %>
-            </p>
-            <p>
-              <%= f.label :coil_width %>
-              <%= f.text_field :coil_width %>
-            </p>
-            <p>
-              <%= f.label :coil_weight %>
-              <%= f.text_field :coil_weight %>
-            </p>
-            <p>
-              <%= f.label :side_trim %>
-              <%= f.text_field :side_trim %>
-            </p>
-             <p>
-              <%= f.label :thickness %>
-              <%= f.text_field :thickness %>
-            </p>
-          </div>
-        </div>
-        <div style="width: 52%;" class="fr">
-          <div>
+            <table>
+              <tr>
+                <td><label>Coil No:</label></td>
+                <td><%=f.collection_select(:rawmaterial_id, @coils,:id,:name,{:include_blank => "---Select---"},{:onchange => "coildetail(this.value);"})%></td>
+                <td><label>Coil width:</label></td>
+                <td><%=text_field_tag "coil_width" %></td>
+                <td><label>Coil wt:</label></td>
+                <td><%=text_field_tag "coil_wt" %></td>                     
+              </tr>
+              <tr>
+                <td><label>Coil Thick.:</label></td>
+                <td><%=text_field_tag "coil_thick" %></td>                        
+                <td><label>Side Trim:</label></td>
+                <td><%=f.text_field "side_trim" %></td>                
+                <td><label>Scrap:</label></td>
+                <td><%=f.text_field "scrap" %></td>
            
-            <p>
-              <%= f.label :scrap %>
-              <%= f.text_field :scrap %>
-            </p>
-            <p>
-              <%= f.label :slit_width %>
-              <%= f.text_field :slit_width %>
-            </p>
-            <p>
-              <%= f.label :slit_weight %>
-              <%= f.text_field :slit_weight %>
-            </p>
-            <p>
-              <%= f.label :no_of_slits %>
-              <%= f.text_field :no_of_slits %>
-            </p>
-            <p>
-              <%= f.label :weight %>
-              <%= f.text_field :weight %>
-            </p>
-            <p>
-              <%= f.label :remarks %>
-              <%= f.text_field :remarks %>
-            </p>
-          </div>
-        </div>
+              </tr>            
+            </table>      
+        <br class="clear"/>        
+        <div id="detail"></div>
+
+
         <br class="clear"/>
-        <div class="txtC" id="submit_div">
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
-        </div>
-        <br class="clear"/>
+  <div class="txtC" id="submit_div">
+
+  <%= f.submit "Create" , :class=>'button submit_buttons'%>
+    <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
+ 
+      </div>
+       <br class="clear"/>
       </div>
     <% end %>
   </div>

@@ -7,8 +7,7 @@
   <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
   <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <th>Rawmaterial</th>
-     <th>Slitting Coil No </th>
+    <th>Slitting Coil No</th>
     <th>Coil width</th>
     <th>Coil weight</th>
     <th>Side trim</th>
@@ -25,11 +24,10 @@
 <% for slitting in @slittings %>
   <tr class="<%=cycle("bg1", "bg2")%>">
     <td><%=h slitting.rawmaterial.name %></td>
-    <td><%=h slitting.slitting_coil_no %></td>
-    <td><%=h slitting.coil_width %></td>
-    <td><%=h slitting.coil_weight %></td>
+    <td><%=h slitting.rawmaterial.width %></td>
+    <td><%=h slitting.rawmaterial.coil_weight %></td>
     <td><%=h slitting.side_trim %></td>
-    <td><%=h slitting.thickness %></td>
+    <td><%=h slitting.rawmaterial.thickness %></td>
     <td><%=h slitting.scrap %></td>
     <td><%=h slitting.slit_width %></td>
     <td><%=h slitting.slit_weight %></td>

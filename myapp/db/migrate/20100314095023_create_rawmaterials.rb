@@ -6,6 +6,7 @@ class CreateRawmaterials < ActiveRecord::Migration
       t.string :thickness, :null => false
       t.string :coil_weight, :null => false
       t.integer :rawmaterial_category_id, :null => false
+      t.integer :status, :limit => 1 ,:default => 0
 
       t.timestamps
     end

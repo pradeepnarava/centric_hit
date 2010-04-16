@@ -3,28 +3,12 @@
 <% form_for(@slitting) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :slitting_coil_no %><br />
-    <%= f.text_field :slitting_coil_no %>
-  </p>
-  <p>
-    <%= f.label :rawmaterial_id %><br />
-    <%= f.text_field :rawmaterial_id %>
-  </p>
-  <p>
-    <%= f.label :coil_width %><br />
-    <%= f.text_field :coil_width %>
-  </p>
-  <p>
-    <%= f.label :coil_weight %><br />
-    <%= f.text_field :coil_weight %>
+    <label> Coil no </label><br />
+    <%= f.collection_select( :rawmaterial_id, @coils,:id,:name,{:include_blank => "--- Select ---"})%>
   </p>
   <p>
     <%= f.label :side_trim %><br />
     <%= f.text_field :side_trim %>
-  </p>
-  <p>
-    <%= f.label :thickness %><br />
-    <%= f.text_field :thickness %>
   </p>
   <p>
     <%= f.label :scrap %><br />

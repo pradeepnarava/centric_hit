@@ -39,3 +39,17 @@ function total_price(row){
  twt  = jQuery("#"+row+"_customer_order_total_weight").val();
  jQuery("#"+row+"_customer_order_total_amount").val(rpkg*twt);
 }
+
+function coildetail(id){
+    if(id==""){return false}
+    loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/slittings/coil_detail",
+       dataType: 'script',
+    data: {
+          'id' : id
+        },
+     success: function(){loader.remove();}
+     });        
+}
