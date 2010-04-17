@@ -16,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :rawmaterials
   map.resources :rawmaterial_categories
   map.resources :salesplans
-  map.resources :customer_orders
+  map.resources :customer_orders , :collections => {:customer_detail => :get}
   map.resources :serializes
   map.resources :customers
   map.resource :user_session

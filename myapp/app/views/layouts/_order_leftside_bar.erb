@@ -1,0 +1,12 @@
+<div id="left-column">
+        <h3>Order</h3>
+        <ul class="nav">
+          <li class ='<%=controller.controller_name.eql?('customer_orders')? 'active' : ''%>'>
+          <span><span><%=link_to("Customer Orders", customer_orders_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('salesplans')? 'active' : ''%>'>
+          <span><span><%=link_to("Sales Plans", salesplans_path)%></span></span>
+          </li>
+        </ul>
+</div>
+

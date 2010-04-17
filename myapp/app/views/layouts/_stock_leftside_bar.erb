@@ -1,0 +1,11 @@
+<div id="left-column">
+        <h3>Stock</h3>
+        <ul class="nav">
+          <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'active' : ''%>'>
+          <span><span><%=link_to("Raw Materials", rawmaterials_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('rawmaterial_categories')? 'active' : ''%>'>
+          <span><span><%=link_to("RawMaterial Categories", rawmaterial_categories_path)%></span></span>
+          </li>
+        </ul>
+</div>

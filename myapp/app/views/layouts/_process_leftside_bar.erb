@@ -1,0 +1,22 @@
+<div id="left-column">
+        <h3>Process</h3>
+        <ul class="nav">
+          <li class ='<%=controller.controller_name.eql?('slittings')? 'active' : ''%>'>
+          <span><span><%=link_to("Slittings", slittings_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('slittingproductions')? 'active' : ''%>'>
+          <span><span><%=link_to("Slitting Productions", slittingproductions_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('uncoiler_reports')? 'active' : ''%>'>
+          <span><span><%=link_to("Uncoiler Reports", uncoiler_reports_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports')? 'active' : ''%>'>
+          <span><span><%=link_to("Tube Mill Performance Reports", tube_mill_performance_reports_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('tube_mill_stoppage_reports')? 'active' : ''%>'>
+          <span><span><%=link_to("Tube Mill Stoppage Reports", tube_mill_stoppage_reports_path)%></span></span>
+          </li>
+        </ul>
+</div>
+
+

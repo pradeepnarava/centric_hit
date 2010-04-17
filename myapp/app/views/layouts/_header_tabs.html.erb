@@ -1,8 +1,7 @@
     <ul id="top-navigation">
-      <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'active' : ''%>'><span><span><%=link_to("Raw Materials", rawmaterials_path)%></span></span></li>
-      <li class ='<%=controller.controller_name.eql?('rawmaterial_categories')? 'active' : ''%>'><span><span><%=link_to("Rawmaterial Categories", rawmaterial_categories_path)%></span></span></li>
-      <li class ='<%=controller.controller_name.eql?('customers')? 'active' : ''%>'><span><span><%=link_to("Customers",customers_path)%></span></span></li>
-      <li class ='<%=controller.controller_name.eql?('customer_orders')? 'active' : ''%>'><span><span><%=link_to("Customer Order", customer_orders_path)%></span></span></li>
-      
+      <li class ='<%=['rawmaterials','rawmaterial_categories'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Stoke", rawmaterials_path)%></span></span></li>
+      <li class ='<%=['customer_orders','salesplans'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Order", customer_orders_path)%></span></span></li>
+      <li class ='<%=['customers'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Customer",customers_path)%></span></span></li>
+      <li class ='<%=['slittings','slittingproductions','predespatchtcs','uncoiler_reports','tube_mill_performance_reports','tube_mill_stoppage_reports'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Process", slittings_path)%></span></span></li>
     </ul>
 
