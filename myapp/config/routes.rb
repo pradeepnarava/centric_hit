@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :clients
+  map.resources :clients
+  map.resources :suppliers
   map.resources :deliverychallans
   map.resources :taxinvoices
   map.resources :predespatchtcs

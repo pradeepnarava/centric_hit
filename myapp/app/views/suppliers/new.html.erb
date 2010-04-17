@@ -1,0 +1,159 @@
+<h1>New supplier</h1>
+
+<% form_for(@supplier) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :po_no %><br />
+    <%= f.text_field :po_no %>
+  </p>
+  <p>
+    <%= f.label :sales_order_no %><br />
+    <%= f.text_field :sales_order_no %>
+  </p>
+  <p>
+    <%= f.label :test_certificate_no %><br />
+    <%= f.text_field :test_certificate_no %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.label :invoice_no %><br />
+    <%= f.text_field :invoice_no %>
+  </p>
+  <p>
+    <%= f.label :coil_packet_no %><br />
+    <%= f.text_field :coil_packet_no %>
+  </p>
+  <p>
+    <%= f.label :t_w_l %><br />
+    <%= f.text_field :t_w_l %>
+  </p>
+  <p>
+    <%= f.label :no_of_sheets %><br />
+    <%= f.text_field :no_of_sheets %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </p>
+  <p>
+    <%= f.label :net_weight %><br />
+    <%= f.text_field :net_weight %>
+  </p>
+  <p>
+    <%= f.label :c %><br />
+    <%= f.text_field :c %>
+  </p>
+  <p>
+    <%= f.label :v %><br />
+    <%= f.text_field :v %>
+  </p>
+  <p>
+    <%= f.label :mn %><br />
+    <%= f.text_field :mn %>
+  </p>
+  <p>
+    <%= f.label :cu %><br />
+    <%= f.text_field :cu %>
+  </p>
+  <p>
+    <%= f.label :s %><br />
+    <%= f.text_field :s %>
+  </p>
+  <p>
+    <%= f.label :nb %><br />
+    <%= f.text_field :nb %>
+  </p>
+  <p>
+    <%= f.label :p %><br />
+    <%= f.text_field :p %>
+  </p>
+  <p>
+    <%= f.label :cr %><br />
+    <%= f.text_field :cr %>
+  </p>
+  <p>
+    <%= f.label :al %><br />
+    <%= f.text_field :al %>
+  </p>
+  <p>
+    <%= f.label :ni %><br />
+    <%= f.text_field :ni %>
+  </p>
+  <p>
+    <%= f.label :si %><br />
+    <%= f.text_field :si %>
+  </p>
+  <p>
+    <%= f.label :ti %><br />
+    <%= f.text_field :ti %>
+  </p>
+  <p>
+    <%= f.label :n %><br />
+    <%= f.text_field :n %>
+  </p>
+  <p>
+    <%= f.label :ys %><br />
+    <%= f.text_field :ys %>
+  </p>
+  <p>
+    <%= f.label :u_t_s %><br />
+    <%= f.text_field :u_t_s %>
+  </p>
+  <p>
+    <%= f.label :el_on_gl %><br />
+    <%= f.text_field :el_on_gl %>
+  </p>
+  <p>
+    <%= f.label :hrb %><br />
+    <%= f.text_field :hrb %>
+  </p>
+  <p>
+    <%= f.label :vpn %><br />
+    <%= f.text_field :vpn %>
+  </p>
+  <p>
+    <%= f.label :ecv %><br />
+    <%= f.text_field :ecv %>
+  </p>
+  <p>
+    <%= f.label :n_value %><br />
+    <%= f.text_field :n_value %>
+  </p>
+  <p>
+    <%= f.label :r_bar %><br />
+    <%= f.text_field :r_bar %>
+  </p>
+  <p>
+    <%= f.label :bend_test %><br />
+    <%= f.text_field :bend_test %>
+  </p>
+  <p>
+    <%= f.label :bright_matt %><br />
+    <%= f.text_field :bright_matt %>
+  </p>
+  <p>
+    <%= f.label :ra %><br />
+    <%= f.text_field :ra %>
+  </p>
+  <p>
+    <%= f.label :do_item_wise %><br />
+    <%= f.text_field :do_item_wise %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', suppliers_path %>

@@ -27,6 +27,7 @@ class RawmaterialsController < ApplicationController
   def new
     @rawmaterial = Rawmaterial.new
     @rawmaterialcategory = RawmaterialCategory.all
+    @supplier=Supplier.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @rawmaterial }

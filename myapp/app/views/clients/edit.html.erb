@@ -1,0 +1,188 @@
+<h1>Editing client</h1>
+
+<% form_for(@client) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :customer_name %><br />
+    <%= f.text_field :customer_name %>
+  </p>
+  <p>
+    <%= f.label :od %><br />
+    <%= f.text_field :od %>
+  </p>
+  <p>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </p>
+  <p>
+    <%= f.label :thickness %><br />
+    <%= f.text_field :thickness %>
+  </p>
+  <p>
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.label :part_number %><br />
+    <%= f.text_field :part_number %>
+  </p>
+  <p>
+    <%= f.label :is %><br />
+    <%= f.text_field :is %>
+  </p>
+  <p>
+    <%= f.label :astm %><br />
+    <%= f.text_field :astm %>
+  </p>
+  <p>
+    <%= f.label :din %><br />
+    <%= f.text_field :din %>
+  </p>
+  <p>
+    <%= f.label :jis %><br />
+    <%= f.text_field :jis %>
+  </p>
+  <p>
+    <%= f.label :automotive %><br />
+    <%= f.check_box :automotive %>
+  </p>
+  <p>
+    <%= f.label :newprogram %><br />
+    <%= f.check_box :newprogram %>
+  </p>
+  <p>
+    <%= f.label :sop %><br />
+    <%= f.check_box :sop %>
+  </p>
+  <p>
+    <%= f.label :existing %><br />
+    <%= f.check_box :existing %>
+  </p>
+  <p>
+    <%= f.label :gen_engg %><br />
+    <%= f.check_box :gen_engg %>
+  </p>
+  <p>
+    <%= f.label :boiler_air_heat %><br />
+    <%= f.check_box :boiler_air_heat %>
+  </p>
+  <p>
+    <%= f.label :furniture %><br />
+    <%= f.check_box :furniture %>
+  </p>
+  <p>
+    <%= f.label :cut_chamf %><br />
+    <%= f.text_field :cut_chamf %>
+  </p>
+  <p>
+    <%= f.label :press_operations %><br />
+    <%= f.text_field :press_operations %>
+  </p>
+  <p>
+    <%= f.label :machining %><br />
+    <%= f.text_field :machining %>
+  </p>
+  <p>
+    <%= f.label :plating %><br />
+    <%= f.text_field :plating %>
+  </p>
+  <p>
+    <%= f.label :meters %><br />
+    <%= f.text_field :meters %>
+  </p>
+  <p>
+    <%= f.label :tons %><br />
+    <%= f.text_field :tons %>
+  </p>
+  <p>
+    <%= f.label :od_tol %><br />
+    <%= f.text_field :od_tol %>
+  </p>
+  <p>
+    <%= f.label :id_tol %><br />
+    <%= f.text_field :id_tol %>
+  </p>
+  <p>
+    <%= f.label :thick_tol %><br />
+    <%= f.text_field :thick_tol %>
+  </p>
+  <p>
+    <%= f.label :length_tol %><br />
+    <%= f.text_field :length_tol %>
+  </p>
+  <p>
+    <%= f.label :id_fin_cut %><br />
+    <%= f.text_field :id_fin_cut %>
+  </p>
+  <p>
+    <%= f.label :id_fin_height %><br />
+    <%= f.text_field :id_fin_height %>
+  </p>
+  <p>
+    <%= f.label :id_surface %><br />
+    <%= f.text_field :id_surface %>
+  </p>
+  <p>
+    <%= f.label :straightness %><br />
+    <%= f.text_field :straightness %>
+  </p>
+  <p>
+    <%= f.label :od_surface_finish %><br />
+    <%= f.text_field :od_surface_finish %>
+  </p>
+  <p>
+    <%= f.label :ect %><br />
+    <%= f.check_box :ect %>
+  </p>
+  <p>
+    <%= f.label :pressure_testing %><br />
+    <%= f.text_field :pressure_testing %>
+  </p>
+  <p>
+    <%= f.label :corner_radius %><br />
+    <%= f.text_field :corner_radius %>
+  </p>
+  <p>
+    <%= f.label :uts %><br />
+    <%= f.text_field :uts %>
+  </p>
+  <p>
+    <%= f.label :ys %><br />
+    <%= f.text_field :ys %>
+  </p>
+  <p>
+    <%= f.label :elongation %><br />
+    <%= f.text_field :elongation %>
+  </p>
+  <p>
+    <%= f.label :special_characteristics %><br />
+    <%= f.text_field :special_characteristics %>
+  </p>
+  <p>
+    <%= f.label :spc_requirement %><br />
+    <%= f.text_field :spc_requirement %>
+  </p>
+  <p>
+    <%= f.label :remarks %><br />
+    <%= f.text_field :remarks %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :designation %><br />
+    <%= f.text_field :designation %>
+  </p>
+  <p>
+    <%= f.label :enclosures %><br />
+    <%= f.text_field :enclosures %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @client %> |
+<%= link_to 'Back', clients_path %>

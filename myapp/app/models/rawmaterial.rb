@@ -2,6 +2,7 @@ class Rawmaterial < ActiveRecord::Base
   belongs_to :rawmaterial_category
   has_many :slittings
   has_many :slittingproductions
+  belongs_to:supplier
 
   # Here rowmaterial status 
   # 0 = still in stock and not used till now

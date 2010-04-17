@@ -1,0 +1,67 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  customer_name: MyString
+  od: 9.99
+  id: 9.99
+  thickness: MyString
+  length: MyString
+  part_number: MyString
+  is: MyString
+  astm: MyString
+  din: MyString
+  jis: MyString
+  automotive: false
+  newprogram: false
+  sop: false
+  existing: false
+  gen_engg: false
+  boiler_air_heat: false
+  furniture: false
+  cut_chamf: MyString
+  press_operations: MyString
+  machining: MyString
+  plating: MyString
+  meters: 9.99
+  tons: 9.99
+  od_tol: 9.99
+  id_tol: 9.99
+  thick_tol: 9.99
+  length_tol: 9.99
+  id_fin_cut: MyString
+  id_fin_height: 9.99
+  id_surface: 9.99
+  straightness: 
+
+two:
+  customer_name: MyString
+  od: 9.99
+  id: 9.99
+  thickness: MyString
+  length: MyString
+  part_number: MyString
+  is: MyString
+  astm: MyString
+  din: MyString
+  jis: MyString
+  automotive: false
+  newprogram: false
+  sop: false
+  existing: false
+  gen_engg: false
+  boiler_air_heat: false
+  furniture: false
+  cut_chamf: MyString
+  press_operations: MyString
+  machining: MyString
+  plating: MyString
+  meters: 9.99
+  tons: 9.99
+  od_tol: 9.99
+  id_tol: 9.99
+  thick_tol: 9.99
+  length_tol: 9.99
+  id_fin_cut: MyString
+  id_fin_height: 9.99
+  id_surface: 9.99
+  straightness: 

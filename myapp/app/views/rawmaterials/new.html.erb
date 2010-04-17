@@ -17,6 +17,10 @@
           <td valign="top" align="center">
             <div style="padding-left:100px;">
               <table width="50%" border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                  <td class="textBlack11Height10L"><%= f.label "Supplier" %><span class="text_red">*</span></td>
+                  <td><%=f.collection_select( :supplier_id, @supplier,:id,:name,{:include_blank => "--- Select ---"})%></td>
+                </tr>
                 <tr>
                   <td class="textBlack11Height10L"><%= f.label "Rawmaterial Category" %><span class="text_red">*</span></td>
                   <td><%=f.collection_select( :rawmaterial_category_id, @rawmaterialcategory,:id,:name,{:include_blank => "--- Select ---"})%></td>

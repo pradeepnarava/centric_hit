@@ -1,0 +1,92 @@
+<h1>Listing suppliers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Po no</th>
+    <th>Sales order no</th>
+    <th>Test certificate no</th>
+    <th>Date</th>
+    <th>Invoice no</th>
+    <th>Coil packet no</th>
+    <th>T w l</th>
+    <th>No of sheets</th>
+    <th>Grade</th>
+    <th>Net weight</th>
+    <th>C</th>
+    <th>V</th>
+    <th>Mn</th>
+    <th>Cu</th>
+    <th>S</th>
+    <th>Nb</th>
+    <th>P</th>
+    <th>Cr</th>
+    <th>Al</th>
+    <th>Ni</th>
+    <th>Si</th>
+    <th>Ti</th>
+    <th>N</th>
+    <th>Ys</th>
+    <th>U t s</th>
+    <th>El on gl</th>
+    <th>Hrb</th>
+    <th>Vpn</th>
+    <th>Ecv</th>
+    <th>N value</th>
+    <th>R bar</th>
+    <th>Bend test</th>
+    <th>Bright matt</th>
+    <th>Ra</th>
+    <th>Do item wise</th>
+  </tr>
+
+<% for supplier in @suppliers %>
+  <tr>
+    <td><%=h supplier.name %></td>
+    <td><%=h supplier.address %></td>
+    <td><%=h supplier.po_no %></td>
+    <td><%=h supplier.sales_order_no %></td>
+    <td><%=h supplier.test_certificate_no %></td>
+    <td><%=h supplier.date %></td>
+    <td><%=h supplier.invoice_no %></td>
+    <td><%=h supplier.coil_packet_no %></td>
+    <td><%=h supplier.t_w_l %></td>
+    <td><%=h supplier.no_of_sheets %></td>
+    <td><%=h supplier.grade %></td>
+    <td><%=h supplier.net_weight %></td>
+    <td><%=h supplier.c %></td>
+    <td><%=h supplier.v %></td>
+    <td><%=h supplier.mn %></td>
+    <td><%=h supplier.cu %></td>
+    <td><%=h supplier.s %></td>
+    <td><%=h supplier.nb %></td>
+    <td><%=h supplier.p %></td>
+    <td><%=h supplier.cr %></td>
+    <td><%=h supplier.al %></td>
+    <td><%=h supplier.ni %></td>
+    <td><%=h supplier.si %></td>
+    <td><%=h supplier.ti %></td>
+    <td><%=h supplier.n %></td>
+    <td><%=h supplier.ys %></td>
+    <td><%=h supplier.u_t_s %></td>
+    <td><%=h supplier.el_on_gl %></td>
+    <td><%=h supplier.hrb %></td>
+    <td><%=h supplier.vpn %></td>
+    <td><%=h supplier.ecv %></td>
+    <td><%=h supplier.n_value %></td>
+    <td><%=h supplier.r_bar %></td>
+    <td><%=h supplier.bend_test %></td>
+    <td><%=h supplier.bright_matt %></td>
+    <td><%=h supplier.ra %></td>
+    <td><%=h supplier.do_item_wise %></td>
+    <td><%= link_to 'Show', supplier %></td>
+    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+    <td><%= link_to 'Destroy', supplier, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New supplier', new_supplier_path %>

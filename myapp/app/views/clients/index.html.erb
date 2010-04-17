@@ -1,0 +1,106 @@
+<h1>Listing clients</h1>
+
+<table>
+  <tr>
+    <th>Customer name</th>
+    <th>Od</th>
+    <th>Id</th>
+    <th>Thickness</th>
+    <th>Length</th>
+    <th>Part number</th>
+    <th>Is</th>
+    <th>Astm</th>
+    <th>Din</th>
+    <th>Jis</th>
+    <th>Automotive</th>
+    <th>Newprogram</th>
+    <th>Sop</th>
+    <th>Existing</th>
+    <th>Gen engg</th>
+    <th>Boiler air heat</th>
+    <th>Furniture</th>
+    <th>Cut chamf</th>
+    <th>Press operations</th>
+    <th>Machining</th>
+    <th>Plating</th>
+    <th>Meters</th>
+    <th>Tons</th>
+    <th>Od tol</th>
+    <th>Id tol</th>
+    <th>Thick tol</th>
+    <th>Length tol</th>
+    <th>Id fin cut</th>
+    <th>Id fin height</th>
+    <th>Id surface</th>
+    <th>Straightness</th>
+    <th>Od surface finish</th>
+    <th>Ect</th>
+    <th>Pressure testing</th>
+    <th>Corner radius</th>
+    <th>Uts</th>
+    <th>Ys</th>
+    <th>Elongation</th>
+    <th>Special characteristics</th>
+    <th>Spc requirement</th>
+    <th>Remarks</th>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>Enclosures</th>
+  </tr>
+
+<% for client in @clients %>
+  <tr>
+    <td><%=h client.customer_name %></td>
+    <td><%=h client.od %></td>
+    <td><%=h client.id %></td>
+    <td><%=h client.thickness %></td>
+    <td><%=h client.length %></td>
+    <td><%=h client.part_number %></td>
+    <td><%=h client.is %></td>
+    <td><%=h client.astm %></td>
+    <td><%=h client.din %></td>
+    <td><%=h client.jis %></td>
+    <td><%=h client.automotive %></td>
+    <td><%=h client.newprogram %></td>
+    <td><%=h client.sop %></td>
+    <td><%=h client.existing %></td>
+    <td><%=h client.gen_engg %></td>
+    <td><%=h client.boiler_air_heat %></td>
+    <td><%=h client.furniture %></td>
+    <td><%=h client.cut_chamf %></td>
+    <td><%=h client.press_operations %></td>
+    <td><%=h client.machining %></td>
+    <td><%=h client.plating %></td>
+    <td><%=h client.meters %></td>
+    <td><%=h client.tons %></td>
+    <td><%=h client.od_tol %></td>
+    <td><%=h client.id_tol %></td>
+    <td><%=h client.thick_tol %></td>
+    <td><%=h client.length_tol %></td>
+    <td><%=h client.id_fin_cut %></td>
+    <td><%=h client.id_fin_height %></td>
+    <td><%=h client.id_surface %></td>
+    <td><%=h client.straightness %></td>
+    <td><%=h client.od_surface_finish %></td>
+    <td><%=h client.ect %></td>
+    <td><%=h client.pressure_testing %></td>
+    <td><%=h client.corner_radius %></td>
+    <td><%=h client.uts %></td>
+    <td><%=h client.ys %></td>
+    <td><%=h client.elongation %></td>
+    <td><%=h client.special_characteristics %></td>
+    <td><%=h client.spc_requirement %></td>
+    <td><%=h client.remarks %></td>
+    <td><%=h client.name %></td>
+    <td><%=h client.designation %></td>
+    <td><%=h client.enclosures %></td>
+    <td><%= link_to 'Show', client %></td>
+    <td><%= link_to 'Edit', edit_client_path(client) %></td>
+    <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New client', new_client_path %>

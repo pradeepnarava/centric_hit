@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100328165632) do
+ActiveRecord::Schema.define(:version => 20100417103423) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -18,21 +18,62 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.datetime "updated_at"
   end
 
+  create_table "clients", :force => true do |t|
+    t.string   "customer_name"
+    t.decimal  "od"
+    t.string   "thickness"
+    t.string   "length"
+    t.string   "part_number"
+    t.string   "is"
+    t.string   "astm"
+    t.string   "din"
+    t.string   "jis"
+    t.boolean  "automotive"
+    t.boolean  "newprogram"
+    t.boolean  "sop"
+    t.boolean  "existing"
+    t.boolean  "gen_engg"
+    t.boolean  "boiler_air_heat"
+    t.boolean  "furniture"
+    t.string   "cut_chamf"
+    t.string   "press_operations"
+    t.string   "machining"
+    t.string   "plating"
+    t.decimal  "meters"
+    t.decimal  "tons"
+    t.decimal  "od_tol"
+    t.decimal  "id_tol"
+    t.decimal  "thick_tol"
+    t.decimal  "length_tol"
+    t.string   "id_fin_cut"
+    t.decimal  "id_fin_height"
+    t.decimal  "id_surface"
+    t.decimal  "straightness"
+    t.decimal  "od_surface_finish"
+    t.boolean  "ect"
+    t.decimal  "pressure_testing"
+    t.decimal  "corner_radius"
+    t.decimal  "uts"
+    t.decimal  "ys"
+    t.decimal  "elongation"
+    t.string   "special_characteristics"
+    t.string   "spc_requirement"
+    t.string   "remarks"
+    t.string   "name"
+    t.string   "designation"
+    t.string   "enclosures"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "customer_orders", :force => true do |t|
-    t.string   "tube_size"
-    t.string   "grade"
-    t.string   "specification"
-    t.integer  "unit_price"
+    t.decimal  "tube_size",        :precision => 10, :scale => 4
     t.integer  "customer_id"
     t.integer  "serialize_id"
     t.integer  "quantity"
-    t.string   "unit_of_measure"
-    t.string   "tital_weight"
-    t.decimal  "rate_per_kilo"
-    t.decimal  "total_amount"
-    t.string   "email"
-    t.string   "office_address"
-    t.string   "vat_no"
+    t.decimal  "total_weight",     :precision => 10, :scale => 4
+    t.decimal  "rate_per_kilo",    :precision => 10, :scale => 4
+    t.decimal  "total_amount",     :precision => 10, :scale => 4
     t.string   "ecc_no"
     t.string   "delivery_address"
     t.string   "po_no"
@@ -44,8 +85,8 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.string   "name"
     t.string   "address"
     t.string   "contact_person"
-    t.integer  "phone"
-    t.integer  "mobile"
+    t.string   "phone"
+    t.string   "mobile"
     t.string   "email"
     t.string   "excise_registration_no"
     t.string   "vat_no"
@@ -93,14 +134,15 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.string   "state"
     t.string   "zipcode"
     t.integer  "user_id"
+    t.integer  "department_id"
     t.integer  "mgr_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "department_id"
   end
 
   create_table "predespatchtcs", :force => true do |t|
     t.string   "test_certificate_no"
+    t.integer  "taxinvoice_id"
     t.integer  "customer_id"
     t.datetime "date"
     t.decimal  "od"
@@ -165,7 +207,6 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.integer  "tube_mill_performance_report_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "taxinvoice_id"
   end
 
   create_table "rawmaterial_categories", :force => true do |t|
@@ -176,15 +217,15 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
   end
 
   create_table "rawmaterials", :force => true do |t|
-    t.string   "name"
-    t.string   "grade"
-    t.string   "width"
-    t.string   "thickness"
-    t.string   "coil_weight"
-    t.string   "type"
-    t.integer  "rawmaterial_category_id"
+    t.string   "name",                                                :null => false
+    t.string   "width",                                               :null => false
+    t.string   "thickness",                                           :null => false
+    t.string   "coil_weight",                                         :null => false
+    t.integer  "rawmaterial_category_id",                             :null => false
+    t.integer  "status",                  :limit => 2, :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "supplier_id"
   end
 
   create_table "roles", :force => true do |t|
@@ -212,17 +253,14 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "customer_id"
+    t.decimal  "od",              :precision => 10, :scale => 4
+    t.decimal  "thikness",        :precision => 10, :scale => 4
+    t.decimal  "length",          :precision => 10, :scale => 4
+    t.string   "grade"
+    t.string   "specification"
+    t.string   "unit_of_measure"
   end
-
-  create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "slittingproductions", :force => true do |t|
     t.integer  "rawmaterial_id"
@@ -248,10 +286,7 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
 
   create_table "slittings", :force => true do |t|
     t.integer  "rawmaterial_id"
-    t.integer  "coil_width"
-    t.decimal  "coil_weight"
     t.integer  "side_trim"
-    t.decimal  "thickness"
     t.string   "scrap"
     t.decimal  "slit_width"
     t.decimal  "slit_weight"
@@ -261,6 +296,48 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
+  end
+
+  create_table "suppliers", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "po_no"
+    t.string   "sales_order_no"
+    t.string   "test_certificate_no"
+    t.datetime "date"
+    t.string   "invoice_no"
+    t.string   "coil_packet_no"
+    t.string   "t_w_l"
+    t.integer  "no_of_sheets"
+    t.string   "grade"
+    t.decimal  "net_weight"
+    t.decimal  "c"
+    t.decimal  "v"
+    t.decimal  "mn"
+    t.decimal  "cu"
+    t.decimal  "s"
+    t.decimal  "nb"
+    t.decimal  "p"
+    t.decimal  "cr"
+    t.decimal  "al"
+    t.decimal  "ni"
+    t.decimal  "si"
+    t.decimal  "ti"
+    t.decimal  "n"
+    t.decimal  "ys"
+    t.decimal  "u_t_s"
+    t.decimal  "el_on_gl"
+    t.decimal  "hrb"
+    t.decimal  "vpn"
+    t.decimal  "ecv"
+    t.decimal  "n_value"
+    t.decimal  "r_bar"
+    t.string   "bend_test"
+    t.string   "bright_matt"
+    t.decimal  "ra"
+    t.integer  "do_item_wise"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taxinvoices", :force => true do |t|
@@ -329,6 +406,7 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.string   "flattening"
     t.string   "specification"
     t.string   "rm_grade"
+    t.integer  "slittingproduction_id"
     t.string   "spl_requirement"
     t.datetime "date"
     t.datetime "shift"
@@ -347,7 +425,6 @@ ActiveRecord::Schema.define(:version => 20100328165632) do
     t.integer  "lot_numbers"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "slittingproduction_id"
   end
 
   create_table "tube_mill_stoppage_reports", :force => true do |t|

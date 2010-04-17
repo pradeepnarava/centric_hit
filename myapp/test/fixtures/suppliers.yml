@@ -1,0 +1,79 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  address: MyString
+  po_no: MyString
+  sales_order_no: MyString
+  test_certificate_no: MyString
+  date: 2010-04-17 15:40:43
+  invoice_no: MyString
+  coil_packet_no: MyString
+  t_w_l: MyString
+  no_of_sheets: 1
+  grade: MyString
+  net_weight: 9.99
+  c: 9.99
+  v: 9.99
+  mn: 9.99
+  cu: 9.99
+  s: 9.99
+  nb: 9.99
+  p: 9.99
+  cr: 9.99
+  al: 9.99
+  ni: 9.99
+  si: 9.99
+  ti: 9.99
+  n: 9.99
+  ys: 9.99
+  u_t_s: 9.99
+  el_on_gl: 9.99
+  hrb: 9.99
+  vpn: 9.99
+  ecv: 9.99
+  n_value: 9.99
+  r_bar: 9.99
+  bend_test: MyString
+  bright_matt: MyString
+  ra: 9.99
+  do_item_wise: 1
+
+two:
+  name: MyString
+  address: MyString
+  po_no: MyString
+  sales_order_no: MyString
+  test_certificate_no: MyString
+  date: 2010-04-17 15:40:43
+  invoice_no: MyString
+  coil_packet_no: MyString
+  t_w_l: MyString
+  no_of_sheets: 1
+  grade: MyString
+  net_weight: 9.99
+  c: 9.99
+  v: 9.99
+  mn: 9.99
+  cu: 9.99
+  s: 9.99
+  nb: 9.99
+  p: 9.99
+  cr: 9.99
+  al: 9.99
+  ni: 9.99
+  si: 9.99
+  ti: 9.99
+  n: 9.99
+  ys: 9.99
+  u_t_s: 9.99
+  el_on_gl: 9.99
+  hrb: 9.99
+  vpn: 9.99
+  ecv: 9.99
+  n_value: 9.99
+  r_bar: 9.99
+  bend_test: MyString
+  bright_matt: MyString
+  ra: 9.99
+  do_item_wise: 1
