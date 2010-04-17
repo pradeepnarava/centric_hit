@@ -12,11 +12,11 @@
         <div class="fl w48" style="width: 48%;" >
           <div>
   <p><label>Raw  Material</label>
-<%=f.collection_select( :rawmaterial_id, Rawmaterial.all,:id,:name,{:include_blank => "----------Select----------"})%>
+<%=f.collection_select( :rawmaterial_id, @coils,:id,:name,{:include_blank => "---Select---"})%>
   </p>
   <p>
     <label>Slitting coil no </label>
-    <%=f.collection_select( :slitting_id, Slitting.all,:id,:slitting_coil_no,{:include_blank => "----------Select----------"})%>
+    <%=f.collection_select( :slitting_id, Slitting.all,:id,:slitting_coil_no,{:include_blank => "---Select---"})%>
  </p> 
  <p style="width:100%">
     <%= f.label :shift %>

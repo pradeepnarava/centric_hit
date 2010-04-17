@@ -9,6 +9,7 @@ class CreateSlittings < ActiveRecord::Migration
       t.integer :no_of_slits
       t.decimal :weight
       t.string :remarks
+      t.string :slitting_coil_no
 
       t.timestamps
     end

@@ -18,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :salesplans
   map.resources :customer_orders , :collections => {:customer_detail => :get}
   map.resources :serializes
-  map.resources :customers
+  map.resources :customers,:member=>"customer_report"  
   map.resource :user_session
   map.root :controller => "rawmaterials", :action => "index" # optional, this just sets the root route
   map.resources :users

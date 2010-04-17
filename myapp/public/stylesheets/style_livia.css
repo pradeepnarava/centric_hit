@@ -26,13 +26,13 @@ input[type="submit"]:focus, input[type="button"]:focus {outline:none;}
 /* TEXT  */
 .txtBld10_blue a, .txt10_blue a, .txtBld11_blue{color:#3d80b3;text-decoration:none;}
 .txtBld10_blue a:hover, .txt10_blue a:hover{text-decoration:underline;}
-.txtBld10_blue a {font-weight:bold; font-size:0.688em; text-decoration:none;}
-.txt10_blue a{font-size:0.688em;}
+.txtBld10_blue a {font-weight:bold; font-size:0.988em; text-decoration:none;}
+.txt10_blue a{font-size:0.988em;}
 .more a{color:#c04c32; text-align:right; font-weight:normal; text-decoration:none;}
 .more a:hover{text-decoration:underline;}
-.textBrwn11{font-size:0.688em; color:#c04c32; text-align:right; margin:0 5px; line-height:18px;}
+.textBrwn11{font-size:0.988em; color:#c04c32; text-align:right; margin:0 5px; line-height:18px;}
 .textBrwn11 a{color:#c04c32; text-decoration:none;}
-.textBlue11{font-size:0.688em; color:#3D80B3; text-align:right; margin:0 5px; line-height:18px;}
+.textBlue11{font-size:0.988em; color:#3D80B3; text-align:right; margin:0 5px; line-height:18px;}
 .textBlue11 a{color:#3D80B3; text-decoration:none;}
 .textBlue11 a:hover, .textBrwn11 a:hover{text-decoration:underline;}
 
@@ -98,7 +98,7 @@ input[type="submit"]:focus, input[type="button"]:focus {outline:none;}
 .mainContent {padding:10px;text-align:left;background:#f8f8f8;border-right:1px solid #dddddd;border-left:1px solid #dddddd;border-bottom:1px solid #dddddd;position:relative;min-height:450px;height:100%;}
 .mainContent .rightCol {width:83%;float:right;}
 .mainContent .leftCol {width:16%;float:left;}
-.leftCol .appBox, .viewBox {background-color:#fafafa;margin: 0 0 5px 0;font-size:0.688em;}
+.leftCol .appBox, .viewBox {background-color:#fafafa;margin: 0 0 5px 0;font-size:0.988em;}
 .appBox .title, .viewBox .title {color:#0f0f0f;font-weight:bold;padding:0 0 0 6px;background: url(/images/livia_portal/headingBg1.gif) repeat-x;border:1px solid #8abadf;text-align:left;height:21px;line-height:20px;}
 .appBox .content, .viewBox .content {border:1px solid #DDDDDD; padding:5px;}
 .content .text{padding:5px;}
@@ -109,7 +109,7 @@ input[type="submit"]:focus, input[type="button"]:focus {outline:none;}
 .content .leftViews a.current {color:#c04c32;font-weight:bold;padding:5px;}
 
 .gridDiv{margin:0; padding:0;}
-.gridDiv .titleHead{font-size:0.75em;color:#0f0f0f;font-weight:bold;padding:0 0 0 6px;background:url(/images/livia_portal/headingBg.gif) repeat-x center left;border:1px solid #6ba3ce;height:21px;line-height:20px;}
+.gridDiv .titleHead{font-size:0.65em;color:#0f0f0f;font-weight:bold;padding:0 0 0 6px;background:url(/images/livia_portal/headingBg.gif) repeat-x center left;border:1px solid #6ba3ce;height:21px;line-height:20px;}
 .gridDiv .gryBox{background:#f2f5f7; border:1px solid #dddddd; margin: 0px; padding: 0px;}
 .gridDiv input.button{border:1px solid #aed0eb; width: auto; background:#c4dff1; color:#00416a; padding:0; font-size:0.688em; font-weight:normal; outline:none; cursor:pointer; text-align:center; margin:0;}
 .gryBox input.textBox{padding:0;margin:0; width:130px; text-align:left;font-family:Arial, Helvetica, sans-serif;color:#0f0f0f; font-size:0.688em;height:100%;}
@@ -124,9 +124,9 @@ input[type="submit"]:focus, input[type="button"]:focus {outline:none;}
 .gridDiv .tabularDiv table{ background-color:#f2f5f7; border:1px solid #DDDDDD;}
 .gridDiv .tabularDiv table th{background:#E3F1FA url(/images/livia_portal/top_bg.gif) repeat-x bottom left;height:23px;color:#003e6d;vertical-align:top;padding-left:3px;font-size:0.688em;}
 .gridDiv .tabularDiv table td{padding:5px;}
-.gridDiv .tabularDiv table td select{padding:0;margin:0; font-size:0.688em;font-family:Arial, Helvetica, sans-serif;width:150px;}
-.gridDiv .tabularDiv table td textarea {padding:0;margin:0;font-size:0.688em; font-family:Arial, Helvetica, sans-serif; height:25px; width:98%; }
-.gridDiv .tabularDiv table td input.button{border:0;border:1px solid #aed0eb;height:100%; width: 10%; background:#c4dff1; color:#00416a; padding:0; font-size:0.688em; font-weight:normal; outline:none; cursor:pointer; text-align:center; margin:0;}
+.gridDiv .tabularDiv table td select{padding:0;margin:0; font-size:0.988em;font-family:Arial, Helvetica, sans-serif;width:150px;}
+.gridDiv .tabularDiv table td textarea {padding:0;margin:0;font-size:0.988em; font-family:Arial, Helvetica, sans-serif; height:25px; width:98%; }
+.gridDiv .tabularDiv table td input.button{border:0;border:1px solid #aed0eb;height:100%; width: 10%; background:#c4dff1; color:#00416a; padding:0; font-size:0.988em; font-weight:normal; outline:none; cursor:pointer; text-align:center; margin:0;}
 
 .gridDiv .tabularDiv table td div table tr td{padding:0px ;margin:0;}
 
@@ -135,9 +135,9 @@ input[type="submit"]:focus, input[type="button"]:focus {outline:none;}
 .bg2, ul.userList li.bg2{background-color:#edf5fa; line-height:20px; width:100%;}
 .bg3{background:#e5e9eb}
 
-.textNormal{font-size:0.688em;color:#0f0f0f; padding:0; margin:0; }
+.textNormal{font-size:0.988em;color:#0f0f0f; padding:0; margin:0; }
 
-.gridTable table{font-size:0.688em; }
+.gridTable table{font-size:0.988em; }
 .gridTable .gryBox{background:#f2f5f7; border:1px solid #dddddd; margin: 0px; padding: 0px;}
 .gridTable table th{background:#E3F1FA url(/images/livia_portal/headingBg_th.gif) repeat-x bottom left;height:23px;border-top:1px solid #cce2f2;color:#003e6d;vertical-align:top;text-align:left;padding-left:3px;}
 
@@ -164,7 +164,7 @@ input[type="submit"]:focus, input[type="button"]:focus {outline:none;}
 
 /*************/
 
-.gridTable table{font-size:0.688em; }
+.gridTable table{font-size:0.988em; }
 .gridTable table th{background:#E3F1FA url(/images/livia_portal/headingBg_th.gif) repeat-x bottom left;height:23px;border-top:1px solid #cce2f2;color:#003e6d;vertical-align:top;text-align:left;padding-left:3px;}
 .gridTable table a{color:#003e6d; text-decoration:none;}
 .gridTable table a:hover{text-decoration:underline;}

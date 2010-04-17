@@ -70,6 +70,22 @@ class CustomersController < ApplicationController
       end
     end
   end
+  def customer_report
+     @cus_name,@delivery_address,@address,@total_amount,@total_weight,@vat_no,@tin_no,@ecc_no="","","",0,0,0,0,0
+    @customer_report = Serialize.find(:all,:conditions=>["customer_id=#{params[:id]}"])
+    @customer_report.each do |obj|
+      @vat_no=obj.customer.vat_no
+      @cus_name=obj.customer.name
+      @tin_no=obj.customer.tin_no
+      @address= obj.customer.address
+      obj.customer_orders.each do |obj1|
+        @total_amount=obj1.total_amount+@total_amount if obj1.total_amount
+        @total_weight=obj1.total_weight+@total_weight if obj1.total_weight
+        @ecc_no=obj1.ecc_no if obj1.ecc_no
+        @delivery_address= obj1.delivery_address
+      end
+    end
+  end
 
   # DELETE /customers/1
   # DELETE /customers/1.xml

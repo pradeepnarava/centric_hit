@@ -1,0 +1,117 @@
+<div class="top-bar" style="padding-left:100px;">
+  <h1>PURCHASE ORDER</h1>
+</div><br />
+<div class="table" style="padding-left:100px;">
+<table class="listing" cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+    <thead>
+      <th>Sr. No</th>
+      <th>Item description</th>
+      <th>Unit of measure</th>
+      <th>Qty</th>
+      <th>Total wt.In kgs</th>
+      <th>Rate Per Kg</th>
+      <th>Total Amount</th>
+    </thead>
+    <%i=1%>
+    <%@customer_report.each do |obj| %>
+      <tr>
+        <td><%=i%></td>
+        <td>
+          <%=obj.tube_size%>
+        </td>
+        <td>
+          <%=obj.unit_of_measure%>
+        </td>
+        <%obj.customer_orders.each do |obj1|%>
+          <td> <%=obj1.quantity%></td>
+          <td><%=obj1.total_weight%></td>
+          <td><%= obj1.rate_per_kilo %></td>
+        <%end%>
+        <%obj.customer_orders.each do |obj1|%>
+          <td><%=obj1.total_amount%></td>
+        <%end%>
+      </tr>
+      <%i=i+1%>
+    <%end%>
+      <tr>
+        <td colspan="5">  
+        </td>
+        <td>
+          Total
+        </td>
+        <td>
+          <%=@total_amount%>
+        </td>
+      </tr>
+  </tbody>
+</table>
+<div><br/>
+  <label>Total Weight</label>
+  <label> <%=@total_weight%> <b>kgs</b></label><br/>
+  <label><b>Oil is not required on outer surface</b></label><br/>
+  <label>
+    Terms & conditions:
+  </label><br/>
+  <div style="padding-left:30px;">
+    <label>
+      1)Prices Ex-work at Murbad factory<br/>
+      2)Taxes Extra as applicable.<br/>
+      3)Transport will be extra.<br/>
+      4)Delivery at Murbad factory.<br/>
+      5)Payment- On receipt of material.<br/>
+      6)Debit note will be raised against rejection.<br/>
+    </label>
+  </div>
+  <label>
+    Instruction:
+  </label>
+  <div style="padding-left:30px;">
+    <label>
+      1)Pl. quotes P.O no in all challans,Bills and correspondences etc.<br/>
+      2)Goods delivered must accompany invoice, challans, and P.O copy.<br/>
+      3)This order must be acknowleged within 7 days,else it will be treated as accepted byb you.
+    </label>
+  </div>
+  
+</div><br/><br/>
+<table cellpadding="8" cellspacing="0" width="100%" border="1">
+  <tr>
+    <td width="50%">
+      <label>VAT NO :-</label>&nbsp;<%=@vat_no%>
+    </td>
+    <td>
+      <label>CST TIN :-
+      </label>&nbsp;<%=@tin_no%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>ECC NO :-</label>&nbsp;<%=@ecc_no%>
+    </td>
+    <td>
+      <label>Subject to Mumbai Jurisedicion.
+      </label>
+    </td>
+  </tr>
+   <tr>
+    <td>
+      <label>Delivery address :</label>&nbsp;<%=@delivery_address%>
+    </td>
+    <td>
+      <label>Office address :
+      </label>&nbsp;<%=@address%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>For <%= @cus_name%> :</label><br/>
+      <label>Prepared by :</label><br/>
+    </td>
+    <td>
+      <label>Authorised Signatory :
+      </label>&nbsp;
+    </td>
+  </tr>
+</table>
+</div>

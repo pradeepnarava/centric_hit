@@ -5,7 +5,6 @@ body {
 	background:#BBD9EE;
   	color:#000;
 	font-family:tahoma,arial,sans-serif;
-	font-size:11px;
 	}
 form {
 	margin:0;
@@ -41,6 +40,7 @@ input.text {
 	}
 /* header */
 #header {
+        font-size:11px;
 	position:relative;
 	width:1200px;
 	height:106px;
@@ -55,7 +55,8 @@ a.logo {
 	
 /* header tabs */
 #top-navigation {
-	position:absolute;
+	font-size:11px;
+        position:absolute;
 	top:60px;
 	left:20px;
 	margin:0;
@@ -158,9 +159,13 @@ ul.nav {
 	padding:0 2px;
 	}
 ul.nav li {
+        font-size:11px;
 	padding:4px 4px 6px 5px;
 	background:url(/images/bg-dotted.gif) repeat-x bottom;
 	}
+.nav li.active {
+    font-weight:bold;
+}
 ul.nav a {
 	padding:0 0 0 12px;
 	background:url(/images/arrow.gif) no-repeat 0 4px;
@@ -184,6 +189,7 @@ ul.nav li.last {background:none;}
 	
 /* center column styles */
 .top-bar {
+        font-size:11px;
 	float:left;
 	width:940px;
 	border-left:2px solid #f70;
@@ -192,7 +198,7 @@ ul.nav li.last {background:none;}
 	}
 /* text page header */
 .top-bar h1 {
-	font:20px/21px verdana,sans-serif;
+	font:16px/17px verdana,sans-serif;
 	color:#43729F;
 	margin:0 0 4px 0;
 	}
@@ -222,6 +228,7 @@ ul.nav li.last {background:none;}
 
 /* table container */
 div.table {
+        font-size:11px;
 	float:left;
 	position:relative;
 	width:950px;

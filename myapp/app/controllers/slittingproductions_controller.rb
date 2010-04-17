@@ -27,7 +27,7 @@ class SlittingproductionsController < ApplicationController
   # GET /slittingproductions/new.xml
   def new
     @slittingproduction = Slittingproduction.new
-
+    @coils = Rawmaterial.find(:all, :conditions => ["status = 1"])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @slittingproduction }

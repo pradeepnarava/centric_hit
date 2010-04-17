@@ -3,7 +3,7 @@ class RawmaterialsController < ApplicationController
   # GET /rawmaterials
   # GET /rawmaterials.xml
   def index
-    @rawmaterials = Rawmaterial.find(:all)
+    @rawmaterials = Rawmaterial.find(:all, :order => :status)
 
     respond_to do |format|
       format.html # index.html.erb
