@@ -13,14 +13,16 @@
                 <td><%=f.collection_select(:rawmaterial_id, @coils,:id,:name,{:include_blank => "---Select---"},{:onchange => "coildetail(this.value);"})%></td>
                 <td><label>Coil width:</label></td>
                 <td><%=text_field_tag "coil_width" %></td>
-                <td><label>Coil wt:</label></td>
+                <td><label>Full Coil wt:</label></td>
                 <td><%=text_field_tag "coil_wt" %></td>                     
+                <td><label>Coil Thick.:</label></td>
+                <td><%=text_field_tag "coil_thick" %></td>                                        
               </tr>
               <tr>
-                <td><label>Coil Thick.:</label></td>
-                <td><%=text_field_tag "coil_thick" %></td>                        
-                <td><label>Side Trim:</label></td>
-                <td><%=f.text_field "side_trim" %></td>                
+                <td><label>Division Part:</label></td>
+                <td><%=f.text_field "division_part", :onblur => "get_process_coilwt();"%></td>                        
+                <td><label>Process coil wt:</label></td>
+                <td><%=f.text_field "process_coil_wt" %></td>                
                 <td><label>Scrap:</label></td>
                 <td><%=f.text_field "scrap" %></td>
            

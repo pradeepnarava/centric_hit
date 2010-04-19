@@ -50,7 +50,8 @@ class SlittingsController < ApplicationController
         if @slitting.valid?
           @slitting.rawmaterial_id = data[:slitting][:rawmaterial_id]
           @slitting.scrap = data[:slitting][:scrap]
-          @slitting.side_trim = data[:slitting][:side_trim]
+          @slitting.division_part = data[:slitting][:division_part]
+          @slitting.process_coil_wt = data[:slitting][:process_coil_wt]
           if @slitting.save
             flash[:notice] = 'Slitting Plan was successfully created.'
           else
