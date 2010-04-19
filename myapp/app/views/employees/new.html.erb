@@ -1,54 +1,58 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<h1>New employee</h1>
-
+<div class="gridDiv">
+  <div class="titleHead">New employee</div>
+  <div class="formMain">
 <% form_for(@employee) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+<div class="fl w48" >
+          <div>
+  <p><%= f.label :first_name %></p>
+  <p><%= f.text_field :first_name %></p>
+  <p><%= f.label :last_name %></p><p><%= f.text_field :last_name %>
   </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :birthdate %><br />
+  <p >
+    <%= f.label :birthdate %></p><p>
     <%= f.date_select :birthdate, :start_year => 1950 %>
   </p>
   <p>
-    <%= f.label :phone %><br />
+    <%= f.label :phone %></p><p>
     <%= f.text_field :phone %>
   </p>
-  <p>
-    <%= f.label :mobile %><br />
+   <p>
+    <%= f.label :mobile %></p><p>
     <%= f.text_field :mobile %>
   </p>
+          </div>
+</div>
+    <div class="fl w48" >
+          <div>
+ 
   <p>
-    <%= f.label :street %><br />
+    <%= f.label :street %></p><p>
     <%= f.text_field :street %>
   </p>
   <p>
-    <%= f.label :city %><br />
+    <%= f.label :city %></p><p>
     <%= f.text_field :city %>
   </p>
   <p>
-    <%= f.label :state %><br />
+    <%= f.label :state %></p><p>
     <%= f.text_field :state %>
   </p>
   <p>
-    <%= f.label :zipcode %><br />
+    <%= f.label :zipcode %></p><p>
     <%= f.text_field :zipcode %>
   </p>
   <p>
-    <label> Department </label><br />
+    <label> Department </label></p><p>
     <%= collection_select(:employee, :department_id, @departments, :id, :name, {:include_blank => 'Please select'})%>
   </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+          </div></div>
+          <div class="txtC" id="submit_div" >
+    <%= f.submit "Create" , :class=>'button submit_buttons'%>
+          </div>
 <% end %>
 
-<%= link_to 'Back', employees_path %>
 </div>
+</div></div><br/>
