@@ -1,0 +1,17 @@
+<div id="left-column"> 
+        <h3>Centric</h3>
+        <ul class="nav">
+          <li class ='<%=controller.controller_name.eql?('employees')? 'active' : ''%>'>
+          <span><span><%=link_to("Employees", employees_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('departments')? 'active' : ''%>'>
+          <span><span><%=link_to("Departments", departments_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('roles')? 'active' : ''%>'>
+          <span><span><%=link_to("Role", roles_path)%></span></span>
+          </li>
+          <li class ='<%=controller.controller_name.eql?('users')? 'active' : ''%>'>
+          <span><span><%=link_to("User", users_path)%></span></span>
+          </li>          
+        </ul>
+</div>
