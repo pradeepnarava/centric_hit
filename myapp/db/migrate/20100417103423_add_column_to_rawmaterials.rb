@@ -1,9 +1,9 @@
 class AddColumnToRawmaterials < ActiveRecord::Migration
   def self.up
-    add_column :rawmaterials, :supplier_id, :integer
+    add_column :rawmaterials, :address_id, :integer
   end
 
   def self.down
-    remove_column  :rawmaterials, :supplier_id
+    remove_column  :rawmaterials, :address_id
   end
 end

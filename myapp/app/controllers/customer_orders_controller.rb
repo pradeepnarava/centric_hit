@@ -65,7 +65,7 @@ class CustomerOrdersController < ApplicationController
 
   def customer_detail
     @customer = Customer.find(params[:id])
-    @serials = @customer.serializes
+    @serials = @customer.serializes  
   end
 
   def serial_detail

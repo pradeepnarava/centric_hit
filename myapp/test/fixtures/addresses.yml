@@ -1,0 +1,47 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  company_name: MyString
+  address_one: MyString
+  address_two: MyString
+  phone_no: MyString
+  fax_no: MyString
+  email: MyString
+  contact_person: MyString
+  excise_reg_no: MyString
+  range: MyString
+  division: MyString
+  collectorate: MyString
+  ecc_no: MyString
+  vat_tin_no: MyString
+  cst_tin_no: MyString
+  ifc_no: MyString
+  dgft_no: MyString
+  pan_no: MyString
+  service_tax_reg: MyString
+  gta_red_no: MyString
+  bankers: MyString
+  bank_a_c_no: MyString
+
+two:
+  company_name: MyString
+  address_one: MyString
+  address_two: MyString
+  phone_no: MyString
+  fax_no: MyString
+  email: MyString
+  contact_person: MyString
+  excise_reg_no: MyString
+  range: MyString
+  division: MyString
+  collectorate: MyString
+  ecc_no: MyString
+  vat_tin_no: MyString
+  cst_tin_no: MyString
+  ifc_no: MyString
+  dgft_no: MyString
+  pan_no: MyString
+  service_tax_reg: MyString
+  gta_red_no: MyString
+  bankers: MyString
+  bank_a_c_no: MyString

@@ -27,7 +27,7 @@ class RawmaterialsController < ApplicationController
   def new
     @rawmaterial = Rawmaterial.new
     @rawmaterialcategory = RawmaterialCategory.all
-    @supplier=Supplier.all
+    @addresses=Address.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @rawmaterial }
@@ -47,7 +47,7 @@ class RawmaterialsController < ApplicationController
     respond_to do |format|
       if @rawmaterial.save
         flash[:notice] = 'Rawmaterial was successfully created.'
-        format.html { redirect_to(@rawmaterial) }
+        format.html { redirect_to(:controller=>'suppliers',:action=>'new') }
         format.xml  { render :xml => @rawmaterial, :status => :created, :location => @rawmaterial }
       else
         format.html { render :action => "new" }

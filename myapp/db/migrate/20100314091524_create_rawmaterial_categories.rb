@@ -1,9 +1,7 @@
 class CreateRawmaterialCategories < ActiveRecord::Migration
   def self.up
     create_table :rawmaterial_categories do |t|
-      t.string :name
-      t.string :grade
-
+      t.string :name   
       t.timestamps
     end
   end
