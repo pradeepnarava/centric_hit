@@ -1,3 +1,5 @@
+<%= render :partial=>'layouts/customer_leftside_bar' %>
+<div id="center-column">
 <div class="gridDiv">
   <div class="titleHead">New serialize</div>
   <div class="formMain">
@@ -13,7 +15,7 @@
               <%=f.collection_select(:customer_id, Customer.all,:id,:name,{:include_blank => "---Select---"})%>
             </p>
             <p>
-              <%= f.label :name %>
+              <label>Serial Name/No.</label>
               <%= f.text_field :name %>
             </p>
             <p>
@@ -28,8 +30,8 @@
 
         <div class="fl w48" >
             <p>
-              <%= f.label :unit_of_measure %>
-              <%= f.text_field :unit_of_measure %>
+              <%#= f.label :unit_of_measure %>
+              <%#= f.text_field :unit_of_measure %>
             </p>             
             <p>
               <%= f.label :od %>
@@ -52,4 +54,5 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>

@@ -1,3 +1,5 @@
+<%= render :partial=>'layouts/centric_left_bar' %>
+<div id="center-column">
 <p>
   <b>Name:</b>
   <%=h @role.name %>
@@ -6,3 +8,4 @@
 
 <%= link_to 'Edit', edit_role_path(@role) %> |
 <%= link_to 'Back', roles_path %>
+</div>

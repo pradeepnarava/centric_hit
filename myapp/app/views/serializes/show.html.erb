@@ -1,3 +1,5 @@
+<%= render :partial=>'layouts/customer_leftside_bar' %>
+<div id="center-column">
 <p>
   <b>Name:</b>
   <%=h @serialize.name %>
@@ -6,3 +8,4 @@
 
 <%= link_to 'Edit', edit_serialize_path(@serialize) %> |
 <%= link_to 'Back', serializes_path %>
+</div>

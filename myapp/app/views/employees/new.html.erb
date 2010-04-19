@@ -1,3 +1,5 @@
+<%= render :partial=>'layouts/centric_left_bar' %>
+<div id="center-column">
 <h1>New employee</h1>
 
 <% form_for(@employee) do |f| %>
@@ -49,3 +51,4 @@
 <% end %>
 
 <%= link_to 'Back', employees_path %>
+</div>

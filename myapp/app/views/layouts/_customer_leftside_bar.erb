@@ -4,5 +4,8 @@
           <li class ='<%=controller.controller_name.eql?('customers')? 'active' : ''%>'>
           <span><span><%=link_to("Customers", customers_path)%></span></span>
           </li>
+          <li class ='<%=controller.controller_name.eql?('serializes')? 'active' : ''%>'>
+          <span><span><%=link_to("Serials", serializes_path)%></span></span>
+          </li>          
         </ul>
 </div>

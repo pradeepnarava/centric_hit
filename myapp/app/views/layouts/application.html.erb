@@ -25,21 +25,21 @@
 </head>
 <body>
   <div id="main">
-	<div id="header">
-		<a href="index.html" class="logo">
-                  <%= image_tag '/images/logo.gif',:height=>"29", :width=>"101",:alt=>"",:title=>"" %>
-                  </a>
-           <%if current_user%>
-          <div class="loginDetails" style="float:right;">
-      <div class=""><%= link_to "Logout" ,logout_url %></div>
-      <div class="txtR ">
-      </div>
-    </div>
-    <%end%>
-        <%#=render :partial =>'layouts/header'%>
-        <%unless controller.controller_name.eql?('user_sessions')%>
-        <%=render :partial =>'layouts/header_tabs'%>
-        <%end%>
+    <div id="header">
+      <a href="" class="logo">
+        <%= image_tag '/images/logo.gif',:height=>"29", :width=>"101",:alt=>"",:title=>"" %>
+        </a>
+      <%if current_user%>
+        <div class="loginDetails" style="float:right;">
+          <div class=""><%= link_to "Logout" ,logout_url %></div>
+          <div class="txtR ">
+          </div>
+        </div>
+      <%end%>
+      <%#=render :partial =>'layouts/header'%>
+      <%unless controller.controller_name.eql?('user_sessions')%>
+         <%=render :partial =>'layouts/header_tabs'%>
+      <%end%>
         <br class="clear" />
       </div>
     <div id="middle">
