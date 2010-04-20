@@ -16,7 +16,7 @@
   </p>
   <p>
     <label>Slitting coil no </label>
-    <%=f.collection_select( :slitting_id, Slitting.all,:id,:slitting_coil_no,{:include_blank => "---Select---"})%>
+    <%= f.text_field :slitting_coil_no %>
  </p> 
  <p style="width:100%">
     <%= f.label :shift %>

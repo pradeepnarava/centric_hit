@@ -7,7 +7,8 @@ class CreateRawmaterials < ActiveRecord::Migration
       t.string :coil_weight, :null => false
       t.integer :rawmaterial_category_id, :null => false
       t.integer :status, :limit => 1 ,:default => 0
-
+      t.string :grade
+      t.datetime :dateofreciept
       t.timestamps
     end
   end

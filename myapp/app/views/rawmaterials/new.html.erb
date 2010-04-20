@@ -21,7 +21,7 @@
               <table width="50%" border="0" cellspacing="0" cellpadding="2">
                   <tr>
                   <td class="textBlack11Height10L"><%= f.label "Supplier" %><span class="text_red">*</span></td>
-                  <td><%=f.collection_select( :supplier_id, @supplier,:id,:name,{:include_blank => "--- Select ---"})%></td>
+                  <td><%=f.collection_select( :address_id, @addresses,:id,:company_name,{:include_blank => "--- Select ---"})%></td>
                 </tr>
                 <tr>
                   <td class="textBlack11Height10L"><%= f.label "Rawmaterial Category" %><span class="text_red">*</span></td>
@@ -42,7 +42,16 @@
                 <tr>
                   <td class="textBlack11Height10L"><%= f.label :coil_weight %><span class="text_red">*</span></td>
                   <td><%= f.text_field :coil_weight %></td>
-                </tr>                
+                </tr>   
+                 <tr>
+                  <td class="textBlack11Height10L"><%= f.label :grade %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :grade %></td>
+                </tr>
+                  <tr>
+    <td class="textBlack11Height10L"><%= f.label :dateofreciept %><span class="text_red">*</span></td>
+    <td><%= f.datetime_select :dateofreciept %></td>
+  </tr>
+
               </table>
             </div>
           </td>

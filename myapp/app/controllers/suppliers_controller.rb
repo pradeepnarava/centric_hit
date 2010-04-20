@@ -45,7 +45,7 @@ class SuppliersController < ApplicationController
     respond_to do |format|
       if @supplier.save
         flash[:notice] = 'Supplier was successfully created.'
-        format.html { redirect_to(@supplier) }
+        format.html { redirect_to(rawmaterials_path) }
         format.xml  { render :xml => @supplier, :status => :created, :location => @supplier }
       else
         format.html { render :action => "new" }

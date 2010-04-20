@@ -6,18 +6,16 @@
                  <td>Slit Width</td>
                  <td>Slit wt</td>
                  <td>No. of Slits</td>          
-                 <td>Wt.</td>
-                 <td>Slitting coil No</td>
+                 <td>Total Wt.</td>
                  <td>Remarks</td>               
                </tr>
                <%for slit in 1..10%>
                <tr>
                  <td><%=slit%></td>
-                 <td><%= text_field_tag "#{slit}[slitting][slit_width]" %></td>
+                 <td><%= text_field_tag "#{slit}[slitting][slit_width]",nil, :onblur => "get_slitwt(#{slit});" %></td>
                  <td><%= text_field_tag "#{slit}[slitting][slit_weight]" %></td>            
-                 <td><%= text_field_tag "#{slit}[slitting][no_of_slits]" %></td>
+                 <td><%= text_field_tag "#{slit}[slitting][no_of_slits]" ,nil,:onblur => "get_totalwt(#{slit}); get_scrap();" %></td>
                  <td><%= text_field_tag "#{slit}[slitting][weight]" %></td>
-                 <td><%= text_field_tag "#{slit}[slitting][slitting_coil_no]" %></td> 
                  <td><%= text_field_tag "#{slit}[slitting][remarks]" %></td>               
                </tr>
                <%end%>

@@ -1,0 +1,95 @@
+<h1>New address</h1>
+
+<% form_for(@address) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :company_name %><br />
+    <%= f.text_field :company_name %>
+  </p>
+  <p>
+    <%= f.label :address_one %><br />
+    <%= f.text_field :address_one %>
+  </p>
+  <p>
+    <%= f.label :address_two %><br />
+    <%= f.text_field :address_two %>
+  </p>
+  <p>
+    <%= f.label :phone_no %><br />
+    <%= f.text_field :phone_no %>
+  </p>
+  <p>
+    <%= f.label :fax_no %><br />
+    <%= f.text_field :fax_no %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :contact_person %><br />
+    <%= f.text_field :contact_person %>
+  </p>
+  <p>
+    <%= f.label :excise_reg_no %><br />
+    <%= f.text_field :excise_reg_no %>
+  </p>
+  <p>
+    <%= f.label :range %><br />
+    <%= f.text_field :range %>
+  </p>
+  <p>
+    <%= f.label :division %><br />
+    <%= f.text_field :division %>
+  </p>
+  <p>
+    <%= f.label :collectorate %><br />
+    <%= f.text_field :collectorate %>
+  </p>
+  <p>
+    <%= f.label :ecc_no %><br />
+    <%= f.text_field :ecc_no %>
+  </p>
+  <p>
+    <%= f.label :vat_tin_no %><br />
+    <%= f.text_field :vat_tin_no %>
+  </p>
+  <p>
+    <%= f.label :cst_tin_no %><br />
+    <%= f.text_field :cst_tin_no %>
+  </p>
+  <p>
+    <%= f.label :ifc_no %><br />
+    <%= f.text_field :ifc_no %>
+  </p>
+  <p>
+    <%= f.label :dgft_no %><br />
+    <%= f.text_field :dgft_no %>
+  </p>
+  <p>
+    <%= f.label :pan_no %><br />
+    <%= f.text_field :pan_no %>
+  </p>
+  <p>
+    <%= f.label :service_tax_reg %><br />
+    <%= f.text_field :service_tax_reg %>
+  </p>
+  <p>
+    <%= f.label :gta_red_no %><br />
+    <%= f.text_field :gta_red_no %>
+  </p>
+  <p>
+    <%= f.label :bankers %><br />
+    <%= f.text_field :bankers %>
+  </p>
+  <p>
+    <%= f.label :bank_a_c_no %><br />
+    <%= f.text_field :bank_a_c_no %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', addresses_path %>
