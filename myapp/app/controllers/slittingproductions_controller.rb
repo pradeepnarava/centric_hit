@@ -43,11 +43,13 @@ class SlittingproductionsController < ApplicationController
   # POST /slittingproductions.xml
   def create
     @slittingproduction = Slittingproduction.new(params[:slittingproduction])
-
     respond_to do |format|
       if @slittingproduction.save
+        @slittingproduction.status=1
+        @coils = Rawmaterial.find(params[:slittingproduction][:rawmaterial_id])
+          @coils.status=1
         flash[:notice] = 'Slittingproduction was successfully created.'
-        format.html { redirect_to(@slittingproduction) }
+        format.html { redirect_to(slittingproductions_path) }
         format.xml  { render :xml => @slittingproduction, :status => :created, :location => @slittingproduction }
       else
         format.html { render :action => "new" }

@@ -25,6 +25,7 @@
     <th>Slit coil weight</th>
     <th>Slit weight</th>
     <th>Scrap weight</th>
+    <th>Status</th>
     <th>Remarks</th>
     <th>Action</th>
   </tr>
@@ -47,6 +48,7 @@
     <td><%=h slittingproduction.slit_coil_weight %></td>
     <td><%=h slittingproduction.slit_weight %></td>
     <td><%=h slittingproduction.scrap_weight %></td>
+    <td><%=h slittingproduction.status==1?'Slitting WIP':'TubeMil WIP' %></td>
     <td><%=h slittingproduction.remarks %></td>
     <td>
       <div class="fr" style="float:left;">

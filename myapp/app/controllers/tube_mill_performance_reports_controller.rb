@@ -44,11 +44,17 @@ class TubeMillPerformanceReportsController < ApplicationController
   # POST /tube_mill_performance_reports.xml
   def create
     @tube_mill_performance_report = TubeMillPerformanceReport.new(params[:tube_mill_performance_report])
-
+        @tube_mill_performance_report.status=1
     respond_to do |format|
       if @tube_mill_performance_report.save
+
+        @slitting_status=Slittingproduction.find(params[:tube_mill_performance_report][:slittingproduction_id])
+        @slitting_status.update_attribute('status',2)
+        
+        @rawmaterail_status=Rawmaterial.find(@slitting_status.rawmaterial_id)
+        @rawmaterail_status.update_attribute('status',2)
         flash[:notice] = 'TubeMillPerformanceReport was successfully created.'
-        format.html { redirect_to(@tube_mill_performance_report) }
+        format.html { redirect_to(tube_mill_performance_reports_path) }
         format.xml  { render :xml => @tube_mill_performance_report, :status => :created, :location => @tube_mill_performance_report }
       else
         format.html { render :action => "new" }
