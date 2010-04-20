@@ -25,7 +25,8 @@ class TubeMillPerformanceReportsController < ApplicationController
   # GET /tube_mill_performance_reports/new.xml
   def new
     @tube_mill_performance_report = TubeMillPerformanceReport.new
-
+    @customers = Customer.all
+    @slittingproductions = Slittingproduction.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tube_mill_performance_report }
@@ -35,6 +36,8 @@ class TubeMillPerformanceReportsController < ApplicationController
   # GET /tube_mill_performance_reports/1/edit
   def edit
     @tube_mill_performance_report = TubeMillPerformanceReport.find(params[:id])
+    @customers = Customer.all
+    @slittingproductions = Slittingproduction.all    
   end
 
   # POST /tube_mill_performance_reports
