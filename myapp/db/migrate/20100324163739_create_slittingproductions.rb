@@ -16,8 +16,7 @@ class CreateSlittingproductions < ActiveRecord::Migration
       t.decimal :slit_coil_weight
       t.decimal :slit_weight
       t.decimal :scrap_weight
-      t.string :remarks
-      t.string :slitting_coil_no
+      t.string :remarks      
       t.integer :status, :limit => 1 ,:default => 0
 
       t.timestamps

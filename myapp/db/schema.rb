@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100419150311) do
+ActiveRecord::Schema.define(:version => 20100421160037) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company_name"
@@ -122,6 +122,23 @@ ActiveRecord::Schema.define(:version => 20100419150311) do
     t.string   "bankers"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "customer_code"
+    t.string   "address_delivery"
+    t.string   "fax_no"
+    t.string   "range"
+    t.string   "division"
+    t.string   "collectorate"
+    t.string   "ecc_no"
+    t.string   "ifc_no"
+    t.string   "dgft_code"
+    t.string   "service_tax_reg"
+    t.string   "gta_red_no"
+    t.string   "bank_ac_no"
+    t.string   "taxes"
+    t.string   "excise_duty"
+    t.string   "delivery"
+    t.string   "payment"
+    t.string   "octra"
   end
 
   create_table "deliverychallans", :force => true do |t|
@@ -237,7 +254,6 @@ ActiveRecord::Schema.define(:version => 20100419150311) do
 
   create_table "rawmaterial_categories", :force => true do |t|
     t.string   "name"
-    t.string   "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -249,9 +265,11 @@ ActiveRecord::Schema.define(:version => 20100419150311) do
     t.string   "coil_weight",                                         :null => false
     t.integer  "rawmaterial_category_id",                             :null => false
     t.integer  "status",                  :limit => 2, :default => 0
+    t.string   "grade"
+    t.datetime "dateofreciept"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "supplier_id"
+    t.integer  "address_id"
   end
 
   create_table "roles", :force => true do |t|
@@ -286,6 +304,7 @@ ActiveRecord::Schema.define(:version => 20100419150311) do
     t.string   "grade"
     t.string   "specification"
     t.string   "unit_of_measure"
+    t.string   "height"
   end
 
   create_table "slittingproductions", :force => true do |t|
@@ -305,6 +324,7 @@ ActiveRecord::Schema.define(:version => 20100419150311) do
     t.decimal  "slit_weight"
     t.decimal  "scrap_weight"
     t.string   "remarks"
+    t.integer  "status",               :limit => 2, :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
@@ -312,13 +332,14 @@ ActiveRecord::Schema.define(:version => 20100419150311) do
 
   create_table "slittings", :force => true do |t|
     t.integer  "rawmaterial_id"
-    t.integer  "side_trim"
+    t.integer  "division_part"
     t.string   "scrap"
     t.decimal  "slit_width"
     t.decimal  "slit_weight"
     t.integer  "no_of_slits"
     t.decimal  "weight"
     t.string   "remarks"
+    t.string   "process_coil_wt"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
@@ -451,6 +472,7 @@ ActiveRecord::Schema.define(:version => 20100419150311) do
     t.integer  "lot_numbers"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status"
   end
 
   create_table "tube_mill_stoppage_reports", :force => true do |t|

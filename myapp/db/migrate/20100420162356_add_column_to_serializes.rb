@@ -1,9 +1,9 @@
 class AddColumnToSerializes < ActiveRecord::Migration
   def self.up
-      add_column :serializes, :length, :string
+      add_column :serializes, :height, :string
   end
 
   def self.down
-      remove_column :serializes, :length
+      remove_column :serializes, :height
   end
 end

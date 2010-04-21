@@ -21,6 +21,23 @@
       <th>Pan no</th>
       <th>Payment terms</th>
       <th>Bankers</th>
+      <th>Customer Code</th>
+      <th>Adress Deivery</th>
+      <th>Fax NO</th>
+      <th>Range</th>
+      <th>Division</th>
+      <th>Collectorate</th>
+      <th>Ecc No</th>
+      <th>Ifc No</th>
+      <th>Dgft No</th>
+      <th>Service Tax Reg</th>
+      <th>Gta Regd NO</th>
+      <th>Bank A/c No</th>
+      <th>Taxes</th>
+      <th>Excise Duty</th>
+      <th>Delivery</th>
+      <th>Payment</th>
+      <th>Octra</th>
       <th style=" width:50px;">Action</th>
     </tr>
     <% for customer in @customers %>
@@ -37,6 +54,23 @@
         <td><%=h customer.pan_no %></td>
         <td><%=h customer.payment_terms %></td>
         <td><%=h customer.bankers %></td>
+        <td><%=h customer.customer_code %></td>
+        <td><%=h customer.address_delivery %></td>
+        <td><%=h customer.fax_no %></td>
+        <td><%=h customer.range %></td>
+        <td><%=h customer.division %></td>
+        <td><%=h customer.collectorate %></td>
+        <td><%=h customer.ecc_no %></td>
+        <td><%=h customer.ifc_no %></td>
+        <td><%=h customer.dgft_code %></td>
+        <td><%=h customer.service_tax_reg %></td>
+        <td><%=h customer.gta_red_no %></td>
+        <td><%=h customer.bank_ac_no %></td>
+        <td><%=h customer.taxes %></td>
+        <td><%=h customer.excise_duty %></td>
+        <td><%=h customer.delivery %></td>
+        <td><%=h customer.payment %></td>
+        <td><%=h customer.octra %></td>
         <td>
           <div class="fr">
             <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_customer_path(customer))%>

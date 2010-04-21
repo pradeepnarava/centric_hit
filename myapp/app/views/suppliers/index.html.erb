@@ -1,8 +1,16 @@
-<h1>Listing suppliers</h1>
+<%= render :partial=>'layouts/supplier_info' %>
 
-<table>
+<div id="center-column">
+<div class="top-bar">
+  <%= link_to 'New', new_supplier_path,:class=>"button" %>
+  <h1>Supplier TC</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <th>Name</th>
+   <th>Name</th>
     <th>Address</th>
     <th>Po no</th>
     <th>Sales order no</th>
@@ -42,7 +50,7 @@
   </tr>
 
 <% for supplier in @suppliers %>
-  <tr>
+  <tr class="<%=cycle("bg1", "bg2")%>">
     <td><%=h supplier.name %></td>
     <td><%=h supplier.address %></td>
     <td><%=h supplier.po_no %></td>
@@ -80,13 +88,20 @@
     <td><%=h supplier.bright_matt %></td>
     <td><%=h supplier.ra %></td>
     <td><%=h supplier.do_item_wise %></td>
-    <td><%= link_to 'Show', supplier %></td>
-    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-    <td><%= link_to 'Destroy', supplier, :confirm => 'Are you sure?', :method => :delete %></td>
+
+
+
+
+    <td>
+          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_supplier_path(supplier))%>
+          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}), supplier, :confirm => 'Are you sure?', :method => :delete) %>
+      </td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
+</div>
 
-<%= link_to 'New supplier', new_supplier_path %>
+
+
