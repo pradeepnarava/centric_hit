@@ -43,9 +43,9 @@ class SlittingproductionsController < ApplicationController
   # POST /slittingproductions.xml
   def create
     @slittingproduction = Slittingproduction.new(params[:slittingproduction])
+    @slittingproduction.status = 1    
     respond_to do |format|
       if @slittingproduction.save
-        @slittingproduction.status=1
         @coils = Rawmaterial.find(params[:slittingproduction][:rawmaterial_id])
           @coils.status=1
         flash[:notice] = 'Slittingproduction was successfully created.'

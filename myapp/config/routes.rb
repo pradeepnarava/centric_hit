@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :addresses
-
   map.resources :clients
   map.resources :clients
   map.resources :suppliers
@@ -9,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :predespatchtcs
   map.resources :uncoiler_reports
   map.resources :tube_mill_performance_reports
+  map.connect 'production_index', :controller => 'tube_mill_performance_reports', :action => 'production_index'
   map.resources :tube_mill_stoppage_reports
   map.resources :slittingproductions
   map.resources :slittings  

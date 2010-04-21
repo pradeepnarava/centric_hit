@@ -26,7 +26,7 @@ class TubeMillPerformanceReportsController < ApplicationController
   def new
     @tube_mill_performance_report = TubeMillPerformanceReport.new
     @customers = Customer.all
-    @slittingproductions = Slittingproduction.all
+    @slittingproductions = Slittingproduction.find(:all,:conditions => ["status = 1"])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tube_mill_performance_report }
@@ -37,7 +37,7 @@ class TubeMillPerformanceReportsController < ApplicationController
   def edit
     @tube_mill_performance_report = TubeMillPerformanceReport.find(params[:id])
     @customers = Customer.all
-    @slittingproductions = Slittingproduction.all    
+    @slittingproductions = Slittingproduction.all
   end
 
   # POST /tube_mill_performance_reports
@@ -91,4 +91,15 @@ class TubeMillPerformanceReportsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def production_index
+    @tube_mill_performance_report = TubeMillPerformanceReport.all
+    # TODO
+    # need to find yield %
+    # prime qty(wt) = 500
+    # rejection qty (wt) = 8
+    # yeild = prime qty /  total qty
+    # i.e. 500 / 508
+  end
+  
 end
