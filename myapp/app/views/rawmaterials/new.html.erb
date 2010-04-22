@@ -1,3 +1,8 @@
+  <script type="text/javascript">
+  //initDatePickerDateStart();
+  //initDatePickerDateEnd();
+  livia_datepicker();
+  </script>
 <%= render :partial=>'layouts/stock_leftside_bar' %>
 <div id="center-column">
 <div class="gridDiv">
@@ -47,11 +52,11 @@
                   <td class="textBlack11Height10L"><%= f.label :grade %><span class="text_red">*</span></td>
                   <td><%= f.text_field :grade %></td>
                 </tr>
-                  <tr>
-    <td class="textBlack11Height10L"><%= f.label :dateofreciept %><span class="text_red">*</span></td>
-    <td><%= f.datetime_select :dateofreciept %></td>
-  </tr>
-
+                 <tr>
+                    <td class="textBlack11Height10L"><%= f.label :dateofreciept %><span class="text_red">*</span></td>
+                      <td>
+                        <%= f.text_field :dateofreciept, :class=>'dateTextBox date_picker'%></td>
+                 </tr>
               </table>
             </div>
           </td>

@@ -84,3 +84,18 @@ function get_scrap(){
  }
  jQuery("#slitting_scrap").val(Number(cwth-totalwt).toFixed(4));
 }
+function livia_datepicker(){
+    jQuery(function() {
+        jQuery(".date_picker").datepicker({
+            showOn: 'both',
+            buttonImage: '/images/calendar_n.gif',
+            buttonImageOnly: true,
+            dateFormat: 'mm/dd/yy',
+            onSelect: function(value,date){
+                var today=new Date();
+                var newdate=new Date(value);
+                jQuery('.date_picker').value =(newdate.getMonth()+1)+'/'+newdate.getDate()+'/'+newdate.getFullYear	();
+            }
+        });
+    });
+}
