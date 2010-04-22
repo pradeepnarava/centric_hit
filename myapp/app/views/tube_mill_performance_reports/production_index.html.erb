@@ -1,163 +1,44 @@
 <%= render :partial=>'layouts/process_leftside_bar' %>
 <div id="center-column">
 <div class="top-bar">
-  <%= link_to 'New', new_tube_mill_performance_report_path,:class=>"button" %>
-  <h1>Listing Tube Mill Performance Reports</h1>
+  <h1>Listing Tube Mill Productions</h1>
 </div><br />
 <div class="table">
   <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
   <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
   <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <th>Parameters</th>
-    <th>Open</th>
-    <th>Joint</th>
-    <th>Tool mark</th>
-    <th>Roll mark</th>
-    <th>Pick up</th>
-    <th>Scratch</th>
-    <th>Week weld</th>
-    <th>Bend</th>
-    <th>Nf c</th>
-    <th>Remarks</th>
-    <th>Lot num</th>
-    <th>Status</th>
+    <th>Customer</th>
+    <th>Slit Coil No.</th>
+    <th>Lot No.</th>        
+    <th>Operator</th>
+    <th>Inspector</th>
+    <th>Date</th>
+    <th>Shift</th>
+    <th>Prime</th>
+    <th>Reject</th>
+    <th>Yield %</th>
     <th>Action</th>
   </tr>
 
-<% for tube_mill_performance_report in @tube_mill_performance_reports %>
+<% @tube_mill_performance_reports.each do |tube_mill| %>
   <tr class="<%=cycle("bg1", "bg2")%>">
+    <td><%=h tube_mill.customer.name %></td>
+    <td><%=h tube_mill.slittingproduction.slitting_coil_no%></td>
+    <td><%=h tube_mill.lot_no %></td>    
+    <td><%=h tube_mill.operator_name %></td>
+    <td><%=h tube_mill.inspector_name %></td>
+    <td><%=h tube_mill.date %></td>
+    <td><%=h tube_mill.shift %></td>
+    <td><%=h tube_mill.prime %></td>
+    <td><%=h tube_mill.rejected %></td>
+    <td><%=h tube_mill.yieldpercent %></td>
     <td>
-      <table style="font-size:11px;" cellpadding="1" width="100%">
-        <tr>
-          <td class="border_td">
-            Lot no
-          </td>
-          <td class="border_td">
-             <%=h tube_mill_performance_report.lot_no %>
-          </td>
-        </tr>
-        <tr>
-          <td class="border_td">
-            Customer
-          </td>
-             <td class="border_td"><%=h tube_mill_performance_report.customer.name %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-           Od width
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.od_width %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-           Id height
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.id_height %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-           Thickness
-          </td>
-             <td class="border_td"><%=h tube_mill_performance_report.thickness %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-           Length
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.length %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-           Id fin height
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.id_fin_height %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-           Drifting
-          </td>
-           <td class="border_td"><%=h tube_mill_performance_report.drifting %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-          Flattening
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.flattening %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-          Specification
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.specification %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-          Rm grade
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.rm_grade %></td>
-        </tr>
-         <tr>
-          <td class="border_td">
-          Slitting production coil no
-          </td>
-            <td class="border_td"><%=h tube_mill_performance_report.slittingproduction.slitting_coil_no %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-          Spl requirement
-          </td>
-             <td class="border_td"><%=h tube_mill_performance_report.spl_requirement %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-          Date
-          </td>
-             <td class="border_td"><%=h tube_mill_performance_report.date %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-          Shift
-          </td>
-              <td class="border_td"><%=h tube_mill_performance_report.shift %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-          Operator name
-          </td>
-               <td class="border_td"><%=h tube_mill_performance_report.operator_name %></td>
-        </tr>
-        <tr>
-          <td class="border_td">
-         Inspector name
-          </td>
-               <td class="border_td"><%=h tube_mill_performance_report.inspector_name %></td>
-        </tr>
-      </table>
-          </td>
-    
-   
-   
-    
-    <td><%=h tube_mill_performance_report.open %></td>
-    <td><%=h tube_mill_performance_report.joint %></td>
-    <td><%=h tube_mill_performance_report.tool_mark %></td>
-    <td><%=h tube_mill_performance_report.roll_mark %></td>
-    <td><%=h tube_mill_performance_report.pick_up %></td>
-    <td><%=h tube_mill_performance_report.scratch %></td>
-    <td><%=h tube_mill_performance_report.week_weld %></td>
-    <td><%=h tube_mill_performance_report.bend %></td>
-    <td><%=h tube_mill_performance_report.nf_c %></td>
-    <td><%=h tube_mill_performance_report.remarks %></td>
-    <td></td>
-  <td><%=h tube_mill_performance_report.status==1?'Tube WIP':'-' %></td>
-    <td><%=h tube_mill_performance_report.lot_numbers %></td>
-     <td>
       <div class="fr" style="float:left;">
-          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_tube_mill_performance_report_path(tube_mill_performance_report) )%>
-          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}),tube_mill_performance_report, :confirm => 'Are you sure?', :method => :delete) %>
+          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"View Detail", :title=>"View Detail", :border => 0, :hspace => "0"}),  production_detail_tube_mill_performance_report_path(tube_mill) )%>
+          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}),tube_mill, :confirm => 'Are you sure?', :method => :delete) %>
         </div>
-</td>
+    </td>
   </tr>
 <% end %>
 </table>

@@ -13,6 +13,9 @@
           <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports')? 'active' : ''%>'>
           <span><span><%=link_to("Tube Mill Performance Reports", tube_mill_performance_reports_path)%></span></span>
           </li>
+          <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports')? 'active' : ''%>'>
+          <span><span><%=link_to("Tube Mill Production Reports", "/tube_mill_production")%></span></span>
+          </li>          
           <li class ='<%=controller.controller_name.eql?('tube_mill_stoppage_reports')? 'active' : ''%>'>
           <span><span><%=link_to("Tube Mill Stoppage Reports", tube_mill_stoppage_reports_path)%></span></span>
           </li>

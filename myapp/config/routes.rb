@@ -7,8 +7,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :taxinvoices
   map.resources :predespatchtcs
   map.resources :uncoiler_reports
-  map.resources :tube_mill_performance_reports
-  map.connect 'production_index', :controller => 'tube_mill_performance_reports', :action => 'production_index'
+  map.resources :tube_mill_performance_reports , :member => {:production_detail => :get}
+  map.tube_mill_production 'tube_mill_production', :controller => 'tube_mill_performance_reports', :action => 'production_index'
   map.resources :tube_mill_stoppage_reports
   map.resources :slittingproductions
   map.resources :slittings  
@@ -18,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :rawmaterials
   map.resources :rawmaterial_categories
   map.resources :salesplans
-  map.resources :customer_orders , :collections => {:customer_detail => :get}
+  map.resources :customer_orders , :collection => {:customer_detail => :get}
   map.resources :serializes
   map.resources :customers,:member=>"customer_report"  
   map.resource :user_session

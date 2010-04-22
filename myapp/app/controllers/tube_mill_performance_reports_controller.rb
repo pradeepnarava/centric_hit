@@ -93,13 +93,17 @@ class TubeMillPerformanceReportsController < ApplicationController
   end
   
   def production_index
-    @tube_mill_performance_report = TubeMillPerformanceReport.all
+    @tube_mill_performance_reports = TubeMillPerformanceReport.all
     # TODO
     # need to find yield %
     # prime qty(wt) = 500
     # rejection qty (wt) = 8
     # yeild = prime qty /  total qty
     # i.e. 500 / 508
+  end
+  
+  def production_detail
+    @tube_mill = TubeMillPerformanceReport.find(params[:id])
   end
   
 end

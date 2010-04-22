@@ -20,7 +20,6 @@
     <th>Bend</th>
     <th>Nf c</th>
     <th>Remarks</th>
-    <th>Lot num</th>
     <th>Status</th>
     <th>Action</th>
   </tr>
@@ -150,8 +149,7 @@
     <td><%=h tube_mill_performance_report.nf_c %></td>
     <td><%=h tube_mill_performance_report.remarks %></td>
     <td></td>
-  <td><%=h tube_mill_performance_report.status==1?'Tube WIP':'-' %></td>
-    <td><%=h tube_mill_performance_report.lot_numbers %></td>
+    <td><%=h tube_mill_performance_report.status==1?'Tube WIP':'-' %></td>
      <td>
       <div class="fr" style="float:left;">
           <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_tube_mill_performance_report_path(tube_mill_performance_report) )%>
