@@ -1,0 +1,31 @@
+<div class="rightCol">
+  <div class="gridDiv">
+    <div class="titleHead">Open Opportunities</div>
+    <div class="formMain2">
+      <%form_for "report", :url => {:action => :rawmaterial_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
+        <div class="gridTable">
+          <table width="100%" align="center" cellpadding="0" cellspacing="0" class="" cellpading="0">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
+                    <tr>
+                      <td width="8%" align="left">Status</td>
+                      <td width="16%" align="left"> <%=select("report","status",[["Stock","0"],["Slitt WIP","1"],["Tube Mill WIP","3"]])%>
+                      </td>
+                      <td width="25%">
+                          <input id="com_notes_entries[3]_submit" class="button" type="submit" value="Run Report" name="commit"/>
+                      </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td colspan="7" align="right">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      <%end%>
+    </div>
+  </div>
+</div><br class="clear"/>

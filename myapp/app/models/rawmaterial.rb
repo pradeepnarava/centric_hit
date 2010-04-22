@@ -3,7 +3,7 @@ class Rawmaterial < ActiveRecord::Base
   has_many :slittings
   has_many :slittingproductions
   belongs_to:supplier
-  belongs_to:addresses
+  belongs_to:address
 
   # Here rowmaterial status 
   # 0 = still in stock and not used till now

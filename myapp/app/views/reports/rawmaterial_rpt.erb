@@ -1,0 +1,34 @@
+<table>
+  <thead>
+  <th>Rawmaterial Name</th>
+  <th>Categorie</th>
+  <th>Grade</th>
+  <th>Company Name</th>
+  <th>Vat Tin No</th>
+  <th>Ifc No</th>
+  <th>Banker</th>
+  <th>Banker Account No</th>
+</thead>
+<tbody>
+  <%@rawmaterial.each do |obj|%>
+  <tr>
+    <td><%=obj.name%>
+      </td>
+      <td><%=obj.rawmaterial_category.name if obj.rawmaterial_category.name%>
+      </td>
+      <td><%=obj.grade if obj.grade%>
+      </td>
+      <td><%=obj.address.company_name if obj.address.company_name%>
+      </td>
+      <td><%=obj.address.vat_tin_no if obj.address.vat_tin_no%>
+      </td>
+      <td><%=obj.address.ifc_no if obj.address.ifc_no%>
+      </td>
+      <td><%=obj.address.bankers if obj.address.bankers%>
+      </td>
+      <td><%=obj.address.bank_a_c_no if obj.address.bank_a_c_no%>
+      </td>
+  </tr>
+  <%end%>
+</tbody>
+</table>
