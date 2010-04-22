@@ -1,0 +1,21 @@
+<%= render :partial=>'layouts/process_leftside_bar' %>
+<h1>Editing stoppage</h1>
+
+<% form_for(@stoppage) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @stoppage %> |
+<%= link_to 'Back', stoppages_path %>

@@ -29,10 +29,10 @@
         </div>
 
         <div class="fl w48" >
-            <p>
-              <%#= f.label :unit_of_measure %>
-              <%#= f.text_field :unit_of_measure %>
-            </p>             
+             <p>
+              <%= f.label :height %>
+              <%= f.text_field :height %>
+            </p>
             <p>
               <%= f.label :od %>
               <%= f.text_field :od %>
@@ -44,7 +44,21 @@
             <p>
               <%= f.label :length %>
               <%= f.text_field :length %>
-            </p>              
+            </p>   
+              <p>
+              <%= f.label :unit_in_meters %>
+              <%= f.text_field :unit_mts %>
+            </p>
+             <p>
+              <%= f.label :unit_in_pieces %>
+              <%= f.text_field :unit_pcs %>
+            </p>
+             <p>
+              <%= f.label :unit_in_kilos %>
+              <%= f.text_field :unit_kgs %>
+            </p>
+
+   
             
           <div class="txtC" id="submit_div" >
             <%= f.submit "Create" , :class=>'button submit_buttons'%>

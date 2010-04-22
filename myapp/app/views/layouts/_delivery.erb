@@ -1,0 +1,14 @@
+<div id="left-column">
+  <h3>Delivery</h3>
+  <ul class="nav">
+    <li class ='<%=controller.controller_name.eql?('predespatchtcs')? 'active' : ''%>'>
+      <span><span><%=link_to("Pre Despatch TC", predespatchtcs_path)%></span></span>
+    </li>
+    <li class ='<%=controller.controller_name.eql?('taxinvoices')? 'active' : ''%>'>
+      <span><span><%=link_to("Taxinvoices", taxinvoices_path)%></span></span>
+    </li>
+     <li class ='<%=controller.controller_name.eql?('deliverychallans')? 'active' : ''%>'>
+      <span><span><%=link_to("Delivery Challan", deliverychallans_path)%></span></span>
+    </li>
+  </ul>
+</div>

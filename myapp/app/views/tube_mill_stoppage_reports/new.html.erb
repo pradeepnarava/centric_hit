@@ -41,7 +41,7 @@
   </p>
   <p>
     <%= f.label :type %>
-    <%= f.text_field :type %>
+    <%=f.collection_select( :type_stop, @stoppage,:name,:name,{:include_blank => "--- Select ---"})%>
   </p>
   <p>
     <%= f.label :stoppage_code %>
@@ -60,36 +60,36 @@
     <%= f.text_field :remarks %>
   </p>
   <p>
-    <%= f.label :electrical_maintainence %>
-    <%= f.text_field :electrical_maintainence %>
+    <%#= f.label :electrical_maintainence %>
+    <%#= f.text_field :electrical_maintainence %>
   </p>
   <p>
-    <%= f.label :mechanical_maintainence %>
-    <%= f.text_field :mechanical_maintainence %>
+    <%#= f.label :mechanical_maintainence %>
+    <%#= f.text_field :mechanical_maintainence %>
   </p>
   <p>
-    <%= f.label :operational %>
-    <%= f.text_field :operational %>
+    <%#= f.label :operational %>
+    <%#= f.text_field :operational %>
   </p>
   <p>
-    <%= f.label :roll_change %>
-    <%= f.text_field :roll_change %>
+    <%#= f.label :roll_change %>
+    <%#= f.text_field :roll_change %>
   </p>
   <p>
-    <%= f.label :raw_material_shortage %>
-    <%= f.text_field :raw_material_shortage %>
+    <%#= f.label :raw_material_shortage %>
+    <%#= f.text_field :raw_material_shortage %>
   </p>
   <p>
-    <%= f.label :man_power_shortage %>
-    <%= f.text_field :man_power_shortage %>
+    <%#= f.label :man_power_shortage %>
+    <%#= f.text_field :man_power_shortage %>
   </p>
   <p>
-    <%= f.label :crane_delay %>
-    <%= f.text_field :crane_delay %>
+    <%#= f.label :crane_delay %>
+    <%#= f.text_field :crane_delay %>
   </p>
   <p>
-    <%= f.label :power_failure %>
-    <%= f.text_field :power_failure %>
+    <%#= f.label :power_failure %>
+    <%#= f.text_field :power_failure %>
   </p>
   <p>
     <%= f.label :remarks_last %>

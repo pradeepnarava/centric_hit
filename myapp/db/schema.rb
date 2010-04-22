@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100421160037) do
+ActiveRecord::Schema.define(:version => 20100422152518) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company_name"
@@ -105,6 +105,9 @@ ActiveRecord::Schema.define(:version => 20100421160037) do
     t.string   "po_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "rate_mts"
+    t.decimal  "rate_pcs"
+    t.decimal  "rate_kgs"
   end
 
   create_table "customers", :force => true do |t|
@@ -305,6 +308,9 @@ ActiveRecord::Schema.define(:version => 20100421160037) do
     t.string   "specification"
     t.string   "unit_of_measure"
     t.string   "height"
+    t.decimal  "unit_mts"
+    t.decimal  "unit_pcs"
+    t.decimal  "unit_kgs"
   end
 
   create_table "slittingproductions", :force => true do |t|
@@ -343,6 +349,13 @@ ActiveRecord::Schema.define(:version => 20100421160037) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
+  end
+
+  create_table "stoppages", :force => true do |t|
+    t.string   "name"
+    t.integer  "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "suppliers", :force => true do |t|

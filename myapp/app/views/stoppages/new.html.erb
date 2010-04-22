@@ -1,0 +1,42 @@
+<%= render :partial=>'layouts/process_leftside_bar' %>
+
+
+
+  <div class="gridDiv">
+  <div class="titleHead">New Stoppage</div>
+  <div class="formMain">
+    <% form_for(@stoppage) do |f| %>
+      <%= f.error_messages %>
+    <div style="width: 70%">
+        <!--BOX 1-->
+        <div class="mt5">
+        </div>
+        <div class="fl w48" >
+          <div>
+            <p>
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+            </p>
+              <p>
+    <label>Type</label>
+    <%= f.select(:type_stop, {"Operational" =>'1', "Mechanical" =>'2',"Electrical"=>'3',"Others" =>'4'}) %>
+  </p>
+
+            </div>
+          </div>
+
+             <div class="fl w48" >
+          <div class="txtC" id="submit_div" >
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+          <%=link_to 'Cancel',stoppages_path, :class=>'button submit_buttons cancelbutton' %>
+        </div>
+            </div>
+        </div>
+
+        <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+
+
+

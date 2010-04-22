@@ -25,7 +25,7 @@ class TubeMillStoppageReportsController < ApplicationController
   # GET /tube_mill_stoppage_reports/new.xml
   def new
     @tube_mill_stoppage_report = TubeMillStoppageReport.new
-
+@stoppage=Stoppage.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tube_mill_stoppage_report }
@@ -45,7 +45,7 @@ class TubeMillStoppageReportsController < ApplicationController
     respond_to do |format|
       if @tube_mill_stoppage_report.save
         flash[:notice] = 'TubeMillStoppageReport was successfully created.'
-        format.html { redirect_to(@tube_mill_stoppage_report) }
+        format.html { redirect_to(tube_mill_stoppage_reports_path) }
         format.xml  { render :xml => @tube_mill_stoppage_report, :status => :created, :location => @tube_mill_stoppage_report }
       else
         format.html { render :action => "new" }

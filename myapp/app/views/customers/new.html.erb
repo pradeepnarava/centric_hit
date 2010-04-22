@@ -1,139 +1,155 @@
 <%= render :partial=>'layouts/customer_leftside_bar' %>
 <div id="center-column">
-<div class="gridDiv">
-  <div class="titleHead">New customer</div>
-  <div class="formMain">
-    <% form_for(@customer) do |f| %>
-      <%= f.error_messages %>
-      <div>
-        <!--BOX 1-->
-        <div class="mt5">
-        </div> 
-        <div class="fl w48" style="width: 48%;" >
-          <div>
+  <div class="gridDiv">
+    <div class="titleHead">New customer</div>
+    <div class="formMain">
+      <% form_for(@customer) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <div class="mt5">
+          </div> 
+          <div class="fl w48" style="width: 48%;" >
+            <div>
               <p>
-              <%= f.label :customercode %>
-              <%= f.text_field :customer_code %>
-            </p>
+                <%= f.label :customercode %>
+                <%= f.text_field :customer_code %>
+              </p>
               <p>
-              <%= f.label :address_delivery %>
-              <%= f.text_field :address_delivery %>
-            </p>
-                <p>
-              <%= f.label :faxno %>
-              <%= f.text_field :fax_no %>
-            </p>
-                <p>
-              <%= f.label :email %>
-              <%= f.text_field :email %>
-            </p>
-                <p>
-              <%= f.label :range %>
-              <%= f.text_field :range %>
-            </p>
-                <p>
-              <%= f.label :division %>
-              <%= f.text_field :division %>
-            </p>
-                <p>
-              <%= f.label :collectorate %>
-              <%= f.text_field :collectorate %>
-            </p>
-                <p>
-              <%= f.label :ecc_no%>
-              <%= f.text_field :ecc_no %>
-            </p>
-                <p>
-              <%= f.label :ifc_nno %>
-              <%= f.text_field :ifc_no %>
-            </p>
-                <p>
-              <%= f.label :dgft_code %>
-              <%= f.text_field :dgft_code %>
-            </p>
-                <p>
-              <%= f.label :service_tax_reg %>
-              <%= f.text_field :service_tax_reg %>
-            </p>
-                <p>
-              <%= f.label :gta_red_no %>
-              <%= f.text_field :gta_red_no %>
-            </p>
-                <p>
-              <%= f.label :bank_ac_no %>
-              <%= f.text_field :bank_ac_no %>
-            </p>
-            <p>
-              <%= f.label :name %>
-              <%= f.text_field :name %>
-            </p>
-            <p>
-              <%= f.label :address %>
-              <%= f.text_area :address ,:rows => 4, :cols => 15%>
-            </p>
-            <p>
-              <%= f.label :contact_person %>
-              <%= f.text_field :contact_person %>
-            </p>
-            <p>
-              <%= f.label :phone %>
-              <%= f.text_field :phone %>
-            </p>
-          </div>
-          <div>
-            <p>
-              <%= f.label :mobile %>
-              <%= f.text_field :mobile %>
-            </p>
-            <p>
-              <%= f.label :email %>
-              <%= f.text_field :email %>
-            </p>
-            <p>
+                <%= f.label :address_delivery %>
+                <%= f.text_field :address_delivery %>
+              </p>
+              <p>
+                <%= f.label :faxno %>
+                <%= f.text_field :fax_no %>
+              </p>
+              <p>
+                <%= f.label :email %>
+                <%= f.text_field :email %>
+              </p>
+              <p>
+                <%= f.label :range %>
+                <%= f.text_field :range %>
+              </p>
+              <p>
+                <%= f.label :division %>
+                <%= f.text_field :division %>
+              </p>
+              <p>
+                <%= f.label :collectorate %>
+                <%= f.text_field :collectorate %>
+              </p>
+              <p>
+                <%= f.label :ecc_no%>
+                <%= f.text_field :ecc_no %>
+              </p>
+              <p>
+                <%= f.label :ifc_nno %>
+                <%= f.text_field :ifc_no %>
+              </p>
+              <p>
+                <%= f.label :dgft_code %>
+                <%= f.text_field :dgft_code %>
+              </p>
+              <p>
+                <%= f.label :service_tax_reg %>
+                <%= f.text_field :service_tax_reg %>
+              </p>
+              <p>
+                <%= f.label :gta_red_no %>
+                <%= f.text_field :gta_red_no %>
+              </p>
+              <p>
+                <%= f.label :bank_ac_no %>
+                <%= f.text_field :bank_ac_no %>
+              </p>
+              <p>
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+              </p>
+              <p>
+                <%= f.label :address %>
+                <%= f.text_area :address ,:rows => 4, :cols => 15%>
+              </p>
+              <p>
+                <%= f.label :contact_person %>
+                <%= f.text_field :contact_person %>
+              </p>
+              <p>
+                <%= f.label :phone %>
+                <%= f.text_field :phone %>
+              </p>
+            </div>
+            <div>
+              <p>
+                <%= f.label :mobile %>
+                <%= f.text_field :mobile %>
+              </p>
+              <p>
+                <%= f.label :email %>
+                <%= f.text_field :email %>
+              </p>
+              <p>
                 <%= f.label :excise_registration_no %>
-              <%= f.text_field :excise_registration_no %>
-            </p>
-            <p>
-              <%= f.label :vat_no %>
-              <%= f.text_field :vat_no %>
-            </p>
+                <%= f.text_field :excise_registration_no %>
+              </p>
+              <p>
+                <%= f.label :vat_no %>
+                <%= f.text_field :vat_no %>
+              </p>
+            </div>
           </div>
-        </div>
-        <div style="width: 52%;" class="fr">
-          <div>
-            <p>
-              <%= f.label :tin_no %>
-              <%= f.text_field :tin_no %>
-            </p>
-            <p>
-              <%= f.label :pan_no %>
-              <%= f.text_field :pan_no %>
-            </p>
-            <p>
-              <%= f.label :payment_terms %>
-              <%= f.text_field :payment_terms %>
-            </p>
-            <p>
-              <%= f.label :bankers %>
-              <%= f.text_field :bankers %>
-            </p>
+          <div style="width: 52%;" class="fr">
+            <div>
+              <p>
+                <%= f.label :tin_no %>
+                <%= f.text_field :tin_no %>
+              </p>
+              <p>
+                <%= f.label :pan_no %>
+                <%= f.text_field :pan_no %>
+              </p>
+              <p>
+                <%= f.label :payment_terms %>
+                <%= f.text_field :payment_terms %>
+              </p>
+              <p>
+                <%= f.label :bankers %>
+                <%= f.text_field :bankers %>
+              </p>
+              <p>
+                <label>Taxes</label>
+                <%= f.select("taxes", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
 
+              </p>
+              <p>
+                <label>Excise Duty</label>
+                <%= f.select("excise_duty", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
+              </p>
+              <p>
+                <label>Delivery</label>
+                <%= f.select("delivery", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
+              </p>
+              <p>
+                <label>Payment</label>
+                <%= f.select("payment", { "30 days" => "30 days", "45 days" => "45 days","60 days" => "60 days","Inclusive" => "Inclusive"}) %>
+              </p>
+              <p>
+                <label>Octra</label>
+                <%= f.select("octra", {"Exclusive" => "Exclusive", "Inclusive" => "Inclusive"}) %>
+              </p>
+            </div>
+          </div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
 
-
-
+            <%= f.submit "Create" , :class=>'button submit_buttons'%>
+            <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
 
           </div>
+          <br class="clear"/>
         </div>
-        <br class="clear"/>
-        <div class="txtC" id="submit_div">
-
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
-          <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
-
-        </div>
-        <br class="clear"/>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>

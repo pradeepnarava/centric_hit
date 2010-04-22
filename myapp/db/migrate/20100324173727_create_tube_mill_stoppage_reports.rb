@@ -6,20 +6,20 @@ class CreateTubeMillStoppageReports < ActiveRecord::Migration
       t.decimal :size
       t.string :customer
       t.string :description_of_breakdown
-      t.string :type
+      t.string :type_stop
       t.string :stoppage_code
       t.datetime :from
       t.datetime :to
       t.string :total_time
       t.string :remarks
-      t.string :electrical_maintainence
-      t.string :mechanical_maintainence
-      t.string :operational
-      t.string :roll_change
-      t.string :raw_material_shortage
-      t.string :man_power_shortage
-      t.string :crane_delay
-      t.string :power_failure
+      #t.string :electrical_maintainence
+      #t.string :mechanical_maintainence
+      #t.string :operational
+      #t.string :roll_change
+      #t.string :raw_material_shortage
+      #t.string :man_power_shortage
+      #t.string :crane_delay
+      #t.string :power_failure
       t.string :remarks_last
       t.string :shift_incharge
 

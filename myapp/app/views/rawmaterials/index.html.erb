@@ -28,9 +28,9 @@
     <td><%=h rawmaterial.thickness %></td>
     <td><%=h rawmaterial.coil_weight %></td>
     <td>
-      <%=h rawmaterial.status == 0? '-Stock' : '-'%>
-<%=h rawmaterial.status == 1? 'Slitt WIP': '-'%>
-    <%=h rawmaterial.status == 2? 'Tube Mill WIP': '-'%>
+      <%if rawmaterial.status==0%>Stock<%end%>
+  <%if rawmaterial.status==1%>Slitting WIP<%end%>
+  <%if rawmaterial.status==2%>Tube Mill WIP<%end%>
     </td>
 
 
