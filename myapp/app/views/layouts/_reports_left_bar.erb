@@ -1,8 +1,17 @@
 <div id="left-column">
-        <h3>Centric</h3>
+        <h3>Reports</h3>
         <ul class="nav">
-          <li class ='<%=controller.controller_name.eql?('reports')? 'active' : ''%>'>
-          <span><span><%=link_to("Rawmaterias", :url=>{:controller=>"reports",:action=>'rpt_raw'})%></span></span>
+          <li class ='<%=(controller.controller_name.eql?('reports') && ['raw_rpt','rawmaterial_rpt'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Rawmaterias", '/reports/raw_rpt')%></span></span>
+          </li>
+          <li class ='<%=(controller.controller_name.eql?('reports') && ['slitting_rpt','slitting_show_rpt'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Slitting Report", '/reports/slitting_rpt')%></span></span>
+          </li>
+          <li class ='<%=(controller.controller_name.eql?('reports') && ['slitting_production_rpt','slitting_production_show_rpt'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Slitting Production Report", '/reports/slitting_production_rpt')%></span></span>
+          </li>
+          <li class ='<%=(controller.controller_name.eql?('reports') && ['uncol_rpt','uncoiler_rpt'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Uncoiler Report", '/reports/uncol_rpt')%></span></span>
           </li>
         </ul>
 </div>
