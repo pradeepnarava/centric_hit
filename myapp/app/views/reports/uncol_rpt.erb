@@ -4,17 +4,18 @@
 <%= render :partial=>'layouts/reports_left_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">Open Opportunities</div>
+    <div class="titleHead">Uncoiler Report</div>
     <div class="formMain2">
-      <%form_for "report", :url => {:action => :rawmaterial_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
+      <%form_for "report", :url => {:action => :uncoiler_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
       <div class="gridTable" style="font-size:11px;">
           <table width="100%" align="center" cellpadding="0" cellspacing="0" class="" cellpading="0">
             <tbody>
               <tr>
                 <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
                     <tr>
-                      <td width="8%" align="left">Status</td>
-                      <td width="16%" align="left"> <%=select("report","status",[["Stock","0"],["Slitt WIP","1"],["Tube Mill WIP","3"]])%>
+                      <td width="8%" align="left">Slitting Coil No</td>
+                      <td width="16%" align="left">
+                         <%=f.collection_select(:slittingproduction_id, @slitting_pro,:id,:slitting_coil_no,{:include_blank => "---Select---"})%>
                       </td>
                       <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
                         <td style="display:none;" id="date_div">
@@ -37,7 +38,9 @@
                   </table></td>
               </tr>
               <tr>
-                <td colspan="7" align="right">&nbsp;</td>
+                <td colspan="7" align="right">
+                   &nbsp;
+                </td>
               </tr>
             </tbody>
           </table>

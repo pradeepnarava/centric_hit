@@ -1,0 +1,101 @@
+<%= render :partial=>'layouts/process_leftside_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Production Detail</div>
+    <div class="formOrder">
+        <div>
+          <!--BOX 1-->
+          <table cellpadding="5" cellspacing="20">
+            <tr>
+              <td><strong>Customer Name :</strong> </td>
+              <td><%=h @tube_mill.customer.name%></td>
+              <td><strong>Slit CoilNo : </strong></td>
+              <td><%=h @tube_mill.slittingproduction.slitting_coil_no%></td>
+              <td><strong>Inspector :</strong> </td>
+              <td><%=h @tube_mill.inspector_name%></td>
+            </tr>
+            <tr>
+              <td><strong>Operator : </strong></td>
+              <td><%=h @tube_mill.operator_name%></td>
+              <td><strong>Date : </strong></td>
+              <td><%=h @tube_mill.date.strftime('%d-%b-%Y') %></td>
+              <td><strong>Shift :</strong> </td>
+              <td><%=h @tube_mill.shift%></td>
+            </tr>
+          </table>
+          <br class="clear"/>
+        <p>Prime Detail</p>
+        <div>
+          <table cellpadding="5">
+            <tr>
+              <td><strong>Lot No.</strong></td>
+              <td><%= h @tube_mill.lot_no%></td>
+              <td><strong>Specification</strong></td>
+              <td><%= h @tube_mill.specification%></td>
+              <td><strong>Yield %</strong></td>
+              <td><%= h @tube_mill.yieldpercent%></td>
+            </tr>
+          </table>
+        </div>          
+          <table border="1" cellpadding="5" >
+            <tr>
+              <th>OD/Width</th>
+              <th>ID/Height</th>
+              <th>Thick</th>
+              <th>Length</th>
+              <th>ID Fin Height</th>
+              <th>Drifting</th>
+              <th>Flattening</th>
+              <th>Rm grade</th>
+              <th>Spl requirement</th>
+            </tr>
+            <tr>
+              <td><%= h @tube_mill.od_width%></td>
+              <td><%= h @tube_mill.id_height%></td>
+              <td><%= h @tube_mill.thickness%></td>
+              <td><%= h @tube_mill.length%></td>
+              <td><%= h @tube_mill.id_fin_height%></td>
+              <td><%= h @tube_mill.drifting%></td>
+              <td><%= h @tube_mill.flattening%></td>
+              <td><%= h @tube_mill.rm_grade%></td>
+              <td><%= h @tube_mill.spl_requirement%></td>
+            </tr>
+          </table>
+          <br class="clear"/>
+        </div>
+
+        <p>Rejection Detail</p>
+        <div class="tubemilltable">
+          <table cellpadding="5">
+            <tr>
+              <th>Open</th>
+              <th>Joint</th>
+              <th>Tool Mark</th>
+              <th>Roll Mark</th>
+              <th>PickUp</th>
+              <th>Scratch</th>
+              <th>Weak Weld</th>
+              <th>Bend</th>
+              <th>NF/C</th>
+              <th>Remark</th>
+            </tr>
+            <tr>
+              <td><%= h @tube_mill.open%></td>
+              <td><%= h @tube_mill.joint%></td>
+              <td><%= h @tube_mill.tool_mark%></td>
+              <td><%= h @tube_mill.roll_mark%></td>
+              <td><%= h @tube_mill.pick_up%></td>
+              <td><%= h @tube_mill.scratch%></td>
+              <td><%= h @tube_mill.weak_weld%></td>
+              <td><%= h @tube_mill.bend%></td>
+              <td><%= h @tube_mill.nf_c%></td>
+              <td><%= h @tube_mill.remarks%></td>
+            </tr>
+          </table>
+        </div>
+    </div>
+  </div> 
+<br class="clear"/>
+<br class="clear"/>
+<%=link_to 'Back', tube_mill_production_url, :class => "linkbutton" %>  
+</div>  

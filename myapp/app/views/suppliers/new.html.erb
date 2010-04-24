@@ -195,7 +195,7 @@
         <div class="txtC" id="submit_div">
 
           <%= f.submit "Create" , :class=>'button submit_buttons'%>
-          <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
+          <%=link_to 'Cancel',suppliers_path,{ :class=>'button submit_buttons cancelbutton' }%>
 
         </div>
         <br class="clear"/>

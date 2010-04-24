@@ -4,7 +4,7 @@ class TubeMillPerformanceReport < ActiveRecord::Base
   has_many :predespatchtcs
   
   def rejected
-    self.open + self.joint + self.tool_mark + self.roll_mark + self.pick_up + self.scratch + self.week_weld + self.bend + self.nf_c 
+    self.open + self.joint + self.tool_mark + self.roll_mark + self.pick_up + self.scratch + self.weak_weld + self.bend + self.nf_c 
   end
   
   def prime

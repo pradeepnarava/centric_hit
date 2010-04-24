@@ -12,7 +12,7 @@
                 <td><label>Date</label></td>
                 <td><%= f.datetime_select :date %></td>
                 <td><label>Shift</label></td>
-                <td><%= f.datetime_select :shift %></td>
+                <td><%= f.time_select :shift %></td>
                 <td><label>Operator Name</label></td>
                 <td><%= f.text_field :operator_name %></td>                     
                 <td><label>Inspector Name</label></td>
@@ -55,7 +55,7 @@
                 <td><label>Roll Mark</label></td>
                 <td><label>Pickup</label></td>
                 <td><label>Scratch</label></td>
-                <td><label>Week Weld</label></td>
+                <td><label>Weak Weld</label></td>
                 <td><label>Bend</label></td>
                 <td><label>NF/C</label></td>
                 <td><label>Remarks</label></td>
@@ -67,7 +67,7 @@
                 <td><%= f.text_field :roll_mark,:size=>"8"  %></td>  
                 <td><%= f.text_field :pick_up,:size=>"8"  %></td>  
                 <td><%= f.text_field :scratch,:size=>"8"  %></td>  
-                <td><%= f.text_field :week_weld,:size=>"8"  %></td>  
+                <td><%= f.text_field :weak_weld,:size=>"8"  %></td>  
                 <td><%= f.text_field :bend,:size=>"8"  %></td>  
                 <td><%= f.text_field :nf_c,:size=>"8"  %></td> 
                 <td><%= f.text_field :remarks %></td>                 
@@ -79,7 +79,7 @@
   <div class="txtC" id="submit_div">
 
   <%= f.submit "Create" , :class=>'button submit_buttons'%>
-    <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
+  <%=link_to 'Cancel', tube_mill_performance_reports_url, :class => "linkbutton" %>
  
       </div>
        <br class="clear"/>

@@ -17,35 +17,32 @@
             <tr>
               <td><label>Office Address</label></td>
               <td><%= text_area_tag "customer_order_office_address",nil, :cols => 30, :rows => 5 %></td>
-              <td><%= f.label :delivery_address %> <%=link_to "Same as Office","#",:onclick => "copyaddress();"%></td>
+              <td><%= f.label :delivery_address %> <br/> <%=link_to "Same as Office","#",:onclick => "copyaddress();"%></td>
               <td><%= f.text_area :delivery_address, :cols => 30, :rows => 5 %></td>
             </tr>
             <tr>
               <td><%= f.label :ecc_no %></td>
-              <td><%= f.text_field :ecc_no %></td>
+              <td><%= f.text_field :ecc_no,:size => 15 %></td>
               <td><%= f.label :po_no %></td>
-              <td><%= f.text_field :po_no %></td>
+              <td><%= f.text_field :po_no,:size => 10 %></td>
+              <tr></tr>
               <td><%= f.label :rate_in_meters %></td>
-              <td><%= f.text_field :rate_mts %></td>
+              <td><%= f.text_field :rate_mts,:size => 10 %></td>
+            
               <td><%= f.label :rate_in_pcs %></td>
-              <td><%= f.text_field :rate_pcs %></td>
+              <td><%= f.text_field :rate_pcs,:size => 10 %></td>
               <td><%= f.label :rate_in_kilos %></td>
-              <td><%= f.text_field :rate_kgs %></td>
+              <td><%= f.text_field :rate_kgs,:size => 10 %></td>
             </tr>
           </table>
           <div id="detail"></div>
-
-
           <br class="clear"/>
           <div class="txtC" id="submit_div">
-
             <%= f.submit "Create" , :class=>'button submit_buttons'%>
-            <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
-
+            <%=link_to 'Cancel',customer_orders_path,{ :class=>'button submit_buttons cancelbutton' }%>
           </div>
           <br class="clear"/>
         </div>
-  <%#= link_to 'Back', customer_orders_path %>
       <% end %>
     </div>
   </div>

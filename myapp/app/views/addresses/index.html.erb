@@ -20,19 +20,20 @@
     <th>Email</th>
     <th>Contact person</th>
     <th>Excise reg no</th>
-    <th>Range</th>
+    <!--<th>Range</th>
     <th>Division</th>
-    <th>Collectorate</th>
+    <th>Collectorate</th>-->
     <th>Ecc no</th>
     <th>Vat tin no</th>
     <th>Cst tin no</th>
-    <th>Ifc no</th>
-    <th>Dgft no</th>
+    <!--<th>Ifc no</th>
+    <th>Dgft no</th>-->
     <th>Pan no</th>
     <th>Service tax reg</th>
     <th>Gta red no</th>
     <th>Bankers</th>
     <th>Bank a c no</th>
+      <th>Action</th>
   </tr>
 
 <% for address in @addresses %>
@@ -45,14 +46,14 @@
     <td><%=h address.email %></td>
     <td><%=h address.contact_person %></td>
     <td><%=h address.excise_reg_no %></td>
-    <td><%=h address.range %></td>
-    <td><%=h address.division %></td>
-    <td><%=h address.collectorate %></td>
+    <!--<td><%#=h address.range %></td>
+    <td><%#=h address.division %></td>
+    <td><%#=h address.collectorate %></td>-->
     <td><%=h address.ecc_no %></td>
     <td><%=h address.vat_tin_no %></td>
     <td><%=h address.cst_tin_no %></td>
-    <td><%=h address.ifc_no %></td>
-    <td><%=h address.dgft_no %></td>
+    <!--<td><%#=h address.ifc_no %></td>
+    <td><%#=h address.dgft_no %></td>-->
     <td><%=h address.pan_no %></td>
     <td><%=h address.service_tax_reg %></td>
     <td><%=h address.gta_red_no %></td>

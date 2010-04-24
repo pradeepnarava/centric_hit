@@ -701,3 +701,7 @@ input.blursearchbox_es {padding:0;margin:0; width:130px; text-align:left;font-fa
 .formOrder form p{margin:0 0 5px 0; padding:0; height:20px; float:left;}
 .formOrder form p label{margin:0;height:100%;padding:0 2px 0 0; width:85px; float:left; text-align:right;font-size: 0.688em;}
 */
+
+.tubemilltable table{border: 1px solid #000000;}
+.tubemilltable table th{border: 1px solid #000000;}
+.tubemilltable table td{border: 1px solid #000000;}

@@ -9,18 +9,18 @@
         <!--BOX 1-->
         <div class="mt5">
         </div>
-        <div class="fl w48" style="width: 52%;" >
+        <div class="fl w48" >
           <div>
-            <p style="width:100%">
+            <p style="width:99%">
     <%= f.label :date %>
     <%= f.datetime_select :date %>
   </p>
-  <p>
-    <%= f.label :test_certificate_no %>
+ <p style="width:55%">
+    <label> Test certificate no </label>
     <%= f.text_field :test_certificate_no %>
   </p>
  <p>
-   <%= f.label "Invoice no" %>
+   <label> Invoice no </label>
   
    <%=f.collection_select( :taxinvoice_id, Taxinvoice.all,:id,:invoice_no,{:include_blank => "----------Select----------"})%>
 

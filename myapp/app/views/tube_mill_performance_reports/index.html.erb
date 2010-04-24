@@ -16,7 +16,7 @@
     <th>Roll mark</th>
     <th>Pick up</th>
     <th>Scratch</th>
-    <th>Week weld</th>
+    <th>Weak weld</th>
     <th>Bend</th>
     <th>Nf c</th>
     <th>Remarks</th>
@@ -40,7 +40,7 @@
           <td class="border_td">
             Customer
           </td>
-             <td class="border_td"><%=h tube_mill_performance_report.customer.name %></td>
+             <td class="border_td"><%=h tube_mill_performance_report.customer.name rescue "-"%></td>
         </tr>
         <tr>
           <td class="border_td">
@@ -112,13 +112,13 @@
           <td class="border_td">
           Date
           </td>
-             <td class="border_td"><%=h tube_mill_performance_report.date %></td>
+             <td class="border_td"><%=h tube_mill_performance_report.date.strftime('%d-%b-%Y') %></td>
         </tr>
         <tr>
           <td class="border_td">
           Shift
           </td>
-              <td class="border_td"><%=h tube_mill_performance_report.shift %></td>
+              <td class="border_td"><%=h tube_mill_performance_report.shift.strftime("%H:%M") %></td>
         </tr>
         <tr>
           <td class="border_td">
@@ -144,7 +144,7 @@
     <td><%=h tube_mill_performance_report.roll_mark %></td>
     <td><%=h tube_mill_performance_report.pick_up %></td>
     <td><%=h tube_mill_performance_report.scratch %></td>
-    <td><%=h tube_mill_performance_report.week_weld %></td>
+    <td><%=h tube_mill_performance_report.weak_weld %></td>
     <td><%=h tube_mill_performance_report.bend %></td>
     <td><%=h tube_mill_performance_report.nf_c %></td>
     <td><%=h tube_mill_performance_report.remarks %></td>

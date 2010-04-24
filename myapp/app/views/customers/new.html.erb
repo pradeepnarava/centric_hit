@@ -11,10 +11,37 @@
           </div> 
           <div class="fl w48" style="width: 48%;" >
             <div>
+                    <p>
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+              </p>
               <p>
                 <%= f.label :customercode %>
                 <%= f.text_field :customer_code %>
               </p>
+              <p>
+                <%= f.label :address %>
+                <%= f.text_area :address ,:rows => 4, :cols => 15%>
+              </p>
+              <p>
+                <%= f.label :contact_person %>
+                <%= f.text_field :contact_person %>
+              </p>
+              <p>
+                <%= f.label :phone %>
+                <%= f.text_field :phone %>
+              </p>
+            </div>
+            <div>
+              <p>
+                <%= f.label :mobile %>
+                <%= f.text_field :mobile %>
+              </p>
+              <p>
+                <%= f.label :email %>
+                <%= f.text_field :email %>
+              </p>
+           
               <p>
                 <%= f.label :address_delivery %>
                 <%= f.text_field :address_delivery %>
@@ -63,32 +90,8 @@
                 <%= f.label :bank_ac_no %>
                 <%= f.text_field :bank_ac_no %>
               </p>
-              <p>
-                <%= f.label :name %>
-                <%= f.text_field :name %>
-              </p>
-              <p>
-                <%= f.label :address %>
-                <%= f.text_area :address ,:rows => 4, :cols => 15%>
-              </p>
-              <p>
-                <%= f.label :contact_person %>
-                <%= f.text_field :contact_person %>
-              </p>
-              <p>
-                <%= f.label :phone %>
-                <%= f.text_field :phone %>
-              </p>
-            </div>
-            <div>
-              <p>
-                <%= f.label :mobile %>
-                <%= f.text_field :mobile %>
-              </p>
-              <p>
-                <%= f.label :email %>
-                <%= f.text_field :email %>
-              </p>
+           
+              
               <p>
                 <%= f.label :excise_registration_no %>
                 <%= f.text_field :excise_registration_no %>
@@ -144,7 +147,8 @@
           <div class="txtC" id="submit_div">
 
             <%= f.submit "Create" , :class=>'button submit_buttons'%>
-            <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
+              <%=link_to 'Cancel',customers_path, :class=>'button submit_buttons cancelbutton' %>
+
 
           </div>
           <br class="clear"/>

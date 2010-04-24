@@ -28,8 +28,8 @@
     <td><%=h tube_mill.lot_no %></td>    
     <td><%=h tube_mill.operator_name %></td>
     <td><%=h tube_mill.inspector_name %></td>
-    <td><%=h tube_mill.date %></td>
-    <td><%=h tube_mill.shift %></td>
+    <td><%=h tube_mill.date.strftime('%d-%b-%Y') %></td>
+    <td><%=h tube_mill.shift.strftime("%H:%M") %></td>
     <td><%=h tube_mill.prime %></td>
     <td><%=h tube_mill.rejected %></td>
     <td><%=h tube_mill.yieldpercent %></td>

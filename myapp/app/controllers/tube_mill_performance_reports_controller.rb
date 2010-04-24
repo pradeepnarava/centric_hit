@@ -71,7 +71,7 @@ class TubeMillPerformanceReportsController < ApplicationController
     respond_to do |format|
       if @tube_mill_performance_report.update_attributes(params[:tube_mill_performance_report])
         flash[:notice] = 'TubeMillPerformanceReport was successfully updated.'
-        format.html { redirect_to(@tube_mill_performance_report) }
+        format.html { redirect_to(tube_mill_performance_reports_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

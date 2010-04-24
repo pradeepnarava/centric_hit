@@ -1,35 +1,38 @@
+<%= render :partial=>'layouts/order_leftside_bar' %>
+<div id="center-column">
 <div class="top-bar">
   <%= link_to 'New', new_salesplan_path,:class=>"button" %>
   <h1>Listing SalesPlans</h1>
 </div><br />
 <div class="table">
-<%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
-<%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
-<table class="listing" cellpadding="0" cellspacing="0" width="100%">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
     <tr>
-      <th>Po no</th>
-      <th>Customer name</th>  
+
+      <th>Customer name</th>
+      <th>Customer code</th>
       <th>Tube size</th>
       <th>Serialize</th>
       <th>Quantity</th>
-      <th>Customer code</th>
       <th>Pieces</th>
       <th>Meter</th>
       <th>Kilos</th>
+      <th>Po no</th>
       <th>Action</th>
     </tr>
-    
+
     <% for salesplan in @salesplans %>
       <tr>
-        <td><%=h salesplan.po_no %></td>
         <td><%=h salesplan.customer.name %></td>
+        <td><%=h salesplan.customer_code %></td>
         <td><%=h salesplan.tube_size %></td>
         <td><%=h salesplan.serialize_id %></td>
         <td><%=h salesplan.quantity %></td>
-        <td><%=h salesplan.customer_code %></td>
         <td><%=h salesplan.pieces %></td>
         <td><%=h salesplan.meter %></td>
         <td><%=h salesplan.kilos %></td>
+        <td><%=h salesplan.po_no %></td>
         <td>
           <div class="fr" style="float:left;">
             <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_salesplan_path(salesplan))%>
@@ -41,5 +44,7 @@
   </table>
 </div>
 <br />
+</div>
+
 
 

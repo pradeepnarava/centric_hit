@@ -45,7 +45,7 @@ class SerializesController < ApplicationController
     respond_to do |format|
       if @serialize.save
         flash[:notice] = 'Serialize was successfully created.'
-        format.html { redirect_to(@serialize) }
+        format.html { redirect_to(serializes_path) }
         format.xml  { render :xml => @serialize, :status => :created, :location => @serialize }
       else
         format.html { render :action => "new" }

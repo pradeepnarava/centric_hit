@@ -14,7 +14,8 @@
                 <td><label>Coil width:</label></td>
                 <td><%=text_field_tag "coil_width" %></td>
                 <td><label>Full Coil wt:</label></td>
-                <td><%=text_field_tag "coil_wt" %></td>                     
+                <td><%=text_field_tag "coil_wt" %></td>
+              <tr></tr>
                 <td><label>Coil Thick.:</label></td>
                 <td><%=text_field_tag "coil_thick" %></td>                                        
               </tr>
@@ -25,19 +26,14 @@
                 <td><%=f.text_field "process_coil_wt" %></td>                
                 <td><label>Scrap:</label></td>
                 <td><%=f.text_field "scrap" %></td>
-           
-              </tr>            
+                         </tr>            
             </table>      
         <br class="clear"/>        
         <div id="detail"></div>
-
-
         <br class="clear"/>
   <div class="txtC" id="submit_div">
-
   <%= f.submit "Create" , :class=>'button submit_buttons'%>
     <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
- 
       </div>
        <br class="clear"/>
       </div>

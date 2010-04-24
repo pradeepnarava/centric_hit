@@ -1,0 +1,103 @@
+  <script type="text/javascript">
+  livia_datepicker();
+  </script>
+<%= render :partial=>'layouts/reports_left_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Uncoiler Report</div>
+    <div class="formMain2">
+      <%form_for "report", :url => {:action => :uncoiler_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
+      <div class="gridTable" style="font-size:11px;">
+          <table width="100%" align="center" cellpadding="0" cellspacing="0" class="" cellpading="0">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
+                    <tr>
+                      <td width="8%" align="left">Slitting Coil No</td>
+                      <td width="16%" align="left">
+                         <%=f.collection_select(:slittingproduction_id, @slitting_pro,:id,:slitting_coil_no,{:selected=>params[:report][:slittingproduction_id]},{:include_blank => "---Select---"})%>
+                      </td>
+                      <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{:selected=>params[:report][:dates]},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
+                      <% if params[:report][:dates] == "5"
+                         style="display:block"
+                           else
+                         style="display:none"
+                       end %>
+                      <td style=<%=style%> id="date_div">
+                          <table width="100%" id="" style="font-size:100%"  cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><div style="display:none;"><input type="checkbox" name="date_checked" id="date_checked" value="1">
+                                </div>
+                              </td>
+                              <td style="width:60px;" align="right">Start Date&nbsp;</td>
+                              <td  align="left"><input type="text" id="parameters_0" name="start_date" style="width:60px;"  readonly="true" class="dateTextBox date_picker"value=<%=params[:start_date]%> ></td>
+                              <td style="width:60px;" align="right">End Date&nbsp;</td>
+                              <td  align="left"> <input type="text" id="parameters_1" name="end_date"  style="width:60px;" readonly="true" class="dateTextBox date_picker" value=<%=params[:end_date]%> ></td>
+                            </tr>
+                          </table>
+                        </td>
+                      <td width="25%">
+                        <input id="com_notes_entries[3]_submit" class="button" style="font-size: 11px;" type="submit" value="Run Report" name="commit"/>
+                      </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td colspan="7" align="right"><table cellpadding="0" cellspacing="0" width="100%" border="1">
+                <thead>
+                <th>Date</th>
+                <th>Coil No</th>
+                <th>Shift</th>
+                <th>Operator Name</th>
+                <th>Tube OD</th>
+                <th>Width</th>
+                <th>Thickness</th>
+                <th>Grade</th>
+                <th>Type</th>
+                <th>Actual Wt</th>
+                <th>Actual Thickness</th>
+                <th>Actual Grade</th>
+                <th>Actual Type</th>
+              </thead>
+              <tbody>
+                <%@uncoiler_value.each do |obj|%>
+                <tr>
+                  <td><%=obj.created_at.to_date.strftime('%d-%m-%Y') if obj%>
+                    </td>
+                    <td><%=@slitting_prooduction.slitting_coil_no if @slitting_prooduction%>
+                    </td>
+                     <td><%=obj.shift.to_date.strftime('%d-%m-%Y') if obj.shift%>
+                    </td>
+                     <td><%=obj.operator_name if obj.operator_name%>
+                    </td>
+                     <td><%=obj.tube_od if obj.tube_od%>
+                    </td>
+                    <td><%=obj.width if obj.width%>
+                    </td>
+                    <td><%=obj.thickness if obj.thickness%>
+                    </td>
+                    <td><%=obj.grade if obj.grade%>
+                    </td>
+                    <td><%=obj.type if obj.type%>
+                    </td>
+                    <td><%=obj.width_actual if obj.width_actual%>
+                    </td>
+                    <td><%=obj.thickness_actual if obj.thickness_actual%>
+                    </td>
+                    <td><%=obj.grade_actual if obj.grade_actual%>
+                    </td>
+                    <td><%=obj.type_actual if obj.type_actual%>
+                    </td>
+                </tr>
+                <%end%>
+              </tbody>
+              </table></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      <%end%>
+    </div>
+  </div>
+</div><br class="clear"/>

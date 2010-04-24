@@ -1,22 +1,27 @@
-<div class="gridDiv">
-  <div class="titleHead">New salesplan</div>
-  <div class="formMain">
-    <% form_for(@salesplan) do |f| %>
-      <%= f.error_messages %>
-      <div>
-        <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" style="width: 48%;" >
-          <div>
-            <p>
-              <%= f.label :po_no %>
-              <%= f.text_field :po_no %>
-            </p>
-            <p>
+
+
+<%= render :partial=>'layouts/order_leftside_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">New salesplan</div>
+    <div class="formMain">
+  <% form_for(@salesplan) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <div class="mt5">
+          </div>
+          <div class="fl w48" style="width: 48%;" >
+            <div>
+               <p>
               <%= f.label :customer_name %>
               <%= f.text_field :customer_name %>
             </p>
+            <p>
+              <%= f.label :customer_code %>
+              <%= f.text_field :customer_code %>
+            </p>
+          
 
             <p>
               <%= f.label :tube_size %>
@@ -40,11 +45,8 @@
           </div>
         <div style="width: 52%;" class="fr">
           <div>
-           
-            <p>
-              <%= f.label :customer_code %>
-              <%= f.text_field :customer_code %>
-            </p>
+
+        
             <p>
               <%= f.label :pieces %>
               <%= f.text_field :pieces %>
@@ -57,16 +59,23 @@
               <%= f.label :kilos %>
               <%= f.text_field :kilos %>
             </p>
+                  <p>
+              <%= f.label :po_no %>
+              <%= f.text_field :po_no %>
+            </p>
+            </div>
           </div>
-        </div>
-        <br class="clear"/>
-        <div class="txtC" id="submit_div">
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
 
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+            <%= f.submit "Create" , :class=>'button submit_buttons'%>
+              <%=link_to 'Cancel',salesplans_path, :class=>'button submit_buttons cancelbutton' %>
 
+
+          </div>
+          <br class="clear"/>
         </div>
-        <br class="clear"/>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

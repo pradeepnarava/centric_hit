@@ -4,7 +4,6 @@
   <li class ='<%=['customer_orders','salesplans'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Order", customer_orders_path)%></span></span></li>
   <li class ='<%=['customers'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Customer",customers_path)%></span></span></li>
   <li class ='<%=['rawmaterials','rawmaterial_categories'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Stock", rawmaterials_path)%></span></span></li>
-  <li class ='<%=['salesplans'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Sales Plan",salesplans_path)%></span></span></li>
   <li class ='<%=['slittings','slittingproductions','uncoiler_reports','tube_mill_performance_reports','tube_mill_stoppage_reports'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Process", slittings_path)%></span></span></li>
   <li class ='<%=['suppliers'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Reports")%></span></span></li>
   <li class ='<%=['taxinvoices','predespatchtcs','deliverychallans'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Delivery",predespatchtcs_path)%></span></span></li>

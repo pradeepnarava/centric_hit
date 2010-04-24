@@ -4,17 +4,18 @@
 <%= render :partial=>'layouts/reports_left_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">Open Opportunities</div>
+    <div class="titleHead">Slitting Report</div>
     <div class="formMain2">
-      <%form_for "report", :url => {:action => :rawmaterial_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
+      <%form_for "report", :url => {:action => :slitting_production_show_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
       <div class="gridTable" style="font-size:11px;">
           <table width="100%" align="center" cellpadding="0" cellspacing="0" class="" cellpading="0">
             <tbody>
               <tr>
                 <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
                     <tr>
-                      <td width="8%" align="left">Status</td>
-                      <td width="16%" align="left"> <%=select("report","status",[["Stock","0"],["Slitt WIP","1"],["Tube Mill WIP","3"]])%>
+                      <td width="8%" align="left">RawMaterial</td>
+                      <td width="16%" align="left">
+                         <%=f.collection_select(:rawmaterial_id, @raw,:id,:name,{:selected=>params[:report][:rawmaterial_id]},{:include_blank => "---Select---"})%>
                       </td>
                       <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{:selected=>params[:report][:dates]},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
                       <% if params[:report][:dates] == "5"
@@ -29,7 +30,7 @@
                                 </div>
                               </td>
                               <td style="width:60px;" align="right">Start Date&nbsp;</td>
-                              <td  align="left"><input type="text" id="parameters_0" name="start_date" style="width:60px;"  readonly="true" class="dateTextBox date_picker" value=<%=params[:start_date]%> ></td>
+                              <td  align="left"><input type="text" id="parameters_0" name="start_date" style="width:60px;"  readonly="true" class="dateTextBox date_picker"value=<%=params[:start_date]%> ></td>
                               <td style="width:60px;" align="right">End Date&nbsp;</td>
                               <td  align="left"> <input type="text" id="parameters_1" name="end_date"  style="width:60px;" readonly="true" class="dateTextBox date_picker" value=<%=params[:end_date]%> ></td>
                             </tr>
@@ -42,42 +43,52 @@
                   </table></td>
               </tr>
               <tr>
-                <td colspan="7" align="right">
-                  <table cellpadding="0" cellspacing="0" width="100%" border="1">
+                <td colspan="7" align="right"><table cellpadding="0" cellspacing="0" width="100%" border="1">
   <thead>
-  <th>Rawmaterial Name</th>
-  <th>Categorie</th>
+   <th>Date</th>
+  <th>Mother Coil No</th>
+  <th>Mother Coil Width</th>
+  <th>Mother Coil Weight</th>
+  <th>Thickness</th>
   <th>Grade</th>
-  <th>Supplier Name</th>
-  <th>Vat Tin No</th>
-  <th>Ifc No</th>
-  <th>Banker</th>
-  <th>Banker Account No</th>
+  <th>Slit Width</th>
+  <th>Shift</th>
+  <th>Slit Weight</th>
+  <th>Operator Name</th>
+  <th>Slit Coil Weight</th>
+  <th>Scrap</th>
 </thead>
 <tbody>
-  <%@rawmaterial.each do |obj|%>
+  <%@slitting_value.each do |obj|%>
   <tr>
-    <td><%=obj.name%>
+    <td><%=obj.created_at.to_date.strftime('%d-%m-%Y') if obj%>
       </td>
-      <td><%=obj.rawmaterial_category.name if obj.rawmaterial_category.name%>
+      <td><%=@raw_material.name if @raw_material%>
+      </td>
+       <td><%=@raw_material.coil_weight if @raw_material.coil_weight%>
+      </td>
+       <td><%=@raw_material.width if @raw_material.width%>
+      </td>
+       <td><%=@raw_material.thickness if @raw_material.thickness%>
       </td>
       <td><%=obj.grade if obj.grade%>
       </td>
-      <td><%=obj.address.company_name if obj.address.company_name%>
+      <td><%=obj.width if obj.width%>
       </td>
-      <td><%=obj.address.vat_tin_no if obj.address.vat_tin_no%>
+      <td><%=obj.shift.to_date.strftime('%d-%m-%Y') if obj.shift%>
       </td>
-      <td><%=obj.address.ifc_no if obj.address.ifc_no%>
+      <td><%=obj.slit_weight if obj.slit_weight%>
       </td>
-      <td><%=obj.address.bankers if obj.address.bankers%>
+      <td><%=obj.operator_name if obj.operator_name%>
       </td>
-      <td><%=obj.address.bank_a_c_no if obj.address.bank_a_c_no%>
+      <td><%=obj.slit_coil_weight if obj.slit_coil_weight%>
+      </td>
+      <td><%=obj.scrap_weight if obj.scrap_weight%>
       </td>
   </tr>
   <%end%>
 </tbody>
-</table>
-                </td>
+</table></td>
               </tr>
             </tbody>
           </table>

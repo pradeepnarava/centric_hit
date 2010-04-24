@@ -1,43 +1,33 @@
 <%= render :partial=>'layouts/process_leftside_bar' %>
-
-
 <div id="center-column">
   <div class="gridDiv">
-  <div class="titleHead">New Stoppage</div>
-  <div class="formMain">
-    <% form_for(@stoppage) do |f| %>
-      <%= f.error_messages %>
-    <div style="width: 70%">
-        <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" >
-          <div>
-            <p>
-              <%= f.label :name %>
-              <%= f.text_field :name %>
-            </p>
-              <p>
-    <label>Type</label>
-    <%= f.select(:type_stop, {"Operational" =>'1', "Mechanical" =>'2',"Electrical"=>'3',"Others" =>'4'}) %>
-  </p>
-
-            </div>
+    <div class="titleHead">New Stoppage</div>
+    <div class="formOrder">
+      <% form_for(@stoppage) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <table>
+            <tr>
+              <td><label>Name:</label></td>
+              <td><%=f.text_field "name"%></td>
+              <td><label>Type:</label></td>
+              <td> <%= f.select(:type_stop, {"Operational" =>'1', "Mechanical" =>'2',"Electrical"=>'3',"Others" =>'4'}) %></td>
+            </tr>
+          </table>
+          <br class="clear"/>
+          <div id="detail"></div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Create" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',stoppages_path,{ :class=>'button submit_buttons cancelbutton' }%>
           </div>
-
-             <div class="fl w48" >
-          <div class="txtC" id="submit_div" >
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
-          <%=link_to 'Cancel',stoppages_path, :class=>'button submit_buttons cancelbutton' %>
+          <br class="clear"/>
         </div>
-            </div>
-        </div>
-
-        <br class="clear"/>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
     </div>
+  </div>
+</div>
 
 
 
