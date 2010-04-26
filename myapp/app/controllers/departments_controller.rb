@@ -45,7 +45,7 @@ class DepartmentsController < ApplicationController
     respond_to do |format|
       if @department.save
         flash[:notice] = 'Department was successfully created.'
-        format.html { redirect_to(@department) }
+        format.html { redirect_to(departments_url) }
         format.xml  { render :xml => @department, :status => :created, :location => @department }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class DepartmentsController < ApplicationController
     respond_to do |format|
       if @department.update_attributes(params[:department])
         flash[:notice] = 'Department was successfully updated.'
-        format.html { redirect_to(@department) }
+        format.html { redirect_to(departments_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

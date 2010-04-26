@@ -1,23 +1,28 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<h1>Listing departments</h1>
+<div class="top-bar">
+  <%= link_to 'New', new_department_path,:class=>"button" %>
+    <h1>Listing departments</h1>
+</div><br />
+<div class="table">  
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
 
-<table>
+    <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <th>Department Name</th>
+    <th>Action</th>
   </tr>
 
 <% @departments.each do |department| %>
   <tr>
     <td><%=h department.name %></td>
-    <td><%= link_to 'Show', department %></td>
-    <td><%= link_to 'Edit', edit_department_path(department) %></td>
-    <td><%= link_to 'Destroy', department, :confirm => 'Are you sure?', :method => :delete %></td>
+     <td>
+          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_department_path(department))%>
+          <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}), department, :confirm => 'Are you sure?', :method => :delete) %>
+        </td>
   </tr>
 <% end %>
 </table>
-
 <br />
-
-<%= link_to 'New department', new_department_path %>
-</div>
+</div></div>

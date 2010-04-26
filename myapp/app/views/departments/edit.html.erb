@@ -1,19 +1,22 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<h1>Editing department</h1>
-
+  <div class="gridDiv">
+    <div class="titleHead">Update department</div>
+    <div class="formMain">
 <% form_for(@department) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
+ <div  style="width:650px;">
+          <div  style="width:650px;">
+            <p >
+    <%= f.label :department_name%>
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  </p></div></div>
+       <div style="width:250px">
+          <div>
+  <div class="txtC" id="submit_div">
+          <%= f.submit "Update" , :class=>'button submit_buttons'%>
+        </div>
+          </div></div>
 <% end %>
-
-<%= link_to 'Show', @department %> |
-<%= link_to 'Back', departments_path %>
+    </div></div>
 </div>

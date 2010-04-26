@@ -1,18 +1,22 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<h1>New role</h1>
-
+  <div class="gridDiv">
+    <div class="titleHead">Role</div>
+    <div class="formMain">
 <% form_for(@role) do |f| %>
   <%= f.error_messages %>
-
+<div  style="width:650px;">
+          <div>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+  </p></div></div>
+       <div style="width:250px">
+          <div>
+  <div class="txtC" id="submit_div">
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+        </div>
+          </div></div>
 <% end %>
 
-<%= link_to 'Back', roles_path %>
-</div>
+    </div></div></div>

@@ -1,58 +1,66 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<div class="gridDiv">
-  <div class="titleHead">New employee</div>
-  <div class="formMain">
-<% form_for(@employee) do |f| %>
-  <%= f.error_messages %>
-<div class="fl w48" >
+  <div class="gridDiv">
+    <div class="titleHead">Employee</div>
+    <div class="formMain">
+      <% form_for(@employee) do |f| %>
+        <%= f.error_messages %>
+        <div class="fl w48" style="width:25%">
           <div>
-  <p><%= f.label :first_name %></p>
-  <p><%= f.text_field :first_name %></p>
-  <p><%= f.label :last_name %></p><p><%= f.text_field :last_name %>
-  </p>
-  <p >
-    <%= f.label :birthdate %></p><p>
-    <%= f.date_select :birthdate, :start_year => 1950 %>
-  </p>
-  <p>
-    <%= f.label :phone %></p><p>
-    <%= f.text_field :phone %>
-  </p>
-   <p>
-    <%= f.label :mobile %></p><p>
-    <%= f.text_field :mobile %>
-  </p>
-          </div>
-</div>
-    <div class="fl w48" >
-          <div>
- 
-  <p>
-    <%= f.label :street %></p><p>
-    <%= f.text_field :street %>
-  </p>
-  <p>
-    <%= f.label :city %></p><p>
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :state %></p><p>
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :zipcode %></p><p>
-    <%= f.text_field :zipcode %>
-  </p>
-  <p>
-    <label> Department </label></p><p>
-    <%= collection_select(:employee, :department_id, @departments, :id, :name, {:include_blank => 'Please select'})%>
-  </p>
-          </div></div>
-          <div class="txtC" id="submit_div" >
-    <%= f.submit "Create" , :class=>'button submit_buttons'%>
-          </div>
-<% end %>
+            <p><%= f.label :first_name %></p>
+            <p><%= f.text_field :first_name %></p>
+            <p>
+              <label> Department </label></p><p>
+              <%= collection_select(:employee, :department_id, @departments, :id, :name, {:include_blank => 'Please select'})%>
+            </p>
+            <p>
+              <%= f.label :street %></p><p>
+              <%= f.text_field :street %>
+            </p>
+            <p>
+              <%= f.label :address %></p><p>
+              <%= f.text_area :address %>
+            </p>
 
-</div>
-</div></div><br/>
+          </div>
+        </div>
+        <div class="fl w48" style="width:25%;" >
+          <div>
+            <p><%= f.label :last_name %></p><p><%= f.text_field :last_name %>
+            </p>
+            <p>
+              <%= f.label :phone %></p><p>
+              <%= f.text_field :phone %>
+            </p>
+            <p>
+              <%= f.label :city %></p><p>
+              <%= f.text_field :city %>
+            </p>
+           <p>
+              <%= f.label :zipcode %></p><p>
+              <%= f.text_field :zipcode %>
+            </p>
+          </div></div>
+        <div class="fl w48" style="width:50%">
+
+          <p style="width:140px;">
+            <%= f.label :birthdate %></p><p style="width:250px;">
+            <%= f.date_select :birthdate, :start_year => 1950 %>
+          </p><br/>
+          <p style="width:140px;">
+            <%= f.label :mobile %></p><p>
+            <%= f.text_field :mobile %>
+          </p>
+          <p style="width:140px;">
+            <%= f.label :state %></p><p>
+            <%= f.text_field :state %>
+          </p>
+          <p></p><p></p>
+          <div></div></div><br/><br/>
+        <div class="txtC" id="submit_div">
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+        </div>
+      <% end %>
+
+    </div>
+  </div></div><br/>
