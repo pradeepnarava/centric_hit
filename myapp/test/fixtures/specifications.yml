@@ -1,0 +1,57 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  specification_name: MyString
+  grade: MyString
+  per_c: 9.99
+  per_mn: 9.99
+  per_s: 9.99
+  per_p: 9.99
+  per_si: 9.99
+  per_al: 9.99
+  per_ni: 9.99
+  per_cr: 9.99
+  ys: 9.99
+  ts: 9.99
+  el: 9.99
+  hardness: 9.99
+  od_width: MyString
+  id_height: MyString
+  thick: MyString
+  length: MyString
+  flaring: MyString
+  flattening: MyString
+  bending: MyString
+  crushing: MyString
+  bend: MyString
+  corner_radius: MyString
+  squareness: MyString
+  twist: MyString
+
+two:
+  specification_name: MyString
+  grade: MyString
+  per_c: 9.99
+  per_mn: 9.99
+  per_s: 9.99
+  per_p: 9.99
+  per_si: 9.99
+  per_al: 9.99
+  per_ni: 9.99
+  per_cr: 9.99
+  ys: 9.99
+  ts: 9.99
+  el: 9.99
+  hardness: 9.99
+  od_width: MyString
+  id_height: MyString
+  thick: MyString
+  length: MyString
+  flaring: MyString
+  flattening: MyString
+  bending: MyString
+  crushing: MyString
+  bend: MyString
+  corner_radius: MyString
+  squareness: MyString
+  twist: MyString

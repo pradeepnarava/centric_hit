@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :specifications
+
   map.resources :stoppages
 
   map.resources :addresses

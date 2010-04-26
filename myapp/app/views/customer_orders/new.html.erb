@@ -9,7 +9,7 @@
           <!--BOX 1-->
           <div class="fl3row">
             <label>Customer Name</label><%=f.collection_select(:customer_id, @customers,:id,:name,{:include_blank => "---Select---"},{:onchange => "customerdetail(this.value);"})%>
-            <label>E-mail</label><%=text_field_tag "customer_order_email" %>
+           <!-- <label>E-mail</label><%#=text_field_tag "customer_order_email" %>-->
             <label>VAT No</label><%=text_field_tag "customer_order_vat_no" %>
           </div>
           <br class="clear"/>

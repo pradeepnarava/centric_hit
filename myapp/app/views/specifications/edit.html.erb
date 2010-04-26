@@ -1,0 +1,116 @@
+<h1>Editing specification</h1>
+
+<% form_for(@specification) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :specification_name %><br />
+    <%= f.text_field :specification_name %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </p>
+  <p>
+    <%= f.label :per_c %><br />
+    <%= f.text_field :per_c %>
+  </p>
+  <p>
+    <%= f.label :per_mn %><br />
+    <%= f.text_field :per_mn %>
+  </p>
+  <p>
+    <%= f.label :per_s %><br />
+    <%= f.text_field :per_s %>
+  </p>
+  <p>
+    <%= f.label :per_p %><br />
+    <%= f.text_field :per_p %>
+  </p>
+  <p>
+    <%= f.label :per_si %><br />
+    <%= f.text_field :per_si %>
+  </p>
+  <p>
+    <%= f.label :per_al %><br />
+    <%= f.text_field :per_al %>
+  </p>
+  <p>
+    <%= f.label :per_ni %><br />
+    <%= f.text_field :per_ni %>
+  </p>
+  <p>
+    <%= f.label :per_cr %><br />
+    <%= f.text_field :per_cr %>
+  </p>
+  <p>
+    <%= f.label :ys %><br />
+    <%= f.text_field :ys %>
+  </p>
+  <p>
+    <%= f.label :ts %><br />
+    <%= f.text_field :ts %>
+  </p>
+  <p>
+    <%= f.label :el %><br />
+    <%= f.text_field :el %>
+  </p>
+  <p>
+    <%= f.label :hardness %><br />
+    <%= f.text_field :hardness %>
+  </p>
+  <p>
+    <%= f.label :od_width %><br />
+    <%= f.text_field :od_width %>
+  </p>
+  <p>
+    <%= f.label :id_height %><br />
+    <%= f.text_field :id_height %>
+  </p>
+  <p>
+    <%= f.label :thick %><br />
+    <%= f.text_field :thick %>
+  </p>
+  <p>
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.label :flaring %><br />
+    <%= f.text_field :flaring %>
+  </p>
+  <p>
+    <%= f.label :flattening %><br />
+    <%= f.text_field :flattening %>
+  </p>
+  <p>
+    <%= f.label :bending %><br />
+    <%= f.text_field :bending %>
+  </p>
+  <p>
+    <%= f.label :crushing %><br />
+    <%= f.text_field :crushing %>
+  </p>
+  <p>
+    <%= f.label :bend %><br />
+    <%= f.text_field :bend %>
+  </p>
+  <p>
+    <%= f.label :corner_radius %><br />
+    <%= f.text_field :corner_radius %>
+  </p>
+  <p>
+    <%= f.label :squareness %><br />
+    <%= f.text_field :squareness %>
+  </p>
+  <p>
+    <%= f.label :twist %><br />
+    <%= f.text_field :twist %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @specification %> |
+<%= link_to 'Back', specifications_path %>
