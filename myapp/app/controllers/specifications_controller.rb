@@ -45,7 +45,7 @@ class SpecificationsController < ApplicationController
     respond_to do |format|
       if @specification.save
         flash[:notice] = 'Specification was successfully created.'
-        format.html { redirect_to(@specification) }
+        format.html { redirect_to(specifications_path) }
         format.xml  { render :xml => @specification, :status => :created, :location => @specification }
       else
         format.html { render :action => "new" }

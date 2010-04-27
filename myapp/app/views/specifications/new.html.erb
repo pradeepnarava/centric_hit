@@ -1,9 +1,22 @@
-<h1>New specification</h1>
+<%= render :partial=>'layouts/customer_leftside_bar' %>
 
-<% form_for(@specification) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
+
+
+
+<div id="center-column">
+<div class="gridDiv">
+  <div class="titleHead">New Specification</div>
+  <div class="formMain">
+   <% form_for(@specification) do |f| %>
+      <%= f.error_messages %>
+      <div>
+        <!--BOX 1-->
+        <div class="mt5">
+        </div>
+        <div class="fl w48" style="width: 60%;" >
+          <div>
+            <p>
     <%= f.label :specification_name %><br />
     <%= f.text_field :specification_name %>
   </p>
@@ -107,9 +120,47 @@
     <%= f.label :twist %><br />
     <%= f.text_field :twist %>
   </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
+          </div>
+          <div>
 
-<%= link_to 'Back', specifications_path %>
+          </div>
+        </div>
+        <div style="width: 52%;" class="fr">
+          <div>
+
+
+
+
+
+
+
+
+
+          </div>
+          <div>
+
+          </div>
+        </div>
+      
+
+
+
+
+
+          </div>
+        </div>
+        <br class="clear"/>
+        <div class="txtC" id="submit_div">
+
+          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+          <%=link_to 'Cancel',specifications_path,{ :class=>'button submit_buttons cancelbutton' }%>
+
+        </div>
+        <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+
