@@ -1,5 +1,5 @@
 <ul id="top-navigation">
-  <li class ='<%=['employees'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Centric",employees_path)%></span></span></li>
+  <li class ='<%=['employees','departments','roles','users'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("HRM",employees_path)%></span></span></li>
   <li class ='<%=['rawmaterials','rawmaterial_categories'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Stock", rawmaterials_path)%></span></span></li>
   <li class ='<%=['customer_orders','salesplans'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Order", customer_orders_path)%></span></span></li>
   <li class ='<%=['customers'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Customer",customers_path)%></span></span></li>

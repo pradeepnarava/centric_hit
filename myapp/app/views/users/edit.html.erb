@@ -1,12 +1,14 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<h1>Edit My Account</h1>
- 
+  <div class="gridDiv">
+    <div class="titleHead">Edit Account</div>
+    <div class="formMain">
 <% form_for @user, :url => {:action => 'update', :id => @user.id} do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
-  <%= f.submit "Update" %>
-<% end %>
  
-<br /><%= link_to "My Profile", users_path %>
-</div>
+      <div class="txtC" id="submit_div">
+          <%= f.submit "Update" , :class=>'button submit_buttons'%>
+        <br/></div><br/>
+<% end %><br/>
+    </div></div></div><br/>
