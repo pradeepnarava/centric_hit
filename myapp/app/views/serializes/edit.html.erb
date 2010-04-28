@@ -1,40 +1,83 @@
 <%= render :partial=>'layouts/customer_leftside_bar' %>
 <div id="center-column">
-<h1>Editing serialize</h1>
+<div class="gridDiv">
+  <div class="titleHead">Editing serialize</div>
+  <div class="formMain">
+    <% form_for(@serialize) do |f| %>
+      <%= f.error_messages %>
+      <div>
+        <!--BOX 1-->
+        <div class="mt5">
+        </div>
+        <div class="fl w48" >
+            <p>
+              <%= f.label "Customer name"%>
+              <%=f.collection_select(:customer_id, Customer.all,:id,:name,{:include_blank => "---Select---"})%>
+            </p>
+            <p>
+              <label>Serial Name/No.</label>
+              <%= f.text_field :name %>
+            </p>
+            <p>
+              <%= f.label :specification %>
+              <%=f.collection_select(:specification_id, Specification.all,:id,:specification_name,{:include_blank => "---Select---"})%>
+            </p>                 
+     
+               <p>
+                <label>Type</label>
+                <%= f.select("mat_type", { "E" => "E", "S" => "S","R"=>"R"}) %>
+              </p>
+                 <p>
+                <label>Annealead/Unannealed</label>
+                <%= f.select("annealed_unannealed", { "ANN" => "ANN", "UAN" => "UAN"}) %>
+              </p>
+                   <p>
+                <label>Fin Cut/Non Fincut</label>
+                <%= f.select("fincut_non_fincut", { "F/C" => "F/C", "NFC" => "NFC"}) %>
+              </p>
+          
+                
+                  <p>
+                <label>Packing Mode</label>
+              <%= f.text_area :packing_mode,:rows=>5,:cols=>20%>
+            </p>
 
-<% form_for(@serialize) do |f| %>
-  <%= f.error_messages %>
+        </div>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :specification %>
-    <%#= f.text_area :specification,:rows =>4, :cols => 15 %>
-  </p>                 
-  <p>
-    <%= f.label :grade %>
-    <%= f.text_field :grade%>
-  </p>                   
-        
-  <p>
-    <%= f.label :od %>
-    <%= f.text_field :od %>
-  </p>            
-  <p>
-    <%= f.label :thikness %>
-    <%= f.text_field :thikness %>
-  </p>            
-  <p>
-    <%= f.label :length %>
-    <%= f.text_field :length %>
-  </p>      
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @serialize %> |
-<%= link_to 'Back', serializes_path %>
+        <div class="fl w48" >
+             <p>
+              <%= f.label :height %>
+              <%= f.text_field :height %>
+            </p>
+            <p>
+              <%= f.label :od %>
+              <%= f.text_field :od %>
+            </p>            
+            <p>
+              <%= f.label :thikness %>
+              <%= f.text_field :thikness %>
+            </p>            
+            <p>
+              <%= f.label :length %>
+              <%= f.text_field :length %>
+            </p>   
+                  <p>
+              <%= f.label :grade %>
+              <%= f.text_field :grade%>
+            </p><p>
+<label>End Condition</label>
+              <%= f.text_area :end_condition,:rows=>5,:cols=>20%>
+            </p>
+   
+            
+          
+        </div>
+      </div> <br/><br class="clear"/><br class="clear"/><br class="clear"/><br class="clear"/><br class="clear"/>  <div class="txtC" id="submit_div" >
+            <%= f.submit "Update" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',rawmaterial_categories_path, :class=>'button submit_buttons cancelbutton' %>
+          </div>
+     
+    </div>
+  <% end %>
+</div>
 </div>

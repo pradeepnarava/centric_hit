@@ -1,7 +1,7 @@
 <%= render :partial=>'layouts/customer_leftside_bar' %>
 <div id="center-column">
 <div class="gridDiv">
-  <div class="titleHead">New serialize</div>
+  <div class="titleHead">Serialize</div>
   <div class="formMain">
     <% form_for(@serialize) do |f| %>
       <%= f.error_messages %>
@@ -36,10 +36,7 @@
                 <%= f.select("fincut_non_fincut", { "F/C" => "F/C", "NFC" => "NFC"}) %>
               </p>
           
-              <p>
-                <label>End Condition</label>
-              <%= f.text_area :end_condition,:rows=>5,:cols=>20%>
-            </p>
+                
                   <p>
                 <label>Packing Mode</label>
               <%= f.text_area :packing_mode,:rows=>5,:cols=>20%>
@@ -67,16 +64,19 @@
                   <p>
               <%= f.label :grade %>
               <%= f.text_field :grade%>
+            </p><p>
+<label>End Condition</label>
+              <%= f.text_area :end_condition,:rows=>5,:cols=>20%>
             </p>
-
    
             
-          <div class="txtC" id="submit_div" >
+          
+        </div>
+      </div> <br/><br class="clear"/><br class="clear"/><br class="clear"/><br class="clear"/><br class="clear"/>  <div class="txtC" id="submit_div" >
             <%= f.submit "Create" , :class=>'button submit_buttons'%>
             <%=link_to 'Cancel',rawmaterial_categories_path, :class=>'button submit_buttons cancelbutton' %>
           </div>
-        </div>
-      </div>
+     
     </div>
   <% end %>
 </div>

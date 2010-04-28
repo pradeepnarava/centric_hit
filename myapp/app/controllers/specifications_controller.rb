@@ -62,7 +62,7 @@ class SpecificationsController < ApplicationController
     respond_to do |format|
       if @specification.update_attributes(params[:specification])
         flash[:notice] = 'Specification was successfully updated.'
-        format.html { redirect_to(@specification) }
+        format.html { redirect_to(specifications_path)}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

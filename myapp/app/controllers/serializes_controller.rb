@@ -62,7 +62,7 @@ class SerializesController < ApplicationController
     respond_to do |format|
       if @serialize.update_attributes(params[:serialize])
         flash[:notice] = 'Serialize was successfully updated.'
-        format.html { redirect_to(@serialize) }
+        format.html { redirect_to(serializes_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

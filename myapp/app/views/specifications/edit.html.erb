@@ -1,117 +1,141 @@
 <%= render :partial=>'layouts/customer_leftside_bar' %>
-<h1>Editing specification</h1>
-
-<% form_for(@specification) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :specification_name %><br />
-    <%= f.text_field :specification_name %>
-  </p>
-  <p>
-    <%= f.label :grade %><br />
-    <%= f.text_field :grade %>
-  </p>
-  <p>
-    <%= f.label :per_c %><br />
-    <%= f.text_field :per_c %>
-  </p>
-  <p>
-    <%= f.label :per_mn %><br />
-    <%= f.text_field :per_mn %>
-  </p>
-  <p>
-    <%= f.label :per_s %><br />
-    <%= f.text_field :per_s %>
-  </p>
-  <p>
-    <%= f.label :per_p %><br />
-    <%= f.text_field :per_p %>
-  </p>
-  <p>
-    <%= f.label :per_si %><br />
-    <%= f.text_field :per_si %>
-  </p>
-  <p>
-    <%= f.label :per_al %><br />
-    <%= f.text_field :per_al %>
-  </p>
-  <p>
-    <%= f.label :per_ni %><br />
-    <%= f.text_field :per_ni %>
-  </p>
-  <p>
-    <%= f.label :per_cr %><br />
-    <%= f.text_field :per_cr %>
-  </p>
-  <p>
-    <%= f.label :ys %><br />
-    <%= f.text_field :ys %>
-  </p>
-  <p>
-    <%= f.label :ts %><br />
-    <%= f.text_field :ts %>
-  </p>
-  <p>
-    <%= f.label :el %><br />
-    <%= f.text_field :el %>
-  </p>
-  <p>
-    <%= f.label :hardness %><br />
-    <%= f.text_field :hardness %>
-  </p>
-  <p>
-    <%= f.label :od_width %><br />
-    <%= f.text_field :od_width %>
-  </p>
-  <p>
-    <%= f.label :id_height %><br />
-    <%= f.text_field :id_height %>
-  </p>
-  <p>
-    <%= f.label :thick %><br />
-    <%= f.text_field :thick %>
-  </p>
-  <p>
-    <%= f.label :length %><br />
-    <%= f.text_field :length %>
-  </p>
-  <p>
-    <%= f.label :flaring %><br />
-    <%= f.text_field :flaring %>
-  </p>
-  <p>
-    <%= f.label :flattening %><br />
-    <%= f.text_field :flattening %>
-  </p>
-  <p>
-    <%= f.label :bending %><br />
-    <%= f.text_field :bending %>
-  </p>
-  <p>
-    <%= f.label :crushing %><br />
-    <%= f.text_field :crushing %>
-  </p>
-  <p>
-    <%= f.label :bend %><br />
-    <%= f.text_field :bend %>
-  </p>
-  <p>
-    <%= f.label :corner_radius %><br />
-    <%= f.text_field :corner_radius %>
-  </p>
-  <p>
-    <%= f.label :squareness %><br />
-    <%= f.text_field :squareness %>
-  </p>
-  <p>
-    <%= f.label :twist %><br />
-    <%= f.text_field :twist %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @specification %> |
-<%= link_to 'Back', specifications_path %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Editing specification</div>
+    <div class="formMain">
+      <% form_for(@specification) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <div class="mt5">
+          </div>
+          <div class="fl w48" >
+            <div>
+              <p>
+                <%= f.label :specification_name %>
+                <%= f.text_field :specification_name %>
+              </p>
+              <p>
+                <%= f.label :grade %>
+                <%= f.text_field :grade %>
+              </p>
+              <p>
+                <%= f.label :per_c %>
+                <%= f.text_field :per_c %>
+              </p>
+              <p>
+                <%= f.label :per_mn %>
+                <%= f.text_field :per_mn %>
+              </p>
+              <p>
+                <%= f.label :per_s %>
+                <%= f.text_field :per_s %>
+              </p>
+              <p>
+                <%= f.label :per_p %>
+                <%= f.text_field :per_p %>
+              </p>
+              <p>
+                <%= f.label :per_si %>
+                <%= f.text_field :per_si %>
+              </p>
+              <p>
+                <%= f.label :per_al %>
+                <%= f.text_field :per_al %>
+              </p>
+              <p>
+                <%= f.label :per_ni %>
+                <%= f.text_field :per_ni %>
+              </p>
+            </div>
+            <div>
+              <p>
+                <%= f.label :per_cr %>
+                <%= f.text_field :per_cr %>
+              </p>
+              <p>
+                <%= f.label :ys %>
+                <%= f.text_field :ys %>
+              </p>
+              <p>
+                <%= f.label :ts %>
+                <%= f.text_field :ts %>
+              </p>
+              <p>
+                <%= f.label :squareness %>
+                <%= f.text_field :squareness %>
+              </p>
+              <p>
+                <%= f.label :twist %>
+                <%= f.text_field :twist %>
+              </p>
+            </div>
+            <div>
+            </div>
+          </div>
+          <div style="width: 52%;" class="fr">
+            <div>
+              <p>
+                <%= f.label :el %>
+                <%= f.text_field :el %>
+              </p>
+              <p>
+                <%= f.label :hardness %>
+                <%= f.text_field :hardness %>
+              </p>
+              <p>
+                <%= f.label :od_width %>
+                <%= f.text_field :od_width %>
+              </p>
+              <p>
+                <%= f.label :id_height %>
+                <%= f.text_field :id_height %>
+              </p>
+              <p>
+                <%= f.label :thick %>
+                <%= f.text_field :thick %>
+              </p>
+              <p>
+                <%= f.label :length %>
+                <%= f.text_field :length %>
+              </p>
+              <p>
+                <%= f.label :flaring %>
+                <%= f.text_field :flaring %>
+              </p>
+              <p>
+                <%= f.label :flattening %>
+                <%= f.text_field :flattening %>
+              </p>
+              <p>
+                <%= f.label :bending %>
+                <%= f.text_field :bending %>
+              </p>
+            
+              <p>
+                <%= f.label :crushing %>
+                <%= f.text_field :crushing %>
+              </p>
+              <p>
+                <%= f.label :bend %>
+                <%= f.text_field :bend %>
+              </p>
+              <p>
+                <%= f.label :corner_radius %>
+                <%= f.text_field :corner_radius %>
+              </p>
+              <div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="clear"/>
+        <div class="txtC" id="submit_div">
+          <%= f.submit "Update" , :class=>'button submit_buttons'%>
+          <%=link_to 'Cancel',specifications_path,{ :class=>'button submit_buttons cancelbutton' }%>
+        </div>
+        <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+</div>
