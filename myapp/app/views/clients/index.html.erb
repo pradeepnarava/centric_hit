@@ -1,23 +1,31 @@
-<h1>Listing clients</h1>
-
-<table>
-  <tr>
+<%= render :partial=>'layouts/client_leftside_bar' %>
+<div id="center-column">
+<div class="top-bar">
+  <%= link_to 'New', new_client_path,:class=>"button" %>
+  <h1>Listing clients</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+ <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+    <tr>  
+<tr>
     <th>Customer name</th>
-    <th>Od</th>
-    <th>Id</th>
+    <!--<th>Od</th>
+    <th>Id</th> 
     <th>Thickness</th>
-    <th>Length</th>
+    <th>Length</th>-->
     <th>Part number</th>
-    <th>Is</th>
+   <!-- <th>Is</th>
     <th>Astm</th>
     <th>Din</th>
     <th>Jis</th>
-    <th>Automotive</th>
+    <th>Automotive</th> -->
     <th>Newprogram</th>
-    <th>Sop</th>
+    <!-- <th>Sop</th>
     <th>Existing</th>
     <th>Gen engg</th>
-    <th>Boiler air heat</th>
+    <th>Boiler air heat</th> -->
     <th>Furniture</th>
     <th>Cut chamf</th>
     <th>Press operations</th>
@@ -25,7 +33,7 @@
     <th>Plating</th>
     <th>Meters</th>
     <th>Tons</th>
-    <th>Od tol</th>
+   <!-- <th>Od tol</th>
     <th>Id tol</th>
     <th>Thick tol</th>
     <th>Length tol</th>
@@ -41,31 +49,32 @@
     <th>Ys</th>
     <th>Elongation</th>
     <th>Special characteristics</th>
-    <th>Spc requirement</th>
+    <th>Spc requirement</th> -->
     <th>Remarks</th>
-    <th>Name</th>
+   <!-- <th>Name</th>-->
     <th>Designation</th>
     <th>Enclosures</th>
+    <th>Action</th>
   </tr>
 
 <% for client in @clients %>
   <tr>
     <td><%=h client.customer_name %></td>
-    <td><%=h client.od %></td>
+   <!-- <td><%=h client.od %></td>
     <td><%=h client.id %></td>
     <td><%=h client.thickness %></td>
-    <td><%=h client.length %></td>
+    <td><%=h client.length %></td> -->
     <td><%=h client.part_number %></td>
-    <td><%=h client.is %></td>
+   <!-- <td><%=h client.is %></td>
     <td><%=h client.astm %></td>
     <td><%=h client.din %></td>
     <td><%=h client.jis %></td>
-    <td><%=h client.automotive %></td>
+    <td><%=h client.automotive %></td> -->
     <td><%=h client.newprogram %></td>
-    <td><%=h client.sop %></td>
+  <!--  <td><%=h client.sop %></td>
     <td><%=h client.existing %></td>
     <td><%=h client.gen_engg %></td>
-    <td><%=h client.boiler_air_heat %></td>
+    <td><%=h client.boiler_air_heat %></td> -->
     <td><%=h client.furniture %></td>
     <td><%=h client.cut_chamf %></td>
     <td><%=h client.press_operations %></td>
@@ -73,7 +82,7 @@
     <td><%=h client.plating %></td>
     <td><%=h client.meters %></td>
     <td><%=h client.tons %></td>
-    <td><%=h client.od_tol %></td>
+   <!-- <td><%=h client.od_tol %></td>
     <td><%=h client.id_tol %></td>
     <td><%=h client.thick_tol %></td>
     <td><%=h client.length_tol %></td>
@@ -89,18 +98,21 @@
     <td><%=h client.ys %></td>
     <td><%=h client.elongation %></td>
     <td><%=h client.special_characteristics %></td>
-    <td><%=h client.spc_requirement %></td>
+    <td><%=h client.spc_requirement %></td> -->
     <td><%=h client.remarks %></td>
-    <td><%=h client.name %></td>
+   <!-- <td><%=h client.name %></td> -->
     <td><%=h client.designation %></td>
     <td><%=h client.enclosures %></td>
-    <td><%= link_to 'Show', client %></td>
-    <td><%= link_to 'Edit', edit_client_path(client) %></td>
-    <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+ <div class="fr" style="float:left;">
+            <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_client_path(client))%>
+            <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate",:border => 0, :hspace => "2"}), client, :confirm => 'Are you sure?', :method => :delete) %>
+          </div>
+   </td>
   </tr>
 <% end %>
 </table>
+</div></div>
 
 <br />
 
-<%= link_to 'New client', new_client_path %>
