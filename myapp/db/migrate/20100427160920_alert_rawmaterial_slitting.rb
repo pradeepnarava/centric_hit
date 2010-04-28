@@ -1,5 +1,5 @@
 class AlertRawmaterialSlitting < ActiveRecord::Migration
-  def self.up
+  def self.up 
     add_column :rawmaterials, :mother_id, :integer
     add_column :slittings, :slitt_rawmaterial_id ,:integer
     change_column_default :slittings, :division_part, 0

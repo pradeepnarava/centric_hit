@@ -27,12 +27,17 @@ class SlittingproductionsController < ApplicationController
   # GET /slittingproductions/new.xml
   def new
     @slittingproduction = Slittingproduction.new
-    @coils = Rawmaterial.find(:all, :conditions => ["status = 1"])
+    #@coils = Rawmaterial.find(:all, :conditions => ["status = 1"])
+    @coils = Slitting.all.collect { |sl| sl.rawmaterial}.uniq
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @slittingproduction }
     end
   end
+
+  def coil_detail
+    @coil = Rawmaterial.find(params[:id])
+  end  
 
   # GET /slittingproductions/1/edit
   def edit
@@ -42,20 +47,23 @@ class SlittingproductionsController < ApplicationController
   # POST /slittingproductions
   # POST /slittingproductions.xml
   def create
-    @slittingproduction = Slittingproduction.new(params[:slittingproduction])
-    @slittingproduction.status = 1    
-    respond_to do |format|
-      if @slittingproduction.save
-        @coils = Rawmaterial.find(params[:slittingproduction][:rawmaterial_id])
-          @coils.status=1
-        flash[:notice] = 'Slittingproduction was successfully created.'
-        format.html { redirect_to(slittingproductions_path) }
-        format.xml  { render :xml => @slittingproduction, :status => :created, :location => @slittingproduction }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @slittingproduction.errors, :status => :unprocessable_entity }
-      end
-    end
+    
+#    @slittingproduction = Slittingproduction.new(params[:slittingproduction])
+#    @slittingproduction.status = 1    
+#    respond_to do |format|
+#      if @slittingproduction.save
+#        @coils = Rawmaterial.find(params[:slittingproduction][:rawmaterial_id])
+#          @coils.status=1
+#        flash[:notice] = 'Slittingproduction was successfully created.'
+#        format.html { redirect_to(slittingproductions_path) }
+#        format.xml  { render :xml => @slittingproduction, :status => :created, :location => @slittingproduction }
+#      else
+#        format.html { render :action => "new" }
+#        format.xml  { render :xml => @slittingproduction.errors, :status => :unprocessable_entity }
+#      end
+#    end
+
+    render :action => "new"
   end
 
   # PUT /slittingproductions/1

@@ -1,0 +1,58 @@
+<p>Mother Coil Detail</p>
+<table>
+  <tr>
+    <th>CLS Coil No.</th>
+    <th>Input wt</th>
+    <th>Width</th>
+    <th>Thickness</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td><%=h @coil.name%></td>
+    <td><%=h @coil.coil_weight%></td>
+    <td><%=h @coil.width%></td>
+    <td><%=h @coil.thickness%></td>
+    <td><%=h @coil.grade%></td>
+  </tr>
+</table>  
+<br class="clear"/>
+<p>Slitting Setting Detail</p>
+<div>
+  <table>
+    <tr>
+      <th>Width</th>
+      <th>Coil wt.</th>
+      <th>Scrap</th>
+      <th>No. of Slits</th>
+    </tr>
+    <%i=1%>
+    <%@coil.slittings.each do |slits|%>
+      <tr>
+        <td><%= h slits.slit_width %></td>
+        <td><%= h slits.process_coil_wt %></td>
+        <td><%= h slits.scrap %></td>
+        <td><%= h slits.no_of_slits %></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <table>
+            <tr>
+              <td>Width</td>
+              <td>Coil wt</td>
+              <td>Slit Coil No</td>
+            </tr>
+            <%for sub in 1..slits.no_of_slits.to_i%>
+              <tr>
+                <td><%= h slits.slit_width%></td>
+                <td><%= h slits.process_coil_wt%></td>
+                <td><%= text_field_tag "#{i}_#{sub}[production][slitting_coil_no]" %></td>
+              </tr>
+            <%end%>
+          </table>
+        </td>
+      </tr>
+      <%i = i + 1%>
+    <%end%>    
+  </table>
+</div>

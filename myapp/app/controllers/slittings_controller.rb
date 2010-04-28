@@ -2,7 +2,7 @@ class SlittingsController < ApplicationController
   # GET /slittings
   # GET /slittings.xml
  
-  def index
+  def index 
     @slittings = Slitting.find(:all)
 
     respond_to do |format|
