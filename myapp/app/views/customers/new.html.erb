@@ -20,22 +20,23 @@
                 <%= f.text_field :customer_code %>
               </p>
               <p>
-                <%= f.label :address %>
-                <%= f.text_area :address ,:rows => 4, :cols => 15%>
+                <%= f.label :ifc_nno %>
+                <%= f.text_field :ifc_no %>
               </p>
                 <p>
-                <%= f.label :street %>
-                <%= f.text_field :street%>
+                <%= f.label :dgft_code %>
+                <%= f.text_field :dgft_code %>
               </p>
-                  <p>
-                <%= f.label :state %>
-                <%= f.text_field :state%>
-              </p>
-             
                  <p>
-                <%= f.label :city %>
-                <%= f.text_field :city%>
+                <label>Octroi</label>
+                <%= f.select("octra", {"Exclusive" => "Exclusive", "Inclusive" => "Inclusive"}) %>
               </p>
+              <p>
+                <label>Payment</label>
+                <%= f.select("payment", { "Immediate" => "Immediate","30 days" => "30 days", "45 days" => "45 days","60 days" => "60 days","Against Proforma Invoice" => "Against Proforma Invoice","Against L/C" => "Against L/C"}) %>
+              </p>
+              
+                
               <p>
                 <%= f.label :contact_person %>
                 <%= f.text_field :contact_person %>
@@ -72,14 +73,19 @@
                 <%= f.text_field :ecc_no %>
               </p>
               <p>
-                <%= f.label :ifc_nno %>
-                <%= f.text_field :ifc_no %>
+                <%= f.label :address %>
+                <%= f.text_area :address ,:rows => 3, :cols => 15%>
               </p>
               <p>
-                <%= f.label :dgft_code %>
-                <%= f.text_field :dgft_code %>
+                <%= f.label :street %>
+                <%= f.text_field :street%>
               </p>
-              <p>
+              
+            </div>
+          </div>
+          <div style="width: 52%;" class="fr">
+            <div>
+               <p>
                 <%= f.label :service_tax_reg %>
                 <%= f.text_field :service_tax_reg %>
               </p>
@@ -88,9 +94,10 @@
                 <%= f.text_field :gta_red_no %>
               </p>
               <p>
-                <%= f.label :bank_ac_no %>
-                <%= f.text_field :bank_ac_no %>
+                <label>Excise Duty</label>
+                <%= f.select("excise_duty", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
               </p>
+               
            
               
               <p>
@@ -101,10 +108,6 @@
                 <label> Vat Tin No </label>
                 <%= f.text_field :vat_no %>
               </p>
-            </div>
-          </div>
-          <div style="width: 52%;" class="fr">
-            <div>
               <p>
                   <label>  CST Tin No </label>
                 <%= f.text_field :tin_no %>
@@ -133,21 +136,25 @@
                 <%= f.label :delivery %>
                 <%= f.select("delivery", { "FOR" => "FOR", "EX Works" => "EX Works"}) %>
               </p>
-              <p>
-                <label>Excise Duty</label>
-                <%= f.select("excise_duty", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
+               <p>
+                <%= f.label :bank_ac_no %>
+                <%= f.text_field :bank_ac_no %>
               </p>
-            
-              <p>
-                <label>Payment</label>
-                <%= f.select("payment", { "Immediate" => "Immediate","30 days" => "30 days", "45 days" => "45 days","60 days" => "60 days","Against Proforma Invoice" => "Against Proforma Invoice","Against L/C" => "Against L/C"}) %>
+            <p>&nbsp;</p>
+              
+                <p>
+                <%= f.label :state %>
+                <%= f.text_field :state%>
               </p>
               <p>
-                <label>Octroi</label>
-                <%= f.select("octra", {"Exclusive" => "Exclusive", "Inclusive" => "Inclusive"}) %>
+                <%= f.label :city %>
+                <%= f.text_field :city%>
               </p>
             </div>
           </div>
+          <br class="clear"/>
+          <br class="clear"/>
+          <br class="clear"/>
           <br class="clear"/>
           <div class="txtC" id="submit_div">
 
