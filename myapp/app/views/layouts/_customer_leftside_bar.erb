@@ -6,6 +6,9 @@
           </li>
           <li class ='<%=controller.controller_name.eql?('serializes')? 'active' : ''%>'>
           <span><span><%=link_to("Serials", serializes_path)%></span></span>
-          </li>          
+          </li>
+               <li class ='<%=controller.controller_name.eql?('specifications')? 'active' : ''%>'>
+          <span><span><%=link_to("Specifications", specifications_path)%></span></span>
+          </li>
         </ul>
 </div>

@@ -1,70 +1,39 @@
-<h1>Listing specifications</h1>
-
-<table>
-  <tr>
-    <th>Specification name</th>
-    <th>Grade</th>
-    <th>Per c</th>
-    <th>Per mn</th>
-    <th>Per s</th>
-    <th>Per p</th>
-    <th>Per si</th>
-    <th>Per al</th>
-    <th>Per ni</th>
-    <th>Per cr</th>
-    <th>Ys</th>
-    <th>Ts</th>
-    <th>El</th>
-    <th>Hardness</th>
-    <th>Od width</th>
-    <th>Id height</th>
-    <th>Thick</th>
-    <th>Length</th>
-    <th>Flaring</th>
-    <th>Flattening</th>
-    <th>Bending</th>
-    <th>Crushing</th>
-    <th>Bend</th>
-    <th>Corner radius</th>
-    <th>Squareness</th>
-    <th>Twist</th>
-  </tr>
-
-<% for specification in @specifications %>
-  <tr>
-    <td><%=h specification.specification_name %></td>
-    <td><%=h specification.grade %></td>
-    <td><%=h specification.per_c %></td>
-    <td><%=h specification.per_mn %></td>
-    <td><%=h specification.per_s %></td>
-    <td><%=h specification.per_p %></td>
-    <td><%=h specification.per_si %></td>
-    <td><%=h specification.per_al %></td>
-    <td><%=h specification.per_ni %></td>
-    <td><%=h specification.per_cr %></td>
-    <td><%=h specification.ys %></td>
-    <td><%=h specification.ts %></td>
-    <td><%=h specification.el %></td>
-    <td><%=h specification.hardness %></td>
-    <td><%=h specification.od_width %></td>
-    <td><%=h specification.id_height %></td>
-    <td><%=h specification.thick %></td>
-    <td><%=h specification.length %></td>
-    <td><%=h specification.flaring %></td>
-    <td><%=h specification.flattening %></td>
-    <td><%=h specification.bending %></td>
-    <td><%=h specification.crushing %></td>
-    <td><%=h specification.bend %></td>
-    <td><%=h specification.corner_radius %></td>
-    <td><%=h specification.squareness %></td>
-    <td><%=h specification.twist %></td>
-    <td><%= link_to 'Show', specification %></td>
-    <td><%= link_to 'Edit', edit_specification_path(specification) %></td>
-    <td><%= link_to 'Destroy', specification, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New specification', new_specification_path %>
+<%= render :partial=>'layouts/customer_leftside_bar' %>
+<div id="center-column">
+  <div class="top-bar">
+    <%= link_to 'New', new_specification_path,:class=>"button" %>
+    <h1>Specifications</h1>
+  </div><br />
+  <div class="table">
+    <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+    <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+    <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <th>Specification name</th>
+        <th>Grade</th>
+        <th>Hardness</th>
+        <th>Od width</th>
+        <th>Id height</th>
+        <th>Thick</th>
+        <th>Length</th>
+        <th>Action</th>
+      </tr>
+      <% for specification in @specifications %>
+        <tr>
+          <td><%=h specification.specification_name %></td>
+          <td><%=h specification.grade %></td>
+          <td><%=h specification.hardness %></td>
+          <td><%=h specification.od_width %></td>
+          <td><%=h specification.id_height %></td>
+          <td><%=h specification.thick %></td>
+          <td><%=h specification.length %></td>
+          <td>
+            <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_specification_path(specification))%>
+            <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate",:border => 0, :hspace => "2"}),specification, :confirm => 'Are you sure?', :method => :delete) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <br />
+</div>

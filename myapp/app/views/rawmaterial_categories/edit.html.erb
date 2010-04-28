@@ -1,20 +1,29 @@
-<h1>Editing rawmaterial_category</h1>
+<%= render :partial=>'layouts/stock_leftside_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Editing rawmaterial_category</div>
+    <div class="formOrder">
+     <% form_for(@rawmaterial_category) do |f| %>
+        <%= f.error_messages %>
+        <div  style="padding-left:320px;">
+          <!--BOX 1-->
+          <table>
+            <tr>
+              <td><label>Material:</label></td>
+              <td><%=f.text_field "name"%></td>
 
-<% form_for(@rawmaterial_category) do |f| %>
-  <%= f.error_messages %>
+            </tr>
+          </table>
+            </div>
+          <div id="detail"></div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Update" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',rawmaterial_categories_path,:class=>'button submit_buttons cancelbutton'%>
+          </div>
+          <br class="clear"/>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :grade %><br />
-    <%= f.text_field :grade %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @rawmaterial_category %> |
-<%= link_to 'Back', rawmaterial_categories_path %>
+      <% end %>
+    </div>
+  </div>
+</div>

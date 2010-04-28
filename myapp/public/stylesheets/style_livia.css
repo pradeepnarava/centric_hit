@@ -705,3 +705,4 @@ input.blursearchbox_es {padding:0;margin:0; width:130px; text-align:left;font-fa
 .tubemilltable table{border: 1px solid #000000;}
 .tubemilltable table th{border: 1px solid #000000;}
 .tubemilltable table td{border: 1px solid #000000;}
+.gridDiv a.button{border:1px solid #aed0eb; width: auto; background:#c4dff1; color:#00416a; padding:0; font-size:0.688em; font-weight:normal; outline:none; cursor:pointer; text-align:center; margin:0;}

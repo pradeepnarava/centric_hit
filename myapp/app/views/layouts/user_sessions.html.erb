@@ -15,9 +15,11 @@
         <p style="color: green"><%= flash[:notice] %></p>
     </div>
     <div class="blueBar"></div>
-    <div class="contentBox">
+    <div class="contentBox" style="height:260px;">
       <div class="login_box_heading">
-        <div class="logoDiv" align="center">CENTRIC INDIA</div>
+        <div class="logoDiv" style="width:265px;margin-top:10px;">
+           <%= image_tag '/images/logo.png',:height=>"90", :width=>"265",:alt=>"",:title=>"" %>
+        </div>
       </div>
         <%= yield %>
     </div>

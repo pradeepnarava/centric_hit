@@ -1,7 +1,7 @@
 <%= render :partial=>'layouts/order_leftside_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">New Customer Order</div>
+    <div class="titleHead">Customer Order</div>
     <div class="formOrder">
       <% form_for(@customer_order) do |f| %>
         <%= f.error_messages %>
@@ -27,12 +27,12 @@
               <td><%= f.text_field :po_no,:size => 10 %></td>
               <tr></tr>
               <td><%= f.label :rate_in_meters %></td>
-              <td><%= f.text_field :rate_mts,:size => 10 %></td>
+              <td><%#= f.text_field :rate_mts,:size => 10 %></td>
             
               <td><%= f.label :rate_in_pcs %></td>
-              <td><%= f.text_field :rate_pcs,:size => 10 %></td>
+              <td><%#= f.text_field :rate_pcs,:size => 10 %></td>
               <td><%= f.label :rate_in_kilos %></td>
-              <td><%= f.text_field :rate_kgs,:size => 10 %></td>
+              <td><%#= f.text_field :rate_kgs,:size => 10 %></td>
             </tr>
           </table>
           <div id="detail"></div>

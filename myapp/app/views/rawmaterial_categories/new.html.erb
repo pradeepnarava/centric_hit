@@ -1,20 +1,20 @@
 <%= render :partial=>'layouts/stock_leftside_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">New Stoppage</div>
+    <div class="titleHead">RawMaterial Categories</div>
     <div class="formOrder">
      <% form_for(@rawmaterial_category) do |f| %>
         <%= f.error_messages %>
-        <div>
+        <div  style="padding-left:320px;">
           <!--BOX 1-->
           <table>
             <tr>
-              <td><label>Name:</label></td>
+              <td><label>Material:</label></td>
               <td><%=f.text_field "name"%></td>
 
             </tr>
           </table>
-          <br class="clear"/>
+            </div>
           <div id="detail"></div>
           <br class="clear"/>
           <div class="txtC" id="submit_div">
@@ -22,7 +22,7 @@
             <%=link_to 'Cancel',rawmaterial_categories_path,{ :class=>'button submit_buttons cancelbutton' }%>
           </div>
           <br class="clear"/>
-        </div>
+      
       <% end %>
     </div>
   </div>

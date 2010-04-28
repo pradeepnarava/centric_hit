@@ -1,7 +1,7 @@
 <%= render :partial=>'layouts/customer_leftside_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">New customer</div>
+    <div class="titleHead">Customer</div>
     <div class="formMain">
       <% form_for(@customer) do |f| %>
         <%= f.error_messages %>
@@ -23,6 +23,19 @@
                 <%= f.label :address %>
                 <%= f.text_area :address ,:rows => 4, :cols => 15%>
               </p>
+                <p>
+                <%= f.label :street %>
+                <%= f.text_field :street%>
+              </p>
+                  <p>
+                <%= f.label :state %>
+                <%= f.text_field :state%>
+              </p>
+             
+                 <p>
+                <%= f.label :city %>
+                <%= f.text_field :city%>
+              </p>
               <p>
                 <%= f.label :contact_person %>
                 <%= f.text_field :contact_person %>
@@ -41,19 +54,7 @@
                 <%= f.label :email %>
                 <%= f.text_field :email %>
               </p>
-           
-              <p>
-                <%= f.label :address_delivery %>
-                <%= f.text_field :address_delivery %>
-              </p>
-              <p>
-                <%= f.label :faxno %>
-                <%= f.text_field :fax_no %>
-              </p>
-              <p>
-                <%= f.label :email %>
-                <%= f.text_field :email %>
-              </p>
+                                           
               <p>
                 <%= f.label :range %>
                 <%= f.text_field :range %>
@@ -97,7 +98,7 @@
                 <%= f.text_field :excise_registration_no %>
               </p>
               <p>
-                <%= f.label :vat_no %>
+                <label> Vat Tin No </label>
                 <%= f.text_field :vat_no %>
               </p>
             </div>
@@ -105,12 +106,20 @@
           <div style="width: 52%;" class="fr">
             <div>
               <p>
-                <%= f.label :tin_no %>
+                  <label>  CST Tin No </label>
                 <%= f.text_field :tin_no %>
               </p>
               <p>
                 <%= f.label :pan_no %>
                 <%= f.text_field :pan_no %>
+              </p>
+                  <p>
+                    <label> VAT </label>
+                <%= f.text_field :vat %>
+              </p>
+                  <p>
+                <label> CST </label>
+                <%= f.text_field :cst %>
               </p>
               <p>
                 <%= f.label :payment_terms %>
@@ -120,25 +129,21 @@
                 <%= f.label :bankers %>
                 <%= f.text_field :bankers %>
               </p>
-              <p>
-                <label>Taxes</label>
-                <%= f.select("taxes", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
-
+            <p>
+                <%= f.label :delivery %>
+                <%= f.select("delivery", { "FOR" => "FOR", "EX Works" => "EX Works"}) %>
               </p>
               <p>
                 <label>Excise Duty</label>
                 <%= f.select("excise_duty", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
               </p>
-              <p>
-                <label>Delivery</label>
-                <%= f.select("delivery", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
-              </p>
+            
               <p>
                 <label>Payment</label>
-                <%= f.select("payment", { "30 days" => "30 days", "45 days" => "45 days","60 days" => "60 days","Inclusive" => "Inclusive"}) %>
+                <%= f.select("payment", { "Immediate" => "Immediate","30 days" => "30 days", "45 days" => "45 days","60 days" => "60 days","Against Proforma Invoice" => "Against Proforma Invoice","Against L/C" => "Against L/C"}) %>
               </p>
               <p>
-                <label>Octra</label>
+                <label>Octroi</label>
                 <%= f.select("octra", {"Exclusive" => "Exclusive", "Inclusive" => "Inclusive"}) %>
               </p>
             </div>
