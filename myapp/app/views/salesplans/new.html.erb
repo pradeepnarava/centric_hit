@@ -1,9 +1,7 @@
-
-
 <%= render :partial=>'layouts/order_leftside_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">New salesplan</div>
+    <div class="titleHead">Salesplan</div>
     <div class="formMain">
   <% form_for(@salesplan) do |f| %>
         <%= f.error_messages %>
@@ -21,18 +19,14 @@
               <%= f.label :customer_code %>
               <%= f.text_field :customer_code %>
             </p>
-          
-
             <p>
               <%= f.label :tube_size %>
               <%= f.text_field :tube_size %>
             </p>
-
             <p>
               <%= f.label "Customer Name"%>
               <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
             </p>
-
             <p>
               <%= f.label :serialize_id %>
               <%= f.text_field :serialize_id %>
@@ -45,8 +39,6 @@
           </div>
         <div style="width: 52%;" class="fr">
           <div>
-
-        
             <p>
               <%= f.label :pieces %>
               <%= f.text_field :pieces %>
@@ -67,11 +59,8 @@
           </div>
           <br class="clear"/>
           <div class="txtC" id="submit_div">
-
             <%= f.submit "Create" , :class=>'button submit_buttons'%>
               <%=link_to 'Cancel',salesplans_path, :class=>'button submit_buttons cancelbutton' %>
-
-
           </div>
           <br class="clear"/>
         </div>

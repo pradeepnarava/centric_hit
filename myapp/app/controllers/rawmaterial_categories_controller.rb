@@ -62,7 +62,7 @@ class RawmaterialCategoriesController < ApplicationController
     respond_to do |format|
       if @rawmaterial_category.update_attributes(params[:rawmaterial_category])
         flash[:notice] = 'RawmaterialCategory was successfully updated.'
-        format.html { redirect_to(@rawmaterial_category) }
+        format.html { redirect_to rawmaterial_categories_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

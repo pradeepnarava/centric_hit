@@ -6,10 +6,10 @@
 <%= render :partial=>'layouts/stock_leftside_bar' %>
 <div id="center-column">
 <div class="gridDiv">
-  <div class="titleHead">New Rawmaterial</div>
+  <div class="titleHead">Rawmaterial</div>
   <div class="formMain">
     <% form_for(@rawmaterial) do |f| %>
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_label">
         <tr>
           <td>
             <%if(@rawmaterial.errors.length > 0)%>
@@ -33,7 +33,7 @@
                   <td><%=f.collection_select( :rawmaterial_category_id, @rawmaterialcategory,:id,:name,{:include_blank => "--- Select ---"})%></td>
                 </tr>
                 <tr>
-                  <td class="textBlack11Height10L"><%= f.label :name %><span class="text_red">*</span></td>
+                  <td class="textBlack11Height10L"><%= f.label "Coil Number" %><span class="text_red">*</span></td>
                   <td><%= f.text_field :name %></td>
                 </tr>                
                 <tr>
