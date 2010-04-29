@@ -19,14 +19,7 @@
           <%= f.label :od %>
           <%= f.text_field :od %>
         </p>
-        <p>
-          <%= f.label :id %>
-          <%= f.text_field :id %>
-        </p>
-        <p>
-          <%= f.label :thickness %>
-          <%= f.text_field :thickness %>
-        </p>
+       
         <p>
           <%= f.label :length %>
           <%= f.text_field :length %>
@@ -36,14 +29,8 @@
           <%= f.text_field :part_number %>
         </p>
       
-        <p>
-          <%= f.label :is %>
-          <%= f.text_field :is %>
-        </p>
-        <p>
-          <%= f.label :astm %>
-          <%= f.text_field :astm %>
-        </p>
+      
+        
         <p>
           <%= f.label :din %>
           <%= f.text_field :din %>
@@ -52,14 +39,7 @@
           <%= f.label :jis %>
           <%= f.text_field :jis %>
         </p>
-        <p >
-          <%= f.check_box :automotive,:style=>"width:20px;"%>
-          <%= f.label :automotive %>
-        </p>
-        <p>
-           <%= f.check_box :newprogram ,:style=>"width:20px;"%>
-          <%= f.label :newprogram %>
-        </p>
+        
       
         <p>
            <%= f.check_box :sop ,:style=>"width:20px;"%>
@@ -69,14 +49,7 @@
           <%= f.check_box :existing ,:style=>"width:20px;"%>
           <%= f.label :existing %>
         </p>
-        <p>
-          <%= f.check_box :gen_engg ,:style=>"width:20px;"%>
-          <%= f.label :gen_engg %>
-        </p>
-        <p>
-          <%= f.check_box :boiler_air_heat ,:style=>"width:20px;"%>
-          <%= f.label :boiler_air_heat %>
-        </p>
+       
         <p>
           <%= f.check_box :furniture ,:style=>"width:20px;"%>
           <%= f.label :furniture %>
@@ -86,14 +59,7 @@
           <%= f.text_field :cut_chamf %>
         </p>
       
-        <p>
-          <%= f.label :press_operations %>
-          <%= f.text_field :press_operations %>
-        </p>
-        <p>
-          <%= f.label :machining %>
-          <%= f.text_field :machining %>
-        </p>
+        
         <p>
           <%= f.label :plating %>
           <%= f.text_field :plating %>
@@ -102,34 +68,13 @@
           <%= f.label :meters %>
           <%= f.text_field :meters %>
         </p>
-        
-      </div>
-    </div>
-    <div style="width: 52%;" class="fr">
-      <div>
-       <p>
-          <%= f.label :tons %>
-          <%= f.text_field :tons %>
-        </p>
         <p>
-          <%= f.label :od_tol %>
-          <%= f.text_field :od_tol %>
-        </p>
-         <p>
           <%= f.label :id_tol %>
           <%= f.text_field :id_tol %>
         </p>
         <p>
           <%= f.label :thick_tol %>
           <%= f.text_field :thick_tol %>
-        </p>
-        <p>
-          <%= f.label :length_tol %>
-          <%= f.text_field :length_tol %>
-        </p>
-        <p>
-          <%= f.label :id_fin_cut %>
-          <%= f.text_field :id_fin_cut %>
         </p>
         <p>
           <%= f.label :id_fin_height %>
@@ -139,6 +84,92 @@
           <%= f.label :id_surface %>
           <%= f.text_field :id_surface %>
         </p>
+         <p>
+          <%= f.label :ect %>
+          <%= f.check_box :ect ,:style=>"width:20px;"%>
+        </p>
+        <p>
+          <%= f.label :pressure_testing %>
+          <%= f.text_field :pressure_testing %>
+        </p>
+        <p>
+          <%= f.label :ys %>
+          <%= f.text_field :ys %>
+        </p>
+        <p>
+          <%= f.label :elongation %>
+          <%= f.text_field :elongation %>
+        </p>
+         <p>
+          <%= f.label :remarks %>
+          <%= f.text_field :remarks %>
+        </p>
+        <p>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </p>
+      </div>
+    </div>
+    <div style="width: 52%;" class="fr">
+      <div>
+         <p>
+          <%= f.label :id %>
+          <%= f.text_field :id %>
+        </p>
+        <p>
+          <%= f.label :thickness %>
+          <%= f.text_field :thickness %>
+        </p>
+          <p>
+          <%= f.label :is %>
+          <%= f.text_field :is %>
+        </p>
+        <p>
+          <%= f.label :astm %>
+          <%= f.text_field :astm %>
+        </p>
+        <p >
+          <%= f.check_box :automotive,:style=>"width:20px;"%>
+          <%= f.label :automotive %>
+        </p>
+        <p>
+           <%= f.check_box :newprogram ,:style=>"width:20px;"%>
+          <%= f.label :newprogram %>
+        </p>
+         <p>
+          <%= f.check_box :gen_engg ,:style=>"width:20px;"%>
+          <%= f.label :gen_engg %>
+        </p>
+        <p>
+          <%= f.check_box :boiler_air_heat ,:style=>"width:20px;"%>
+          <%= f.label :boiler_air_heat %>
+        </p>
+        <p>
+          <%= f.label :press_operations %>
+          <%= f.text_field :press_operations %>
+        </p>
+        <p>
+          <%= f.label :machining %>
+          <%= f.text_field :machining %>
+        </p>
+       <p>
+          <%= f.label :tons %>
+          <%= f.text_field :tons %>
+        </p>
+        <p>
+          <%= f.label :od_tol %>
+          <%= f.text_field :od_tol %>
+        </p>
+         
+        <p>
+          <%= f.label :length_tol %>
+          <%= f.text_field :length_tol %>
+        </p>
+        <p>
+          <%= f.label :id_fin_cut %>
+          <%= f.text_field :id_fin_cut %>
+        </p>
+        
       </div>
     </div>
     <div style="width: 52%;" class="fr">
@@ -152,14 +183,6 @@
           <%= f.text_field :od_surface_finish %>
         </p>
         <p>
-          <%= f.label :ect %>
-          <%= f.check_box :ect ,:style=>"width:20px;"%>
-        </p>
-        <p>
-          <%= f.label :pressure_testing %>
-          <%= f.text_field :pressure_testing %>
-        </p>
-        <p>
           <%= f.label :corner_radius %>
           <%= f.text_field :corner_radius %>
         </p>
@@ -171,14 +194,7 @@
     </div>
     <div style="width: 52%;" class="fr">
       <div>
-        <p>
-          <%= f.label :ys %>
-          <%= f.text_field :ys %>
-        </p>
-        <p>
-          <%= f.label :elongation %>
-          <%= f.text_field :elongation %>
-        </p>
+        
         <p>
           <%= f.label :special_characteristics %>
           <%= f.text_field :special_characteristics %>
@@ -187,14 +203,7 @@
           <%= f.label :spc_requirement %>
           <%= f.text_field :spc_requirement %>
         </p>
-        <p>
-          <%= f.label :remarks %>
-          <%= f.text_field :remarks %>
-        </p>
-        <p>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </p>
+       
       </div>
     </div>
     <div style="width: 52%;" class="fr">
