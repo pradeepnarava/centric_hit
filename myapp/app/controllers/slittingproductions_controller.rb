@@ -47,23 +47,36 @@ class SlittingproductionsController < ApplicationController
   # POST /slittingproductions
   # POST /slittingproductions.xml
   def create
-    
-#    @slittingproduction = Slittingproduction.new(params[:slittingproduction])
-#    @slittingproduction.status = 1    
-#    respond_to do |format|
-#      if @slittingproduction.save
-#        @coils = Rawmaterial.find(params[:slittingproduction][:rawmaterial_id])
-#          @coils.status=1
-#        flash[:notice] = 'Slittingproduction was successfully created.'
-#        format.html { redirect_to(slittingproductions_path) }
-#        format.xml  { render :xml => @slittingproduction, :status => :created, :location => @slittingproduction }
-#      else
-#        format.html { render :action => "new" }
-#        format.xml  { render :xml => @slittingproduction.errors, :status => :unprocessable_entity }
-#      end
-#    end
+    data = params
+    @error = 0
+    @coil = Rawmaterial.find(data[:slittingproduction][:rawmaterial_id])
+    @coil.slittings.each do |slit|
+      @slitting = data["#{slit.id}"].rehash.each_pair do |key,value|
+        unless value[:slitting_coil_no].blank?
+          @slittingproduction = Slittingproduction.new(data[:slittingproduction])
+          @slittingproduction.slitting_coil_no = value[:slitting_coil_no]
+          @slittingproduction.slitting_id = slit.id
+          @slittingproduction.input_weight = @coil.coil_weight
+          @slittingproduction.width = @coil.width
+          @slittingproduction.thickness = @coil.thickness
+          @slittingproduction.grade = @coil.grade
+          @slittingproduction.width_slitting = slit.slit_width
+          @slittingproduction.slit_coil_weight = slit.process_coil_wt
+          @slittingproduction.status = 1
+          if @slittingproduction.save
+            flash[:notice] = 'Slitting Production was successfully created.'
+          else
+            @error = 1
+          end     
+        end
+      end      
+    end
+    if @error == 0
+      redirect_to slittingproductions_path
+    else
+      render :action => "new"
+    end     
 
-    render :action => "new"
   end
 
   # PUT /slittingproductions/1

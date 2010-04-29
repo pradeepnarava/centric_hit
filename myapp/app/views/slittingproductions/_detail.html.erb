@@ -46,7 +46,7 @@
               <tr>
                 <td><%= h slits.slit_width%></td>
                 <td><%= h slits.process_coil_wt%></td>
-                <td><%= text_field_tag "#{i}_#{sub}[production][slitting_coil_no]" %></td>
+                <td><%= text_field_tag "#{slits.id}[#{sub}][slitting_coil_no]" %></td>
               </tr>
             <%end%>
           </table>
