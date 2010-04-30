@@ -1,5 +1,5 @@
 <p>Mother Coil Detail</p>
-<table>
+<table border="1">
   <tr>
     <th>CLS Coil No.</th>
     <th>Input wt</th>
@@ -24,14 +24,17 @@
       <th>Coil wt.</th>
       <th>Scrap</th>
       <th>No. of Slits</th>
+      <th>No. of Produced Slits</th>
     </tr>
     <%i=1%>
-    <%@coil.slittings.each do |slits|%>
+    <%#@coil.slittings.each do |slits|%>
+    <%@slittings.each do |slits|%>
       <tr>
         <td><%= h slits.slit_width %></td>
         <td><%= h slits.process_coil_wt %></td>
         <td><%= h slits.scrap %></td>
         <td><%= h slits.no_of_slits %></td>
+        <td><%= h slits.produced_no_of_slit %></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
@@ -42,7 +45,7 @@
               <td>Coil wt</td>
               <td>Slit Coil No</td>
             </tr>
-            <%for sub in 1..slits.no_of_slits.to_i%>
+            <%for sub in 1..(slits.no_of_slits.to_i - slits.produced_no_of_slit.to_i)%>
               <tr>
                 <td><%= h slits.slit_width%></td>
                 <td><%= h slits.process_coil_wt%></td>

@@ -1,81 +1,36 @@
+<script type="text/javascript">
+    livia_datepicker();
+</script>
 <%= render :partial=>'layouts/process_leftside_bar' %>
 <div id="center-column">
 <div class="gridDiv">
-  <div class="titleHead">New Uncoiler Report</div>
-  <div class="formMain">
+  <div class="titleHead">Uncoiler Report</div>
+  <div class="formOrder">
     <% form_for(@uncoiler_report) do |f| %>
-      <%= f.error_messages %>
-      <div>
-        <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" style="width: 48%;" >
-          <div>
-            <p style="width:100%">
-              <%= f.label :date %>
-              <%= f.datetime_select :date %>
-            </p>
-            <p style="width:100%">
-              <%= f.label :shift %>
-              <%= f.datetime_select :shift %>
-            </p>
-            <p>
-              <%= f.label :operator_name %>
-              <%= f.text_field :operator_name %>
-            </p>
-            <p>
-              <%= f.label "Slitting coil no" %>
-              <%=f.collection_select( :slittingproduction_id, Slittingproduction.all,:id,:slitting_coil_no,{:include_blank => "----------Select----------"})%>
-            </p>
-            <p>
-              <%= f.label :tube_od %>
-              <%= f.text_field :tube_od %>
-            </p>
-            <p>
-              <%= f.label :width %>
-              <%= f.text_field :width %>
-            </p>
-          </div>
-        </div>
-        <div style="width: 52%;" class="fr">
-          <div>
-             <p>
-              <%= f.label :thickness %>
-              <%= f.text_field :thickness %>
-            </p>
-            <p>
-              <%= f.label :grade %>
-              <%= f.text_field :grade %>
-            </p>
-            <p>
-              <%= f.label :type %>
-              <%= f.text_field :type %>
-            </p>
-            <p>
-              <%= f.label :width_actual %>
-              <%= f.text_field :width_actual %>
-            </p>
-            <p>
-              <%= f.label :thickness_actual %>
-              <%= f.text_field :thickness_actual %>
-            </p>
-            <p>
-              <%= f.label :grade_actual %>
-              <%= f.text_field :grade_actual %>
-            </p>
-            <p>
-              <%= f.label :type_actual %>
-              <%= f.text_field :type_actual %>
-            </p>
-          </div>
-        </div>
+        <%= f.error_messages %>
+        <table>
+          <tr>
+            <td><label>Mother Coil No:</label></td>
+            <td><%=collection_select( :slittingproduction,:rawmaterial_id, @coils,:id,:name,{:include_blank => "---Select---"},{:onchange => "uncoilerdetail(this.value);"})%></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td><label>Date</label></td>
+            <td><%=f.text_field :date, :size => 12, :class=>'dateTextBox date_picker'%></td>
+            <td><label>Shift</label></td>
+            <td><%=f.text_field :shift%></td>
+            <td><label>Operator Name</label></td>
+            <td><%=f.text_field :operator_name%></td>            
+          </tr>
+        </table>        
         <br class="clear"/>
+        <div id="detail"></div>
         <div class="txtC" id="submit_div">
           <%= f.submit "Create" , :class=>'button submit_buttons'%>
-        </div>
-        <br class="clear"/>
-      </div>
-    <% end %>
+          <%=link_to 'Cancel', uncoiler_reports_url, :class => "linkbutton" %>
+        </div>        
+    <%end%>
   </div>
 </div>
 </div>

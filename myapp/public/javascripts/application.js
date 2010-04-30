@@ -206,3 +206,17 @@ function slitproductioncoildetail(id){
      success: function(){loader.remove();}
      });       
 }
+
+function uncoilerdetail(id){
+    if(id==""){return false}
+    loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/uncoiler_reports/coil_detail",
+       dataType: 'script',
+    data: {
+          'id' : id
+        },
+     success: function(){loader.remove();}
+     });       
+}

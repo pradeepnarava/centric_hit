@@ -1,7 +1,10 @@
+<script type="text/javascript">
+    livia_datepicker();
+</script>
 <%= render :partial=>'layouts/process_leftside_bar' %>
 <div id="center-column">
 <div class="gridDiv">
-  <div class="titleHead">New Tube Mill Performance</div>
+  <div class="titleHead">Edit Tube Mill Performance</div>
   <div class="formOrder">
     <% form_for(@tube_mill_performance_report) do |f| %>
       <%= f.error_messages %>
@@ -10,9 +13,9 @@
             <table>
               <tr>
                 <td><label>Date</label></td>
-                <td><%= f.datetime_select :date %></td>
+                <td><%= f.text_field :date ,:size => 12,  :class=>'dateTextBox date_picker'%></td>
                 <td><label>Shift</label></td>
-                <td><%= f.time_select :shift %></td>
+                <td><%= f.text_field :shift,:size => 8 %></td>
                 <td><label>Operator Name</label></td>
                 <td><%= f.text_field :operator_name %></td>                     
                 <td><label>Inspector Name</label></td>

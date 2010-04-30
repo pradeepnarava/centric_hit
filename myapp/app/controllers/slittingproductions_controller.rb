@@ -37,6 +37,7 @@ class SlittingproductionsController < ApplicationController
 
   def coil_detail
     @coil = Rawmaterial.find(params[:id])
+    @slittings = @coil.slittings.find(:all, :conditions => ["status = 0"])
   end  
 
   # GET /slittingproductions/1/edit
@@ -70,6 +71,12 @@ class SlittingproductionsController < ApplicationController
           end     
         end
       end      
+      slittingproduction = Slittingproduction.find_all_by_slitting_id(slit.id)
+      if slit.update_attributes!(:produced_no_of_slit => slittingproduction.size.to_i)
+        if slit.no_of_slits.to_i == slit.produced_no_of_slit.to_i
+          slit.update_attributes(:status => 1)
+        end
+      end
     end
     if @error == 0
       redirect_to slittingproductions_path

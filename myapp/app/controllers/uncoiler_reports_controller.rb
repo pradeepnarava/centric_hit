@@ -25,12 +25,17 @@ class UncoilerReportsController < ApplicationController
   # GET /uncoiler_reports/new.xml
   def new
     @uncoiler_report = UncoilerReport.new
-
+    @coils = Slittingproduction.all.collect { |sl| sl.rawmaterial}.uniq
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @uncoiler_report }
     end
   end
+  
+  def coil_detail
+    @coil = Rawmaterial.find(params[:id])
+    @slittingproductions = @coil.slittingproductions.find(:all, :conditions => ["status = 1"])
+  end    
 
   # GET /uncoiler_reports/1/edit
   def edit
@@ -40,18 +45,30 @@ class UncoilerReportsController < ApplicationController
   # POST /uncoiler_reports
   # POST /uncoiler_reports.xml
   def create
-    @uncoiler_report = UncoilerReport.new(params[:uncoiler_report])
-
-    respond_to do |format|
-      if @uncoiler_report.save
-        flash[:notice] = 'UncoilerReport was successfully created.'
-        format.html { redirect_to(@uncoiler_report) }
-        format.xml  { render :xml => @uncoiler_report, :status => :created, :location => @uncoiler_report }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @uncoiler_report.errors, :status => :unprocessable_entity }
+    data = params
+    @error = 0
+    @uncoiler = data.rehash.each_pair do |key,value|
+      unless value[:uncoiler].blank?
+        @uncoiler_report = UncoilerReport.new(value[:uncoiler])
+        @uncoiler_report.date = data[:uncoiler_report][:date]
+        @uncoiler_report.operator_name = data[:uncoiler_report][:operator_name]
+        @uncoiler_report.shift = data[:uncoiler_report][:shift]
+        if @uncoiler_report.save
+          @slittingp = Slittingproduction.find(value[:uncoiler][:slittingproduction_id])
+          @slittingp.update_attributes(:status => 2)
+          flash[:notice] = 'Uncoiler Report was successfully created.'
+        else
+          @error = 1
+        end                 
       end
     end
+
+    if @error == 0
+      redirect_to uncoiler_reports_path
+    else
+      render :action => "new"
+    end   
+
   end
 
   # PUT /uncoiler_reports/1
