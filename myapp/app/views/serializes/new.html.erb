@@ -21,46 +21,62 @@
             <p>
               <%= f.label :specification %>
               <%=f.collection_select(:specification_id, Specification.all,:id,:specification_name,{:include_blank => "---Select---"})%>
-            </p>                 
-     
-               <p>
-                <label>Type</label>
-                <%= f.select("mat_type", { "E" => "E", "S" => "S","R"=>"R"}) %>
-              </p>
-                 <p>
-                <label>Annealead/Unannealed</label>
-                <%= f.select("annealed_unannealed", { "ANN" => "ANN", "UAN" => "UAN"}) %>
-              </p>
-                   <p>
-                <label>Fin Cut/Non Fincut</label>
-                <%= f.select("fincut_non_fincut", { "F/C" => "F/C", "NFC" => "NFC"}) %>
-              </p>
-          
-                
-                  <p>
-                <label>Packing Mode</label>
+            </p>
+
+            <p>
+              <label>Type</label>
+              <%= f.select("mat_type", { "E" => "E", "S" => "S","R"=>"R"}) %>
+            </p>
+
+            <p>
+              <label>Annealead/Unannealed</label>
+              <%= f.select("annealed_unannealed", { "ANN" => "ANN", "UAN" => "UAN"}) %>
+            </p>
+
+            <p>
+              <label>Fin Cut/Non Fincut</label>
+              <%= f.select("fincut_non_fincut", { "F/C" => "F/C", "NFC" => "NFC"}) %>
+            </p>
+
+            <p>
+              <label>End Condition</label>
+              <%= f.text_area :end_condition,:rows=>5,:cols=>20%>
+            </p>
+
+            <p>
+              <label>Packing Mode</label>
               <%= f.text_area :packing_mode,:rows=>5,:cols=>20%>
             </p>
 
         </div>
 
-        <div class="fl w48" >
-             <p>
-              <%= f.label :height %>
-              <%= f.text_field :height %>
-            </p>
+          <div class="fl w48" >
+
             <p>
-              <%= f.label :od %>
-              <%= f.text_field :od %>
-            </p>            
+              <%= f.label :width %>
+              <%= f.text_field :width %>
+            </p>
+
+            <p>
+              <label> Height </label>
+              <%= text_field_tag "#{"serialize"}[height]" %>
+            </p>
+
             <p>
               <%= f.label :thikness %>
               <%= f.text_field :thikness %>
-            </p>            
+            </p>
+
             <p>
-              <%= f.label :length %>
-              <%= f.text_field :length %>
-            </p>   
+              <label> Length </label>
+              <%= text_field_tag "#{"serialize"}[length]" ,nil,:onblur => "total_cal_od();"%>
+            </p>
+
+            <p>
+              <%= f.label :od %>
+              <%= f.text_field :od %>
+            </p>
+  
                   <p>
               <%= f.label :grade %>
               <%= f.text_field :grade%>

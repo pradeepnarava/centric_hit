@@ -48,7 +48,8 @@ class CustomerOrdersController < ApplicationController
         @customer_order.customer_id = data[:customer_order][:customer_id]
         @customer_order.delivery_address = data[:customer_order][:delivery_address]
         @customer_order.ecc_no = data[:customer_order][:ecc_no]
-        @customer_order.po_no = data[:customer_order][:po_no]  
+         @customer_order.vat_no = data[:customer_order][:vat_no]
+        @customer_order.po_no = data[:customer_order][:po_no]
         if @customer_order.save
           flash[:notice] = 'CustomerOrder was successfully created.'
         else
@@ -65,7 +66,7 @@ class CustomerOrdersController < ApplicationController
 
   def customer_detail
     @customer = Customer.find(params[:id])
-    @serials = @customer.serializes  
+    @serials = @customer.serializes
   end
 
   def serial_detail

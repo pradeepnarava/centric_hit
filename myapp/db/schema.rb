@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100427183610) do
+ActiveRecord::Schema.define(:version => 20100430085642) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company_name"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20100427183610) do
     t.decimal  "qty_mtr",          :precision => 12, :scale => 3, :default => 0.0
     t.decimal  "qty_mt",           :precision => 12, :scale => 3, :default => 0.0
     t.decimal  "qty_pcs",          :precision => 12, :scale => 3, :default => 0.0
+    t.string   "vat_no"
   end
 
   create_table "customers", :force => true do |t|
@@ -282,6 +283,7 @@ ActiveRecord::Schema.define(:version => 20100427183610) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "address_id"
+    t.integer  "mother_id"
   end
 
   create_table "roles", :force => true do |t|
@@ -291,18 +293,19 @@ ActiveRecord::Schema.define(:version => 20100427183610) do
   end
 
   create_table "salesplans", :force => true do |t|
-    t.string   "po_no"
-    t.string   "customer_name"
     t.integer  "customer_id"
-    t.string   "tube_size"
     t.integer  "serialize_id"
-    t.integer  "quantity"
-    t.string   "customer_code"
-    t.integer  "pieces"
-    t.integer  "meter"
-    t.integer  "kilos"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "od"
+    t.decimal  "length"
+    t.decimal  "thikness"
+    t.decimal  "order_wt",         :precision => 12, :scale => 4, :default => 0.0
+    t.integer  "stock_quantity"
+    t.decimal  "stock_wt",         :precision => 12, :scale => 4, :default => 0.0
+    t.integer  "balance_quantity"
+    t.decimal  "balance_wt",       :precision => 12, :scale => 4, :default => 0.0
+    t.integer  "order_quantity"
   end
 
   create_table "serializes", :force => true do |t|
@@ -321,6 +324,7 @@ ActiveRecord::Schema.define(:version => 20100427183610) do
     t.string   "end_condition"
     t.string   "packing_mode"
     t.string   "mat_type"
+    t.decimal  "width"
   end
 
   create_table "slittingproductions", :force => true do |t|
@@ -348,7 +352,7 @@ ActiveRecord::Schema.define(:version => 20100427183610) do
 
   create_table "slittings", :force => true do |t|
     t.integer  "rawmaterial_id"
-    t.integer  "division_part"
+    t.integer  "division_part",        :default => 0
     t.string   "scrap"
     t.decimal  "slit_width"
     t.decimal  "slit_weight"
@@ -359,6 +363,7 @@ ActiveRecord::Schema.define(:version => 20100427183610) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
+    t.integer  "slitt_rawmaterial_id"
   end
 
   create_table "specifications", :force => true do |t|

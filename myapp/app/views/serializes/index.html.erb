@@ -20,8 +20,8 @@
                         <tr>
                 <td><%=h serialize.name %></td>
                  <td><%=h serialize.customer.name %></td>
-                 <td><%=h serialize.specification.specification_name  if serialize.specification%></td>
-                 <td><%=h "#{serialize.od}""#{serialize.length}" "#{serialize.thikness}"%></td>
+                 <td><%=h serialize.specification.specification_name if serialize.specification%></td>
+                 <td><%=h "#{serialize.od}X#{serialize.length}X#{serialize.thikness}"%></td>
                 <td>
                     <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_serialize_path(serialize))%>
                     <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate",:border => 0, :hspace => "2"}),serialize, :confirm => 'Are you sure?', :method => :delete) %>

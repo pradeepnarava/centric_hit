@@ -16,6 +16,8 @@ function customerdetail(id){
 
 function copyaddress(){
   jQuery('#customer_order_delivery_address').val(jQuery('#customer_order_office_address').val());
+    jQuery('#customer_order_ecc_no').val('');
+    jQuery('#customer_order_vat_no').val('');
 }
 
 function serialdetail(id,row){
@@ -33,12 +35,101 @@ function serialdetail(id,row){
      });       
 }
 
-function total_price(row){
- 
- rpkg  = jQuery("#"+row+"_customer_order_rate_per_kilo").val();
- twt  = jQuery("#"+row+"_customer_order_total_weight").val();
- jQuery("#"+row+"_customer_order_total_amount").val(rpkg*twt);
+function total_price(row){ 
+    rpkg  = jQuery("#"+row+"_customer_order_rate_per_kilo").val();
+    twt  = jQuery("#"+row+"_customer_order_rate_pcs").val();
+    jQuery("#"+row+"_customer_order_total_amount").val(rpkg*twt);
 }
+
+function total_pcs_mts(row){    
+    length= jQuery("#"+row+"_customer_order_h_length").val();
+    od  = jQuery("#"+row+"_customer_order_h_od").val();
+    mtr  = jQuery("#"+row+"_customer_order_rate_mtr").val();
+    thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
+    i  = ((od-thikness)*thikness)/40549;  
+    jQuery("#"+row+"_customer_order_rate_pcs").val(Number(mtr*length).toFixed(3));
+    jQuery("#"+row+"_customer_order_rate_mt").val(Number(mtr/i).toFixed(3));
+    
+}
+
+function total_mtr_mts(row){    
+    pcs  = jQuery("#"+row+"_customer_order_rate_pcs").val();
+    length= jQuery("#"+row+"_customer_order_h_length").val();
+    od  = jQuery("#"+row+"_customer_order_h_od").val();
+    thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
+    i  = ((od-thikness)*thikness)/40549;
+    jQuery("#"+row+"_customer_order_rate_mt").val(Number(pcs/(length*i)).toFixed(3));
+    jQuery("#"+row+"_customer_order_rate_mtr").val(Number(pcs/length).toFixed(3));
+}
+
+
+function total_mtr_pcs(row){    
+    mtonnes  = jQuery("#"+row+"_customer_order_rate_mt").val();
+    length= jQuery("#"+row+"_customer_order_h_length").val();
+    od  = jQuery("#"+row+"_customer_order_h_od").val();
+    thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
+    i  = ((od-thikness)*thikness)/40549;
+    jQuery("#"+row+"_customer_order_rate_mtr").val(Number(((od-thikness)*thikness*0.2465*mtonnes)/10000).toFixed(3));
+    jQuery("#"+row+"_customer_order_rate_pcs").val(Number(i*mtonnes*length).toFixed(3));
+}
+
+
+function total_weight(row){
+    quantity  = jQuery("#"+row+"_customer_order_quantity").val();
+    length= jQuery("#"+row+"_customer_order_h_length").val();
+    od  = jQuery("#"+row+"_customer_order_h_od").val();
+    thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
+    i  = ((od-thikness)*thikness*length*0.02465*quantity)/1000;
+    jQuery("#"+row+"_customer_order_total_weight").val(Number(i).toFixed(3));
+  
+}
+
+function total_amount(row){
+    quantity  = jQuery("#"+row+"_customer_order_quantity").val();
+    rate_pcs= jQuery("#"+row+"_customer_order_rate_pcs").val();
+      i  = quantity*rate_pcs;
+    jQuery("#"+row+"_customer_order_total_amount").val(Number(i).toFixed(3));
+}
+
+function total_cal_od(){
+ height  = jQuery("#"+"serialize_height").val();
+  width  = jQuery("#"+"serialize_width").val();
+    i  = ((width*2.0)+(height*2.0))/3.14;
+ jQuery("#"+"serialize_od").val(Number(i).toFixed(3));
+}
+
+
+
+function cal_bal_quantity(){
+ order_qty  = jQuery("#"+"salesplan_order_quantity").val();
+  stock_qty  = jQuery("#"+"salesplan_stock_quantity").val();
+    i  =  order_qty-stock_qty;
+ jQuery("#"+"salesplan_balance_quantity").val(Number(i).toFixed(3));
+}
+
+function cal_bal_wt(){
+ order_wt  = jQuery("#"+"salesplan_order_wt").val();
+  stock_wt  = jQuery("#"+"salesplan_stock_wt").val();
+    i  =  order_wt-stock_wt;
+ jQuery("#"+"salesplan_balance_wt").val(Number(i).toFixed(3));
+}
+
+
+function salesplan_customer_order(id){
+    alert(id);
+    if(id==""){return false}
+    loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/salesplans/order_detail",
+       dataType: 'script',
+    data: {
+          'id' : id
+        },
+     success: function(){loader.remove();}
+     });
+}
+
 
 function coildetail(id){
     if(id==""){return false}

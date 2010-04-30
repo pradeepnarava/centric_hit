@@ -10,29 +10,21 @@
   <table class="listing" cellpadding="0" cellspacing="0" width="100%">
     <tr>
 
-      <th>Customer name</th>
-      <th>Customer code</th>
-      <th>Tube size</th>
+      <th>Customer name</th>   
       <th>Serialize</th>
-      <th>Quantity</th>
-      <th>Pieces</th>
-      <th>Meter</th>
-      <th>Kilos</th>
-      <th>Po no</th>
+      <th> Order Quantity</th>
+      <th>Order Weight</th>
       <th>Action</th>
     </tr>
 
     <% for salesplan in @salesplans %>
       <tr>
-        <td><%=h salesplan.customer.name %></td>
-        <td><%=h salesplan.customer_code %></td>
-        <td><%=h salesplan.tube_size %></td>
-        <td><%=h salesplan.serialize_id %></td>
-        <td><%=h salesplan.quantity %></td>
-        <td><%=h salesplan.pieces %></td>
-        <td><%=h salesplan.meter %></td>
-        <td><%=h salesplan.kilos %></td>
-        <td><%=h salesplan.po_no %></td>
+        <td><%=h salesplan.customer.name %></td>      
+        <td><%=h salesplan.serialize.name %></td>
+        <td><%=h salesplan.order_quantity %></td>
+        <td><%=h salesplan.order_wt %></td>
+
+   
         <td>
           <div class="fr" style="float:left;">
             <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_salesplan_path(salesplan))%>

@@ -1,2 +1,4 @@
-jQuery("#<%=params[:row]%>_customer_order_tube_size").val("<%=@serial.tube_size%>");
-jQuery("#<%=params[:row]%>_order_specification").val("<%=@serial.specification%>");
+jQuery("#<%=params[:row]%>_customer_order_tube_size").val("<%="#{@serial.od}X #{@serial.length}X#{@serial.thikness}"%>");
+jQuery("#<%=params[:row]%>_customer_order_h_od").val("<%=@serial.od%>");
+jQuery("#<%=params[:row]%>_customer_order_h_length").val("<%=@serial.length%>");
+jQuery("#<%=params[:row]%>_customer_order_h_thikness").val("<%=@serial.thikness%>");

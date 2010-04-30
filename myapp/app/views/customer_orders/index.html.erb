@@ -1,49 +1,54 @@
 <%= render :partial=>'layouts/order_leftside_bar' %>
 <div id="center-column">
-<div class="top-bar">
-  <%= link_to 'New', new_customer_order_path,:class=>"button" %>
-  <h1>Listing Customer Orders</h1>
-</div><br />
-<div class="table">
-  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
-  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
-  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-      <th>Tube size</th>
-      <th>Specification</th>
-      <th>Customer name</th>
-      <th>Serialize code</th>
-      <th>Quantity</th>
-      <th>Rate per kilo</th>
-      <th>Total amount</th>
-      <th>Email</th>
-      <th>Vat no</th>
-      <th>Delivery address</th>
-      <th>Action</th>
-    </tr>
-    
-    <% for customer_order in @customer_orders %>
-      <tr class="<%=cycle("bg1", "bg2")%>">
-        <td><%=h customer_order.tube_size %></td>
-        <td><%=h customer_order.serialize.specification rescue "-" %></td>
-        <td><%=h customer_order.customer.name rescue "-" %></td>
-        <td><%=h customer_order.serialize.name rescue "-"%></td>
-        <td><%=h customer_order.quantity %></td>
-        <td><%=h customer_order.rate_per_kilo %></td>
-        <td><%=h customer_order.total_amount %></td>
-        <td><%=h customer_order.customer.email rescue "-" %></td>
-        <td><%=h customer_order.customer.vat_no rescue "-"  %></td>
-        <td><%=h customer_order.delivery_address %></td>
-        <td>
-          <div class="fr">
-            <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}), edit_customer_order_path(customer_order))%>
-            <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :border => 0, :hspace => "2"}), :method => :delete) %>
-          </div>
-        </td>
+  <div class="top-bar">
+    <%= link_to 'New', new_customer_order_path,:class=>"button" %>
+    <h1>Listing Customer Orders</h1>
+  </div><br />
+  <div class="table">
+    <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+    <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+    <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <th>Tube size</th>
+        <th>Specification</th>
+        <th>Customer name</th>
+        <th>Serialize code</th>
+        <th>Quantity</th>
+        <th>Total amount</th>
+        <th>PO.No</th>
+        <th>Vat no</th>
+        <th>Ecc no</th>
+        <th>Delivery address</th>
+        <th>Action</th>
       </tr>
-    <% end %>
-  </table>
-</div>
-<br />
+
+      <% for customer_order in @customer_orders %>
+        <tr class="<%=cycle("bg1", "bg2")%>">
+          <td><%=h customer_order.tube_size %></td>
+          <td><%=h customer_order.serialize.specification.specification_name rescue "-" %></td>
+          <td><%=h customer_order.customer.name rescue "-" %></td>
+          <td><%=h customer_order.serialize.name rescue "-"%></td>
+          <td><%=h customer_order.quantity %></td>
+          <td><%=h customer_order.total_amount %></td>
+          <td><%=h customer_order.po_no rescue "-" %></td>
+          <% if customer_order.delivery_address.empty? %>
+            <td><%=h customer_order.customer.vat_no rescue "-"  %></td>
+            <td><%=h customer_order.customer.ecc_no rescue "-"  %></td>
+          <%else%>
+            <td><%=h customer_order.vat_no rescue "-"  %></td>
+            <td><%=h customer_order.ecc_no rescue "-"  %></td>
+          <%end%>
+          <td><%=h customer_order.delivery_address %></td>
+          <td>
+            <div class="fr">
+              <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}), edit_customer_order_path(customer_order))%>
+              <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :border => 0, :hspace => "2"}), :method => :delete) %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <br />
 </div>
 

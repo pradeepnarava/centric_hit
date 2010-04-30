@@ -1,5 +1,5 @@
 class SalesplansController < ApplicationController
-  load_and_authorize_resource
+  #load_and_authorize_resource
   # GET /salesplans
   # GET /salesplans.xml
   def index
@@ -14,8 +14,7 @@ class SalesplansController < ApplicationController
   # GET /salesplans/1
   # GET /salesplans/1.xml
   def show
-    @salesplan = Salesplan.find(params[:id])
-
+    @serials = Serialize.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @salesplan }
@@ -38,6 +37,12 @@ class SalesplansController < ApplicationController
     @salesplan = Salesplan.find(params[:id])
   end
 
+
+def order_detail
+@serial = Serialize.find(params[:id])
+@customer_order=CustomerOrder.find_by_serialize_id(@serial.id)
+end
+
   # POST /salesplans
   # POST /salesplans.xml
   def create
@@ -45,7 +50,7 @@ class SalesplansController < ApplicationController
     respond_to do |format|
       if @salesplan.save
         flash[:notice] = 'Salesplan was successfully created.'
-        format.html { redirect_to(@salesplan) }
+        format.html { redirect_to(salesplans_url) }
         format.xml  { render :xml => @salesplan, :status => :created, :location => @salesplan }
       else
         format.html { render :action => "new" }
