@@ -1,0 +1,35 @@
+<%sno = 1%>
+<table border="1">
+  <tr>
+    <th rowspan="2">S.No.</th>
+    <th rowspan="2">Coil No.</th>
+    <th colspan="4">Standard</th>
+    <th colspan="4">Actual Observations</th>
+  </tr>
+  <tr>
+    <th>Width</th>
+    <th>Thick</th>
+    <th>Grade</th>
+    <th>Type</th>
+    <th>Width</th>
+    <th>Thick</th>
+    <th>Grade</th>
+    <th>Type</th>
+  </tr>
+  <%@slittingproductions.each do |slitp|%>
+  <tr>
+    <td><%=h sno %></td>
+    <td><%=h slitp.slitting_coil_no%></td>
+    <td><%=h slitp.width_slitting%></td>
+    <td><%=h slitp.thickness%></td>
+    <td><%=h slitp.grade%></td>
+    <td><%=h slitp.type%></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][width_actual]" %></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][thickness_actual]" %></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][grade_actual]" %></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][type_actual]" %></td>
+  </tr>
+    <%sno += 1%>
+    <%=hidden_field_tag "#{slitp.id}[uncoiler][slittingproduction_id]", "#{slitp.id}"%>
+  <%end%>
+</table>
