@@ -1,0 +1,5 @@
+<%unless params[:id]%>
+  <%=select_tag "tube_mill_stoppage_report_description_of_breakdown", "<option>--Select--</option>",:disabled => true%>
+<%else%>
+  <%=collection_select "tube_mill_stoppage_report","description_of_breakdown",@stoppage,:name,:name,{:include_blank => "--- Select ---"}%>
+<%end%>

@@ -1,113 +1,48 @@
+<script type="text/javascript">
+    livia_datepicker();
+</script>
 <%= render :partial=>'layouts/process_leftside_bar' %>
 <div id="center-column">
-<div class="gridDiv">
-  <div class="titleHead">New Tube Mill Stoppage Report</div>
-  <div class="formMain">
-   <% form_for(@tube_mill_stoppage_report) do |f| %>
-  <%= f.error_messages %>
-      <div>
-        <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" style="width: 52%;" >
-          <div>
-  <p style="width:110%">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
-  </p>
-  <p style="width:100%">
-    <%= f.label :shift %>
-    <%= f.datetime_select :shift %>
-  </p>
-  <p style="width:100%">
-    <%= f.label :from %>
-    <%= f.datetime_select :from %>
-  </p>
-  <p style="width:100%" >
-    <%= f.label :to %>
-    <%= f.datetime_select :to %>  
-  </p>
-   <p>
-    <%= f.label :size %>
-    <%= f.text_field :size %>
-  </p>
-  <p>
-    <%= f.label :customer %>
-    <%= f.text_field :customer %>
-  </p>
-  <p style="width:50%" >
-    <%= f.label :description_of_breakdown %>
-    <%= f.text_field :description_of_breakdown %>
-  </p>
-  <p>
-    <%= f.label :type %>
-    <%=f.collection_select( :type_stop, @stoppage,:name,:name,{:include_blank => "--- Select ---"})%>
-  </p>
-  <p>
-    <%= f.label :stoppage_code %>
-    <%= f.text_field :stoppage_code %>
-  </p>
-  </div>
-        </div>
-        <div style="width: 48%;" class="fr">
-          <div>
-  <p>
-    <%= f.label :total_time %>
-    <%= f.text_field :total_time %>
-  </p>
-  <p>
-    <%= f.label :remarks %>
-    <%= f.text_field :remarks %>
-  </p>
-  <p>
-    <%#= f.label :electrical_maintainence %>
-    <%#= f.text_field :electrical_maintainence %>
-  </p>
-  <p>
-    <%#= f.label :mechanical_maintainence %>
-    <%#= f.text_field :mechanical_maintainence %>
-  </p>
-  <p>
-    <%#= f.label :operational %>
-    <%#= f.text_field :operational %>
-  </p>
-  <p>
-    <%#= f.label :roll_change %>
-    <%#= f.text_field :roll_change %>
-  </p>
-  <p>
-    <%#= f.label :raw_material_shortage %>
-    <%#= f.text_field :raw_material_shortage %>
-  </p>
-  <p>
-    <%#= f.label :man_power_shortage %>
-    <%#= f.text_field :man_power_shortage %>
-  </p>
-  <p>
-    <%#= f.label :crane_delay %>
-    <%#= f.text_field :crane_delay %>
-  </p>
-  <p>
-    <%#= f.label :power_failure %>
-    <%#= f.text_field :power_failure %>
-  </p>
-  <p>
-    <%= f.label :remarks_last %>
-    <%= f.text_field :remarks_last %>
-  </p>
-  <p>
-    <%= f.label :shift_incharge %>
-    <%= f.text_field :shift_incharge %>
-  </p>
- </div>
-        </div>
+  <div class="gridDiv">
+    <div class="titleHead">Tube Mill Stoppage Report</div>
+    <div class="formOrder">
+      <% form_for(@tube_mill_stoppage_report) do |f| %>
+        <%= f.error_messages %>
+        <table cellspacing="5">
+          <tr>
+            <td><%= f.label :date %></td>
+            <td><%= f.text_field :date ,:size => 12,  :class=>'dateTextBox date_picker'%></td>
+            <td><%= f.label :shift %></td>
+            <td><%= f.text_field :shift,:size => 8%></td>
+            <td><%= f.label :shift_incharge %></td>
+            <td><%= f.text_field :shift_incharge %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th>Stopage Type</th>
+            <th>Description of Breakdown</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Total Time</th>
+            <th>Remark</th>
+          </tr>
+          <tr>
+            <td><%=f.select :type_stop ,Stoppage::STOPAGE_TYPE ,{:include_blank => "--- Select ---"},{:onchange => "stopagedetail(this.value);"}%></td>
+            <td><span id="breakdown"><%=render :partial => 'stoppage'%></span></td>
+            <td><%= f.time_select :from %></td>
+            <td><%= f.time_select :to %></td>
+            <td><%= f.text_field :total_time %></td>
+            <td><%= f.text_field :remarks %></td>
+          </tr>
+        </table>
         <br class="clear"/>
         <div class="txtC" id="submit_div">
           <%= f.submit "Create" , :class=>'button submit_buttons'%>
+          <%=link_to 'Cancel',tube_mill_stoppage_reports_path,{ :class=>'button submit_buttons cancelbutton' }%>
         </div>
         <br class="clear"/>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>

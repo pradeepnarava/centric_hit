@@ -12,7 +12,7 @@
               <td><label>Name:</label></td>
               <td><%=f.text_field "name"%></td>
               <td><label>Type:</label></td>
-              <td> <%= f.select(:type_stop, {"Operational" =>'1', "Mechanical" =>'2',"Electrical"=>'3',"Others" =>'4'}) %></td>
+              <td> <%= f.select(:type_stop,Stoppage::STOPAGE_TYPE ,{:include_blank => "--- Select ---"}) %></td>
             </tr>
           </table>
           <br class="clear"/>

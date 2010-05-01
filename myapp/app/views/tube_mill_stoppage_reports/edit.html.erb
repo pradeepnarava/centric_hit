@@ -1,96 +1,48 @@
-<h1>Editing tube_mill_stoppage_report</h1>
-
-<% form_for(@tube_mill_stoppage_report) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </p>
-  <p>
-    <%= f.label :shift %><br />
-    <%= f.datetime_select :shift %>
-  </p>
-  <p>
-    <%= f.label :size %><br />
-    <%= f.text_field :size %>
-  </p>
-  <p>
-    <%= f.label :customer %><br />
-    <%= f.text_field :customer %>
-  </p>
-  <p>
-    <%= f.label :description_of_breakdown %><br />
-    <%= f.text_field :description_of_breakdown %>
-  </p>
-  <p>
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </p>
-  <p>
-    <%= f.label :stoppage_code %><br />
-    <%= f.text_field :stoppage_code %>
-  </p>
-  <p>
-    <%= f.label :from %><br />
-    <%= f.datetime_select :from %>
-  </p>
-  <p>
-    <%= f.label :to %><br />
-    <%= f.datetime_select :to %>
-  </p>
-  <p>
-    <%= f.label :total_time %><br />
-    <%= f.text_field :total_time %>
-  </p>
-  <p>
-    <%= f.label :remarks %><br />
-    <%= f.text_field :remarks %>
-  </p>
-  <p>
-    <%= f.label :electrical_maintainence %><br />
-    <%= f.text_field :electrical_maintainence %>
-  </p>
-  <p>
-    <%= f.label :mechanical_maintainence %><br />
-    <%= f.text_field :mechanical_maintainence %>
-  </p>
-  <p>
-    <%= f.label :operational %><br />
-    <%= f.text_field :operational %>
-  </p>
-  <p>
-    <%= f.label :roll_change %><br />
-    <%= f.text_field :roll_change %>
-  </p>
-  <p>
-    <%= f.label :raw_material_shortage %><br />
-    <%= f.text_field :raw_material_shortage %>
-  </p>
-  <p>
-    <%= f.label :man_power_shortage %><br />
-    <%= f.text_field :man_power_shortage %>
-  </p>
-  <p>
-    <%= f.label :crane_delay %><br />
-    <%= f.text_field :crane_delay %>
-  </p>
-  <p>
-    <%= f.label :power_failure %><br />
-    <%= f.text_field :power_failure %>
-  </p>
-  <p>
-    <%= f.label :remarks_last %><br />
-    <%= f.text_field :remarks_last %>
-  </p>
-  <p>
-    <%= f.label :shift_incharge %><br />
-    <%= f.text_field :shift_incharge %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @tube_mill_stoppage_report %> |
-<%= link_to 'Back', tube_mill_stoppage_reports_path %>
+<script type="text/javascript">
+    livia_datepicker();
+</script>
+<%= render :partial=>'layouts/process_leftside_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Tube Mill Stoppage Report</div>
+    <div class="formOrder">
+      <% form_for(@tube_mill_stoppage_report) do |f| %>
+        <%= f.error_messages %>
+        <table cellspacing="5">
+          <tr>
+            <td><%= f.label :date %></td>
+            <td><%= f.text_field :date ,:size => 12,  :class=>'dateTextBox date_picker'%></td>
+            <td><%= f.label :shift %></td>
+            <td><%= f.text_field :shift,:size => 8%></td>
+            <td><%= f.label :shift_incharge %></td>
+            <td><%= f.text_field :shift_incharge %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th>Stopage Type</th>
+            <th>Description of Breakdown</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Total Time</th>
+            <th>Remark</th>
+          </tr>
+          <tr>
+            <td><%=f.select :type_stop ,Stoppage::STOPAGE_TYPE ,{:include_blank => "--- Select ---"},{:onchange => "stopagedetail(this.value);"}%></td>
+            <td><span id="breakdown"><%=render :partial => 'stoppage'%></span></td>
+            <td><%= f.time_select :from %></td>
+            <td><%= f.time_select :to %></td>
+            <td><%= f.text_field :total_time %></td>
+            <td><%= f.text_field :remarks %></td>
+          </tr>
+        </table>
+        <br class="clear"/>
+        <div class="txtC" id="submit_div">
+          <%= f.submit "Update" , :class=>'button submit_buttons'%>
+          <%=link_to 'Back',tube_mill_stoppage_reports_path,{ :class=>'button submit_buttons cancelbutton' }%>
+        </div>
+        <br class="clear"/>
+      <% end %>
+    </div>
+  </div>
+</div>

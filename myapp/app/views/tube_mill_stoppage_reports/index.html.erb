@@ -12,34 +12,26 @@
   <tr>
     <th>Date</th>
     <th>Shift</th>
-    <th>Size</th>
-    <th>Customer</th>
+    <th>Type</th>    
     <th>Description of breakdown</th>
-    <th>Type</th>
-    <th>Stoppage code</th>
     <th>From</th>
     <th>To</th>
     <th>Total time</th>
     <th>Remarks</th>  
-    <th>Remarks last</th>
     <th>Shift incharge</th>
     <th>Action</th>
   </tr>
 
 <% for tube_mill_stoppage_report in @tube_mill_stoppage_reports %>
   <tr>
-    <td><%=h tube_mill_stoppage_report.date %></td>
+    <td><%=h tube_mill_stoppage_report.date.strftime('%d-%b-%Y') %></td>
     <td><%=h tube_mill_stoppage_report.shift %></td>
-    <td><%=h tube_mill_stoppage_report.size %></td>
-    <td><%=h tube_mill_stoppage_report.customer %></td>
+    <td><%=h Stoppage::STOPAGE_TYPE[tube_mill_stoppage_report.type_stop][0] %></td>    
     <td><%=h tube_mill_stoppage_report.description_of_breakdown %></td>
-    <td><%=h tube_mill_stoppage_report.type_stop %></td>
-    <td><%=h tube_mill_stoppage_report.stoppage_code %></td>
-   <td><%=h tube_mill_stoppage_report.from %></td>
-    <td><%=h tube_mill_stoppage_report.to %></td>
+   <td><%=h tube_mill_stoppage_report.from.strftime('%I:%M %p') %></td>
+    <td><%=h tube_mill_stoppage_report.to.strftime('%I:%M %p') %></td>
     <td><%=h tube_mill_stoppage_report.total_time %></td>
     <td><%=h tube_mill_stoppage_report.remarks %></td> 
-     <td><%=h tube_mill_stoppage_report.remarks_last %></td>
     <td><%=h tube_mill_stoppage_report.shift_incharge %></td>
     <td>
       <div class="fr" style="float:left;">

@@ -25,16 +25,19 @@ class TubeMillStoppageReportsController < ApplicationController
   # GET /tube_mill_stoppage_reports/new.xml
   def new
     @tube_mill_stoppage_report = TubeMillStoppageReport.new
-@stoppage=Stoppage.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tube_mill_stoppage_report }
     end
   end
-
+  
+  def stopage_detail
+    @stoppage = Stoppage.find_all_by_type_stop(params[:id])
+  end
   # GET /tube_mill_stoppage_reports/1/edit
   def edit
     @tube_mill_stoppage_report = TubeMillStoppageReport.find(params[:id])
+    @stoppage = Stoppage.find_all_by_type_stop(@tube_mill_stoppage_report.type_stop)
   end
 
   # POST /tube_mill_stoppage_reports
@@ -62,7 +65,7 @@ class TubeMillStoppageReportsController < ApplicationController
     respond_to do |format|
       if @tube_mill_stoppage_report.update_attributes(params[:tube_mill_stoppage_report])
         flash[:notice] = 'TubeMillStoppageReport was successfully updated.'
-        format.html { redirect_to(@tube_mill_stoppage_report) }
+        format.html { redirect_to(tube_mill_stoppage_reports_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

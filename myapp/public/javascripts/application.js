@@ -264,3 +264,17 @@ function db_date_change(){
         }
     });
 }
+
+function stopagedetail(id){
+    if(id==""){return false}
+    loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/tube_mill_stoppage_reports/stopage_detail",
+       dataType: 'script',
+    data: {
+          'id' : id
+        },
+     success: function(){loader.remove();}
+     });       
+}
