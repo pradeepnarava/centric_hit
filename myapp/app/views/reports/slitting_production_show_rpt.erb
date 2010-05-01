@@ -1,5 +1,6 @@
   <script type="text/javascript">
   livia_datepicker();
+  
   </script>
 <%= render :partial=>'layouts/reports_left_bar' %>
 <div id="center-column">
@@ -43,7 +44,15 @@
                   </table></td>
               </tr>
               <tr>
-                <td colspan="7" align="right"><table cellpadding="0" cellspacing="0" width="100%" border="1">
+                <tr>
+                  <td colspan="7" align="right">
+                    <a onclick="print_section('print_section');" style="cursor: pointer; cursor: hand;">
+            <%= image_tag '/images/print-icon.png',:height=>"38", :width=>"38",:alt=>"",:title=>"" %>
+            </a>
+                  </td>
+                </tr>
+                <td colspan="7" align="right">
+                  <table cellpadding="0" cellspacing="0" width="100%" border="1" id="print_section">
   <thead>
    <th>Date</th>
   <th>Mother Coil No</th>

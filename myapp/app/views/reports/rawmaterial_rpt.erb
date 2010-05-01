@@ -41,9 +41,16 @@
                     </tr>
                   </table></td>
               </tr>
+               <tr>
+                  <td colspan="7" align="right">
+                    <a onclick="print_section('raw_material_rpt');" style="cursor: pointer; cursor: hand;">
+            <%= image_tag '/images/print-icon.png',:height=>"38", :width=>"38",:alt=>"",:title=>"" %>
+            </a>
+                  </td>
+                </tr>
               <tr>
                 <td colspan="7" align="right">
-                  <table cellpadding="0" cellspacing="0" width="100%" border="1">
+                  <table cellpadding="0" cellspacing="0" width="100%" border="1" id="raw_material_rpt">
   <thead>
   <th>Rawmaterial Name</th>
   <th>Categorie</th>

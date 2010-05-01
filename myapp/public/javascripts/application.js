@@ -219,3 +219,18 @@ function uncoilerdetail(id){
      success: function(){loader.remove();}
      });       
 }
+function print_section(id){
+ jQuery("#"+id).printElement({printMode:'popup'});
+}
+
+function db_date_change(){
+    jQuery('#report_dates').change(function(){
+        jQuery('#date_div')
+        if (jQuery(this).val() == '5'){
+            jQuery("#date_checked").attr("checked", "checked");
+            jQuery('#date_div').show()
+        }else{
+            jQuery('#date_div').hide()
+        }
+    });
+}
