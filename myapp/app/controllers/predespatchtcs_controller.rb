@@ -36,7 +36,9 @@ class PredespatchtcsController < ApplicationController
   def edit
     @predespatchtc = Predespatchtc.find(params[:id])
   end
-
+def specification_to_predespatch
+@specification=Specification.find(params[id])
+end
   # POST /predespatchtcs
   # POST /predespatchtcs.xml
   def create

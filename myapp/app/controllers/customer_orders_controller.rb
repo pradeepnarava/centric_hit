@@ -42,7 +42,7 @@ class CustomerOrdersController < ApplicationController
   # POST /customer_orders.xml
   def create
     data=params
-    p params
+   
     @error = 0
     @save_order = data.rehash.each_pair do |key,value|
       @customer_order = CustomerOrder.new(value[:customer_order])
@@ -53,7 +53,7 @@ class CustomerOrdersController < ApplicationController
         @customer_order.ecc_no = data[:customer_order][:ecc_no]
          @customer_order.vat_no = data[:customer_order][:vat_no]
         @customer_order.po_no = data[:customer_order][:po_no]
-        if @customer_order.save
+        if @customer_order.save        
           flash[:notice] = 'CustomerOrder was successfully created.'
         else
           @error = 1

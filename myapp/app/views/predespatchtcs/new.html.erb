@@ -47,10 +47,16 @@
             <td >
               <%= f.label "Customers Name" %>
             </td>
-            <td colspan="3">
+            <td >
               <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
             </td>
-          
+
+            <td >
+              <%= f.label "Specification" %>
+            </td>
+            <td colspan="3">
+              <%=f.collection_select( :specification_id, Specification.all,:id,:specification_name,{:include_blank => "----------Select----------"},{:onchange => "specification_to_predespatch(this.value);"})%>
+            </td>
           </tr>
         </table>
         <br/>
@@ -111,9 +117,7 @@
             <td>
               <%= f.text_field :quantity %>
             </td>
-            <td>
-              <%= f.text_field :specification %>
-            </td>
+          
             <td>
               <%= f.text_field :grade %>
             </td>

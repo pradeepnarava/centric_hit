@@ -145,6 +145,20 @@ function cal_bal_wt(){
 }
 
 
+function specification_to_predespatch(id){
+    if(id==""){return false}
+    loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/predespatchtcs/specification_to_predespatch",
+       dataType: 'script',
+    data: {
+          'id' : id
+        },
+     success: function(){loader.remove();}
+     });
+}
+
 function salesplan_customer_order(id){
     if(id==""){return false}
     loader.prependTo("#detail")
