@@ -24,7 +24,7 @@
 <% @tube_mill_performance_reports.each do |tube_mill| %>
   <tr class="<%=cycle("bg1", "bg2")%>">
     <td><%=h tube_mill.customer.name %></td>
-    <td><%=h tube_mill.slittingproduction.slitting_coil_no%></td>
+    <td><%=h tube_mill.slittingproduction.slitting_coil_no if tube_mill.slittingproduction%></td>
     <td><%=h tube_mill.lot_no %></td>    
     <td><%=h tube_mill.operator_name %></td>
     <td><%=h tube_mill.inspector_name %></td>
@@ -32,10 +32,10 @@
     <td><%=h tube_mill.shift%></td>
     <td><%=h tube_mill.prime %></td>
     <td><%=h tube_mill.rejected %></td>
-    <td><%=h tube_mill.yieldpercent %></td>
+    <td><%=h tube_mill.yieldpercent if tube_mill%></td>
     <td>
       <div class="fr" style="float:left;">
-          <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"View Detail", :title=>"View Detail", :border => 0, :hspace => "0"}),  production_detail_tube_mill_performance_report_path(tube_mill) )%>
+          <%=  link_to(image_tag('/images/icon_details.gif',{:style=>"width:20px;height:20px;", :alt =>"View Detail", :title=>"View Detail", :border => 0, :hspace => "0"}),  production_detail_tube_mill_performance_report_path(tube_mill) )%>
           <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate", :confirm => 'Are you sure?',:border => 0, :hspace => "2"}),tube_mill, :confirm => 'Are you sure?', :method => :delete) %>
         </div>
     </td>

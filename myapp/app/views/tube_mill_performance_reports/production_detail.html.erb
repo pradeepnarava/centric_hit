@@ -10,7 +10,7 @@
               <td><strong>Customer Name :</strong> </td>
               <td><%=h @tube_mill.customer.name%></td>
               <td><strong>Slit CoilNo : </strong></td>
-              <td><%=h @tube_mill.slittingproduction.slitting_coil_no%></td>
+              <td><%=h @tube_mill.slittingproduction.slitting_coil_no if @tube_mill.slittingproduction%></td>
               <td><strong>Inspector :</strong> </td>
               <td><%=h @tube_mill.inspector_name%></td>
             </tr>
