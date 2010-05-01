@@ -35,6 +35,7 @@ class CustomerOrdersController < ApplicationController
   # GET /customer_orders/1/edit
   def edit
     @customer_order = CustomerOrder.find(params[:id])
+    @customers = Customer.all
   end
 
   # POST /customer_orders
@@ -58,7 +59,7 @@ class CustomerOrdersController < ApplicationController
       end
     end
     if @error == 0
-      redirect_to(@customer_order)
+      redirect_to(customer_orders_path)
     else
       render :action => "new"
     end
@@ -82,7 +83,7 @@ class CustomerOrdersController < ApplicationController
     respond_to do |format|
       if @customer_order.update_attributes(params[:customer_order])
         flash[:notice] = 'CustomerOrder was successfully updated.'
-        format.html { redirect_to(@customer_order) }
+        format.html { redirect_to(customer_orders_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

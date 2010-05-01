@@ -62,7 +62,7 @@ class SuppliersController < ApplicationController
     respond_to do |format|
       if @supplier.update_attributes(params[:supplier])
         flash[:notice] = 'Supplier was successfully updated.'
-        format.html { redirect_to(@supplier) }
+        format.html { redirect_to(rawmaterials_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

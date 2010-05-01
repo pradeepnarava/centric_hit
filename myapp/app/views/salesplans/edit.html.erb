@@ -1,53 +1,85 @@
+
 <%= render :partial=>'layouts/order_leftside_bar' %>
-<h1>Editing salesplan</h1>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Editing Salesplan</div>
+    <div class="formMain">
+      <% form_for(@salesplan) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <div class="mt5">
+          </div>
+          <div class="fl w48" style="width: 48%;" >
+            <div>
 
-<% form_for(@salesplan) do |f| %>
-  <%= f.error_messages %>
+              <p>
+                <%= f.label "Customer Name"%>
+                <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+              </p>
+              <p>
+                <%= f.label :serialize_id %>
+                <%=f.collection_select( :serialize_id, Serialize.all,:id,:name,{:include_blank => "----------Select----------"},{:onchange => "salesplan_customer_order(this.value);"})%>
 
-  <p>
-    <%= f.label :po_no %><br />
-    <%= f.text_field :po_no %>
-  </p>
-  <p>
-    <%= f.label :customer_name %><br />
-    <%= f.text_field :customer_name %>
-  </p>
-  <p>
-    <%= f.label :customer_id %><br />
-    <%= f.text_field :customer_id %>
-  </p>
-  <p>
-    <%= f.label :tube_size %><br />
-    <%= f.text_field :tube_size %>
-  </p>
-  <p>
-    <%= f.label :serialize_id %><br />
-    <%= f.text_field :serialize_id %>
-  </p>
-  <p>
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </p>
-  <p>
-    <%= f.label :customer_code %><br />
-    <%= f.text_field :customer_code %>
-  </p>
-  <p>
-    <%= f.label :pieces %><br />
-    <%= f.text_field :pieces %>
-  </p>
-  <p>
-    <%= f.label :meter %><br />
-    <%= f.text_field :meter %>
-  </p>
-  <p>
-    <%= f.label :kilos %><br />
-    <%= f.text_field :kilos %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+              </p>
+              <p>
+                <%= f.label :od %>
+                <%= f.text_field :od %>
+              </p>
 
-<%= link_to 'Show', @salesplan %> |
-<%= link_to 'Back', salesplans_path %>
+              <p>
+                <%= f.label :length %>
+                <%= f.text_field :length %>
+              </p>
+              <p>
+                <%= f.label :thikness %>
+                <%= f.text_field :thikness %>
+              </p>
+            </div>
+          </div>
+          <div style="width: 52%;" class="fr">
+            <div>
+              <p>
+                <%= f.label :order_quantity %>
+                       <td><%= f.text_field:order_quantity %></td>
+
+              </p>
+              <p>
+                <%= f.label :order_wt %>
+                <%= f.text_field :order_wt %>
+              </p>
+
+              <p>
+                <%= f.label :stock_quantity %>
+
+               <td><%= text_field_tag "salesplan[stock_quantity]",nil,:onblur => "cal_bal_quantity();" %></td>
+              </p>
+              <p>
+                <%= f.label :stock_wt %>
+               <td><%= text_field_tag "salesplan[stock_wt]",nil,:onblur => "cal_bal_wt();" %></td>
+
+              </p>
+
+              <p>
+                <%= f.label :balance_wt %>
+                <%= f.text_field :balance_wt %>
+              </p>
+              <p>
+                <%= f.label :balance_quantity %>
+                <%= f.text_field :balance_quantity %>
+              </p>
+
+            </div>
+          </div>
+           <div id="detail"></div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Update" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',salesplans_path, :class=>'button submit_buttons cancelbutton' %>
+          </div>
+          <br class="clear"/>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

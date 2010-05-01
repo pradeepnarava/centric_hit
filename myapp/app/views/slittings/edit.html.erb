@@ -1,46 +1,43 @@
 <%= render :partial=>'layouts/process_leftside_bar' %>
 <div id="center-column">
-<h1>Editing slitting</h1>
-
-<% form_for(@slitting) do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <label> Coil no </label><br />
-    <%= f.collection_select( :rawmaterial_id, @coils,:id,:name,{:include_blank => "--- Select ---"})%>
-  </p>
-  <p>
-    <%= f.label :side_trim %><br />
-    <%= f.text_field :side_trim %>
-  </p>
-  <p>
-    <%= f.label :scrap %><br />
-    <%= f.text_field :scrap %>
-  </p>
-  <p>
-    <%= f.label :slit_width %><br />
-    <%= f.text_field :slit_width %>
-  </p>
-  <p>
-    <%= f.label :slit_weight %><br />
-    <%= f.text_field :slit_weight %>
-  </p>
-  <p>
-    <%= f.label :no_of_slits %><br />
-    <%= f.text_field :no_of_slits %>
-  </p>
-  <p>
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
-  </p>
-  <p>
-    <%= f.label :remarks %><br />
-    <%= f.text_field :remarks %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @slitting %> |
-<%= link_to 'Back', slittings_path %>
+<div class="gridDiv">
+  <div class="titleHead">Editing slitting</div>
+  <div class="formOrder">
+    <% form_for(@slitting) do |f| %>
+      <%= f.error_messages %>
+      <div>
+        <!--BOX 1-->
+            <table>
+              <tr>
+                <td><label>Coil No:</label></td>
+                <td><%=f.collection_select(:rawmaterial_id, @coils,:id,:name,{:include_blank => "---Select---"},{:onchange => "coildetail(this.value);"})%></td>
+                <td><label>Coil width:</label></td>
+                <td><%=text_field_tag "coil_width" %></td>
+                <td><label>Full Coil wt:</label></td>
+                <td><%=text_field_tag "coil_wt" %></td>
+              <tr></tr>
+                <td><label>Coil Thick.:</label></td>
+                <td><%=text_field_tag "coil_thick" %></td>                                        
+              </tr>
+              <tr>
+                <td><label>Division Part:</label></td>
+                <td><%=f.text_field "division_part", :onblur => "get_process_coilwt();"%></td>                        
+                <td><label>Process coil wt:</label></td>
+                <td><%=f.text_field "process_coil_wt" %></td>                
+                <td><label>Scrap:</label></td>
+                <td><%=f.text_field "scrap" %></td>
+                         </tr>            
+            </table>      
+        <br class="clear"/>        
+        <div id="detail"></div>
+        <br class="clear"/>
+  <div class="txtC" id="submit_div">
+  <%= f.submit "Update" , :class=>'button submit_buttons'%>
+    <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
+      </div>
+       <br class="clear"/>
+      </div>
+    <% end %>
+  </div>
+</div>
 </div>

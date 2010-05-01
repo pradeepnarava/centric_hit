@@ -40,6 +40,7 @@ class UncoilerReportsController < ApplicationController
   # GET /uncoiler_reports/1/edit
   def edit
     @uncoiler_report = UncoilerReport.find(params[:id])
+    @coils = Slittingproduction.all.collect { |sl| sl.rawmaterial}.uniq
   end
 
   # POST /uncoiler_reports
@@ -79,8 +80,8 @@ class UncoilerReportsController < ApplicationController
     respond_to do |format|
       if @uncoiler_report.update_attributes(params[:uncoiler_report])
         flash[:notice] = 'UncoilerReport was successfully updated.'
-        format.html { redirect_to(@uncoiler_report) }
-        format.xml  { head :ok }
+        format.html { redirect_to uncoiler_reports_path }
+        format.xml  {}
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @uncoiler_report.errors, :status => :unprocessable_entity }

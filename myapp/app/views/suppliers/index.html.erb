@@ -47,6 +47,7 @@
     <th>Bright matt</th>
     <th>Ra</th>
     <th>Do item wise</th>-->
+        <th>Action</th>
   </tr>
 
 <% for supplier in @suppliers %>
@@ -56,7 +57,7 @@
     <td><%=h supplier.po_no %></td>
     <td><%=h supplier.sales_order_no %></td>
     <td><%=h supplier.test_certificate_no %></td>
-    <td><%=h supplier.date %></td>
+    <td><%=h supplier.date.to_date %></td>
     <td><%=h supplier.invoice_no %></td>
     <td><%=h supplier.coil_packet_no %></td>
     <td><%=h supplier.t_w_l %></td>

@@ -50,7 +50,7 @@ end
     respond_to do |format|
       if @salesplan.save
         flash[:notice] = 'Salesplan was successfully created.'
-        format.html { redirect_to(salesplans_url) }
+        format.html { redirect_to(salesplans_path) }
         format.xml  { render :xml => @salesplan, :status => :created, :location => @salesplan }
       else
         format.html { render :action => "new" }
@@ -67,7 +67,7 @@ end
     respond_to do |format|
       if @salesplan.update_attributes(params[:salesplan])
         flash[:notice] = 'Salesplan was successfully updated.'
-        format.html { redirect_to(@salesplan) }
+        format.html { redirect_to(salesplans_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

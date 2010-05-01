@@ -36,7 +36,7 @@ class SlittingsController < ApplicationController
   # GET /slittings/1/edit
   def edit
     @slitting = Slitting.find(params[:id])
-    @coils = Rawmaterial.find(:all, :conditions => ["status = 0"])
+    @coils = Rawmaterial.find(:all, :conditions => ["status < 2"])
   end
 
   # POST /slittings
@@ -75,7 +75,7 @@ class SlittingsController < ApplicationController
         @coil.update_attributes(:status => 1)
       end
       slitted_coil.update_attributes(:status => 1) unless slitted_coil.blank?
-      redirect_to(@slitting)
+      redirect_to(slittings_path)
     else
       render :action => "new"
     end   
@@ -99,7 +99,7 @@ class SlittingsController < ApplicationController
     respond_to do |format|
       if @slitting.update_attributes(params[:slitting])
         flash[:notice] = 'Slitting was successfully updated.'
-        format.html { redirect_to(@slitting) }
+        format.html { redirect_to slittings_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

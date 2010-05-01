@@ -43,6 +43,7 @@ class SlittingproductionsController < ApplicationController
   # GET /slittingproductions/1/edit
   def edit
     @slittingproduction = Slittingproduction.find(params[:id])
+    @coils = Slitting.all.collect { |sl| sl.rawmaterial}.uniq
   end
 
   # POST /slittingproductions
@@ -94,7 +95,7 @@ class SlittingproductionsController < ApplicationController
     respond_to do |format|
       if @slittingproduction.update_attributes(params[:slittingproduction])
         flash[:notice] = 'Slittingproduction was successfully updated.'
-        format.html { redirect_to(@slittingproduction) }
+        format.html { redirect_to slittingproductions_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

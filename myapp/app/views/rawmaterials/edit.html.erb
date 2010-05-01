@@ -1,31 +1,77 @@
-<h1>Editing rawmaterial</h1>
+  <script type="text/javascript">
+  livia_datepicker();
+  </script>
+<%= render :partial=>'layouts/stock_leftside_bar' %>
+<div id="center-column">
+<div class="gridDiv">
+  <div class="titleHead">Editing Rawmaterial</div>
+  <div class="formMain">
+    <% form_for(@rawmaterial) do |f| %>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_label">
+        <tr>
+          <td>
+            <%if(@rawmaterial.errors.length > 0)%>
+              <div class='errorCont'>
+                <%=f.error_messages %>
+                <div class="clear"></div>
+              </div>
+            <%end%>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="center">
+            <div style="padding-left:100px;">
+              <table width="50%" border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                  <td class="textBlack11Height10L"><%= f.label "Supplier" %><span class="text_red">*</span></td>
+                  <td><%=f.collection_select( :address_id, @addresses,:id,:company_name,{:include_blank => "--- Select ---"})%></td>
+                </tr>
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label "Rawmaterial Category" %><span class="text_red">*</span></td>
+                  <td><%=f.collection_select( :rawmaterial_category_id, @rawmaterialcategory,:id,:name,{:include_blank => "--- Select ---"})%></td>
+                </tr>
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label "Coil Number" %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :name %></td>
+                </tr>                
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label :width %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :width %></td>
+                </tr>
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label :thickness %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :thickness %></td>
+                </tr>
+                <tr>
+                  <td class="textBlack11Height10L"><%= f.label :coil_weight %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :coil_weight %></td>
+                </tr>   
+                 <tr>
+                  <td class="textBlack11Height10L"><%= f.label :grade %><span class="text_red">*</span></td>
+                  <td><%= f.text_field :grade %></td>
+                </tr>
+                 <tr>
+                    <td class="textBlack11Height10L"><%= f.label :dateofreciept %><span class="text_red">*</span></td>
+                      <td>
+                        <%= f.text_field :dateofreciept, :class=>'dateTextBox date_picker'%></td>
+                 </tr>
+              </table>
+            </div>
+          </td>
+        </tr>     
+        <tr>
+          <td>
+            <br class="clear" />
+            <div class="txtC">
+              <%= f.submit "Update" , :class=>'button submit_buttons'%>
+              <%=link_to 'Cancel',rawmaterials_path, :class=>'linkbutton' %>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+    <br class="clear" />
+  </div>
+</div>
 
-<% form_for(@rawmaterial) do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :rawmaterial_category_id %><br />
-    <%= f.collection_select( :rawmaterial_category_id, @rawmaterialcategory,:id,:name,{:include_blank => "--- Select ---"})%>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :width %><br />
-    <%= f.text_field :width %>
-  </p>
-  <p>
-    <%= f.label :thickness %><br />
-    <%= f.text_field :thickness %>
-  </p>
-  <p>
-    <%= f.label :coil_weight %><br />
-    <%= f.text_field :coil_weight %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @rawmaterial %> |
-<%= link_to 'Back', rawmaterials_path %>
+</div>

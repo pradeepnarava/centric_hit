@@ -116,7 +116,6 @@ function cal_bal_wt(){
 
 
 function salesplan_customer_order(id){
-    alert(id);
     if(id==""){return false}
     loader.prependTo("#detail")
       jQuery.ajax({

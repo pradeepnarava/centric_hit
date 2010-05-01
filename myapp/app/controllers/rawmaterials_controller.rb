@@ -38,6 +38,7 @@ class RawmaterialsController < ApplicationController
   def edit
     @rawmaterial = Rawmaterial.find(params[:id])
     @rawmaterialcategory = RawmaterialCategory.all
+    @addresses=Address.all
   end
 
   # POST /rawmaterials

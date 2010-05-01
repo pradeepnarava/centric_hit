@@ -1,44 +1,42 @@
-<h1>Editing customer_order</h1>
-
-<% form_for(@customer_order) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :tube_size %><br />
-    <%= f.text_field :tube_size %>
-  </p>
-  <p>
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </p>
-  <p>
-    <%= f.label :total_weight %><br />
-    <%= f.text_field :total_weight %>
-  </p>
-  <p>
-    <%= f.label :rate_per_kilo %><br />
-    <%= f.text_field :rate_per_kilo %>
-  </p>
-  <p>
-    <%= f.label :total_amount %><br />
-    <%= f.text_field :total_amount %>
-  </p>
-  <p>
-    <%= f.label :ecc_no %><br />
-    <%= f.text_field :ecc_no %>
-  </p>
-  <p>
-    <%= f.label :delivery_address %><br />
-    <%= f.text_field :delivery_address %>
-  </p>
-  <p>
-    <%= f.label :po_no %><br />
-    <%= f.text_field :po_no %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @customer_order %> |
-<%= link_to 'Back', customer_orders_path %>
+<%= render :partial=>'layouts/order_leftside_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Editing Customer Order</div>
+    <div class="formOrder">
+      <% form_for(@customer_order) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <div class="fl3row">
+            <label>Customer Name</label><%=f.collection_select(:customer_id, @customers,:id,:name,{:include_blank => "---Select---"},{:onchange => "customerdetail(this.value);"})%>
+          </div>
+          <br class="clear"/>
+          <table>
+            <tr>
+              <td><label>Office Address</label></td>
+              <td><%= text_area_tag "customer_order_office_address",nil, :cols => 30, :rows => 5 %></td>
+              <td><%= f.label :delivery_address %> <br/> <%=link_to "Same as Office","#",:onclick => "copyaddress();"%></td>
+              <td><%= f.text_area :delivery_address, :cols => 30, :rows => 5 %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :ecc_no %></td>
+              <td><%= f.text_field :ecc_no,:size => 15 %></td>
+              <td> <label>VAT No</label></td><td><%= f.text_field :vat_no,:size => 15 %></td>
+              <td><%= f.label :po_no %></td>
+              <td><%= f.text_field :po_no,:size => 10 %></td>
+              <tr></tr>
+         
+            </tr>
+          </table>
+          <div id="detail"></div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Update" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',customer_orders_path,{ :class=>'button submit_buttons cancelbutton' }%>
+          </div>
+          <br class="clear"/>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

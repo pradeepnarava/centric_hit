@@ -62,7 +62,7 @@ class AddressesController < ApplicationController
     respond_to do |format|
       if @address.update_attributes(params[:address])
         flash[:notice] = 'Address was successfully updated.'
-        format.html { redirect_to(@address) }
+        format.html { redirect_to(addresses_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

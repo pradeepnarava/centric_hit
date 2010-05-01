@@ -1,9 +1,10 @@
-
-
+  <script type="text/javascript">
+  livia_datepicker();
+  </script>
 <%= render :partial=>'layouts/supplier_info' %>
 <div id="center-column">
 <div class="gridDiv">
-  <div class="titleHead">New Supplier TC</div>
+  <div class="titleHead">Supplier TC</div>
   <div class="formMain">
     <% form_for(@supplier) do |f| %>
       <%= f.error_messages %>
@@ -11,189 +12,179 @@
         <!--BOX 1-->
         <div class="mt5">
         </div>
-        <div class="fl w48" style="width: 60%;" >
+        <div class="fl w48">
           <div>
            <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </p>
-  <p>
-    <%= f.label :po_no %><br />
+    <%= f.label :po_no %>
     <%= f.text_field :po_no %>
   </p>
   <p>
-    <%= f.label :sales_order_no %><br />
+    <%= f.label :sales_order_no %>
     <%= f.text_field :sales_order_no %>
   </p>
   <p>
-    <%= f.label :test_certificate_no %><br />
+    <%= f.label :test_certificate_no %>
     <%= f.text_field :test_certificate_no %>
   </p>
   <p>
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
+    <%= f.label :date %>
+   <%= f.text_field :date, :class=>'dateTextBox date_picker'%>
   </p>
   <p>
-    <%= f.label :invoice_no %><br />
+    <%= f.label :invoice_no %>
     <%= f.text_field :invoice_no %>
   </p>
   <p>
-    <%= f.label :coil_packet_no %><br />
+    <%= f.label :coil_packet_no %>
     <%= f.text_field :coil_packet_no %>
   </p>
   <p>
-    <%= f.label :t_w_l %><br />
+    <%= f.label :t_w_l %>
     <%= f.text_field :t_w_l %>
   </p>
   <p>
-    <%= f.label :no_of_sheets %><br />
+    <%= f.label :no_of_sheets %>
     <%= f.text_field :no_of_sheets %>
   </p>
   <p>
-    <%= f.label :grade %><br />
+    <%= f.label :grade %>
     <%= f.text_field :grade %>
   </p>
   <p>
-    <%= f.label :net_weight %><br />
+    <%= f.label :net_weight %>
     <%= f.text_field :net_weight %>
   </p>
   <p>
-    <%= f.label :c %><br />
+    <%= f.label :c %>
     <%= f.text_field :c %>
   </p>
   <p>
-    <%= f.label :v %><br />
+    <%= f.label :v %>
     <%= f.text_field :v %>
   </p>
   <p>
-    <%= f.label :mn %><br />
+    <%= f.label :mn %>
     <%= f.text_field :mn %>
   </p>
   <p>
-    <%= f.label :cu %><br />
+    <%= f.label :cu %>
     <%= f.text_field :cu %>
   </p>
   <p>
-    <%= f.label :s %><br />
+    <%= f.label :s %>
     <%= f.text_field :s %>
   </p>
   <p>
-    <%= f.label :nb %><br />
+    <%= f.label :nb %>
     <%= f.text_field :nb %>
   </p>
   <p>
-    <%= f.label :p %><br />
+    <%= f.label :do_item_wise %>
+    <%= f.text_field :do_item_wise %>
+  </p>
+   <p>
+    <%= f.label :address %>
+    <%= f.text_area :address ,:rows => 3, :cols => 15%>
+    </p>
+     <p>
+                <%= f.label :street %>
+                <%= f.text_field :street %>
+              </p>
+</div></div>
+  <div class="fl w48">
+          <div>
+  <p>
+    <%= f.label :p %>
     <%= f.text_field :p %>
   </p>
   <p>
-    <%= f.label :cr %><br />
+    <%= f.label :cr %>
     <%= f.text_field :cr %>
   </p>
   <p>
-    <%= f.label :al %><br />
+    <%= f.label :al %>
     <%= f.text_field :al %>
   </p>
   <p>
-    <%= f.label :ni %><br />
+    <%= f.label :ni %>
     <%= f.text_field :ni %>
   </p>
   <p>
-    <%= f.label :si %><br />
+    <%= f.label :si %>
     <%= f.text_field :si %>
   </p>
   <p>
-    <%= f.label :ti %><br />
+    <%= f.label :ti %>
     <%= f.text_field :ti %>
   </p>
   <p>
-    <%= f.label :n %><br />
+    <%= f.label :n %>
     <%= f.text_field :n %>
   </p>
   <p>
-    <%= f.label :ys %><br />
+    <%= f.label :ys %>
     <%= f.text_field :ys %>
   </p>
   <p>
-    <%= f.label :u_t_s %><br />
+    <%= f.label :u_t_s %>
     <%= f.text_field :u_t_s %>
   </p>
   <p>
-    <%= f.label :el_on_gl %><br />
+    <%= f.label :el_on_gl %>
     <%= f.text_field :el_on_gl %>
   </p>
   <p>
-    <%= f.label :hrb %><br />
+    <%= f.label :hrb %>
     <%= f.text_field :hrb %>
   </p>
   <p>
-    <%= f.label :vpn %><br />
+    <%= f.label :vpn %>
     <%= f.text_field :vpn %>
   </p>
   <p>
-    <%= f.label :ecv %><br />
+    <%= f.label :ecv %>
     <%= f.text_field :ecv %>
   </p>
   <p>
-    <%= f.label :n_value %><br />
+    <%= f.label :n_value %>
     <%= f.text_field :n_value %>
   </p>
   <p>
-    <%= f.label :r_bar %><br />
+    <%= f.label :r_bar %>
     <%= f.text_field :r_bar %>
   </p>
   <p>
-    <%= f.label :bend_test %><br />
+    <%= f.label :bend_test %>
     <%= f.text_field :bend_test %>
   </p>
   <p>
-    <%= f.label :bright_matt %><br />
+    <%= f.label :bright_matt %>
     <%= f.text_field :bright_matt %>
   </p>
   <p>
-    <%= f.label :ra %><br />
+    <%= f.label :ra %>
     <%= f.text_field :ra %>
   </p>
   <p>
-    <%= f.label :do_item_wise %><br />
-    <%= f.text_field :do_item_wise %>
-  </p>
-          </div>
-          <div>
-
-          </div>
-        </div>
-        <div style="width: 52%;" class="fr">
-          <div>
-
-
-
-
-
-
-
-
-
-          </div>
-          <div>
-
-          </div>
-        </div>
-        <div style="width: 52%;" class="fr">
-          <div>
-
-
-
-
-
+                <%= f.label :city %>
+                <%= f.text_field :city %>
+              </p>
+              <p>
+                <%= f.label :state %>
+                <%= f.text_field :state %>
+              </p>
+               <p>
+                <%= f.label :zipcode %>
+                <%= f.text_field :zipcode %>
+              </p>
           </div>
         </div>
         <br class="clear"/>
         <div class="txtC" id="submit_div">
-
           <%= f.submit "Create" , :class=>'button submit_buttons'%>
           <%=link_to 'Cancel',suppliers_path,{ :class=>'button submit_buttons cancelbutton' }%>
 

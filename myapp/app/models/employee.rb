@@ -1,8 +1,8 @@
 class Employee < ActiveRecord::Base
   belongs_to:department
   belongs_to :user
-  validates_presence_of:first_name
-  validates_presence_of:last_name
+#  validates_presence_of:first_name
+#  validates_presence_of:last_name
 
   def self.non_user_employee
     self.find(:all, :conditions =>["user_id is null"])
