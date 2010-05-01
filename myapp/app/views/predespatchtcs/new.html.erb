@@ -1,302 +1,517 @@
+<script type="text/javascript">
+    livia_datepicker();
+</script>
 <%= render :partial=>'layouts/delivery' %>
 <div id="center-column">
-<div class="gridDiv">
-  <div class="titleHead">New predespatchtc</div>
-  <div class="formMain">
-   <% form_for(@predespatchtc) do |f| %>
-  <%= f.error_messages %>
-      <div>
-        <!--BOX 1-->
-        <div class="mt5">
+  <div class="gridDiv">
+    <div class="titleHead">Predespatchtc</div>
+    <div class="formMain" id="pre_disp">
+      <% form_for(@predespatchtc) do |f| %>
+        <%= f.error_messages %>
+        <table width="100%" cellpadding="3" cellspacing="3" border="1">
+          <tr><td align="center" colspan="4">
+              <div style="font-size:15px;"><b>Pre-Despatch Inspection Cum Test Certification</b></div>
+          </td></tr>
+          <tr>
+            <td>
+              <label> Test certificate no </label>
+            </td>
+            <td>
+              <%= f.text_field :test_certificate_no %>
+            </td>
+            <td>
+              <%= f.label :date %>
+            </td>
+            <td>
+              <%= f.text_field :date, :class=>'dateTextBox date_picker'%>
+            </td>
+          
+          </tr>
+          <tr>
+            <td>
+              <label> Invoice no </label>
+            </td>
+            <td>
+              <%=f.collection_select( :taxinvoice_id, Taxinvoice.all,:id,:invoice_no,{:include_blank => "----------Select----------"})%>
+            </td>
+            <td>
+              <%= f.label :date %>
+            </td>
+            <td>
+              <%= f.text_field :date, :class=>'dateTextBox date_picker'%>
+            </td>
+          
+          </tr>
+          <tr>
+          
+            <td >
+              <%= f.label "Customers Name" %>
+            </td>
+            <td colspan="3">
+              <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+            </td>
+          
+          </tr>
+        </table>
+        <br/>
+        <table cellpadding="3" cellspacing="3" width="100%" border="1">
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" width="100%" border="1">
+                <tr>
+                  <td colspan="3" align="center">
+                    <b>Size(mm)</b>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>OD</b>
+                  </td>
+                  <td>
+                    <b>Thick</b>
+                  </td>
+                  <td>
+                    <b>Length</b>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <b>Qty.(Pcs.)</b>
+            </td>
+            <td>
+              <b>Specification</b>
+            </td>
+            <td>
+              <b>Grade</b>
+            </td>
+            <td>
+              <b>Fin Condition</b>
+            </td>
+            <td>
+              <b>UANN/ANN</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" width="100%" border="1">
+                <tr>
+                  <td>
+                    <%= f.text_field :od %>
+                  </td>
+                  <td>
+                    <%= f.text_field :thickness %>
+                  </td>
+                  <td>
+                    <%= f.text_field :length %>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <%= f.text_field :quantity %>
+            </td>
+            <td>
+              <%= f.text_field :specification %>
+            </td>
+            <td>
+              <%= f.text_field :grade %>
+            </td>
+            <td>
+              <b> <%= f.text_field :fin_condition %></b>
+            </td>
+            <td>
+              <%= f.text_field :uann_ann %>
+            </td>
+          </tr>
+        </table>
+      <br/>
+        <table cellpadding="0" cellspacing="0" width="100%" border="1">
+          <tr>
+            <td align="center">
+              <b>Chemical Composition</b>
+            </td>
+            <td align="center">
+              <b>Mechanical Properties</b>
+            </td>
+          </tr>
+          <tr>
+            <td width="50%">
+              <table cellpadding="3" cellspacing="3" width="100%" border="1">
+                <thead>
+                  <th>
+                    &nbsp;
+                  </th>
+                  <th>
+                    %c
+                  </th>
+                  <th>
+                    %Mn
+                  </th>
+                  <th>
+                    %s
+                  </th>
+                  <th>
+                    %p
+                  </th>
+                  <th>
+                    %si
+                  </th>
+                  <th>
+                    %AI
+                  </th>
+                  <th>
+                    %Ni
+                  </th>
+                  <th>
+                    %Cr
+                  </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Spacified(Max.)
+                    </td>
+                    <td>
+                      <%= f.text_field :c_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :mn_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :s_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :p_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :si_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :al_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :ni_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :cr_spec %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Observed
+                    </td>
+                    <td>
+                      <%= f.text_field :c_obs  %>
+                    </td>
+                    <td>
+                      <%= f.text_field :mn_obs  %>
+                    </td>
+                    <td>
+                      <%= f.text_field :s_obs  %>
+                    </td>
+                    <td>
+                      <%= f.text_field :p_obs  %>
+                    </td>
+                    <td>
+                      <%= f.text_field :si_obs  %>
+                    </td>
+                    <td>
+                      <%= f.text_field :al_obs  %>
+                    </td>
+                    <td>
+                      <%= f.text_field :ni_obs  %>
+                    </td>
+                    <td>
+                      <%= f.text_field :cr_obs  %>
+                    </td>
+                  
+                  </tr>
+                
+                </tbody>
+              </table>
+            </td>
+            <td width="50%">
+              <table cellpadding="3" cellspacing="3" width="100%" border="1">
+                <thead>
+                
+                  <th>
+                    Y.S
+                    (Kgs/mm2)
+                  </th>
+                  <th>
+                    T.S
+                    (Kgs/mm2)
+                  </th>
+                  <th>%El 
+                    5.65_/Area
+                  </th>
+                  <th>
+                    Headness
+                    (HRB)
+                  </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <%= f.text_field :ys_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :ts_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :el_spec %>
+                    </td>
+                    <td>
+                      <%= f.text_field :gl_hardness_spec %>
+                    </td>
+                  
+                  </tr>
+                  <tr>
+                    <td>
+                      <%= f.text_field :ys_obs %>
+                    </td>
+                    <td>
+                      <%= f.text_field :ts_obs %>
+                    </td>
+                    <td>
+                      <%= f.text_field :el_obs %>
+                    </td>
+                    <td>
+                      <%= f.text_field :el_hardness_obs %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br/>
+        <table cellpadding="0" cellspacing="0" width="100%" border="1">
+          <tr>
+            <td align="center">
+              <b>Dimensional Observation(mm)</b>
+            </td>
+            <td align="center">
+              <b>Visual Parameters</b>
+            </td>
+          </tr>
+          <tr>
+        <tr>
+        <td>
+          <table cellpadding="3" cellspacing="3" width="100%" border="1">
+            <thead>
+              <th>
+                &nbsp;
+              </th>
+              <th>
+                OD/Width
+              </th>
+              <th>
+                ID/Height
+              </th>
+              <th>
+                Thick
+              </th>
+              <th>
+                Length
+              </th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Spacified(Max.)
+                </td>
+                <td>
+                 <%= f.text_field :od_spec %>
+                </td>
+                <td>
+                <%= f.text_field :id_spec %>
+                </td>
+                <td>
+                  <%= f.text_field :thick_spec %>
+                </td>
+                <td>
+                  <%= f.text_field :length_spec %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Observed
+                </td>
+                <td>
+                 <%= f.text_field :od_obs %>
+                </td>
+                <td>
+                <%= f.text_field :id_obs %>
+                </td>
+                <td>
+                  <%= f.text_field :thick_obs %>
+                </td>
+                <td>
+                  <%= f.text_field :length_obs %>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center"><b<Destructive Testing</b></td>
+              </tr>
+              <tr>
+                <td>
+                  &nbsp;
+                </td>
+                <td>
+                  Flaring
+                </td>
+                <td>
+                  Flatterning
+                </td>
+                <td>
+                  Bending
+                </td>
+                <td>
+                  Crushing
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Specified
+                </td>
+                <td>
+                   <%= f.text_field :flaring_spec %>
+                </td>
+                <td>
+                  <%= f.text_field :flattening_spec %>
+                </td>
+                <td>
+                  <%= f.text_field :bending_spec %>
+                </td>
+                <td>
+                  <%= f.text_field :crushing_spec %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                   Observed
+                </td>
+                <td>
+                   <%= f.text_field :flaring_obs %>
+                </td>
+                <td>
+                  <%= f.text_field :flattening_obs %>
+                </td>
+                <td>
+                  <%= f.text_field :bending_obs %>
+                </td>
+                <td>
+                  <%= f.text_field :crushing_obs %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+        <table cellpadding="3" cellspacing="3" width="100%" border="1">
+          <tr>
+            <td>
+              Scratch Mark
+            </td>
+            <td>
+              <%= f.text_field :scratch_mark %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Roll/Pickup Mark
+            </td>
+            <td>
+              <%= f.text_field :roll_pick_up %>
+            </td>
+          </tr>
+           <tr>
+            <td>
+              Pits/Dents
+            </td>
+            <td>
+             <%= f.text_field :pits_dents %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Bend
+            </td>
+            <td>
+              <%= f.text_field :bend %>
+            </td>
+          </tr>
+           <tr>
+            <td>
+              Corner Radius
+            </td>
+            <td>
+              <%= f.text_field :corner_radius %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Squareness
+            </td>
+            <td>
+              <%= f.text_field :squareness %>
+            </td>
+          </tr>
+           <tr>
+            <td>
+              Twist
+            </td>
+            <td>
+              <%= f.text_field :twist %>
+            </td>
+          </tr>
+        </table>
+        </td>
+        <tr/>
+       </table>
+      <br/>
+      <table cellpadding="3" cellspacing="3" border="1" width="100%">
+        <tr>
+          <td align="center" colspan="4">
+            <b>Identification Details</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lot No.
+          </td>
+          <td>
+            &nbsp;
+          </td>
+          <td>
+            Coil No.
+          </td>
+          <td>
+             <%=f.collection_select( :tube_mill_performance_report_id, TubeMillPerformanceReport.all,:id,:lot_no,{:include_blank => "----------Select----------"})%>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            Chemical Copositions have been verified from raw material supplier test certificate.
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding-top:50px;" align="center" width="50%">
+            Inspected By.
+          </td>
+          <td colspan="2" style="padding-top:50px;" align="center">
+            Aproved By.
+          </td>
+        </tr>
+  </table>  
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Create" , :class=>'button submit_buttons'%>
+          </div>
+          <br class="clear"/>
         </div>
-        <div class="fl w48" >
-          <div>
-            <p style="width:99%">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
-  </p>
- <p style="width:55%">
-    <label> Test certificate no </label>
-    <%= f.text_field :test_certificate_no %>
-  </p>
- <p>
-   <label> Invoice no </label>
-  
-   <%=f.collection_select( :taxinvoice_id, Taxinvoice.all,:id,:invoice_no,{:include_blank => "----------Select----------"})%>
-
- </p> <p>
-   <%= f.label "Customers" %>
-  
-  <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
-</p>
-
-  <p>
-    <%= f.label :od %>
-    <%= f.text_field :od %>
-  </p>
-  <p>
-    <%= f.label :thickness %>
-    <%= f.text_field :thickness %>
-  </p>
-  <p>
-    <%= f.label :length %>
-    <%= f.text_field :length %>
-  </p>
-  <p>
-    <%= f.label :quantity %>
-    <%= f.text_field :quantity %>
-  </p>
-  <p>
-    <%= f.label :specification %>
-    <%= f.text_field :specification %>
-  </p>
-  <p>
-    <%= f.label :grade %>
-    <%= f.text_field :grade %>
-  </p>
-  <p>
-    <%= f.label :fin_condition %>
-    <%= f.text_field :fin_condition %>
-  </p>
-  <p>
-    <%= f.label :uann_ann %>
-    <%= f.text_field :uann_ann %>
-  </p>
-  <p>
-    <%= f.label :c_spec %>
-    <%= f.text_field :c_spec %>
-  </p>
-  <p>
-    <%= f.label :c_obs %>
-    <%= f.text_field :c_obs %>
-  </p>
-  <p>
-    <%= f.label :mn_spec %>
-    <%= f.text_field :mn_spec %>
-  </p>
-  <p>
-    <%= f.label :mn_obs %>
-    <%= f.text_field :mn_obs %>
-  </p>
-  <p>
-    <%= f.label :s_spec %>
-    <%= f.text_field :s_spec %>
-  </p>
-  <p>
-    <%= f.label :s_obs %>
-    <%= f.text_field :s_obs %>
-  </p>
-  <p>
-    <%= f.label :p_spec %>
-    <%= f.text_field :p_spec %>
-  </p>
-  <p>
-    <%= f.label :p_obs %>
-    <%= f.text_field :p_obs %>
-  </p>
-  <p>
-    <%= f.label :si_spec %>
-    <%= f.text_field :si_spec %>
-  </p>
-  <p>
-    <%= f.label :si_obs %>
-    <%= f.text_field :si_obs %>
-  </p>
-  <p>
-    <%= f.label :al_spec %>
-    <%= f.text_field :al_spec %>
-  </p>
-  <p>
-    <%= f.label :al_obs %>
-    <%= f.text_field :al_obs %>
-  </p>
-  <p>
-    <%= f.label :ni_spec %>
-    <%= f.text_field :ni_spec %>
-  </p>
-   <p>
-    <%= f.label :ni_obs %>
-    <%= f.text_field :ni_obs %>
-  </p>
-  <p>
-    <%= f.label :cr_spec %>
-    <%= f.text_field :cr_spec %>
-  </p>
-  <p>
-    <%= f.label :cr_obs %>
-    <%= f.text_field :cr_obs %>
-  </p>
-  <p>
-    <%= f.label :ys_spec %>
-    <%= f.text_field :ys_spec %>
-  </p>
-  <p>
-    <%= f.label :ys_obs %>
-    <%= f.text_field :ys_obs %>
-  </p>
-  <p>
-    <%= f.label :ts_obs %>
-    <%= f.text_field :ts_obs %>
-  </p>
-  </div>
-        </div>
-        <div style="width: 48%;" class="fr">
-          <div>
- 
-  <p>
-    <%= f.label :ts_spec %>
-    <%= f.text_field :ts_spec %>
-  </p>
-  <p>
-    <%= f.label :el_spec %>
-    <%= f.text_field :el_spec %>
-  </p>
-  <p>
-    <%= f.label :el_obs %>
-    <%= f.text_field :el_obs %>
-  </p>
-  <p>
-    <%= f.label :gl_hardness_spec %>
-    <%= f.text_field :gl_hardness_spec %>
-  </p>
-  <p>
-    <%= f.label :el_hardness_obs %>
-    <%= f.text_field :el_hardness_obs %>
-  </p>
-  <p>
-    <%= f.label :od_spec %>
-    <%= f.text_field :od_spec %>
-  </p>
-  <p>
-    <%= f.label :od_obs %>
-    <%= f.text_field :od_obs %>
-  </p>
-  <p>
-    <%= f.label :id_spec %>
-    <%= f.text_field :id_spec %>
-  </p>
-  <p>
-    <%= f.label :id_obs %>
-    <%= f.text_field :id_obs %>
-  </p>
-  <p>
-    <%= f.label :thick_spec %>
-    <%= f.text_field :thick_spec %>
-  </p>
-  <p>
-    <%= f.label :thick_obs %>
-    <%= f.text_field :thick_obs %>
-  </p>
-  <p>
-    <%= f.label :length_spec %>
-    <%= f.text_field :length_spec %>
-  </p>
-  <p>
-    <%= f.label :length_obs %>
-    <%= f.text_field :length_obs %>
-  </p>
-  <p>
-    <%= f.label :scratch_mark %>
-    <%= f.text_field :scratch_mark %>
-  </p>
-  <p>
-    <%= f.label :roll_pick_up %>
-    <%= f.text_field :roll_pick_up %>
-  </p>
-  <p>
-    <%= f.label :pits_dents %>
-    <%= f.text_field :pits_dents %>
-  </p>
-  <p>
-    <%= f.label :bend %>
-    <%= f.text_field :bend %>
-  </p>
-  <p>
-    <%= f.label :corner_radius %>
-    <%= f.text_field :corner_radius %>
-  </p>
-  <p>
-    <%= f.label :squareness %>
-    <%= f.text_field :squareness %>
-  </p>
-  <p>
-    <%= f.label :twist %>
-    <%= f.text_field :twist %>
-  </p>
-  <p>
-    <%= f.label :flaring_spec %>
-    <%= f.text_field :flaring_spec %>
-  </p>
-  <p>
-    <%= f.label :flaring_obs %>
-    <%= f.text_field :flaring_obs %>
-  </p>
-  <p>
-    <%= f.label :flattening_obs %>
-    <%= f.text_field :flattening_obs %>
-  </p>
-  <p>
-    <%= f.label :flattening_spec %>
-    <%= f.text_field :flattening_spec %>
-  </p>
-  <p>
-    <%= f.label :bending_spec %>
-    <%= f.text_field :bending_spec %>
-  </p>
-  <p>
-    <%= f.label :bending_obs %>
-    <%= f.text_field :bending_obs %>
-  </p>
-  <p>
-    <%= f.label :crushing_spec %>
-    <%= f.text_field :crushing_spec %>
-  </p>
-  <p>
-    <%= f.label :crushing_obs %>
-    <%= f.text_field :crushing_obs %>
-  </p>
-
-
-   <%#=f.collection_select( :uncoiler_report_id, UncoilerReports.all,:id,:name,{:include_blank => "----------Select----------"})%>
-
-  <p>
-    <%= f.label :uncoiler_report_id %>
-    <%= f.text_field :uncoiler_report_id %>
-  </p>
-  <p>
-    <%= f.label "Slitting coil No" %>
-  
-     <%=f.collection_select( :slittingproduction_id, Slittingproduction.all,:id,:slitting_coil_no,{:include_blank => "----------Select----------"})%>
-</p>
-
-
-
-  <p>
-    <%= f.label :inspected_by %>
-    <%= f.text_field :inspected_by %>
-  </p>
-  <p>
-    <%= f.label :approved_by %>
-    <%= f.text_field :approved_by %>
-  </p>
-  <p>
-    <%= f.label "Coil NO" %>
-  
-       <%=f.collection_select( :tube_mill_performance_report_id, TubeMillPerformanceReport.all,:id,:lot_no,{:include_blank => "----------Select----------"})%>
-</p>
-  <p>
-    <%= f.label :tube_mill_performance_report_id %>
-    <%= f.text_field :tube_mill_performance_report_id %>
-  </p>
- </div>
-        </div>
-        <br class="clear"/>
-        <div class="txtC" id="submit_div">
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
-        </div>
-        <br class="clear"/>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>
-  </div>
