@@ -1,88 +1,45 @@
 <%= render :partial=>'layouts/delivery' %>
 <div id="center-column">
-<div class="gridDiv">
-  <div class="titleHead">New deliverychallan</div>
-  <div class="formMain">
-   <% form_for(@deliverychallan) do |f| %>
-  <%= f.error_messages %>
-      <div>
-        <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" style="width: 52%;" >
-          <div>
-            <p>
- <%= f.label "Customer Name" %>
-    <%= f.collection_select(:customer_id, Customer.all, :id, :name, {:include_blank => 'Please select'})%>
-</p>
-  <p>
-    <%= f.label :delivery_challan_no %>
-    <%= f.text_field :delivery_challan_no %>
-  </p>
-  <p style="width:110%">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
-  </p>
-  <p>
-    <%= f.label :vehicle_no %>
-    <%= f.text_field :vehicle_no %>
-  </p>
-  <p>
-    <%= f.label :od %>
-    <%= f.text_field :od %>
-  </p>
-   <p>
-    <%= f.label :length %>
-    <%= f.text_field :length %>
-  </p>
-  <p>
-    <%= f.label :thickness %>
-    <%= f.text_field :thickness %>
-  </p>
-  
-  </div>
-        </div>
-        <div style="width: 48%;" class="fr">
-          <div>
+  <div class="gridDiv">
+    <div class="titleHead">New deliverychallan</div>
+    <div class="formMain">
 
-            <p>
-    <%= f.label :quantity_pcs %>
-    <%= f.text_field :quantity_pcs %>
-  </p>
-  <p>
-    <%= f.label :quantity_mtrs %>
-    <%= f.text_field :quantity_mtrs %>
-  </p>
-  <p>
-    <%= f.label :remark %>
-    <%= f.text_field :remark %>
-  </p>
-  <p>
-    <%= f.label :vat_tin %>
-    <%= f.text_field :vat_tin %>
-  </p>
-  <p>
-    <%= f.label :cst_tin %>
-    <%= f.text_field :cst_tin %>
-  </p>
-  <p>
-    <%= f.label :from %>
-    <%= f.text_field :from %>
-  </p>
-  <p>
-    <%= f.label :to %>
-    <%= f.text_field :to %>
-  </p>
-  </div>
+      <% form_for(@deliverychallan) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <div class="mt5">
+          </div>
+          <div class="fl w48" style="width: 52%;" >
+            <div>
+              <p>
+                <%= f.label "Customer" %>
+                <%= f.collection_select(:customer_id, Customer.all, :id, :name, {:include_blank => 'Please select'},{:onchange => "customer_po(this.value);"})%>
+              </p>
+              <p><%= f.label :delivery_challan_no %>
+                <%= f.text_field :delivery_challan_no,:size => 15 %></p>
+              <p><%= f.label :vehicle_no %>
+                <%= f.text_field :vehicle_no,:size => 15 %></p>
+              <p><%= f.label :remark %>
+                <%= f.text_field :remark,:size => 15 %></p>
+              <p><%= f.label :from %>
+                <%= f.text_field :from,:size => 15 %></p>
+              <p><%= f.label :to %>
+                <%= f.text_field :to,:size => 15 %></p>
+              <p><%= f.label :date %>
+                <%= f.date_select :date%></p>
+              <p>
+              <div id="detail"></div></p>
+            </div>
+          </div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Create" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',deliverychallans_path, :class=>'button submit_buttons cancelbutton' %>
+          </div>
+          <br class="clear"/>
         </div>
-        <br class="clear"/>
-        <div class="txtC" id="submit_div">
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
-          <%=link_to 'Cancel',deliverychallans_path, :class=>'button submit_buttons cancelbutton' %>
-        </div>
-        <br class="clear"/>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>

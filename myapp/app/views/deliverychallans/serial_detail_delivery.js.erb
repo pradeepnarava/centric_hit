@@ -1,0 +1,9 @@
+jQuery('#<%=params[:row]%>_deliverychallan_quantity_pcs').val("<%=@customer_order.balance%>");
+jQuery('#<%=params[:row]%>_deliverychallan_vat_tin').val("<%=@customer_order.customer.vat_no%>");
+jQuery('#<%=params[:row]%>_deliverychallan_cst_tin').val("<%=@customer_order.customer.tin_no%>");
+jQuery('#<%=params[:row]%>_deliverychallan_od').val("<%=@customer_order.serialize.od%>");
+jQuery('#<%=params[:row]%>_deliverychallan_length').val("<%=@customer_order.serialize.length%>");
+jQuery('#<%=params[:row]%>_deliverychallan_thickness').val("<%=@customer_order.serialize.thikness%>");
+jQuery('#<%=params[:row]%>_deliverychallan_to').val("<%if @customer_order.delivery_address.empty?%><%=@customer_order.customer.address%><%else%><%=@customer_order.delivery_address%><%end%>");
+
+

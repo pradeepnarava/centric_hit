@@ -18,17 +18,17 @@
     <th>Thickness</th>
     <th>Quantity pcs</th>
     <th>Quantity mtrs</th>
-    <th>Remark</th>
+    <!--<th>Remark</th>
     <th>Vat tin</th>
     <th>Cst tin</th>
     <th>From</th>
-    <th>To</th>
+    <th>To</th>-->
     <th>Action</th>
   </tr>
 
 <% for deliverychallan in @deliverychallans %>
   <tr class="<%=cycle("bg1", "bg2")%>">
-     <td><%=h deliverychallan.customer.name %></td>
+     <td><%#=h deliverychallan.customer_order.customer.name %></td>
     <td><%=h deliverychallan.delivery_challan_no %></td>
     <td><%=h deliverychallan.date %></td>
     <td><%=h deliverychallan.vehicle_no %></td>
@@ -37,11 +37,11 @@
     <td><%=h deliverychallan.thickness %></td>
     <td><%=h deliverychallan.quantity_pcs %></td>
     <td><%=h deliverychallan.quantity_mtrs %></td>
-    <td><%=h deliverychallan.remark %></td>
-    <td><%=h deliverychallan.vat_tin %></td>
-    <td><%=h deliverychallan.cst_tin %></td>
-    <td><%=h deliverychallan.from %></td>
-    <td><%=h deliverychallan.to %></td>
+   <!-- <td><%#=h deliverychallan.remark %></td>
+    <td><%#=h deliverychallan.vat_tin %></td>
+    <td><%#=h deliverychallan.cst_tin %></td>
+    <td><%#=h deliverychallan.from %></td>
+    <td><%#=h deliverychallan.to %></td>-->
     <td>
      <div class="fr" style="float:left;">
           <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_deliverychallan_path(deliverychallan) )%>

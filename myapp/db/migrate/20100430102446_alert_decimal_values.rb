@@ -10,8 +10,9 @@ class AlertDecimalValues < ActiveRecord::Migration
     
     # Uncoiler_reports
     change_column(:uncoiler_reports,:width_actual,:decimal,:precision => 12, :scale => 3,:default => 0) 
-    change_column(:uncoiler_reports,:thickness_actual,:decimal,:precision => 12, :scale => 3,:default => 0) 
-    change_column(:uncoiler_reports,:type_actual,:decimal,:precision => 12, :scale => 3,:default => 0) 
+    change_column(:uncoiler_reports,:thickness_actual,:decimal,:precision => 12, :scale => 3,:default => 0)
+      remove_column :uncoiler_reports, :type_actual
+    add_column(:uncoiler_reports,:type_actual,:decimal,:precision => 12, :scale => 3,:default => 0)
     
     # Slittingproductions
     change_column(:slittingproductions,:input_weight,:decimal,:precision => 12, :scale => 3,:default => 0) 

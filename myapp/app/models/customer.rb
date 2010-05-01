@@ -5,4 +5,5 @@ class Customer < ActiveRecord::Base
   has_many:deliverychallans
   has_many:taxinvoices
   has_many:serializes
+  
 end

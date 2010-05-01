@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100430085642) do
+ActiveRecord::Schema.define(:version => 20100501111810) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company_name"
@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
     t.decimal  "qty_mtr",          :precision => 12, :scale => 3, :default => 0.0
     t.decimal  "qty_mt",           :precision => 12, :scale => 3, :default => 0.0
     t.decimal  "qty_pcs",          :precision => 12, :scale => 3, :default => 0.0
+    t.integer  "balance"
+    t.integer  "status"
     t.string   "vat_no"
   end
 
@@ -169,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
     t.string   "to"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "customer_id"
+    t.integer  "customer_order_id"
   end
 
   create_table "departments", :force => true do |t|
@@ -330,24 +332,23 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
   create_table "slittingproductions", :force => true do |t|
     t.integer  "rawmaterial_id"
     t.integer  "slitting_id"
-    t.datetime "shift"
     t.string   "operator_name"
-    t.string   "source"
-    t.decimal  "input_weight"
-    t.decimal  "width"
-    t.decimal  "thickness"
+    t.decimal  "input_weight",                  :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "width",                         :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "thickness",                     :precision => 12, :scale => 3, :default => 0.0
     t.string   "grade"
     t.string   "type"
-    t.integer  "width_slitting"
-    t.integer  "no_of_slits_slitting"
-    t.decimal  "slit_coil_weight"
-    t.decimal  "slit_weight"
-    t.decimal  "scrap_weight"
+    t.decimal  "slit_coil_weight",              :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "slit_weight",                   :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "scrap_weight",                  :precision => 12, :scale => 3, :default => 0.0
     t.string   "remarks"
-    t.integer  "status",               :limit => 2, :default => 0
+    t.integer  "status",           :limit => 2,                                :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
+    t.datetime "production_date"
+    t.string   "shift"
+    t.decimal  "width_slitting",                :precision => 12, :scale => 3, :default => 0.0
   end
 
   create_table "slittings", :force => true do |t|
@@ -364,6 +365,8 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
     t.integer  "slitt_rawmaterial_id"
+    t.integer  "status",               :default => 0
+    t.integer  "produced_no_of_slit",  :default => 0
   end
 
   create_table "specifications", :force => true do |t|
@@ -514,7 +517,6 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
     t.integer  "slittingproduction_id"
     t.string   "spl_requirement"
     t.datetime "date"
-    t.time     "shift"
     t.string   "operator_name"
     t.string   "inspector_name"
     t.decimal  "open",                  :precision => 12, :scale => 4, :default => 0.0
@@ -531,6 +533,7 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
     t.integer  "status"
     t.decimal  "lot_no",                :precision => 12, :scale => 4, :default => 0.0
     t.decimal  "weak_weld",             :precision => 12, :scale => 4, :default => 0.0
+    t.string   "shift"
   end
 
   create_table "tube_mill_stoppage_reports", :force => true do |t|
@@ -553,7 +556,6 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
 
   create_table "uncoiler_reports", :force => true do |t|
     t.datetime "date"
-    t.datetime "shift"
     t.string   "operator_name"
     t.integer  "slittingproduction_id"
     t.decimal  "tube_od"
@@ -561,12 +563,13 @@ ActiveRecord::Schema.define(:version => 20100430085642) do
     t.decimal  "thickness"
     t.string   "grade"
     t.string   "type"
-    t.decimal  "width_actual"
-    t.decimal  "thickness_actual"
+    t.decimal  "width_actual",          :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "thickness_actual",      :precision => 12, :scale => 3, :default => 0.0
     t.string   "grade_actual"
-    t.string   "type_actual"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "shift"
+    t.decimal  "type_actual",           :precision => 12, :scale => 3, :default => 0.0
   end
 
   create_table "users", :force => true do |t|

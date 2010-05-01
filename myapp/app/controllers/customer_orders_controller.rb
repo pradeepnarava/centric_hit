@@ -42,9 +42,11 @@ class CustomerOrdersController < ApplicationController
   # POST /customer_orders.xml
   def create
     data=params
+    p params
     @error = 0
     @save_order = data.rehash.each_pair do |key,value|
       @customer_order = CustomerOrder.new(value[:customer_order])
+     
       if @customer_order.valid?
         @customer_order.customer_id = data[:customer_order][:customer_id]
         @customer_order.delivery_address = data[:customer_order][:delivery_address]

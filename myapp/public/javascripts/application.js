@@ -34,6 +34,35 @@ function serialdetail(id,row){
      success: function(){loader.remove();}
      });       
 }
+function customerserial(id,row){
+    if(id==""){return false}
+    loader.prependTo("#customer_div")
+      jQuery.ajax({
+       type: "POST",
+       url: "/deliverychallans/serial_detail_delivery",
+       dataType: 'script',
+    data: {
+          'id' : id,
+           'row' :row
+        },
+     success: function(){loader.remove();}
+     });
+}
+
+function customer_po(id){
+    if(id==""){return false}
+    loader.prependTo("#customer_div")
+      jQuery.ajax({
+       type: "POST",
+       url: "/deliverychallans/customer_po",
+       dataType: 'script',
+    data: {
+          'id' : id
+          
+        },
+     success: function(){loader.remove();}
+     });
+}
 
 function total_price(row){ 
     rpkg  = jQuery("#"+row+"_customer_order_rate_per_kilo").val();
@@ -81,6 +110,7 @@ function total_weight(row){
     thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
     i  = ((od-thikness)*thikness*length*0.02465*quantity)/1000;
     jQuery("#"+row+"_customer_order_total_weight").val(Number(i).toFixed(3));
+    jQuery("#"+row+"_customer_order_balance").val(quantity);
   
 }
 

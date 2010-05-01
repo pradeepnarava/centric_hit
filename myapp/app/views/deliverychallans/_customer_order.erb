@@ -1,0 +1,47 @@
+
+
+<%unless @customer_po.size<1%>
+  <table class="formOrdertable">
+    <tr>
+      <td>S.No</td>
+      <td>Customer Order PO</td>
+     
+     
+     
+      <td>OD</td>
+      <td>Length</td>
+      <td>Thickness</td>
+      <td>Quantity Pcs</td>
+      <td>Quantity Meters</td>
+       
+            <td>Vat Tin No</td>
+               <td>Cst Tin No</td>
+                
+
+    </tr>
+    <%for customerorder in 1..@customer_po.size%>
+      <tr>
+        <td><%=customerorder%></td>
+        <td><%=collection_select("#{customerorder}[deliverychallan]",:customer_order_id, CustomerOrder.all,:id,:po_no,{:include_blank => "---Select---"},{:onchange => "customerserial(this.value,#{customerorder});"})%></td>
+       
+   
+
+        <td><%= text_field_tag "#{customerorder}[deliverychallan][od]" %></td>
+        <td><%= text_field_tag "#{customerorder}[deliverychallan][length]" %></td>
+        <td><%= text_field_tag "#{customerorder}[deliverychallan][thickness]"%></td>
+        <td><%= text_field_tag "#{customerorder}[deliverychallan][quantity_pcs]" %></td>
+         <td><%= text_field_tag "#{customerorder}[deliverychallan][quantity_mtrs]" %></td>
+         
+             <td><%= text_field_tag "#{customerorder}[deliverychallan][vat_tin]" %></td>
+
+               <td><%= text_field_tag "#{customerorder}[deliverychallan][cst_tin]" %></td>
+                
+      
+
+      </tr>
+    <%end%>
+  </table>
+<%else%>
+  No Serials, Please Create Serial First.
+<%end%>
+

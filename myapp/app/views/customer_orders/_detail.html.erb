@@ -8,9 +8,10 @@
       <td>Rate/meter</td>
       <td>Rate/pieces</td>
       <td>Rate/M.T.</td>
-      <td>Qty</td>
+      <td>Qty/Pcs</td>
       <td>Total Weight</td>
       <td>Total Amount</td>
+      
     </tr>
     <%for customerorder in 1..@serials.size%>
       <tr>
@@ -23,6 +24,7 @@
         <td><%= text_field_tag "#{customerorder}[customer_order][quantity]",nil,:onblur => "total_weight(#{customerorder});" %></td>
         <td><%= text_field_tag "#{customerorder}[customer_order][total_weight]" ,nil,:onblur => "total_amount(#{customerorder});"%></td>
         <td><%= text_field_tag "#{customerorder}[customer_order][total_amount]" %></td
+         <td><%= hidden_field_tag "#{customerorder}[customer_order][balance]" %></td>
         <td><%= hidden_field_tag "#{customerorder}[customer_order_h][od]" %></td>
         <td><%= hidden_field_tag "#{customerorder}[customer_order_h][length]" %></td>
         <td><%= hidden_field_tag "#{customerorder}[customer_order_h][thikness]" %></td>
