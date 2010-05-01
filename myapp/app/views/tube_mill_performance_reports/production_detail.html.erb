@@ -30,10 +30,10 @@
             <tr>
               <td><strong>Lot No.</strong></td>
               <td><%= h @tube_mill.lot_no%></td>
+              <td><strong>No. of Tubes</strong></td>
+              <td><%= h @tube_mill.no_of_tube%></td>              
               <td><strong>Specification</strong></td>
               <td><%= h @tube_mill.specification%></td>
-              <td><strong>Yield %</strong></td>
-              <td><%= h @tube_mill.yieldpercent%></td>
             </tr>
           </table>
         </div>          
@@ -48,6 +48,9 @@
               <th>Flattening</th>
               <th>Rm grade</th>
               <th>Spl requirement</th>
+              <th>Open %</th>
+              <th>Commercial %</th>
+              <th>Yield %</th>
             </tr>
             <tr>
               <td><%= h @tube_mill.od_width%></td>
@@ -59,6 +62,9 @@
               <td><%= h @tube_mill.flattening%></td>
               <td><%= h @tube_mill.rm_grade%></td>
               <td><%= h @tube_mill.spl_requirement%></td>
+              <td><%= h @tube_mill.openpercent%></td>
+              <td><%= h @tube_mill.commercialpercent%></td>
+              <td><%= h @tube_mill.yieldpercent%></td>
             </tr>
           </table>
           <br class="clear"/>

@@ -8,11 +8,22 @@ class TubeMillPerformanceReport < ActiveRecord::Base
   end
   
   def prime
-    self.lot_no
+    self.no_of_tube
   end
   
   def yieldpercent
     total = prime + rejected
     return (prime / total).to_f
   end
+  
+  def openpercent
+    total = prime + rejected
+    return (self.open / total).to_f    
+  end
+  
+  def commercialpercent
+    total = prime + rejected
+    return ( (rejected - self.open) / total).to_f        
+  end
+  
 end
