@@ -66,7 +66,7 @@
                     </td>
                     <td><%=@slitting_prooduction.slitting_coil_no if @slitting_prooduction%>
                     </td>
-                     <td><%=obj.shift.to_date.strftime('%d-%m-%Y') if obj.shift%>
+                     <td><%=obj.shift if obj.shift%>
                     </td>
                      <td><%=obj.operator_name if obj.operator_name%>
                     </td>
