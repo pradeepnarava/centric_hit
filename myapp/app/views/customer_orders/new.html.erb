@@ -1,4 +1,6 @@
 <%= render :partial=>'layouts/order_leftside_bar' %>
+<%= hidden_field_tag "customer_order_h_ecc_no" %>
+<%= hidden_field_tag "customer_order_h_vat_no" %>
 <div id="center-column">
   <div class="gridDiv">
     <div class="titleHead">Customer Order</div>
@@ -13,10 +15,14 @@
           <br class="clear"/>
           <table>
             <tr>
+             
               <td><label>Office Address</label></td>
               <td><%= text_area_tag "customer_order_office_address",nil, :cols => 30, :rows => 5 %></td>
               <td><%= f.label :delivery_address %> <br/> <%=link_to "Same as Office","#",:onclick => "copyaddress();"%></td>
               <td><%= f.text_area :delivery_address, :cols => 30, :rows => 5 %></td>
+                                 <%#= hidden_field_tag "[1][customer_order_h][ecc_no]" %>
+        
+
             </tr>
             <tr>
               <td><%= f.label :ecc_no %></td>

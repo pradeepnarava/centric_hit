@@ -53,6 +53,7 @@ class CustomerOrdersController < ApplicationController
         @customer_order.ecc_no = data[:customer_order][:ecc_no]
          @customer_order.vat_no = data[:customer_order][:vat_no]
         @customer_order.po_no = data[:customer_order][:po_no]
+         @customer_order.status = 1
         if @customer_order.save        
           flash[:notice] = 'CustomerOrder was successfully created.'
         else
@@ -61,7 +62,7 @@ class CustomerOrdersController < ApplicationController
       end
     end
     if @error == 0
-      redirect_to(customer_orders_path)
+      redirect_to(:controller=>"salesplans",:action=>"new")
     else
       render :action => "new"
     end

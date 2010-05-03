@@ -16,8 +16,8 @@ function customerdetail(id){
 
 function copyaddress(){
   jQuery('#customer_order_delivery_address').val(jQuery('#customer_order_office_address').val());
-    jQuery('#customer_order_ecc_no').val('');
-    jQuery('#customer_order_vat_no').val('');
+  jQuery('#customer_order_ecc_no').val( jQuery('#customer_order_h_ecc_no').val());
+  jQuery('#customer_order_vat_no').val( jQuery('#customer_order_h_vat_no').val());
 }
 
 function serialdetail(id,row){
