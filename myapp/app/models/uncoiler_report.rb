@@ -1,3 +1,3 @@
 class UncoilerReport < ActiveRecord::Base
-belongs_to:slittingproduction
+  belongs_to :slittingproduction
 end

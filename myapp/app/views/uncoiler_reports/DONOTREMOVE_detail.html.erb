@@ -4,9 +4,13 @@
     <th rowspan="2">S.No.</th>
     <th rowspan="2">Coil No.</th>
     <th colspan="4">Standard</th>
-    <th rowspan="2">Proceed For Tube</th>
+    <th colspan="4">Actual Observations</th>
   </tr>
   <tr>
+    <th>Width</th>
+    <th>Thick</th>
+    <th>Grade</th>
+    <th>Type</th>
     <th>Width</th>
     <th>Thick</th>
     <th>Grade</th>
@@ -20,7 +24,10 @@
     <td><%=h slitp.thickness%></td>
     <td><%=h slitp.grade%></td>
     <td><%=h slitp.type%></td>
-    <td><%=check_box_tag "#{slitp.id}[checkuncoiler][istube]"%></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][width_actual]" %></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][thickness_actual]" %></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][grade_actual]" %></td>
+    <td><%=text_field_tag "#{slitp.id}[uncoiler][type_actual]" %></td>
   </tr>
     <%sno += 1%>
     <%=hidden_field_tag "#{slitp.id}[uncoiler][slittingproduction_id]", "#{slitp.id}"%>

@@ -3,7 +3,6 @@ class UncoilerReportsController < ApplicationController
   # GET /uncoiler_reports.xml
   def index
     @uncoiler_reports = UncoilerReport.find(:all)
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @uncoiler_reports }
@@ -25,6 +24,7 @@ class UncoilerReportsController < ApplicationController
   # GET /uncoiler_reports/new.xml
   def new
     @uncoiler_report = UncoilerReport.new
+    @employees = Employee.all
     @coils = Slittingproduction.all.collect { |sl| sl.rawmaterial}.uniq
     respond_to do |format|
       format.html # new.html.erb
@@ -49,10 +49,11 @@ class UncoilerReportsController < ApplicationController
     data = params
     @error = 0
     @uncoiler = data.rehash.each_pair do |key,value|
-      unless value[:uncoiler].blank?
+
+      unless value[:checkuncoiler].blank?         
         @uncoiler_report = UncoilerReport.new(value[:uncoiler])
         @uncoiler_report.date = data[:uncoiler_report][:date]
-        @uncoiler_report.operator_name = data[:uncoiler_report][:operator_name]
+        @uncoiler_report.operator_name = data[:uncoiler_report][:operator_id]
         @uncoiler_report.shift = data[:uncoiler_report][:shift]
         if @uncoiler_report.save
           @slittingp = Slittingproduction.find(value[:uncoiler][:slittingproduction_id])

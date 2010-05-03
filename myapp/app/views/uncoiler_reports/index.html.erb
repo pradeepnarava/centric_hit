@@ -24,7 +24,7 @@
               <tr>
                 <td><%=h uncoiler_report.date.strftime('%d-%b-%Y') %></td>
                 <td><%=h uncoiler_report.shift %></td>
-                <td><%=h uncoiler_report.operator_name %></td>
+                <td><%=h Employee.getname(uncoiler_report.operator_id) rescue "-"%></td>
                 <td><%=h uncoiler_report.slittingproduction.slitting_coil_no %></td>
                 <td><%=h uncoiler_report.width_actual %></td>
                 <td><%=h uncoiler_report.thickness_actual %></td>

@@ -32,7 +32,7 @@
     <td><%=h tube_mill.shift%></td>
     <td><%=h tube_mill.prime %></td>
     <td><%=h tube_mill.rejected %></td>
-    <td><%=h tube_mill.yieldpercent if tube_mill%></td>
+    <td><%=h tube_mill.yieldpercent if tube_mill%> %</td>
     <td>
       <div class="fr" style="float:left;">
           <%=  link_to(image_tag('/images/icon_details.gif',{:style=>"width:20px;height:20px;", :alt =>"View Detail", :title=>"View Detail", :border => 0, :hspace => "0"}),  production_detail_tube_mill_performance_report_path(tube_mill) )%>

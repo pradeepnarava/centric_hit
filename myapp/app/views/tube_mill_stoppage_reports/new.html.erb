@@ -24,14 +24,14 @@
             <th>Description of Breakdown</th>
             <th>From</th>
             <th>To</th>
-            <th>Total Time</th>
+            <th>Total Time(Min)</th>
             <th>Remark</th>
           </tr>
           <tr>
             <td><%=f.select :type_stop ,Stoppage::STOPAGE_TYPE ,{:include_blank => "--- Select ---"},{:onchange => "stopagedetail(this.value);"}%></td>
             <td><span id="breakdown"><%=render :partial => 'stoppage'%></span></td>
-            <td><%= f.time_select :from %></td>
-            <td><%= f.time_select :to %></td>
+            <td><%= f.time_select :from,{},:onchange =>"totaltime();" %></td>
+            <td><%= f.time_select :to,{},:onchange =>"totaltime();"  %></td>
             <td><%= f.text_field :total_time %></td>
             <td><%= f.text_field :remarks %></td>
           </tr>

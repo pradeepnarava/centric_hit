@@ -292,3 +292,15 @@ function stopagedetail(id){
      success: function(){loader.remove();}
      });       
 }
+
+function totaltime(){
+   fromh = jQuery("#tube_mill_stoppage_report_from_4i").val();
+   fromm = jQuery("#tube_mill_stoppage_report_from_5i").val();
+   toh = jQuery("#tube_mill_stoppage_report_to_4i").val();
+   tom = jQuery("#tube_mill_stoppage_report_to_5i").val();   
+   
+   from = (Number(fromh)*60)+Number(fromm)
+   to = (Number(toh)*60)+Number(tom)
+   
+   jQuery("#tube_mill_stoppage_report_total_time").val(Number(to-from)); 
+}
