@@ -42,9 +42,9 @@
           <%end%>
           <td><%=h customer_order.delivery_address %></td>
           <td>     &nbsp              
-            <%if customer_order.status==1%>Ordered<%#end%>
-            <%if customer_order.status==2%>Pending<%#end%>
-            <%if customer_order.status==3%>Delivered<%#end%>           
+            <%if customer_order.status==1%>Ordered<%end%>
+            <%if customer_order.status==2%>Pending<%end%>
+            <%if customer_order.status==3%>Delivered<%end%>           
           </td>
            <td><%=h customer_order.balance rescue "-"  %></td>
           <td>
