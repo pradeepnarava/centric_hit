@@ -18,9 +18,9 @@
         <th>PO.No</th>
         <th>Vat no</th>
         <th>Ecc no</th>
-        <th>Delivery address</th
+        <th>Delivery address</th>
         <th>Status</th>
-         <th>Balance</th>
+        <th>Balance</th>
         <th>Action</th>
       </tr>
 
@@ -41,9 +41,10 @@
             <td><%=h customer_order.ecc_no rescue "-"  %></td>
           <%end%>
           <td><%=h customer_order.delivery_address %></td>
-          <td><%if customer_order.status==1%>Ordered<%end%>
-            <%if customer_order.status==2%>Pending<%end%>
-            <%if customer_order.status==3%>Delivered<%end%>           
+          <td>     &nbsp              
+            <%if customer_order.status==1%>Ordered<%#end%>
+            <%if customer_order.status==2%>Pending<%#end%>
+            <%if customer_order.status==3%>Delivered<%#end%>           
           </td>
            <td><%=h customer_order.balance rescue "-"  %></td>
           <td>
