@@ -20,9 +20,6 @@
     <th>Grade</th>
     <th>Type</th>
     <th>Width slitting</th>
-    <!--<th>Slit coil weight</th>
-    <th>Slit weight</th>
-    <th>Scrap weight</th>-->
     <th>Status</th>
     <th>Remarks</th>
     <th>Action</th>
@@ -31,19 +28,15 @@
 <% for slittingproduction in @slittingproductions %>
   <tr class="<%=cycle("bg1", "bg2")%>">
     <td><%=h slittingproduction.rawmaterial.name %></td>
-       <td><%=h slittingproduction.slitting_coil_no %></td>
-    <td><%#=h slittingproduction.slitting.slitting_coil_no %></td>
+    <td><%=h slittingproduction.slitting_coil_no %></td>
     <td><%=h slittingproduction.shift %></td>
-    <td><%=h slittingproduction.operator_name %></td>
+    <td><%=h Employee.getname(slittingproduction.operator_id) rescue "-" %></td>
     <td><%=h slittingproduction.input_weight %></td>
     <td><%=h slittingproduction.width %></td>
     <td><%=h slittingproduction.thickness %></td>
     <td><%=h slittingproduction.grade %></td>
     <td><%=h slittingproduction.type %></td>
     <td><%=h slittingproduction.width_slitting %></td>
-    <!--<td><%#=h slittingproduction.slit_coil_weight %></td>
-    <td><%#=h slittingproduction.slit_weight %></td>
-    <td><%#=h slittingproduction.scrap_weight %></td>-->
     <td><%=h slittingproduction.status==1?'Slitting WIP':'TubeMil WIP' %></td>
     <td><%=h slittingproduction.remarks %></td>
     <td>

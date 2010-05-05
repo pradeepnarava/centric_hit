@@ -206,7 +206,7 @@ function get_slitwt(row){
 function get_totalwt(row){
  var swt  = jQuery("#"+row+"_slitting_slit_weight").val();
  var slt  = jQuery("#"+row+"_slitting_no_of_slits").val();
- jQuery("#"+row+"_slitting_weight").val(Number(swt*slt).toFixed(3));
+ jQuery("#"+row+"_slitting_total_weight").val(Number(swt*slt).toFixed(3));
 }
 
 function get_scrap(){
@@ -299,8 +299,8 @@ function totaltime(){
    var toh = jQuery("#tube_mill_stoppage_report_to_4i").val();
    var tom = jQuery("#tube_mill_stoppage_report_to_5i").val();   
    
-   var from = (Number(fromh)*60)+Number(fromm)
-   var to = (Number(toh)*60)+Number(tom)
+   var from = (Number(fromh)*60)+Number(fromm);
+   var to = (Number(toh)*60)+Number(tom);
    
    jQuery("#tube_mill_stoppage_report_total_time").val(Number(to-from)); 
 }

@@ -40,6 +40,7 @@ class UncoilerReportsController < ApplicationController
   # GET /uncoiler_reports/1/edit
   def edit
     @uncoiler_report = UncoilerReport.find(params[:id])
+    @employees = Employee.all
     @coils = Slittingproduction.all.collect { |sl| sl.rawmaterial}.uniq
   end
 

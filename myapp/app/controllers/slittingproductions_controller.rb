@@ -27,8 +27,8 @@ class SlittingproductionsController < ApplicationController
   # GET /slittingproductions/new.xml
   def new
     @slittingproduction = Slittingproduction.new
-    #@coils = Rawmaterial.find(:all, :conditions => ["status = 1"])
     @coils = Slitting.all.collect { |sl| sl.rawmaterial}.uniq
+    @employees = Employee.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @slittingproduction }
@@ -44,6 +44,7 @@ class SlittingproductionsController < ApplicationController
   def edit
     @slittingproduction = Slittingproduction.find(params[:id])
     @coils = Slitting.all.collect { |sl| sl.rawmaterial}.uniq
+    @employees = Employee.all
   end
 
   # POST /slittingproductions
@@ -58,12 +59,12 @@ class SlittingproductionsController < ApplicationController
           @slittingproduction = Slittingproduction.new(data[:slittingproduction])
           @slittingproduction.slitting_coil_no = value[:slitting_coil_no]
           @slittingproduction.slitting_id = slit.id
-          @slittingproduction.input_weight = @coil.coil_weight
+          @slittingproduction.input_weight = slit.process_coil_wt
           @slittingproduction.width = @coil.width
           @slittingproduction.thickness = @coil.thickness
           @slittingproduction.grade = @coil.grade
           @slittingproduction.width_slitting = slit.slit_width
-          @slittingproduction.slit_coil_weight = slit.process_coil_wt
+          @slittingproduction.slit_coil_weight = slit.slit_weight
           @slittingproduction.status = 1
           if @slittingproduction.save
             flash[:notice] = 'Slitting Production was successfully created.'

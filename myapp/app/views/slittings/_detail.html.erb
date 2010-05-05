@@ -15,7 +15,7 @@
                  <td><%= text_field_tag "#{slit}[slitting][slit_width]",nil, :onblur => "get_slitwt(#{slit});" %></td>
                  <td><%= text_field_tag "#{slit}[slitting][slit_weight]" %></td>            
                  <td><%= text_field_tag "#{slit}[slitting][no_of_slits]" ,nil,:onblur => "get_totalwt(#{slit}); get_scrap();" %></td>
-                 <td><%= text_field_tag "#{slit}[slitting][weight]" %></td>
+                 <td><%= text_field_tag "#{slit}[slitting][total_weight]" %></td>
                  <td><%= text_field_tag "#{slit}[slitting][remarks]" %></td>               
                </tr>
                <%end%>

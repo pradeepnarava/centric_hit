@@ -19,6 +19,9 @@
 <p>Slitting Setting Detail</p>
 <div>
   <table>
+    <%i=1%>
+    <%#@coil.slittings.each do |slits|%>
+    <%@slittings.each do |slits|%>
     <tr>
       <th>Width</th>
       <th>Coil wt.</th>
@@ -26,12 +29,9 @@
       <th>No. of Slits</th>
       <th>No. of Produced Slits</th>
     </tr>
-    <%i=1%>
-    <%#@coil.slittings.each do |slits|%>
-    <%@slittings.each do |slits|%>
       <tr>
         <td><%= h slits.slit_width %></td>
-        <td><%= h slits.process_coil_wt %></td>
+        <td><%= h slits.total_weight %></td>
         <td><%= h slits.scrap %></td>
         <td><%= h slits.no_of_slits %></td>
         <td><%= h slits.produced_no_of_slit %></td>
@@ -48,7 +48,7 @@
             <%for sub in 1..(slits.no_of_slits.to_i - slits.produced_no_of_slit.to_i)%>
               <tr>
                 <td><%= h slits.slit_width%></td>
-                <td><%= h slits.process_coil_wt%></td>
+                <td><%= h slits.slit_weight%></td>
                 <td><%= text_field_tag "#{slits.id}[#{sub}][slitting_coil_no]" %></td>
               </tr>
             <%end%>
