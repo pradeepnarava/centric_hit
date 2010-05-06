@@ -38,6 +38,28 @@ class SlittingproductionsController < ApplicationController
   def coil_detail
     @coil = Rawmaterial.find(params[:id])
     @slittings = @coil.slittings.find(:all, :conditions => ["status = 0"])
+    
+    unless @slittings.blank?
+      @slittings.each do |sl|
+        @slitt_rawmaterial_id = sl.slitt_rawmaterial_id
+        @no_of_slits = @no_of_slits.to_i + sl.no_of_slits 
+      end  
+      slitcoil = Rawmaterial.find(@slitt_rawmaterial_id).name
+      if slitcoil.include? "PT1"
+        @slitting_coilno = @coil.name+"-A"
+      elsif slitcoil.include? "PT2"
+        @slitting_coilno = @coil.name+"-B"
+      elsif slitcoil.include? "PT3"
+        @slitting_coilno = @coil.name+"-C"
+      elsif slitcoil.include? "PT4"
+        @slitting_coilno = @coil.name+"-D"
+      elsif slitcoil.include? "PT5"
+        @slitting_coilno = @coil.name+"-E"
+      elsif slitcoil.include? "PT6"
+        @slitting_coilno = @coil.name+"-F"        
+      end
+    end
+    
   end  
 
   # GET /slittingproductions/1/edit

@@ -16,6 +16,7 @@
   </tr>
 </table>  
 <br class="clear"/>
+<%unless @slittings.blank?%>
 <p>Slitting Setting Detail</p>
 <div>
   <table>
@@ -49,13 +50,17 @@
               <tr>
                 <td><%= h slits.slit_width%></td>
                 <td><%= h slits.slit_weight%></td>
-                <td><%= text_field_tag "#{slits.id}[#{sub}][slitting_coil_no]" %></td>
+                <td><%= text_field_tag "#{slits.id}[#{sub}][slitting_coil_no]",@slitting_coilno+"#{i}" %></td>
               </tr>
+              <%i = i + 1%>
             <%end%>
           </table>
         </td>
       </tr>
-      <%i = i + 1%>
+
     <%end%>    
   </table>
 </div>
+<%else%>
+<p style="color:#cc0000">No Slitting Plan for this coil.</p>
+<%end%>
