@@ -107,5 +107,8 @@ class TubeMillPerformanceReportsController < ApplicationController
   def production_detail
     @tube_mill = TubeMillPerformanceReport.find(params[:id])
   end
-  
+
+  def tube_stock
+    
+  end
 end

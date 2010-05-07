@@ -1,0 +1,35 @@
+<%= render :partial=>'layouts/stock_leftside_bar' %>
+<div id="center-column">
+  <div class="top-bar">
+    <h1>Wide-Coil Stock</h1>
+  </div><br />  
+  <div class="table">
+    <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+    <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+    <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <th>Coil No</th>
+      <th>Supplier</th>
+      <th>Date of Received</th>      
+      <th>Category/Type</th>    
+      <th>Grade</th>
+      <th>Width</th>
+      <th>Thickness</th>
+      <th>Coil weight</th>
+    </tr>
+
+  <% for rawmaterial in @rawmaterials %>
+    <tr class="<%=cycle("bg1", "bg2")%>">
+      <td><%=h rawmaterial.name %></td>
+      <td><%=h rawmaterial.address.company_name %></td>
+      <td><%=h rawmaterial.dateofreciept.strftime('%d-%b-%Y') %></td>      
+      <td><%=h rawmaterial.rawmaterial_category.name rescue "-" %></td>    
+      <td><%=h rawmaterial.grade rescue "-"%></td>
+      <td><%=h rawmaterial.width %></td>
+      <td><%=h rawmaterial.thickness %></td>
+      <td><%=h rawmaterial.coil_weight %></td>
+    </tr>
+  <% end %>
+  </table>
+  </div>
+</div>

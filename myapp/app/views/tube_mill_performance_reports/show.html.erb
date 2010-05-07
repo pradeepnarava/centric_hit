@@ -1,139 +1,151 @@
-<p>
-  <b>Lot no:</b>
-  <%=h @tube_mill_performance_report.lot_no %>
-</p>
+<%= render :partial=>'layouts/process_leftside_bar' %>
+<div id="center-column">
+<div class="top-bar">
+  <h1>Tube Mill Performance Reports</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <th>Parameters</th>
+    <th>Open</th>
+    <th>Joint</th>
+    <th>Tool mark</th>
+    <th>Roll mark</th>
+    <th>Pick up</th>
+    <th>Scratch</th>
+    <th>Weak weld</th>
+    <th>Bend</th>
+    <th>Nf c</th>
+    <th>Bend</th>
+    <th>Remarks</th>
+    <th>Status</th>
+  </tr>
 
-<p>
-  <b>Customer:</b>
-  <%=h @tube_mill_performance_report.customer_id %>
-</p>
-
-<p>
-  <b>Od width:</b>
-  <%=h @tube_mill_performance_report.od_width %>
-</p>
-
-<p>
-  <b>Id height:</b>
-  <%=h @tube_mill_performance_report.id_height %>
-</p>
-
-<p>
-  <b>Thickness:</b>
-  <%=h @tube_mill_performance_report.thickness %>
-</p>
-
-<p>
-  <b>Length:</b>
-  <%=h @tube_mill_performance_report.length %>
-</p>
-
-<p>
-  <b>Id fin height:</b>
-  <%=h @tube_mill_performance_report.id_fin_height %>
-</p>
-
-<p>
-  <b>Drifting:</b>
-  <%=h @tube_mill_performance_report.drifting %>
-</p>
-
-<p>
-  <b>Flattening:</b>
-  <%=h @tube_mill_performance_report.flattening %>
-</p>
-
-<p>
-  <b>Specification:</b>
-  <%=h @tube_mill_performance_report.specification %>
-</p>
-
-<p>
-  <b>Rm grade:</b>
-  <%=h @tube_mill_performance_report.rm_grade %>
-</p>
-
-<p>
-  <b>Slitting production:</b>
-  <%=h @tube_mill_performance_report.slittingproduction_id %>
-</p>
-
-<p>
-  <b>Spl requirement:</b>
-  <%=h @tube_mill_performance_report.spl_requirement %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%=h @tube_mill_performance_report.date %>
-</p>
-
-<p>
-  <b>Shift:</b>
-  <%=h @tube_mill_performance_report.shift %>
-</p>
-
-<p>
-  <b>Operator name:</b>
-  <%=h @tube_mill_performance_report.operator_name %>
-</p>
-
-<p>
-  <b>Inspector name:</b>
-  <%=h @tube_mill_performance_report.inspector_name %>
-</p>
-
-<p>
-  <b>Open:</b>
-  <%=h @tube_mill_performance_report.open %>
-</p>
-
-<p>
-  <b>Joint:</b>
-  <%=h @tube_mill_performance_report.joint %>
-</p>
-
-<p>
-  <b>Tool mark:</b>
-  <%=h @tube_mill_performance_report.tool_mark %>
-</p>
-
-<p>
-  <b>Roll mark:</b>
-  <%=h @tube_mill_performance_report.roll_mark %>
-</p>
-
-<p>
-  <b>Pick up:</b>
-  <%=h @tube_mill_performance_report.pick_up %>
-</p>
-
-<p>
-  <b>Scratch:</b>
-  <%=h @tube_mill_performance_report.scratch %>
-</p>
-
-<p>
-  <b>Week weld:</b>
-  <%=h @tube_mill_performance_report.weak_weld %>
-</p>
-
-<p>
-  <b>Bend:</b>
-  <%=h @tube_mill_performance_report.bend %>
-</p>
-
-<p>
-  <b>Nf c:</b>
-  <%=h @tube_mill_performance_report.nf_c %>
-</p>
-
-<p>
-  <b>Remarks:</b>
-  <%=h @tube_mill_performance_report.remarks %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_tube_mill_performance_report_path(@tube_mill_performance_report) %> |
-<%= link_to 'Back', tube_mill_performance_reports_path %>
+  <tr>
+    <td>
+      <table style="font-size:11px;" cellpadding="1" width="100%">
+        <tr>
+          <td class="border_td">
+            Lot no
+          </td>
+          <td class="border_td">
+             <%=h @tube_mill_performance_report.lot_no %>
+          </td>
+        </tr>
+        <tr>
+          <td class="border_td">
+            Customer
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.customer.name rescue "-"%></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+            No of Tubes
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.no_of_tube rescue "-"%></td>
+        </tr>        
+        <tr>
+          <td class="border_td">
+           Od width
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.od_width %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Id height
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.id_height %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Thickness
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.thickness %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Length
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.length %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Id fin height
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.id_fin_height %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Drifting
+          </td>
+           <td class="border_td"><%=h @tube_mill_performance_report.drifting %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Flattening
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.flattening %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Specification
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.specification %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Rm grade
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.rm_grade %></td>
+        </tr>
+         <tr>
+          <td class="border_td">
+          Slitting production coil no
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.slittingproduction.slitting_coil_no  if @tube_mill_performance_report.slittingproduction%></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Spl requirement
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.spl_requirement %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Date
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.date.strftime('%d-%b-%Y') %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Shift
+          </td>
+              <td class="border_td"><%=h @tube_mill_performance_report.shift %></td>
+        </tr>
+       
+      </table>
+          </td>
+    
+   
+   
+    
+    <td><%=h @tube_mill_performance_report.open %></td>
+    <td><%=h @tube_mill_performance_report.joint %></td>
+    <td><%=h @tube_mill_performance_report.tool_mark %></td>
+    <td><%=h @tube_mill_performance_report.roll_mark %></td>
+    <td><%=h @tube_mill_performance_report.pick_up %></td>
+    <td><%=h @tube_mill_performance_report.scratch %></td>
+    <td><%=h @tube_mill_performance_report.weak_weld %></td>
+    <td><%=h @tube_mill_performance_report.bend %></td>
+    <td><%=h @tube_mill_performance_report.nf_c %></td>
+    <td><%=h @tube_mill_performance_report.remarks %></td>
+    <td></td>
+    <td><%=h @tube_mill_performance_report.status==1?'Tube WIP':'-' %></td>
+  </tr>
+</table>
+</div>
+<%=link_to 'Back', tube_mill_performance_reports_url, :class => "linkbutton" %>  
+<br />
+</div>

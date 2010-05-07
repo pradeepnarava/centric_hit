@@ -9,7 +9,7 @@
   <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
   <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <th>Rawmaterial Category</th>
+    <th>Coil No</th>
     <th>Category/Type</th>    
     <th>Grade</th>
     <th>Width</th>
@@ -23,7 +23,7 @@
   <tr class="<%=cycle("bg1", "bg2")%>">
     <td><%=h rawmaterial.name %></td>
     <td><%=h rawmaterial.rawmaterial_category.name rescue "-" %></td>    
-    <td><%=h rawmaterial.rawmaterial_category.grade rescue "-"%></td>
+    <td><%=h rawmaterial.grade rescue "-"%></td>
     <td><%=h rawmaterial.width %></td>
     <td><%=h rawmaterial.thickness %></td>
     <td><%=h rawmaterial.coil_weight %></td>

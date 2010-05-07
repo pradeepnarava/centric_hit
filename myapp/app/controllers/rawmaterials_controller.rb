@@ -87,4 +87,14 @@ class RawmaterialsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def wide_coil
+    @rawmaterials = Rawmaterial.find(:all, :conditions=>['status = 0 and mother_id is NULL'],:order => :dateofreciept)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @rawmaterials }
+    end    
+  end
+  
 end

@@ -1,0 +1,61 @@
+<%= render :partial=>'layouts/centric_left_bar' %>
+<div id="center-column">
+<h1>Listing centricsteels</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Country</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th>Email</th>
+    <th>Excise registration no</th>
+    <th>Vat tin</th>
+    <th>Cst</th>
+    <th>Pan no</th>
+    <th>Ecc no</th>
+    <th>Ifc</th>
+    <th>Dgft code</th>
+    <th>Range</th>
+    <th>Division</th>
+    <th>Collectorate</th>
+  </tr>
+
+<% @centricsteels.each do |centricsteel| %>
+  <tr>
+    <td><%=h centricsteel.name %></td>
+    <td><%=h centricsteel.address %></td>
+    <td><%=h centricsteel.street %></td>
+    <td><%=h centricsteel.city %></td>
+    <td><%=h centricsteel.state %></td>
+    <td><%=h centricsteel.zip %></td>
+    <td><%=h centricsteel.country %></td>
+    <td><%=h centricsteel.phone1 %></td>
+    <td><%=h centricsteel.phone2 %></td>
+    <td><%=h centricsteel.email %></td>
+    <td><%=h centricsteel.excise_registration_no %></td>
+    <td><%=h centricsteel.vat_tin %></td>
+    <td><%=h centricsteel.cst %></td>
+    <td><%=h centricsteel.pan_no %></td>
+    <td><%=h centricsteel.ecc_no %></td>
+    <td><%=h centricsteel.ifc %></td>
+    <td><%=h centricsteel.dgft_code %></td>
+    <td><%=h centricsteel.range %></td>
+    <td><%=h centricsteel.division %></td>
+    <td><%=h centricsteel.collectorate %></td>
+    <td><%= link_to 'Show', centricsteel %></td>
+    <td><%= link_to 'Edit', edit_centricsteel_path(centricsteel) %></td>
+    <td><%= link_to 'Destroy', centricsteel, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New centricsteel', new_centricsteel_path %>
+</div>

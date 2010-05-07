@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :centricsteels
+
   map.resources :specifications
   map.resources :stoppages
   map.resources :addresses
@@ -11,13 +13,16 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :uncoiler_reports
   map.resources :tube_mill_performance_reports , :member => {:production_detail => :get}
   map.tube_mill_production 'tube_mill_production', :controller => 'tube_mill_performance_reports', :action => 'production_index'
+  map.wide_coil 'tube_stock', :controller => 'tube_mill_performance_reports', :action => 'tube_stock'  
   map.resources :tube_mill_stoppage_reports
   map.resources :slittingproductions
+  map.wide_coil 'slit_coil', :controller => 'slittingproductions', :action => 'slit_coil'  
   map.resources :slittings  
   map.resources :roles
   map.resources :employees
   map.resources :departments
   map.resources :rawmaterials
+  map.wide_coil 'wide_coil', :controller => 'rawmaterials', :action => 'wide_coil'
   map.resources :rawmaterial_categories
   map.resources :salesplans
   map.resources :customer_orders , :collection => {:customer_detail => :get}
