@@ -11,12 +11,10 @@
               <td><%=h @tube_mill.customer.name%></td>
               <td><strong>Slit CoilNo : </strong></td>
               <td><%=h @tube_mill.slittingproduction.slitting_coil_no if @tube_mill.slittingproduction%></td>
-              <td><strong>Inspector :</strong> </td>
-              <td><%=h @tube_mill.inspector_name%></td>
+             
             </tr>
             <tr>
-              <td><strong>Operator : </strong></td>
-              <td><%=h @tube_mill.operator_name%></td>
+             
               <td><strong>Date : </strong></td>
               <td><%=h @tube_mill.date.strftime('%d-%b-%Y') %></td>
               <td><strong>Shift :</strong> </td>

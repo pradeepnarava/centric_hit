@@ -11,8 +11,6 @@
     <th>Customer</th>
     <th>Slit Coil No.</th>
     <th>Lot No.</th>        
-    <th>Operator</th>
-    <th>Inspector</th>
     <th>Date</th>
     <th>Shift</th>
     <th>Prime</th>
@@ -26,13 +24,11 @@
     <td><%=h tube_mill.customer.name %></td>
     <td><%=h tube_mill.slittingproduction.slitting_coil_no if tube_mill.slittingproduction%></td>
     <td><%=h tube_mill.lot_no %></td>    
-    <td><%=h tube_mill.operator_name %></td>
-    <td><%=h tube_mill.inspector_name %></td>
     <td><%=h tube_mill.date.strftime('%d-%b-%Y') %></td>
     <td><%=h tube_mill.shift%></td>
     <td><%=h tube_mill.prime %></td>
     <td><%=h tube_mill.rejected %></td>
-    <td><%=h tube_mill.yieldpercent if tube_mill%> %</td>
+    <td><%#=h tube_mill.yieldpercent if tube_mill%> %</td>
     <td>
       <div class="fr" style="float:left;">
           <%=  link_to(image_tag('/images/icon_details.gif',{:style=>"width:20px;height:20px;", :alt =>"View Detail", :title=>"View Detail", :border => 0, :hspace => "0"}),  production_detail_tube_mill_performance_report_path(tube_mill) )%>

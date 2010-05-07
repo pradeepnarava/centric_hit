@@ -44,7 +44,7 @@ class EmployeesController < ApplicationController
   # POST /employees.xml
   def create
     @employee = Employee.new(params[:employee])
-
+    @departments = Department.all
     respond_to do |format|
       if @employee.save
         flash[:notice] = 'Employee was successfully created.'

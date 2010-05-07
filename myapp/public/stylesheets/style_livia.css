@@ -313,7 +313,6 @@ ul.userList li a{margin:0px 0px 0px 18px;}
 
 /*FORM*/
 .formMain form {background:#f2f5f7; border:1px solid #dddddd;margin:0; padding:0; height:100%;}
-.formMain form p, .formMain form p.h100{margin:0 0 5px 0; padding:0; height:20px; width:49.5%; float:left;}
 .formMain form p.h100{height:100%;}
 .formMain form p label{margin:0;height:100%;padding:0 2px 0 0; width:85px; float:left; text-align:right;font-size: 0.688em;}
 .formMain form select{padding:0; width:80px; float:left; text-align:left;font-size: 0.688em;}

@@ -18,9 +18,12 @@ class UsersController < ApplicationController
   end
   
   def create
+    @employees = Employee.non_user_employee
     @user = User.new(params[:user])
-    @employee = Employee.find(params[:employee][:id])
+    @roles = Role.all
+    
     if @user.save
+      @employee = Employee.find(params[:employee][:id])
       @employee.update_attributes(:user_id => @user.id)
       @assignment = Assignment.create(:role_id => params[:role][:id],:user_id =>@user.id)
       flash[:notice] = "User Login Created!"

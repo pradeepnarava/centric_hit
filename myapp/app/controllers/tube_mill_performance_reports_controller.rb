@@ -26,6 +26,7 @@ class TubeMillPerformanceReportsController < ApplicationController
   def new
     @tube_mill_performance_report = TubeMillPerformanceReport.new
     @customers = Customer.all
+    @employees = Employee.all
     @slittingproductions = Slittingproduction.find(:all,:conditions => ["status = 1"])
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +38,7 @@ class TubeMillPerformanceReportsController < ApplicationController
   def edit
     @tube_mill_performance_report = TubeMillPerformanceReport.find(params[:id])
     @customers = Customer.all
+    @employees = Employee.all
     @slittingproductions = Slittingproduction.all
   end
 

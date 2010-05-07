@@ -3,20 +3,21 @@
   <div class="gridDiv">
     <div class="titleHead">Department</div>
     <div class="formMain">
-<% form_for(@department) do |f| %>
-  <%= f.error_messages %>
- <div  style="width:650px;">
-          <div  style="width:650px;">
-            <p >
-    <%= f.label :department_name%>
-    <%= f.text_field :name %>
-  </p></div></div>
-       <div style="width:250px">
-          <div>
-  <div class="txtC" id="submit_div">
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
+      <% form_for(@department) do |f| %>
+        <%if(@department.errors.length >0)%>
+          <div class='errorCont'>
+            <%= error_messages_for(:department)%>
+            <div class="clear"></div>
+          </div>
+        <%end%>
+        <div id='department_name'>
+          <p >
+            <%= f.label :department_name%>
+            <%= f.text_field :name %>
+          
+            <%= f.submit "Create" , :class=>'button submit_buttons'%>
+          </p>
         </div>
-          </div></div>
-<% end %>
-    </div></div>
+      <% end %>
+  </div></div>
 </div>

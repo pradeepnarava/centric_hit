@@ -45,6 +45,8 @@ class RawmaterialsController < ApplicationController
   # POST /rawmaterials.xml
   def create
     @rawmaterial = Rawmaterial.new(params[:rawmaterial])
+    @addresses=Address.all
+    @rawmaterialcategory = RawmaterialCategory.all
     respond_to do |format|
       if @rawmaterial.save
         flash[:notice] = 'Rawmaterial was successfully created.'

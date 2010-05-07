@@ -4,19 +4,18 @@
     <div class="titleHead">Role</div>
     <div class="formMain">
 <% form_for(@role) do |f| %>
-  <%= f.error_messages %>
-<div  style="width:650px;">
-          <div>
-  <p>
+ <%if(@role.errors.length >0)%>
+          <div class='errorCont'>
+            <%= error_messages_for(:role)%>
+            <%= flash[:error]%>
+            <div class="clear"></div>
+          </div>
+        <%end%>
+<div >
+  <p  style="width:650px;">
     <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p></div></div>
-       <div style="width:250px">
-          <div>
-  <div class="txtC" id="submit_div">
-          <%= f.submit "Create" , :class=>'button submit_buttons'%>
-        </div>
-          </div></div>
+    <%= f.text_field :name %>&nbsp;&nbsp;&nbsp;
+  <%= f.submit "Create" , :class=>'button submit_buttons'%></p>
 <% end %>
 
-    </div></div></div>
+</div></div></div></div>

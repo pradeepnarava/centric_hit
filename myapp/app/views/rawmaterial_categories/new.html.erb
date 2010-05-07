@@ -4,12 +4,18 @@
     <div class="titleHead">RawMaterial Categories</div>
     <div class="formOrder">
      <% form_for(@rawmaterial_category) do |f| %>
-        <%= f.error_messages %>
+       <%if(@rawmaterial_category.errors.length >0)%>
+          <div class='errorCont'>
+            <%= error_messages_for(:rawmaterial_category)%>
+            <%= flash[:error]%>
+            <div class="clear"></div>
+          </div>
+          <%end%>
         <div  style="padding-left:320px;">
           <!--BOX 1-->
           <table>
             <tr>
-              <td><label>Material:</label></td>
+              <td><label>Raw Material Categories:</label></td>
               <td><%=f.text_field "name"%></td>
 
             </tr>

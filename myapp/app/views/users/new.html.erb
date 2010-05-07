@@ -4,9 +4,13 @@
     <div class="titleHead">Register</div>
     <div class="formMain">
 <% form_for @user, :url => users_path do |f| %>
-  <%= f.error_messages %>
+  <%if(@user.errors.length >0)%>
+          <div class='errorCont'>
+            <%= error_messages_for(:user)%>
+            <div class="clear"></div>
+          </div>
+        <%end%>
   <%= render :partial => "form", :object => f %>
-<br/><br/><br/>
       <div class="txtC" id="submit_div">
           <%= f.submit "Register" , :class=>'button submit_buttons'%>
         </div>

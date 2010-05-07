@@ -1,8 +1,12 @@
 class Employee < ActiveRecord::Base
   belongs_to :department
   belongs_to :user
-#  validates_presence_of:first_name
-#  validates_presence_of:last_name
+  validates_presence_of:first_name
+  validates_presence_of:last_name
+  validates_presence_of:department_id
+  validates_presence_of:street
+  validates_presence_of:city 
+  validates_presence_of:zipcode
 
   def self.getname(id)
     self.find(id).full_name

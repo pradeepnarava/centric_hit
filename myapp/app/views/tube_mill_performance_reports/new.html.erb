@@ -17,9 +17,9 @@
                 <td><label>Shift</label></td>
                 <td><%= f.text_field :shift,:size => 8 %></td>
                 <td><label>Operator Name</label></td>
-                <td><%= f.text_field :operator_name %></td>                     
+                <td><%=f.collection_select(:operator_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%></td>                     
                 <td><label>Inspector Name</label></td>
-                <td><%= f.text_field :inspector_name %></td> 
+                <td><%=f.collection_select(:inspector_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%></td> 
               </tr>
             </table>
             <table width="60%">

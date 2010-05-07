@@ -1,34 +1,29 @@
-<div class="fl w48" style="width:35%">
-  <div>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr><td>
     <%if @user.new_record?%>
       <p>
-        <label> Employee </label></p><p>
+        <label> Employee </label>
         <%= collection_select(:employee, :id, @employees, :id, :full_name, {:include_blank => 'Please select'})%>
-      </p>
+    </p></td><td>
     <%end%><p>
-      <%= form.label :email %></p><p>
-      <%= form.text_field :email %></p>
-  </div>
-</div>
-<div class="fl w48" style="width:35%">
-  <div><p>
-      <label> Role </label></p><p>
+      <label> Role </label>
       <%if @user.new_record?%>
         <%= collection_select(:role, :id, @roles, :id, :name, {:include_blank => 'Please select'})%>
       <%else%>
         <%= collection_select(:role, :id, @roles, :id, :name, {:include_blank => 'Please select',:selected => @user.role.id})%>
       <%end%>
-    </p>
+</p></td><td><p>
+      <%= form.label :email %>
+      <%= form.text_field :email %></p>
+</td><tr><td>
     <%if @user.new_record?%><p>
-        <%= form.label :login %></p><p>
-        <%= form.text_field :login %></p>
-  </div></div><div class="fl w48" style="width:25%">
-  <div>
+        <%= form.label :login %>
+        <%= form.text_field :login %></p></td><td>
     <p>
-        <%= form.label :password, form.object.new_record? ? nil : "Change password" %></p><p>
-        <%= form.password_field :password %></p><p>
-        <%= form.label :password_confirmation %></p><p>
-        <%= form.password_field :password_confirmation %></p>
+        <%= form.label :password, form.object.new_record? ? nil : "Change password" %>
+        <%= form.password_field :password %></p></td><td><p>
+        <%= form.label :password_confirmation %>
+<%= form.password_field :password_confirmation %></p></td>
     <%end%>
-  </div>
-  </div>
+</tr>
+</table>
