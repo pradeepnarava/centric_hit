@@ -28,6 +28,7 @@ class PredespatchtcsController < ApplicationController
     @tube_mill=TubeMillPerformanceReport.find :all
     @specification=Specification.find :all
     @employees= Employee.all
+    @raw_material=Rawmaterial.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @predespatchtc }
@@ -40,6 +41,7 @@ class PredespatchtcsController < ApplicationController
     @tube_mill=TubeMillPerformanceReport.find :all
     @specification=Specification.find :all
     @employees= Employee.all
+    @raw_material=Rawmaterial.all
   end
 def specification_to_predespatch
     @specifications=Specification.find(params[:id])
@@ -52,7 +54,7 @@ end
     respond_to do |format|
       if @predespatchtc.save
         flash[:notice] = 'Predespatchtc was successfully created.'
-        format.html { redirect_to(predespatchtc_path) }
+        format.html { redirect_to predespatchtcs_path }
         format.xml  { render :xml => @predespatchtc, :status => :created, :location => @predespatchtc }
       else
         format.html { render :action => "new" }
@@ -69,7 +71,7 @@ end
     respond_to do |format|
       if @predespatchtc.update_attributes(params[:predespatchtc])
         flash[:notice] = 'Predespatchtc was successfully updated.'
-        format.html { redirect_to(@predespatchtc) }
+        format.html { redirect_to predespatchtcs_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +81,6 @@ end
   end
 def predespatch_lot
   @tube_mill_new=TubeMillPerformanceReport.find(params[:id])
-  p '@tube_mill_new @tube_mill_new @tube_mill_new',@tube_mill_new
 end
   # DELETE /predespatchtcs/1
   # DELETE /predespatchtcs/1.xml

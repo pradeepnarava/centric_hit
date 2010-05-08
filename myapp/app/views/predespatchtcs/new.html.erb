@@ -485,7 +485,7 @@
             Coil No.
           </td>
           <td>
-             <%=f.collection_select( :tube_mill_performance_report_id, TubeMillPerformanceReport.all,:id,:lot_no,{:include_blank => "----------Select----------"})%>
+            <%=f.collection_select( :rawmaterial_id, @raw_material,:id,:name,{:include_blank => "---Select---"})%>
           </td>
         </tr>
         <tr>
