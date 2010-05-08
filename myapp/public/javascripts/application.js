@@ -324,6 +324,20 @@ function slitproductioncoildetail(id){
      });       
 }
 
+function predespatch_lot(id){
+    if(id==""){return false}
+    loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/predespatchtcs/predespatch_lot",
+       dataType: 'script',
+    data: {
+          'id' : id
+        },
+     success: function(){loader.remove();}
+     });       
+}
+
 function uncoilerdetail(id){
     if(id==""){return false}
     loader.prependTo("#detail")

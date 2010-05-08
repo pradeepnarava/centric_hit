@@ -35,10 +35,10 @@
               <%=f.collection_select( :taxinvoice_id, Taxinvoice.all,:id,:invoice_no,{:include_blank => "----------Select----------"})%>
             </td>
             <td>
-              <%= f.label :date %>
+              <%= f.label :lot_no %>
             </td>
             <td>
-              <%= f.text_field :date, :class=>'dateTextBox date_picker'%>
+             <%=f.collection_select( :tube_mill_performance_report_id, @tube_mill,:id,:lot_no,{:include_blank => "---Select---"},{:onchange => "predespatch_lot(this.value);"})%>
             </td>
           
           </tr>
@@ -55,7 +55,7 @@
               <%= f.label "Specification" %>
             </td>
             <td colspan="3">
-              <%=f.collection_select( :specification_id, Specification.all,:id,:specification_name,{:include_blank => "----------Select----------"},{:onchange => "specification_to_predespatch(this.value);"})%>
+              <%=f.collection_select( :specification_id, @specification,:id,:specification_name,{:include_blank => "----------Select----------"},{:onchange => "specification_to_predespatch(this.value);"})%>
             </td>
           </tr>
         </table>
@@ -84,9 +84,6 @@
             </td>
             <td>
               <b>Qty.(Pcs.)</b>
-            </td>
-            <td>
-              <b>Specification</b>
             </td>
             <td>
               <b>Grade</b>
@@ -321,7 +318,6 @@
                 Length
               </th>
             </thead>
-            <tbody>
               <tr>
                 <td>
                   Spacified(Max.)
@@ -357,7 +353,9 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="5" align="center"><b<Destructive Testing</b></td>
+                <td colspan="5" align="center">
+                  <b>Destructive Testing</b>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -484,12 +482,6 @@
         </tr>
         <tr>
           <td>
-            Lot No.
-          </td>
-          <td>
-            &nbsp;
-          </td>
-          <td>
             Coil No.
           </td>
           <td>
@@ -502,11 +494,17 @@
           </td>
         </tr>
         <tr>
-          <td colspan="2" style="padding-top:50px;" align="center" width="50%">
+          <td style="padding-top:50px;" align="center" width="25%">
             Inspected By.
           </td>
-          <td colspan="2" style="padding-top:50px;" align="center">
+          <td style="padding-top:50px;" align="center" width="25%">
+            <%=f.collection_select(:inspected_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%>
+          </td>
+          <td style="padding-top:50px;" align="center" width="25%">
             Aproved By.
+          </td>
+          <td style="padding-top:50px;" align="center" width="25%">
+            <%=f.collection_select(:employee_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%>
           </td>
         </tr>
   </table>  

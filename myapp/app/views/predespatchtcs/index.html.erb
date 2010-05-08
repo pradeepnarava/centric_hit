@@ -69,7 +69,6 @@
     <th>Bending obs</th>
     <th>Crushing spec</th>
     <th>Crushing obs</th> -->
-    <th>Slitting production</th>
     <th>Inspected by</th>
     <th>Approved by</th>
     <th>Tube mill performance report</th>
@@ -80,14 +79,14 @@
   <% for predespatchtc in @predespatchtcs %>
     <tr>
       <td><%=h predespatchtc.test_certificate_no %></td>
-      <td><%=h predespatchtc.taxinvoice.invoice_no %></td>
+      <td><%#=h predespatchtc.taxinvoice.invoice_no if %></td>
       <td><%=h predespatchtc.customer.name %></td>
       <td><%=h predespatchtc.date %></td>
       <td><%=h predespatchtc.od %></td>
       <td><%=h predespatchtc.thickness %></td>
       <td><%=h predespatchtc.length %></td>
       <td><%=h predespatchtc.quantity %></td>
-      <td><%=h predespatchtc.specification %></td>
+      <td><%=h predespatchtc.specification.specification_name %></td>
       <td><%=h predespatchtc.grade %></td>
       <!--<td><%=h predespatchtc.fin_condition %></td>
       <td><%=h predespatchtc.uann_ann %></td>
@@ -138,9 +137,8 @@
       <td><%=h predespatchtc.bending_obs %></td>
       <td><%=h predespatchtc.crushing_spec %></td>
       <td><%=h predespatchtc.crushing_obs %></td> -->
-      <td><%=h predespatchtc.slittingproduction.slitting_coil_no %></td>
-      <td><%=h predespatchtc.inspected_by %></td>
-      <td><%=h predespatchtc.approved_by %></td>
+      <td><%=h Employee.find(predespatchtc.inspected_id).full_name if predespatchtc.inspected_id%></td>
+      <td><%=h Employee.find(predespatchtc.employee_id).full_name if predespatchtc.employee_id %></td>
       <td><%=h predespatchtc.tube_mill_performance_report.lot_no %></td>
       <td>
      <div class="fr" style="float:left;">

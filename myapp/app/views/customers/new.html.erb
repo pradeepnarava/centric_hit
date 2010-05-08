@@ -5,165 +5,146 @@
     <div class="formMain">
       <% form_for(@customer) do |f| %>
         <%= f.error_messages %>
-        <div>
           <!--BOX 1-->
-          <div class="mt5">
-          </div> 
-          <div class="fl w48" style="width: 48%;" >
-            <div>
-                    <p>
+            <table cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+            <td>
+            <p>
                 <%= f.label :name %>
                 <%= f.text_field :name %>
               </p>
+              </td><td>
               <p>
                 <%= f.label :customercode %>
                 <%= f.text_field :customer_code %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :ifc_nno %>
                 <%= f.text_field :ifc_no %>
-              </p>
+              </p></td><td>
                 <p>
                 <%= f.label :dgft_code %>
                 <%= f.text_field :dgft_code %>
-              </p>
+          </p></td></tr><tr>
+            <td>
                  <p>
                 <label>Octroi</label>
                 <%= f.select("octra", {"Exclusive" => "Exclusive", "Inclusive" => "Inclusive"}) %>
-              </p>
+              </p></td><td>
               <p>
                 <label>Payment</label>
                 <%= f.select("payment", { "Immediate" => "Immediate","30 days" => "30 days", "45 days" => "45 days","60 days" => "60 days","Against Proforma Invoice" => "Against Proforma Invoice","Against L/C" => "Against L/C"}) %>
-              </p>
-              
-                
+              </p></td><td>
               <p>
                 <%= f.label :contact_person %>
                 <%= f.text_field :contact_person %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :phone %>
                 <%= f.text_field :phone %>
-              </p>
-            </div>
-            <div>
+              </p></td></tr><tr><td>
               <p>
                 <%= f.label :mobile %>
                 <%= f.text_field :mobile %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :email %>
                 <%= f.text_field :email %>
-              </p>
+              </p></td><td>
                                            
               <p>
                 <%= f.label :range %>
                 <%= f.text_field :range %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :division %>
                 <%= f.text_field :division %>
-              </p>
+              </p></td></tr><tr><td>
               <p>
                 <%= f.label :collectorate %>
                 <%= f.text_field :collectorate %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :ecc_no%>
                 <%= f.text_field :ecc_no %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :address %>
                 <%= f.text_area :address ,:rows => 3, :cols => 15%>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :street %>
                 <%= f.text_field :street%>
-              </p>
+              </p></td></tr><tr><td>
               
-            </div>
-          </div>
-          <div style="width: 52%;" class="fr">
-            <div>
                <p>
                 <%= f.label :service_tax_reg %>
                 <%= f.text_field :service_tax_reg %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :gta_red_no %>
                 <%= f.text_field :gta_red_no %>
-              </p>
+              </p></td><td>
               <p>
                 <label>Excise Duty</label>
                 <%= f.select("excise_duty", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %>
-              </p>
-               
-           
-              
+              </p></td><td>
               <p>
                 <%= f.label :excise_registration_no %>
                 <%= f.text_field :excise_registration_no %>
-              </p>
+              </p></td></tr><tr><td>
               <p>
                 <label> Vat Tin No </label>
                 <%= f.text_field :vat_no %>
-              </p>
+              </p></td><td>
               <p>
                   <label>  CST Tin No </label>
                 <%= f.text_field :tin_no %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :pan_no %>
                 <%= f.text_field :pan_no %>
-              </p>
+              </p></td><td>
                   <p>
                     <label> VAT </label>
                 <%= f.text_field :vat %>
-              </p>
+              </p></td></tr><tr><td>
                   <p>
                 <label> CST </label>
                 <%= f.text_field :cst %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :payment_terms %>
                 <%= f.text_field :payment_terms %>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :bankers %>
                 <%= f.text_field :bankers %>
-              </p>
+              </p></td><td>
             <p>
                 <%= f.label :delivery %>
                 <%= f.select("delivery", { "FOR" => "FOR", "EX Works" => "EX Works"}) %>
-              </p>
+              </p></td></tr><tr><td>
                <p>
                 <%= f.label :bank_ac_no %>
                 <%= f.text_field :bank_ac_no %>
-              </p>
-            <p>&nbsp;</p>
+              </p></td><td>
               
                 <p>
                 <%= f.label :state %>
                 <%= f.text_field :state%>
-              </p>
+              </p></td><td>
               <p>
                 <%= f.label :city %>
                 <%= f.text_field :city%>
-              </p>
-            </div>
-          </div>
-          <br class="clear"/>
-          <br class="clear"/>
-          <br class="clear"/>
-          <br class="clear"/>
-          <div class="txtC" id="submit_div">
+              </p></td></tr><tr><td colspan="4" align="center">
 
             <%= f.submit "Create" , :class=>'button submit_buttons'%>
               <%=link_to 'Cancel',customers_path, :class=>'button submit_buttons cancelbutton' %>
 
 
-          </div>
           <br class="clear"/>
+    </td></tr></table>
         </div>
       <% end %>
     </div>
