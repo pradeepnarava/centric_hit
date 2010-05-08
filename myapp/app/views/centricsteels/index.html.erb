@@ -1,8 +1,13 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<h1>Listing centricsteels</h1>
-
-<table>
+<div class="top-bar">
+  <%= link_to 'New', new_centricsteel_path ,:class=>"button" %>
+  <h1>Listing centricsteels</h1>
+</div><br />
+<div class="table">
+  <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+  <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <th>Name</th>
     <th>Address</th>
@@ -16,14 +21,11 @@
     <th>Email</th>
     <th>Excise registration no</th>
     <th>Vat tin</th>
-    <th>Cst</th>
     <th>Pan no</th>
     <th>Ecc no</th>
-    <th>Ifc</th>
     <th>Dgft code</th>
     <th>Range</th>
-    <th>Division</th>
-    <th>Collectorate</th>
+    <th>Action</th>
   </tr>
 
 <% @centricsteels.each do |centricsteel| %>
@@ -40,22 +42,19 @@
     <td><%=h centricsteel.email %></td>
     <td><%=h centricsteel.excise_registration_no %></td>
     <td><%=h centricsteel.vat_tin %></td>
-    <td><%=h centricsteel.cst %></td>
     <td><%=h centricsteel.pan_no %></td>
     <td><%=h centricsteel.ecc_no %></td>
     <td><%=h centricsteel.ifc %></td>
-    <td><%=h centricsteel.dgft_code %></td>
     <td><%=h centricsteel.range %></td>
-    <td><%=h centricsteel.division %></td>
-    <td><%=h centricsteel.collectorate %></td>
-    <td><%= link_to 'Show', centricsteel %></td>
-    <td><%= link_to 'Edit', edit_centricsteel_path(centricsteel) %></td>
-    <td><%= link_to 'Destroy', centricsteel, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+     <div class="fr" style="float:left;">
+            <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_centricsteel_path(centricsteel))%>
+            <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate",:border => 0, :hspace => "2"}), centricsteel, :confirm => 'Are you sure?', :method => :delete) %>
+        </div></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New centricsteel', new_centricsteel_path %>
-</div>
+</div></div>

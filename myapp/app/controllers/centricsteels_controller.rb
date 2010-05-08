@@ -45,7 +45,7 @@ class CentricsteelsController < ApplicationController
     respond_to do |format|
       if @centricsteel.save
         flash[:notice] = 'Centricsteel was successfully created.'
-        format.html { redirect_to(@centricsteel) }
+        format.html { redirect_to(centricsteels_path) }
         format.xml  { render :xml => @centricsteel, :status => :created, :location => @centricsteel }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class CentricsteelsController < ApplicationController
     respond_to do |format|
       if @centricsteel.update_attributes(params[:centricsteel])
         flash[:notice] = 'Centricsteel was successfully updated.'
-        format.html { redirect_to(@centricsteel) }
+        format.html { redirect_to(centricsteels_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

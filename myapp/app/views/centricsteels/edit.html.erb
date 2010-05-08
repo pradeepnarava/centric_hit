@@ -1,95 +1,117 @@
 <%= render :partial=>'layouts/centric_left_bar' %>
 <div id="center-column">
-<h1>Editing centricsteel</h1>
-
+  <div class="gridDiv">
+    <div class="titleHead">Editing centricsteel</div>
+    <div class="formMain">
 <% form_for(@centricsteel) do |f| %>
   <%= f.error_messages %>
-
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr><td>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
+</p></td>
+<td>
   <p>
-    <%= f.label :address %><br />
-    <%= f.text_area :address %>
-  </p>
-  <p>
-    <%= f.label :street %><br />
-    <%= f.text_field :street %>
-  </p>
-  <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
-  </p>
-  <p>
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </p>
-  <p>
-    <%= f.label :phone1 %><br />
-    <%= f.text_field :phone1 %>
-  </p>
-  <p>
-    <%= f.label :phone2 %><br />
-    <%= f.text_field :phone2 %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :excise_registration_no %><br />
-    <%= f.text_field :excise_registration_no %>
-  </p>
-  <p>
-    <%= f.label :vat_tin %><br />
-    <%= f.text_field :vat_tin %>
-  </p>
-  <p>
-    <%= f.label :cst %><br />
-    <%= f.text_field :cst %>
-  </p>
-  <p>
-    <%= f.label :pan_no %><br />
-    <%= f.text_field :pan_no %>
-  </p>
-  <p>
-    <%= f.label :ecc_no %><br />
-    <%= f.text_field :ecc_no %>
-  </p>
-  <p>
-    <%= f.label :ifc %><br />
-    <%= f.text_field :ifc %>
-  </p>
-  <p>
-    <%= f.label :dgft_code %><br />
+    <%= f.label :dgft_code %>
     <%= f.text_field :dgft_code %>
-  </p>
+  </p></td><td>
   <p>
-    <%= f.label :range %><br />
-    <%= f.text_area :range %>
-  </p>
+    <%= f.label :range %>
+    <%= f.text_area :range  ,:rows => 3, :cols => 15%>
+  </p></td><td>
   <p>
-    <%= f.label :division %><br />
+    <%= f.label :division %>
     <%= f.text_field :division %>
-  </p>
+  </p></td>
+</tr><tr>
+  
+ <td>
   <p>
-    <%= f.label :collectorate %><br />
+    <%= f.label :cst %>
+    <%= f.text_field :cst %>
+  </p></td><td>
+  <p>
+    <%= f.label :pan_no %>
+    <%= f.text_field :pan_no %>
+  </p></td><td>
+  <p>
+    <%= f.label :ecc_no %>
+    <%= f.text_field :ecc_no %>
+  </p></td><td>
+  <p>
+    <%= f.label :ifc %>
+    <%= f.text_field :ifc %>
+</p></td>
+  </tr><tr>
+    <td>
+  <p>
+    <%= f.label :vat_tin %>
+    <%= f.text_field :vat_tin %>
+</p></td>
+    <td>
+  <p>
+    <%= f.label :collectorate %>
     <%= f.text_field :collectorate %>
-  </p>
+</p></td>
+    <td>
   <p>
-    <%= f.submit 'Update' %>
-  </p>
+    <%= f.label :excise_registration_no %>
+    <%= f.text_field :excise_registration_no %>
+  </p></td>
+  <td>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p></td>
+  </tr><tr>
+  <td>
+  <p>
+    <%= f.label :phone1 %>
+    <%= f.text_field :phone1 %>
+  </p></td>
+  <td>
+  <p>
+    <%= f.label :phone2 %>
+    <%= f.text_field :phone2 %>
+  </p></td>
+   <td>
+  <p>
+    <%= f.label :address %>
+    <%= f.text_area :address  ,:rows => 3, :cols => 15%>
+</p></td><td>
+  <p>
+    <%= f.label :street %>
+    <%= f.text_field :street %>
+</p></td>
+ </tr><tr>
+  
+  <td>
+  <p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+</p></td><td>
+  <p>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+</p></td>
+<td>
+  <p>
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </p></td>
+  <td>
+  <p>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </p></td>
+  </tr>
+  <tr><td colspan="4">
+  <p>
+    <div class="txtC" id="submit_div">
+            <%= f.submit "Update" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',centricsteels_path, :class=>'button submit_buttons cancelbutton' %>
+    </div>
+</p></td></tr></table>
 <% end %>
-
-<%= link_to 'Show', @centricsteel %> |
-<%= link_to 'Back', centricsteels_path %>
-</div>
+</div></div></div>
