@@ -44,7 +44,12 @@ class SlittingproductionsController < ApplicationController
         @slitt_rawmaterial_id = sl.slitt_rawmaterial_id
         @no_of_slits = @no_of_slits.to_i + sl.no_of_slits 
       end  
-      slitcoil = Rawmaterial.find(@slitt_rawmaterial_id).name
+      if @slitt_rawmaterial_id.blank?
+        slitcoil = Rawmaterial.find(@coil.id).name
+      else  
+        slitcoil = Rawmaterial.find(@slitt_rawmaterial_id).name
+      end
+      
       if slitcoil.include? "PT1"
         @slitting_coilno = @coil.name+"-A"
       elsif slitcoil.include? "PT2"
@@ -56,7 +61,9 @@ class SlittingproductionsController < ApplicationController
       elsif slitcoil.include? "PT5"
         @slitting_coilno = @coil.name+"-E"
       elsif slitcoil.include? "PT6"
-        @slitting_coilno = @coil.name+"-F"        
+        @slitting_coilno = @coil.name+"-F"
+      else
+        @slitting_coilno = @coil.name+"-A"
       end
     end
     
@@ -140,6 +147,11 @@ class SlittingproductionsController < ApplicationController
   end
   
   def slit_coil
-    
+    @slittingproductions = Slittingproduction.find(:all)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @slittingproductions }
+    end    
   end
 end

@@ -14,7 +14,7 @@ class Rawmaterial < ActiveRecord::Base
   validates_presence_of :thickness
   validates_presence_of :coil_weight
   validates_presence_of :rawmaterial_category_id
-  validates_uniqueness_of :rawmaterial_category_id
+  validates_uniqueness_of :name
   validates_presence_of :grade
   
 end
