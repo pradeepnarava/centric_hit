@@ -288,7 +288,6 @@ ActiveRecord::Schema.define(:version => 20100508170131) do
     t.string   "bending_obs"
     t.string   "crushing_spec"
     t.string   "crushing_obs"
-    t.integer  "uncoiler_report_id"
     t.integer  "slittingproduction_id"
     t.string   "inspected_by"
     t.string   "approved_by"
@@ -298,6 +297,7 @@ ActiveRecord::Schema.define(:version => 20100508170131) do
     t.integer  "specification_id"
     t.integer  "employee_id"
     t.integer  "inspected_id"
+    t.integer  "rawmaterial_id"
   end
 
   create_table "rawmaterial_categories", :force => true do |t|
