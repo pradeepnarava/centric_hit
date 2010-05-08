@@ -485,7 +485,7 @@
             Coil No.
           </td>
           <td>
-            <%=f.collection_select( :rawmaterial_id, @raw_material,:id,:name,{:include_blank => "---Select---"})%>
+            <%= f.text_field :rawmaterial_id %>
           </td>
         </tr>
         <tr>

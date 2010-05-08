@@ -28,7 +28,6 @@ class PredespatchtcsController < ApplicationController
     @tube_mill=TubeMillPerformanceReport.find :all
     @specification=Specification.find :all
     @employees= Employee.all
-    @raw_material=Rawmaterial.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @predespatchtc }
@@ -41,7 +40,6 @@ class PredespatchtcsController < ApplicationController
     @tube_mill=TubeMillPerformanceReport.find :all
     @specification=Specification.find :all
     @employees= Employee.all
-    @raw_material=Rawmaterial.all
   end
 def specification_to_predespatch
     @specifications=Specification.find(params[:id])
