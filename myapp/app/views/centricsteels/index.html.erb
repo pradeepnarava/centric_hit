@@ -10,42 +10,43 @@
   <table class="listing" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <th>Name</th>
-    <th>Address</th>
-    <th>Street</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Country</th>
-    <th>Phone1</th>
-    <th>Phone2</th>
-    <th>Email</th>
     <th>Excise registration no</th>
     <th>Vat tin</th>
     <th>Pan no</th>
     <th>Ecc no</th>
     <th>Dgft code</th>
     <th>Range</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Country</th>
     <th>Action</th>
   </tr>
 
 <% @centricsteels.each do |centricsteel| %>
   <tr>
     <td><%=h centricsteel.name %></td>
-    <td><%=h centricsteel.address %></td>
-    <td><%=h centricsteel.street %></td>
-    <td><%=h centricsteel.city %></td>
-    <td><%=h centricsteel.state %></td>
-    <td><%=h centricsteel.zip %></td>
-    <td><%=h centricsteel.country %></td>
-    <td><%=h centricsteel.phone1 %></td>
-    <td><%=h centricsteel.phone2 %></td>
-    <td><%=h centricsteel.email %></td>
     <td><%=h centricsteel.excise_registration_no %></td>
     <td><%=h centricsteel.vat_tin %></td>
     <td><%=h centricsteel.pan_no %></td>
     <td><%=h centricsteel.ecc_no %></td>
     <td><%=h centricsteel.ifc %></td>
     <td><%=h centricsteel.range %></td>
+    <td><%=h centricsteel.phone1 %></td>
+    <td><%=h centricsteel.phone2 %></td>
+    <td><%=h centricsteel.email %></td>
+    <td><%=h centricsteel.address %></td>
+    <td><%=h centricsteel.street %></td>
+    <td><%=h centricsteel.city %></td>
+    <td><%=h centricsteel.state %></td>
+    <td><%=h centricsteel.zip %></td>
+    <td><%=h centricsteel.country %></td>
+    
     <td>
      <div class="fr" style="float:left;">
             <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_centricsteel_path(centricsteel))%>
