@@ -1,0 +1,249 @@
+
+
+
+<%unless @delivery_challan.size<1%>
+  <table class="formOrdertable">
+    <tr>
+      <td>S.No</td>
+      <td>Delivery Challan No</td>
+      <td>Vehicle no</td>
+      <td>od</td>
+      <td>thickness</td>
+      <td>length</td>
+      <td>pieces</td>
+      <td>meters</td>
+      <td>rs_mtrs</td>
+      <td>total_tariff_value</td>
+       <td>amount</td>
+        <td>packing_forwarding</td>
+         <td>total_before_duty</td>
+          <td>excise_duty</td>
+           <td>ed_cess</td>
+            <td>sah_ed_cess</td>
+           <td>total_all</td>
+            <td>vat_cst</td>
+             <td>total_all</td>
+             <td>grand_total</td>
+
+
+    </tr>
+    <%for taxinvoice in 1..@delivery_challan.size%>
+      <tr>
+        <td><%=taxinvoice%></td>
+        <td><%=collection_select("#{taxinvoice}[taxinvoice]",:deliverychallan_id, @delivery_challan,:id,:delivery_challan_no,{:include_blank => "---Select---"},{:onchange => "deliverychallan_detail(this.value,#{taxinvoice});"})%></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][vehicle_no]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][od]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][thickness]"%></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][length]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][pieces]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][meters]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][rs_mtrs]",nil,:onblur => "total_tariff_value(#{taxinvoice});" %></td
+        <td><%=  text_field_tag "#{taxinvoice}[taxinvoice][total_tariff_value]",nil,:onblur => "total_amount_tax(#{@delivery_challan.size});" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][amount]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][packing_forwarding]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][total_before_duty]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][excise_duty]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][ed_cess]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][sah_ed_cess]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][total_all]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][vat_cst]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][total_all]" %></td>
+        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][grand_total]" %></td>
+
+
+      </tr>
+    <%end%>
+  </table>
+<%else%>
+  No Serials, Please Create Serial First.
+<%end%>
+
+
+
+
+
+
+<!--<p>
+    <label> Delivery Challan No </label>
+  <%#=collection_select( :deliverychallan_id, Deliverychallan.all,:id,:delivery_challan_no,{:include_blank => "----------Select----------"})%>
+  </p>
+    <p>
+    <label>Date challan no </label>
+    <%#= datetime_select :date_challan_no %>
+  </p>
+
+    <p>
+        <label>Vehicle no </label>
+    
+    <%#= text_field :vehicle_no %>
+  </p>
+
+  <p>
+   <label>OD </label>
+
+    <%#= text_field :od %>
+  </p>
+  <p>
+      <label>Thickness </label>
+    
+    <%#= text_field :thickness %>
+  </p>
+  <p>
+     <label>Length</label>
+    <%#= text_field :length %>
+  </p>
+  <!--<p>
+      <label>Description </label>
+    <%#= text_field :description %>
+  </p>-->
+
+  <!--<p>
+     <label>Pieces </label>
+    <%#= text_field :pieces %>
+  </p>
+  <p>
+    <label>Meters </label>
+    <%#= text_field :meters %>
+  </p>
+  <p>
+     <label>Rs Mtrs </label>
+    <%#= text_field :rs_mtrs %>
+  </p>
+
+  <p>
+    <label>total tariff </label>
+    <%#= text_field :total_tariff_value %>
+  </p>
+  <p>
+   <label>total_before_duty</label>
+    <%#= text_field :total_before_duty %>
+  </p>
+  <p>
+   <label>rate_of_duty</label>
+    <%#= text_field :rate_of_duty %>
+  </p>
+  <p>
+    <label>total_duty</label>
+    <%#= text_field :total_duty %>
+  </p>
+  <p>
+<label>amount</label>
+    <%#=text_field :amount %>
+  </p>
+  <p>
+    <label>total_all</label>
+    <%#=text_field :total_all %>
+  </p>
+  <p>
+<label>excise_duty</label>
+    <%#= text_field :excise_duty %>
+  </p>
+  <p>
+     <label>ed_cess</label>
+    <%#= text_field :ed_cess %>
+  </p>
+  <p>
+     <label>sah_ed_cess</label>
+    <%#= text_field :sah_ed_cess %>
+  </p>
+  <p>
+     <label>vat_cst</label>
+    <%#= text_field :vat_cst %>
+  </p>
+  <p>
+    <label>packing_forwarding</label>
+    <%#= text_field :packing_forwarding %>
+  </p>
+  <p>
+     <label>grand_total </label>
+    <%#= text_field :grand_total %>
+  </p>
+  <p>
+    <%#= f.label :vat_tin_no %>
+    <%#= f.text_field :vat_tin_no %>
+  </p>
+  <p>
+    <%#= f.label :cst_tin_no %>
+    <%#= f.text_field :cst_tin_no %>
+  </p>
+  <p>
+    <%#= f.label :part_vat_no %>
+    <%#= f.text_field :part_vat_no %>
+  </p>
+   <p>
+    <%#= f.label :party_cst_no %>
+    <%#= f.text_field :party_cst_no %>
+  </p>
+   <p>
+    <%#= f.label :pan_entry_no %>
+    <%#= f.text_field :pan_entry_no %>
+  </p>
+  <p>
+    <%#= f.label :date_of_debit_entry_no %>
+    <%#= f.text_field :date_of_debit_entry_no %>
+  </p>
+  <p>
+    <%#= f.label :entry_of_duty_entry_no %>
+    <%#= f.text_field :entry_of_duty_entry_no %>
+  </p>
+  <p>
+  <label>Avg/cont-packets </label>
+    <%#= f.text_field :average_content_packets %>
+  </p>
+
+  
+
+
+
+
+
+
+
+
+  <p>
+    <%#= f.label :range %>
+    <%#= f.text_field :range %>
+  </p>
+  <p>
+    <%#= f.label :range_two %>
+    <%#= f.text_field :range_two %>
+  </p>
+  <p>
+    <%#= f.label :ecc_no %>
+    <%#= f.text_field :ecc_no %>
+  </p>
+
+  <p>
+    <%#= f.label :notification_no %>
+    <%#= f.text_field :notification_no %>
+  </p>
+
+
+
+
+
+
+
+
+
+
+  <p>
+    <%#= f.label :chapter_heading_no %>
+    <%#= f.text_field :chapter_heading_no %>
+  </p>
+  <p>
+    <%#= f.label :name_of_deliver_goods %>
+    <%#= f.text_field :name_of_deliver_goods %>
+  </p>
+  <p>
+    <%#= f.label :pan_no %>
+    <%#= f.text_field :pan_no %>
+  </p>
+  <p>
+    <%#= f.label :commissionarate %>
+    <%#= f.text_field :commissionarate %>
+  </p>
+  <p>
+    <%#= f.label :in_words %>
+    <%#= f.text_field :in_words %>
+  </p>-->

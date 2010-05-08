@@ -25,7 +25,8 @@
 
             <p>
               <label>Type</label>
-              <%= f.select("mat_type", { "E" => "E", "S" => "S","R"=>"R"}) %>
+             
+              <%= select_tag("#{"serialize"}[mat_type]",options_for_select([ 'E','S','R']),{:onchange => "change_tubesize(this.value);"}) %>
             </p>
 
             <p>
@@ -51,36 +52,15 @@
         </div>
 
           <div class="fl w48" >
-
-            <p>
-              <%= f.label :width %>
-              <%= f.text_field :width %>
-            </p>
-
-            <p>
-              <label> Height </label>
-              <%= text_field_tag "#{"serialize"}[height]" %>
-            </p>
-
-            <p>
-              <%= f.label :thikness %>
-              <%= f.text_field :thikness %>
-            </p>
-
-            <p>
-              <label> Length </label>
-              <%= text_field_tag "#{"serialize"}[length]" ,nil,:onblur => "total_cal_od();"%>
-            </p>
-
-            <p>
-              <%= f.label :od %>
-              <%= f.text_field :od %>
-            </p>
+              <div id="detail"></div>
+<%#= render :partial=>'serials',:locals => {:f=>f} %>
+    
   
                   <p>
               <%= f.label :grade %>
               <%= f.text_field :grade%>
-            </p><p>
+            </p>
+            <p>
 <label>End Condition</label>
               <%= f.text_area :end_condition,:rows=>5,:cols=>20%>
             </p>

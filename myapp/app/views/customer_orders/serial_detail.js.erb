@@ -1,4 +1,8 @@
-jQuery("#<%=params[:row]%>_customer_order_tube_size").val("<%="#{@serial.od}X #{@serial.length}X#{@serial.thikness}"%>");
+jQuery("#<%=params[:row]%>_customer_order_tube_size").val(<%if @serial.mat_type=='E'%>"<%="#{@serial.width}X#{@serial.height}X#{@serial.thikness}X #{@serial.length}X#{@serial.thikness}X#{@serial.thikness}"%>"
+<%elsif @serial.mat_type=='S'%>
+"<%="#{@serial.width}X#{@serial.height}X#{@serial.thikness}X #{@serial.length}"%>"
+<%else @serial.mat_type=='R'%>"<%="#{@serial.od}X#{@serial.thikness}X #{@serial.length}"%>"
+<%end%>);
 jQuery("#<%=params[:row]%>_customer_order_h_od").val("<%=@serial.od%>");
 jQuery("#<%=params[:row]%>_customer_order_h_length").val("<%=@serial.length%>");
 jQuery("#<%=params[:row]%>_customer_order_h_thikness").val("<%=@serial.thikness%>");

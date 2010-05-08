@@ -12,7 +12,8 @@
               <th>Serial</th>
               <th>Customer Name</th>
               <th>Specification</th>              
-              <th>Tube Size</th>              
+              <th>Tube Size</th>
+               <th>Tube Type</th>
               <th>Action</th>
             </tr>
 
@@ -21,8 +22,15 @@
                 <td><%=h serialize.name %></td>
                  <td><%=h serialize.customer.name %></td>
                  <td><%=h serialize.specification.specification_name if serialize.specification%></td>
-                 <td><%=h "#{serialize.od}X#{serialize.length}X#{serialize.thikness}"%></td>
-                <td>
+                 <%if serialize.mat_type=='R'%>
+                 <td><%=h "#{serialize.od}X#{serialize.thikness}X#{serialize.length}"%></td>
+                 <%else ((serialize.mat_type=='S')||(serialize.mat_type=='E'))%>
+             <td><%=h "#{serialize.width}X#{serialize.height}X#{serialize.thikness}X#{serialize.length}"%></td>
+
+             
+  <%end%>
+                 <td><%=h serialize.mat_type %></td>
+                 <td>
                     <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_serialize_path(serialize))%>
                     <%=  link_to(image_tag('/images/livia_portal/icon_reject_1.gif',{:alt =>"DeActivate", :title=>"DeActivate",:border => 0, :hspace => "2"}),serialize, :confirm => 'Are you sure?', :method => :delete) %>
                 </td>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100501111810) do
+ActiveRecord::Schema.define(:version => 20100505152948) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company_name"
@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.string   "bank_a_c_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "street"
+    t.string   "city"
+    t.string   "zipcode"
+    t.string   "state"
+    t.string   "address"
   end
 
   create_table "assignments", :force => true do |t|
@@ -172,6 +177,7 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_order_id"
+    t.integer  "customer_id"
   end
 
   create_table "departments", :force => true do |t|
@@ -207,7 +213,6 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.decimal  "thickness"
     t.decimal  "length"
     t.integer  "quantity"
-    t.string   "specification"
     t.string   "grade"
     t.string   "fin_condition"
     t.string   "uann_ann"
@@ -265,6 +270,7 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.integer  "tube_mill_performance_report_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "specification_id"
   end
 
   create_table "rawmaterial_categories", :force => true do |t|
@@ -332,7 +338,6 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
   create_table "slittingproductions", :force => true do |t|
     t.integer  "rawmaterial_id"
     t.integer  "slitting_id"
-    t.string   "operator_name"
     t.decimal  "input_weight",                  :precision => 12, :scale => 3, :default => 0.0
     t.decimal  "width",                         :precision => 12, :scale => 3, :default => 0.0
     t.decimal  "thickness",                     :precision => 12, :scale => 3, :default => 0.0
@@ -349,24 +354,25 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.datetime "production_date"
     t.string   "shift"
     t.decimal  "width_slitting",                :precision => 12, :scale => 3, :default => 0.0
+    t.integer  "operator_id"
   end
 
   create_table "slittings", :force => true do |t|
     t.integer  "rawmaterial_id"
-    t.integer  "division_part",        :default => 0
+    t.integer  "division_part",                                       :default => 0
     t.string   "scrap"
-    t.decimal  "slit_width"
-    t.decimal  "slit_weight"
+    t.decimal  "slit_width",           :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "slit_weight",          :precision => 12, :scale => 3, :default => 0.0
     t.integer  "no_of_slits"
-    t.decimal  "weight"
     t.string   "remarks"
     t.string   "process_coil_wt"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slitting_coil_no"
     t.integer  "slitt_rawmaterial_id"
-    t.integer  "status",               :default => 0
-    t.integer  "produced_no_of_slit",  :default => 0
+    t.integer  "status",                                              :default => 0
+    t.integer  "produced_no_of_slit",                                 :default => 0
+    t.decimal  "total_weight",         :precision => 12, :scale => 3, :default => 0.0
   end
 
   create_table "specifications", :force => true do |t|
@@ -447,6 +453,10 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.integer  "do_item_wise"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "street"
+    t.string   "city"
+    t.string   "zipcode"
+    t.string   "state"
   end
 
   create_table "taxinvoices", :force => true do |t|
@@ -531,32 +541,29 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status"
-    t.decimal  "lot_no",                :precision => 12, :scale => 4, :default => 0.0
     t.decimal  "weak_weld",             :precision => 12, :scale => 4, :default => 0.0
     t.string   "shift"
+    t.integer  "no_of_tube"
+    t.integer  "lot_no"
   end
 
   create_table "tube_mill_stoppage_reports", :force => true do |t|
     t.datetime "date"
-    t.datetime "shift"
     t.decimal  "size"
-    t.string   "customer"
     t.string   "description_of_breakdown"
-    t.string   "stoppage_code"
-    t.datetime "from"
-    t.datetime "to"
+    t.time     "from"
+    t.time     "to"
     t.string   "total_time"
     t.string   "remarks"
-    t.string   "remarks_last"
     t.string   "shift_incharge"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type_stop",                :limit => nil
+    t.string   "shift"
+    t.integer  "type_stop"
   end
 
   create_table "uncoiler_reports", :force => true do |t|
     t.datetime "date"
-    t.string   "operator_name"
     t.integer  "slittingproduction_id"
     t.decimal  "tube_od"
     t.decimal  "width"
@@ -570,6 +577,7 @@ ActiveRecord::Schema.define(:version => 20100501111810) do
     t.datetime "updated_at"
     t.string   "shift"
     t.decimal  "type_actual",           :precision => 12, :scale => 3, :default => 0.0
+    t.integer  "operator_id"
   end
 
   create_table "users", :force => true do |t|

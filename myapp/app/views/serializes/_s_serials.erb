@@ -1,0 +1,27 @@
+        <p>
+              <label> Width </label>
+              <%= text_field_tag "#{"serialize"}[width]" %>
+              <%#= text_field :width %>
+            </p>
+
+            <p>
+              <label> Height </label>
+              <%= text_field_tag "#{"serialize"}[height]" %>
+            </p>
+
+            <p>
+             <label> Thickness </label>
+               <%= text_field_tag "#{"serialize"}[thikness]" %>
+              <%#= f.text_field :thikness %>
+            </p>
+
+            <p>
+              <label> Length </label>
+              <%= text_field_tag "#{"serialize"}[length]" ,nil,:onblur => "total_cal_od();"%>
+            </p>
+
+            <p>
+              <label> OD </label>
+               <%= text_field_tag "#{"serialize"}[od]" %>
+              <%#= f.text_field :od %>
+            </p>

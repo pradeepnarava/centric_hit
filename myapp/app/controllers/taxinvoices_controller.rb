@@ -37,6 +37,16 @@ class TaxinvoicesController < ApplicationController
     @taxinvoice = Taxinvoice.find(params[:id])
   end
 
+  
+  def deliverydetail
+    p params[:id]
+    @delivery_challan=Deliverychallan.find_all_by_customer_id(params[:id])
+    p @delivery_challan.size
+  end
+  def deliverychallan_detail
+   @deliverychallan_detail=Deliverychallan.find(params[:id])
+  end
+
   # POST /taxinvoices
   # POST /taxinvoices.xml
   def create
@@ -45,7 +55,7 @@ class TaxinvoicesController < ApplicationController
     respond_to do |format|
       if @taxinvoice.save
         flash[:notice] = 'Taxinvoice was successfully created.'
-        format.html { redirect_to(@taxinvoice) }
+        format.html { redirect_to(taxinvoices_url) }
         format.xml  { render :xml => @taxinvoice, :status => :created, :location => @taxinvoice }
       else
         format.html { render :action => "new" }

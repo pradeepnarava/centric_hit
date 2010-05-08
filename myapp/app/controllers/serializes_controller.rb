@@ -20,7 +20,10 @@ class SerializesController < ApplicationController
       format.xml  { render :xml => @serialize }
     end
   end
-
+  
+def change_tubesize
+p params[:value]
+end
   # GET /serializes/new
   # GET /serializes/new.xml
   def new

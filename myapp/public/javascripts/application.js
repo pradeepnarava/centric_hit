@@ -64,6 +64,26 @@ function customer_po(id){
      });
 }
 
+
+function change_tubesize(value){
+
+    if(value==""){return false}
+    loader.prependTo("#customer_div")
+      jQuery.ajax({
+       type: "POST",
+       url: "/serializes/change_tubesize",
+       dataType: 'script',
+    data: {
+          'value' : value
+          
+        },
+         
+     success: function(){loader.remove();}
+     });
+   
+}
+
+
 function total_price(row){ 
     var rpkg  = jQuery("#"+row+"_customer_order_rate_per_kilo").val();
     var twt  = jQuery("#"+row+"_customer_order_rate_pcs").val();
@@ -143,6 +163,60 @@ var order_wt  = jQuery("#"+"salesplan_order_wt").val();
    var i  =  order_wt-stock_wt;
  jQuery("#"+"salesplan_balance_wt").val(Number(i).toFixed(3));
 }
+
+
+
+function deliverydetail(id){
+    if(id==""){return false}
+    loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/taxinvoices/deliverydetail",
+       dataType: 'script',
+    data: {
+          'id' : id
+        },
+     success: function(){loader.remove();}
+     });
+}
+
+
+function deliverychallan_detail(id,row){
+    if(id==""){return false}
+    //loader.prependTo("#detail")
+      jQuery.ajax({
+       type: "POST",
+       url: "/taxinvoices/deliverychallan_detail",
+       dataType: 'script',
+    data: {
+          'id' : id,
+           'row' :row
+        },
+     success: function(){loader.remove();}
+     });
+}
+
+function total_tariff_value(row){
+    var meters  = jQuery("#"+row+"_taxinvoice_meters").val();
+    var rate_mtrs= jQuery("#"+row+"_taxinvoice_rs_mtrs").val();
+      var i  = meters*rate_mtrs;
+    jQuery("#"+row+"_taxinvoice_total_tariff_value").val(Number(i).toFixed(3));
+}
+
+function total_amount_tax(totalrow){
+
+    var tariffval = 0;
+    for (j=1;j<=totalrow;j++){
+       tariffval = tariffval + jQuery("#"+j+"_taxinvoice_total_tariff_value").val();
+     jQuery("#"+j+"_taxinvoice_amount").val(Number(tariffval).toFixed(3));
+}
+  //return tariffval;
+      //jQuery("#"+j+"_taxinvoice_amount").val(Number(tariffval).toFixed(3));
+  
+
+}
+
+
 
 
 function specification_to_predespatch(id){

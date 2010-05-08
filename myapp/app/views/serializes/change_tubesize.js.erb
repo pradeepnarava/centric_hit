@@ -1,0 +1,8 @@
+<%if params[:value]=='S'%>
+jQuery('#detail').html("<%=escape_javascript(render(:partial => 's_serials' ))%>");
+<%elsif params[:value]=='R'%>
+jQuery('#serialize_od').val("");
+jQuery('#detail').html("<%=escape_javascript(render(:partial => 'r_serials' ))%>");
+<%else params[:value]=='E'%>
+jQuery('#detail').html("<%=escape_javascript(render(:partial => 'e_serials' ))%>");
+<%end%>

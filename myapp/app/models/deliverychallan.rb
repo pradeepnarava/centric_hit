@@ -1,5 +1,6 @@
 class Deliverychallan < ActiveRecord::Base
  belongs_to :customer
  belongs_to :customer_order
- validates_presence_of :cst_tin
+ has_many:taxinvoices
+ validates_presence_of :customer_order_id
 end
