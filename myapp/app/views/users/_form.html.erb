@@ -18,12 +18,12 @@
 </td><tr><td>
     <%if @user.new_record?%><p>
         <%= form.label :login %>
-        <%= form.text_field :login %></p></td><td>
+        <%= form.text_field :login , :autocomplete => 'off'%></p></td><td>
     <p>
         <%= form.label :password, form.object.new_record? ? nil : "Change password" %>
-        <%= form.password_field :password %></p></td><td><p>
+        <%= form.password_field :password , :autocomplete => 'off' %></p></td><td><p>
         <%= form.label :password_confirmation %>
-<%= form.password_field :password_confirmation %></p></td>
+<%= form.password_field :password_confirmation , :autocomplete => 'off' %></p></td>
     <%end%>
 </tr>
 </table>

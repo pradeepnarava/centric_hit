@@ -1,16 +1,16 @@
 <div id="left-column">
         <h3>Stock</h3>
         <ul class="nav">
-          <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'active' : ''%>'>
+          <li class ='<%=controller.controller_name.eql?('rawmaterials') && ['index','new','edit'].include?(controller.action_name) ? 'active' : ''%>'>
           <span><span><%=link_to("Raw Materials", rawmaterials_path)%></span></span>
           </li>
-          <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'active' : ''%>'>
+          <li class ='<%=controller.controller_name.eql?('rawmaterials') &&  controller.action_name.eql?('wide_coil')? 'active' : ''%>'>
           <span><span><%=link_to("Wide Coils", "/wide_coil")%></span></span>
           </li>
-          <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'active' : ''%>'>
+          <li class ='<%=controller.controller_name.eql?('slittingproductions') &&  controller.action_name.eql?('slit_coil')? 'active' : ''%>'>
           <span><span><%=link_to("Slit Coils", "/slit_coil")%></span></span>
           </li>
-          <li class ='<%=controller.controller_name.eql?('rawmaterials')? 'active' : ''%>'>
+          <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports') &&  controller.action_name.eql?('tube_stock')? 'active' : ''%>'>
           <span><span><%=link_to("Tube Stock", "/tube_stock")%></span></span>
           </li>          
           <li class ='<%=controller.controller_name.eql?('rawmaterial_categories')? 'active' : ''%>'>

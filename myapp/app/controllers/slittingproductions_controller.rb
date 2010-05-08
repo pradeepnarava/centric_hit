@@ -147,7 +147,7 @@ class SlittingproductionsController < ApplicationController
   end
   
   def slit_coil
-    @slittingproductions = Slittingproduction.find(:all)
+    @slittingproductions = Slittingproduction.find(:all,:conditions => ['status = 1'])
 
     respond_to do |format|
       format.html # index.html.erb

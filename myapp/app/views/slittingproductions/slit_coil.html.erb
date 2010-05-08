@@ -1,0 +1,31 @@
+<%= render :partial=>'layouts/stock_leftside_bar' %>
+<div id="center-column">
+  <div class="top-bar">
+    <h1>Slit-Coil Stock</h1>
+  </div><br />  
+  <div class="table">
+    <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+    <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+    <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <th>Coil No</th>
+      <th>Date of Slitting</th>
+      <th>Slit width</th>      
+      <th>Thickness</th>
+      <th>Coil weight</th>
+      <th>Grade</th>      
+    </tr>
+
+  <% for slitstock in @slittingproductions %>
+    <tr class="<%=cycle("bg1", "bg2")%>">
+      <td><%=h slitstock.slitting_coil_no %></td>
+      <td><%=h slitstock.production_date.strftime('%d-%b-%Y') %></td>      
+      <td><%=h slitstock.width_slitting rescue "-" %></td>    
+      <td><%=h slitstock.thickness rescue "-"%></td>
+      <td><%=h slitstock.slit_coil_weight %></td>
+      <td><%=h slitstock.grade %></td>
+    </tr>
+  <% end %>
+  </table>
+  </div>
+</div>

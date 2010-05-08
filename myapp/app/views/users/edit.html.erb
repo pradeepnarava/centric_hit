@@ -3,12 +3,18 @@
   <div class="gridDiv">
     <div class="titleHead">Edit Account</div>
     <div class="formMain">
-<% form_for @user, :url => {:action => 'update', :id => @user.id} do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
- 
-      <div class="txtC" id="submit_div">
+      <% form_for @user, :url => {:action => 'update', :id => @user.id} do |f| %>
+        <%= f.error_messages %>
+        <%= render :partial => "form", :object => f %>
+       
+        <div class="txtC" id="submit_div">
           <%= f.submit "Update" , :class=>'button submit_buttons'%>
-        <br/></div><br/>
-<% end %><br/>
-    </div></div></div><br/>
+          <%=link_to 'Cancel', users_url, :class => "linkbutton" %>
+          <br/>
+        </div>
+        <br/>
+      <% end %>
+      <br/>
+    </div>
+  </div>
+</div>

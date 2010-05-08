@@ -1,4 +1,5 @@
 class CentricsteelsController < ApplicationController
+  load_and_authorize_resource  
   # GET /centricsteels
   # GET /centricsteels.xml
   def index

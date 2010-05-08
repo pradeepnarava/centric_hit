@@ -392,3 +392,16 @@ function totaltime(){
    
    jQuery("#tube_mill_stoppage_report_total_time").val(Number(to-from)); 
 }
+
+function common_flash_message(){
+  jQuery(document).ready(function() {
+    jQuery('#notice')
+    .fadeIn('slow')
+    .animate({
+      opacity: 1.0
+    }, 8000)
+    .fadeOut('slow', function() {
+      jQuery('#notice').remove();
+    });
+  });
+}

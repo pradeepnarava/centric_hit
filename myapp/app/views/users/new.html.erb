@@ -3,16 +3,19 @@
   <div class="gridDiv">
     <div class="titleHead">Register</div>
     <div class="formMain">
-<% form_for @user, :url => users_path do |f| %>
-  <%if(@user.errors.length >0)%>
+      <% form_for @user, :url => users_path do |f| %>
+        <%if(@user.errors.length >0)%>
           <div class='errorCont'>
             <%= error_messages_for(:user)%>
             <div class="clear"></div>
           </div>
         <%end%>
-  <%= render :partial => "form", :object => f %>
-      <div class="txtC" id="submit_div">
+        <%= render :partial => "form", :object => f %>
+        <div class="txtC" id="submit_div">
           <%= f.submit "Register" , :class=>'button submit_buttons'%>
+          <%=link_to 'Cancel', users_url, :class => "linkbutton" %>
         </div>
-<% end %><br/>
-    </div></div></div><br/>
+      <% end %><br/>
+    </div>
+  </div>
+</div>

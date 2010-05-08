@@ -215,7 +215,7 @@
               <td colspan="4" align="center">
                 <div class="txtC" id="submit_div">
           <%= f.submit "Create" , :class=>'button submit_buttons'%>
-          <%=f.submit 'Cancel',{ :class=>'button submit_buttons cancelbutton' }%>
+          <%=link_to 'Cancel', addresses_url, :class => "linkbutton" %>
         </div>
               </td>
             </tr>

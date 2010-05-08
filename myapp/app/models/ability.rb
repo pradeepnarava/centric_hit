@@ -23,18 +23,19 @@ class Ability
   
   def manager
     can :manage, :all
-    cannot :create, Role
-    cannot :update, Role
-    cannot :destroy, Role
-  end
-  
-  def operator
-    can :manage, :all
-    
     cannot :manage, Role
     cannot :manage, Department
     cannot :manage, User    
     cannot :manage, Employee
-    cannot :manage, Salesplan
+    cannot :manage, Centricsteel
+  end
+  
+  def operator
+    can :manage, :all
+    cannot :manage, Role
+    cannot :manage, Department
+    cannot :manage, User    
+    cannot :manage, Employee
+    cannot :manage, Centricsteel
   end    
 end

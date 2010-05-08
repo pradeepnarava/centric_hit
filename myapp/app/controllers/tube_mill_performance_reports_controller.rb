@@ -27,7 +27,7 @@ class TubeMillPerformanceReportsController < ApplicationController
     @tube_mill_performance_report = TubeMillPerformanceReport.new
     @customers = Customer.all
     @employees = Employee.all
-    @slittingproductions = Slittingproduction.find(:all,:conditions => ["status = 1"])
+    @slittingproductions = Slittingproduction.find(:all,:conditions => ["status = 2"])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tube_mill_performance_report }
@@ -51,10 +51,10 @@ class TubeMillPerformanceReportsController < ApplicationController
       if @tube_mill_performance_report.save
 
         @slitting_status=Slittingproduction.find(params[:tube_mill_performance_report][:slittingproduction_id])
-        @slitting_status.update_attribute('status',2)
+        @slitting_status.update_attribute('status',3)
         
         @rawmaterail_status=Rawmaterial.find(@slitting_status.rawmaterial_id)
-        @rawmaterail_status.update_attribute('status',2)
+        @rawmaterail_status.update_attribute('status',3)
         flash[:notice] = 'TubeMillPerformanceReport was successfully created.'
         format.html { redirect_to(tube_mill_performance_reports_path) }
         format.xml  { render :xml => @tube_mill_performance_report, :status => :created, :location => @tube_mill_performance_report }
@@ -95,7 +95,7 @@ class TubeMillPerformanceReportsController < ApplicationController
   end
   
   def production_index
-    @tube_mill_performance_reports = TubeMillPerformanceReport.all
+    @tube_mill_performance_reports = TubeMillPerformanceReport.find(:all, :conditions => ['status = 1'])
     # TODO
     # need to find yield %
     # prime qty(wt) = 500
@@ -109,6 +109,6 @@ class TubeMillPerformanceReportsController < ApplicationController
   end
 
   def tube_stock
-    
+    @tube_mill_performance_reports = TubeMillPerformanceReport.find(:all, :conditions => ['status = 1'])
   end
 end

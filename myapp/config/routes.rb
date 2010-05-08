@@ -30,7 +30,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :customers,:member=>"customer_report"  
   map.resource :user_session
   map.root :controller => "rawmaterials", :action => "index" # optional, this just sets the root route
-  map.resources :users
+  map.resources :users, :member => {:reset_password => :get,:update_password => :post}
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout  "logout",  :controller => "user_sessions", :action => "destroy"
   map.connect 'report/raw_mat', :controller => 'reports', :action => 'raw_rpt'

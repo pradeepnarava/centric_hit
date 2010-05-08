@@ -1,0 +1,33 @@
+<%= render :partial=>'layouts/stock_leftside_bar' %>
+<div id="center-column">
+  <div class="top-bar">
+    <h1>Tube Stock</h1>
+  </div><br />  
+  <div class="table">
+    <%= image_tag '/images/bg-th-left.gif',:height=>"7", :width=>"8",:alt=>"",:title=>"",:class=>"left" %>
+    <%= image_tag '/images/bg-th-right.gif',:height=>"7", :width=>"7",:alt=>"",:title=>"",:class=>"right" %>
+    <table class="listing" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <th>Lot No</th>
+      <th>Date of Production</th>      
+      <th>No of Tubes</th>    
+      <th>OD/Width</th>
+      <th>ID/Height</th>
+      <th>Thickness</th>
+      <th>Length</th>
+    </tr>
+
+  <% for tubestock in @tube_mill_performance_reports %>
+    <tr class="<%=cycle("bg1", "bg2")%>">
+      <td><%=h tubestock.lot_no %></td>
+      <td><%=h tubestock.date.strftime('%d-%b-%Y') %></td>      
+      <td><%=h tubestock.no_of_tube rescue "-" %></td>    
+      <td><%=h tubestock.od_width rescue "-"%></td>
+      <td><%=h tubestock.id_height %></td>
+      <td><%=h tubestock.thickness %></td>
+      <td><%=h tubestock.length %></td>
+    </tr>
+  <% end %>
+  </table>
+  </div>
+</div>

@@ -27,7 +27,7 @@
       <tr  class="<%=cycle("bg1", "bg2")%>">
         <td><%=h employee.first_name %></td>
         <td><%=h employee.last_name %></td>
-        <td><%=h employee.birthdate %></td>
+        <td><%=h employee.birthdate.strftime('%d-%b-%Y') %></td>
         <td><%=h employee.phone %></td>
         <td><%=h employee.mobile %></td>
         <td><%=h employee.street %></td>

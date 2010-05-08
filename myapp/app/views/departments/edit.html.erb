@@ -3,20 +3,21 @@
   <div class="gridDiv">
     <div class="titleHead">Update department</div>
     <div class="formMain">
-<% form_for(@department) do |f| %>
-  <%= f.error_messages %>
- <div  style="width:650px;">
+      <% form_for(@department) do |f| %>
+        <%= f.error_messages %>
+        <div  style="width:650px;">
           <div  style="width:650px;">
             <p >
-    <%= f.label :department_name%>
-    <%= f.text_field :name %>
-  </p></div></div>
-       <div style="width:250px">
+              <%= f.label :department_name%>
+              <%= f.text_field :name %>
+        </p></div></div>
+        <div style="width:250px">
           <div>
-  <div class="txtC" id="submit_div">
-          <%= f.submit "Update" , :class=>'button submit_buttons'%>
-        </div>
-          </div></div>
-<% end %>
-    </div></div>
+            <div class="txtC" id="submit_div">
+              <%= f.submit "Update" , :class=>'button submit_buttons'%>
+              <%=link_to 'Cancel', departments_url, :class => "linkbutton" %>
+            </div>
+        </div></div>
+      <% end %>
+  </div></div>
 </div>

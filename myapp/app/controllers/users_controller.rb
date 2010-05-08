@@ -53,4 +53,45 @@ class UsersController < ApplicationController
       render :action => :edit
     end
   end  
+  
+  def reset_password
+    @user = User.find(params[:id])
+  end
+  
+  def update_password
+    @user = User.find(params[:id])
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+    if validate_password(@user.password, @user.password_confirmation)
+      if @user.save
+        flash[:notice] = "Password was reset successfully!"
+        redirect_to users_url
+      else
+        flash[:error] = "Password reset error!"
+        render :action => :reset_password        
+      end
+      return
+    else
+      #flash[:error] = @err_msg
+      render :action => :reset_password
+    end
+
+  end
+  
+  
+  private
+  
+  def validate_password(pass1, pass2)
+    @err_msg = ''
+    if pass1.blank? or pass2.blank?
+      flash[:error] = "Password can't be blank!"
+      return false
+    end
+    unless pass1.eql?(pass2)
+      flash[:error] = "Passwords doesn't match!"
+      return false
+    end
+    return true
+  end
+  
 end

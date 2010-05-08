@@ -1,0 +1,12 @@
+<%@flashmsg= flash[:warning] || flash[:notice] || flash[:error]%>
+<% if @flashmsg.present? %>
+  <div id="notice" <%if flash[:warning]%>class="warningCont"<%elsif flash[:error]%>class="errorCont"<%else%>class="sucessCont"<%end%>>
+    <%= @flashmsg%>
+  </div>
+    <script type="text/javascript">
+        common_flash_message();
+  </script>
+<% end %>
+<%
+  flash.discard
+%>

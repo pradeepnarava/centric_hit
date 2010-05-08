@@ -34,7 +34,7 @@ class UncoilerReportsController < ApplicationController
   
   def coil_detail
     @coil = Rawmaterial.find(params[:id])
-    @slittingproductions = @coil.slittingproductions.find(:all, :conditions => ["status = 1"])
+    @slittingproductions = @coil.slittingproductions.find(:all, :conditions => ["status = 1"],:order => 'id')
   end    
 
   # GET /uncoiler_reports/1/edit
@@ -54,7 +54,7 @@ class UncoilerReportsController < ApplicationController
       unless value[:checkuncoiler].blank?         
         @uncoiler_report = UncoilerReport.new(value[:uncoiler])
         @uncoiler_report.date = data[:uncoiler_report][:date]
-        @uncoiler_report.operator_name = data[:uncoiler_report][:operator_id]
+        @uncoiler_report.operator_id = data[:uncoiler_report][:operator_id]
         @uncoiler_report.shift = data[:uncoiler_report][:shift]
         if @uncoiler_report.save
           @slittingp = Slittingproduction.find(value[:uncoiler][:slittingproduction_id])

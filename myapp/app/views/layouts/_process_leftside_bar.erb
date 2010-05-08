@@ -10,10 +10,10 @@
           <li class ='<%=controller.controller_name.eql?('uncoiler_reports')? 'active' : ''%>'>
           <span><span><%=link_to("Uncoiler Reports", uncoiler_reports_path)%></span></span>
           </li>
-          <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports')? 'active' : ''%>'>
+          <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports') && ['index','new','edit'].include?(controller.action_name) ? 'active' : ''%>'>
           <span><span><%=link_to("Tube Mill Performance", tube_mill_performance_reports_path)%></span></span>
           </li>
-          <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports')? 'active' : ''%>'>
+          <li class ='<%=controller.controller_name.eql?('tube_mill_performance_reports') && controller.action_name.eql?('production_index') ? 'active' : ''%>'>
           <span><span><%=link_to("Tube Mill Production", "/tube_mill_production")%></span></span>
           </li>          
           <li class ='<%=controller.controller_name.eql?('tube_mill_stoppage_reports')? 'active' : ''%>'>
@@ -22,11 +22,6 @@
             <li class ='<%=controller.controller_name.eql?('stoppages')? 'active' : ''%>'>
           <span><span><%=link_to("New Stoppage Type", stoppages_path)%></span></span>
           </li>
-          
-                 
-
-
         </ul>
 </div>
-
 
