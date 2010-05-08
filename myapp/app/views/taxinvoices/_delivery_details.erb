@@ -14,16 +14,7 @@
       <td>meters</td>
       <td>rs_mtrs</td>
       <td>total_tariff_value</td>
-       <td>amount</td>
-        <td>packing_forwarding</td>
-         <td>total_before_duty</td>
-          <td>excise_duty</td>
-           <td>ed_cess</td>
-            <td>sah_ed_cess</td>
-           <td>total_all</td>
-            <td>vat_cst</td>
-             <td>total_all</td>
-             <td>grand_total</td>
+    
 
 
     </tr>
@@ -39,20 +30,34 @@
         <td><%= text_field_tag "#{taxinvoice}[taxinvoice][meters]" %></td>
         <td><%= text_field_tag "#{taxinvoice}[taxinvoice][rs_mtrs]",nil,:onblur => "total_tariff_value(#{taxinvoice});" %></td
         <td><%=  text_field_tag "#{taxinvoice}[taxinvoice][total_tariff_value]",nil,:onblur => "total_amount_tax(#{@delivery_challan.size});" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][amount]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][packing_forwarding]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][total_before_duty]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][excise_duty]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][ed_cess]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][sah_ed_cess]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][total_all]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][vat_cst]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][total_all]" %></td>
-        <td><%= text_field_tag "#{taxinvoice}[taxinvoice][grand_total]" %></td>
+     
 
 
       </tr>
     <%end%>
+      <tr>  <td>amount</td>
+       <td>packing_forwarding</td>
+         <td>total_before_duty</td>
+          <td>excise_duty</td>
+           <td>ed_cess</td>
+            <td>sah_ed_cess</td>
+           <td>total_all</td>
+            <td>vat_cst</td>
+                        <td>grand_total</td>
+                      
+      </tr>
+      <tr>
+        <td><%= text_field_tag "#{"taxinvoice"}[amount]" %></td>
+       <td><%= text_field_tag "#{"taxinvoice"}[packing_forwarding]",nil,:onblur => "total_before_duty();" %></td>
+        <td><%= text_field_tag "#{"taxinvoice"}[total_before_duty]" %></td>
+      <td><%= text_field_tag "#{"taxinvoice"}[excise_duty]" %></td>
+        <td><%= text_field_tag "#{"taxinvoice"}[ed_cess]" %></td>
+        <td><%= text_field_tag "#{"taxinvoice"}[sah_ed_cess]",nil,:onblur => "total_all_duty();" %></td>
+        <td><%= text_field_tag "#{"taxinvoice"}[total_all]" %></td>
+        <td><%= text_field_tag "#{"taxinvoice"}[vat_cst]",nil,:onblur => "grand_total();" %></td>
+            <td><%= text_field_tag "#{"taxinvoice"}[grand_total]" %></td>
+
+      </tr>
   </table>
 <%else%>
   No Serials, Please Create Serial First.
@@ -92,7 +97,7 @@
      <label>Length</label>
     <%#= text_field :length %>
   </p>
-  <!--<p>
+  <p>
       <label>Description </label>
     <%#= text_field :description %>
   </p>-->

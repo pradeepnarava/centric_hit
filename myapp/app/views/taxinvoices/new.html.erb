@@ -1,3 +1,6 @@
+<script type="text/javascript">
+    livia_datepicker();
+</script>
 <%= render :partial=>'layouts/delivery' %>
 <div id="center-column">
 <div class="gridDiv">
@@ -18,23 +21,28 @@
   <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"},{:onchange => "deliverydetail(this.value);"})%>
 </p>
 
+
+
+
+
    <p>
      <label>Date-prep-invoice </label>
-    <%= f.datetime_select :date_of_preparation_invoice %>
+    <%= f.text_field :date_of_preparation_invoice, :class=>'dateTextBox date_picker' %>
   </p>
 
 
  <p>
     <label>Date invoice no </label>
-    <%= f.datetime_select :date_invoice_no %>
+    <%= f.text_field:date_invoice_no, :class=>'dateTextBox date_picker' %>
   </p>
-    <p style="width:100%">
+ 
+    <p>
     <%= f.label :timeof_invoice %>
-    <%= f.datetime_select :timeof_invoice %>
+    <%= f.time_select :timeof_invoice %>
   </p>
     <p>
     <%= f.label :date_po %>
-    <%= f.datetime_select :date_po %>
+    <%= f.text_field :date_po , :class=>'dateTextBox date_picker'%>
   </p>
 <p>
     <%= f.label :invoice_no %>
@@ -43,6 +51,10 @@
 <p>
     <%= f.label :po_no %>
     <%= f.text_field :po_no %>
+  </p>
+    <p>
+    <label>Date challan no </label>
+    <%= f.text_field:date_challan_no, :class=>'dateTextBox date_picker' %>
   </p>
 
     <p>

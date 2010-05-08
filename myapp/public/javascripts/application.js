@@ -207,16 +207,37 @@ function total_amount_tax(totalrow){
 
     var tariffval = 0;
     for (j=1;j<=totalrow;j++){
-       tariffval = tariffval + jQuery("#"+j+"_taxinvoice_total_tariff_value").val();
-     jQuery("#"+j+"_taxinvoice_amount").val(Number(tariffval).toFixed(3));
+       tariffval = tariffval +Number( jQuery("#"+j+"_taxinvoice_total_tariff_value").val());
+    
+     jQuery("#"+"taxinvoice_amount").val(Number(tariffval).toFixed(3));
 }
-  //return tariffval;
-      //jQuery("#"+j+"_taxinvoice_amount").val(Number(tariffval).toFixed(3));
   
-
+}
+function total_before_duty(){
+    var amount  = Number(jQuery("#"+"taxinvoice_amount").val());
+      var packing_forwarding = Number(jQuery("#"+"taxinvoice_packing_forwarding").val());
+      var i  = (amount)+(packing_forwarding);
+         jQuery("#"+"taxinvoice_total_before_duty").val(Number(i).toFixed(3));
 }
 
+function total_all_duty(){
+    var total_before_duty  = Number(jQuery("#"+"taxinvoice_total_before_duty").val());
+      var excise_duty= Number(jQuery("#"+"taxinvoice_excise_duty").val());
+       var ed_cess= Number(jQuery("#"+"taxinvoice_ed_cess").val());
+       var sah_ed_cess= Number(jQuery("#"+"taxinvoice_sah_ed_cess").val());
+      var x  =total_before_duty *(excise_duty/100);
+      var y  =x *(ed_cess/100);
+      var z  =x *(sah_ed_cess/100);
+      var i = total_before_duty+x+y+z
 
+    jQuery("#"+"taxinvoice_total_all").val(Number(i).toFixed(3));
+}
+function grand_total(){
+    var total_all  = Number(jQuery("#"+"taxinvoice_total_all").val());
+       var vat_cst= Number(jQuery("#"+"taxinvoice_vat_cst").val());
+          var i = total_all+((total_all)*(vat_cst/100))
+    jQuery("#"+"taxinvoice_grand_total").val(Number(i).toFixed(3));
+}
 
 
 function specification_to_predespatch(id){

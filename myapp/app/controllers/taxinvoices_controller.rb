@@ -39,28 +39,52 @@ class TaxinvoicesController < ApplicationController
 
   
   def deliverydetail
-    p params[:id]
     @delivery_challan=Deliverychallan.find_all_by_customer_id(params[:id])
-    p @delivery_challan.size
   end
+
   def deliverychallan_detail
-   @deliverychallan_detail=Deliverychallan.find(params[:id])
+    @deliverychallan_detail=Deliverychallan.find(params[:id])
   end
 
   # POST /taxinvoices
   # POST /taxinvoices.xml
   def create
-    @taxinvoice = Taxinvoice.new(params[:taxinvoice])
-
-    respond_to do |format|
-      if @taxinvoice.save
-        flash[:notice] = 'Taxinvoice was successfully created.'
-        format.html { redirect_to(taxinvoices_url) }
-        format.xml  { render :xml => @taxinvoice, :status => :created, :location => @taxinvoice }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @taxinvoice.errors, :status => :unprocessable_entity }
+    data=params
+    @error = 0
+    @save_order = data.rehash.each_pair do |key,value|
+      @taxinvoice =Taxinvoice.new(value[:taxinvoice])
+          if  @taxinvoice.valid?
+        @taxinvoice.customer_id = data[:taxinvoice][:customer_id]
+        @taxinvoice.date_of_preparation_invoice =data[:taxinvoice][:date_of_preparation_invoice]
+        @taxinvoice.date_invoice_no = data[:taxinvoice][:date_invoice_no]
+        @taxinvoice.timeof_invoice = data[:taxinvoice][:timeof_invoice]
+         @taxinvoice.date_challan_no = data[:taxinvoice][:date_challan_no]
+        @taxinvoice.date_po = data[:taxinvoice][:date_po]
+        @taxinvoice.invoice_no = data[:taxinvoice][:invoice_no]
+        @taxinvoice.po_no = data[:taxinvoice][:po_no]
+        @taxinvoice.in_words = data[:taxinvoice][:in_words]
+        @taxinvoice.name_and_adress_of_buyor = data[:taxinvoice][:name_and_adress_of_buyor]
+        @taxinvoice.name_and_adress_of_consignee = data[:taxinvoice][:name_and_adress_of_consignee]
+        @taxinvoice.lr_no = data[:taxinvoice][:lr_no]
+        @taxinvoice.amount = data[:taxinvoice][:amount]
+        @taxinvoice.packing_forwarding = data[:taxinvoice][:packing_forwarding]
+        @taxinvoice.excise_duty = data[:taxinvoice][:excise_duty]
+        @taxinvoice.ed_cess = data[:taxinvoice][:ed_cess]
+        @taxinvoice.sah_ed_cess = data[:taxinvoice][:sah_ed_cess]
+        @taxinvoice.total_all = data[:taxinvoice][:total_all]
+        @taxinvoice.vat_cst = data[:taxinvoice][:vat_cst]
+        @taxinvoice.grand_total = data[:taxinvoice][:grand_total]
+        if  @taxinvoice.save
+          flash[:notice] = 'TaxInvoices was successfully created.'
+        else
+          @error = 1
+        end
       end
+    end
+    if @error == 0
+      redirect_to(taxinvoices_url)
+    else
+      render :action => "new"
     end
   end
 
