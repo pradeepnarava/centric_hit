@@ -1,4 +1,4 @@
-class RemoveColumnFromCustomerOrders < ActiveRecord::Migration
+class AddFromCustomerOrders < ActiveRecord::Migration
   def self.up
      add_column:customer_orders,:balance,:integer
      add_column:customer_orders,:status,:integer
