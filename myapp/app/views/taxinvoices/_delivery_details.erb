@@ -2,25 +2,26 @@
 
 
 <%unless @delivery_challan.size<1%>
-  <table class="formOrdertable">
+<div class="formMain"> 
+ <table cellpadding="0" cellspacing="0" width="100%" border="1">
     <tr>
-      <td>S.No</td>
-      <td>Delivery Challan No</td>
-      <td>Vehicle no</td>
-      <td>od</td>
-      <td>thickness</td>
-      <td>length</td>
-      <td>pieces</td>
-      <td>meters</td>
-      <td>rs_mtrs</td>
-      <td>total_tariff_value</td>
+      <td><p><label>S.No</label></p></td>
+      <td><p><label>Challan No</label></p></td>
+      <td><p><label>Vehicle no</label></p></td>
+      <td><p><label>od</label></p></td>
+      <td><p><label>thickness</label></p></td>
+      <td><p><label>length</label></p></td>
+      <td><p><label>Pcs</label></p></td>
+      <td><p><label>Mtrs</label></p></td>
+      <td><p><label>Rate Mtrs</label></p></td>
+      <td><p><label>total</label></p></td>
     
 
 
     </tr>
     <%for taxinvoice in 1..@delivery_challan.size%>
       <tr>
-        <td><%=taxinvoice%></td>
+      <td style="font-size:11px;"><%=taxinvoice%></td>
         <td><%=collection_select("#{taxinvoice}[taxinvoice]",:deliverychallan_id, @delivery_challan,:id,:delivery_challan_no,{:include_blank => "---Select---"},{:onchange => "deliverychallan_detail(this.value,#{taxinvoice});"})%></td>
         <td><%= text_field_tag "#{taxinvoice}[taxinvoice][vehicle_no]" %></td>
         <td><%= text_field_tag "#{taxinvoice}[taxinvoice][od]" %></td>
@@ -30,20 +31,18 @@
         <td><%= text_field_tag "#{taxinvoice}[taxinvoice][meters]" %></td>
         <td><%= text_field_tag "#{taxinvoice}[taxinvoice][rs_mtrs]",nil,:onblur => "total_tariff_value(#{taxinvoice});" %></td
         <td><%=  text_field_tag "#{taxinvoice}[taxinvoice][total_tariff_value]",nil,:onblur => "total_amount_tax(#{@delivery_challan.size});" %></td>
-     
-
-
       </tr>
     <%end%>
-      <tr>  <td>amount</td>
-       <td>packing_forwarding</td>
-         <td>total_before_duty</td>
-          <td>excise_duty</td>
-           <td>ed_cess</td>
-            <td>sah_ed_cess</td>
-           <td>total_all</td>
-            <td>vat_cst</td>
-                        <td>grand_total</td>
+      <tr>  
+      <td><p><label>Amount</label></p></td>
+       <td><p><label>Packing & Forwarding</label></p></td>
+         <td><p><label>Total Before Duty</label></p></td>
+          <td><p><label>Excise Duty</label></p></td>
+           <td><p><label>Ed Cess</label></p></td>
+            <td><p><label>(SAH) Ed Cess</label></p></td>
+           <td><p><label>All Total</label></p></td>
+            <td><p><label>VAT / CST</label></p></td>
+                        <td><p><label>Grand Total</label></p></td>
                       
       </tr>
       <tr>
@@ -59,6 +58,7 @@
 
       </tr>
   </table>
+</div>
 <%else%>
   No Serials, Please Create Serial First.
 <%end%>

@@ -4,80 +4,67 @@
 <%= render :partial=>'layouts/delivery' %>
 <div id="center-column">
 <div class="gridDiv">
-  <div class="titleHead">New taxinvoice</div>
+  <div class="titleHead">Taxinvoice</div>
   <div class="formMain">
 
 <% form_for(@taxinvoice) do |f| %>
   <%= f.error_messages %>
-      <div>
         <!--BOX 1-->
-        <div class="mt5">
-        </div>
-        <div class="fl w48" style="width: 52%;" >
-          <div>
+        <table cellpadding="0" cellspacing="0" width="100%"><tr><td>
             <p>
                <%= f.label "Customer name" %>
 
   <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"},{:onchange => "deliverydetail(this.value);"})%>
-</p>
-
-
-
-
-
+           </p></td><td>
    <p>
      <label>Date-prep-invoice </label>
     <%= f.text_field :date_of_preparation_invoice, :class=>'dateTextBox date_picker' %>
-  </p>
-
-
+  </p></td><td>
  <p>
     <label>Date invoice no </label>
     <%= f.text_field:date_invoice_no, :class=>'dateTextBox date_picker' %>
-  </p>
+  </p></td><td>
  
     <p>
     <%= f.label :timeof_invoice %>
     <%= f.time_select :timeof_invoice %>
-  </p>
+</p></td></tr><tr><td>
     <p>
     <%= f.label :date_po %>
     <%= f.text_field :date_po , :class=>'dateTextBox date_picker'%>
-  </p>
+  </p></td><td>
 <p>
     <%= f.label :invoice_no %>
     <%= f.text_field :invoice_no %>
-  </p>
+  </p></td><td>
 <p>
     <%= f.label :po_no %>
     <%= f.text_field :po_no %>
-  </p>
+  </p></td><td>
     <p>
     <label>Date challan no </label>
     <%= f.text_field:date_challan_no, :class=>'dateTextBox date_picker' %>
-  </p>
+</p></td></tr><tr><td>
 
     <p>
     <%= f.label :in_words %>
     <%= f.text_field :in_words %>
-  </p>
-    <p>
-     <label>Name/adress-buyer </label>
-    <%= f.text_area :name_and_adress_of_buyor,:rows=>5 %>
-  </p>
-  <p>
-     <label>Name/adress-consignee </label>
-    <%= f.text_area :name_and_adress_of_consignee ,:rows=>5%>
-  </p
-  
+  </p></td>
+  <td>
      <p>
     <%= f.label :lr_no %>
     <%= f.text_field :lr_no %>
-  </p>
+</p> </td><td>
+    <p>
+     <label>Name/adress-buyer </label>
+    <%= f.text_area :name_and_adress_of_buyor,:rows=>5 %>
+  </p></td><td>
+  <p>
+     <label>Name/adress-consignee </label>
+    <%= f.text_area :name_and_adress_of_consignee ,:rows=>5%>
+  </p</td></tr></table>
+  <br class="clear"/>
  <div id="detail"></div>
- <%#= render :partial=>'delivery_details',:locals=>{:f=>f} %>
-   </div>
-        </div>
         <br class="clear"/>
         <div class="txtC" id="submit_div">
           <%= f.submit "Create" , :class=>'button submit_buttons'%>
@@ -88,5 +75,4 @@
       </div>
     <% end %>
   </div>
-</div>
 </div>
