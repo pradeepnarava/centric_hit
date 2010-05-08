@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100505152948) do
+ActiveRecord::Schema.define(:version => 20100508170131) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company_name"
@@ -45,6 +45,31 @@ ActiveRecord::Schema.define(:version => 20100505152948) do
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "centricsteels", :force => true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "phone1"
+    t.string   "phone2"
+    t.string   "email"
+    t.string   "excise_registration_no"
+    t.string   "vat_tin"
+    t.string   "cst"
+    t.string   "pan_no"
+    t.string   "ecc_no"
+    t.string   "ifc"
+    t.string   "dgft_code"
+    t.text     "range"
+    t.string   "division"
+    t.string   "collectorate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -271,6 +296,8 @@ ActiveRecord::Schema.define(:version => 20100505152948) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "specification_id"
+    t.integer  "employee_id"
+    t.integer  "inspected_id"
   end
 
   create_table "rawmaterial_categories", :force => true do |t|
@@ -491,7 +518,6 @@ ActiveRecord::Schema.define(:version => 20100505152948) do
     t.string   "range_two"
     t.string   "ecc_no"
     t.string   "notification_no"
-    t.datetime "date_of_preparation_invoice"
     t.datetime "timeof_invoice"
     t.string   "po_no"
     t.string   "invoice_no"
@@ -511,6 +537,8 @@ ActiveRecord::Schema.define(:version => 20100505152948) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_id"
+    t.datetime "date_of_preparation_invoice"
+    t.integer  "deliverychallan_id"
   end
 
   create_table "tube_mill_performance_reports", :force => true do |t|
@@ -527,8 +555,6 @@ ActiveRecord::Schema.define(:version => 20100505152948) do
     t.integer  "slittingproduction_id"
     t.string   "spl_requirement"
     t.datetime "date"
-    t.string   "operator_name"
-    t.string   "inspector_name"
     t.decimal  "open",                  :precision => 12, :scale => 4, :default => 0.0
     t.decimal  "joint",                 :precision => 12, :scale => 4, :default => 0.0
     t.decimal  "tool_mark",             :precision => 12, :scale => 4, :default => 0.0
@@ -545,6 +571,8 @@ ActiveRecord::Schema.define(:version => 20100505152948) do
     t.string   "shift"
     t.integer  "no_of_tube"
     t.integer  "lot_no"
+    t.integer  "operator_id"
+    t.integer  "inspector_id"
   end
 
   create_table "tube_mill_stoppage_reports", :force => true do |t|
