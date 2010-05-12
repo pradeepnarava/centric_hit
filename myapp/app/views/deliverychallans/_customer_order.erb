@@ -14,7 +14,7 @@
     <%for customerorder in 1..@customer_po.size%>
       <tr>
         <td><%=customerorder%></td>
-        <td><%=collection_select("#{customerorder}[deliverychallan]",:customer_order_id, @customer_po,:id,:po_no,{:include_blank => "---Select---"},{:onchange => "customerserial(this.value,#{customerorder});"})%></td>
+        <td><%=collection_select("#{customerorder}[deliverychallan]",:serialize_id, @serial,:id,:name,{:include_blank => "---Select---"},{:onchange => "customerserial(this.value,#{customerorder});"})%></td>
         <td><%= text_field_tag "#{customerorder}[deliverychallan][od]" %></td>
         <td><%= text_field_tag "#{customerorder}[deliverychallan][length]" %></td>
         <td><%= text_field_tag "#{customerorder}[deliverychallan][thickness]"%></td>
@@ -24,6 +24,6 @@
     <%end%>
   </table>
 <%else%>
-  No Serials, Please Create Serial First.
+  No Purchase Orders, Please Create Purchase Order First.
 <%end%>
 

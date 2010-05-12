@@ -28,7 +28,7 @@
 
 <% for deliverychallan in @deliverychallans %>
   <tr class="<%=cycle("bg1", "bg2")%>">
-     <td><%#=h deliverychallan.customer_order.customer.name %></td>
+     <td><%=h deliverychallan.customer.name %></td>
     <td><%=h deliverychallan.delivery_challan_no %></td>
     <td><%=h deliverychallan.date %></td>
     <td><%=h deliverychallan.vehicle_no %></td>

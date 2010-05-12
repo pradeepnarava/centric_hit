@@ -38,17 +38,13 @@ class DeliverychallansController < ApplicationController
   end
 
   def serial_detail_delivery
-    @customer_order=CustomerOrder.find(params[:id])
-    #@customer_order_serial.customer_orders.collect{}
-
-
-
+    @customer_order=CustomerOrder.find_by_serialize_id(params[:id])
   end
 
   def customer_po
-    @customer_po=CustomerOrder.find_all_by_customer_id(params[:id])
-    
-    end
+    @customer_po=CustomerOrder.find(:all,:conditions=>['customer_id=? and  status IN(?)',params[:id],[1,2]])
+    @serial=@customer_po.collect{|f| f.serialize}
+  end
 
   def create
     data=params 
@@ -60,10 +56,9 @@ class DeliverychallansController < ApplicationController
         @deliverychallan.delivery_challan_no = data[:deliverychallan][:delivery_challan_no]
         @deliverychallan.vehicle_no = data[:deliverychallan][:vehicle_no]
         @deliverychallan.remark = data[:deliverychallan][:remark]
-      
         @deliverychallan.date = data[:deliverychallan][:date]
         if  @deliverychallan.save
-          @customer_order=CustomerOrder.find_all_by_id(@deliverychallan.customer_order_id)
+          @customer_order=CustomerOrder.find_all_by_serialize_id(@deliverychallan.serialize_id)
           for customer in @customer_order
             @balance=  (customer.balance)-(@deliverychallan.quantity_pcs)
             if @balance==0

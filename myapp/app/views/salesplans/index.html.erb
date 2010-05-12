@@ -19,7 +19,7 @@
 
     <% for salesplan in @salesplans %>
       <tr>
-        <td><%=h salesplan.customer.name %></td>      
+        <td><%=h salesplan.customer.name rescue"-"%></td>
         <td><%=h salesplan.serialize.name %></td>
         <td><%=h salesplan.order_quantity %></td>
         <td><%=h salesplan.order_wt %></td>
