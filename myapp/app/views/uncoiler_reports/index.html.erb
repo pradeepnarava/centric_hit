@@ -22,14 +22,14 @@
 
             <% for uncoiler_report in @uncoiler_reports %>
               <tr>
-                <td><%=h uncoiler_report.date.strftime('%d-%b-%Y') %></td>
-                <td><%=h uncoiler_report.shift %></td>
+                <td><%=h uncoiler_report.date.strftime('%d-%b-%Y') rescue "-" %></td>
+                <td><%=h uncoiler_report.shift rescue "-" %></td>
                 <td><%=h Employee.getname(uncoiler_report.operator_id) rescue "-"%></td>
-                <td><%=h uncoiler_report.slittingproduction.slitting_coil_no %></td>
-                <td><%=h uncoiler_report.width_actual %></td>
-                <td><%=h uncoiler_report.thickness_actual %></td>
-                <td><%=h uncoiler_report.grade_actual %></td>
-                <td><%=h uncoiler_report.type_actual %></td>
+                <td><%=h uncoiler_report.slittingproduction.slitting_coil_no rescue "-"%></td>
+                <td><%=h uncoiler_report.width_actual rescue "-"%></td>
+                <td><%=h uncoiler_report.thickness_actual rescue "-"%></td>
+                <td><%=h uncoiler_report.grade_actual rescue "-"%></td>
+                <td><%=h uncoiler_report.type_actual rescue "-"%></td>
                 <td>
                   <div class="fr" style="float:left;">
                     <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_uncoiler_report_path(uncoiler_report) )%>

@@ -15,11 +15,11 @@
   <%@slittingproductions.each do |slitp|%>
   <tr>
     <td><%=h sno %></td>
-    <td><%=h slitp.slitting_coil_no%></td>
-    <td><%=h slitp.width_slitting%></td>
-    <td><%=h slitp.thickness%></td>
-    <td><%=h slitp.grade%></td>
-    <td><%=h slitp.type%></td>
+    <td><%=h slitp.slitting_coil_no rescue "-"%></td>
+    <td><%=h slitp.width_slitting rescue "-"%></td>
+    <td><%=h slitp.thickness rescue "-"%></td>
+    <td><%=h slitp.grade rescue "-"%></td>
+    <td><%=h slitp.type rescue "-" %></td>
     <td><%=check_box_tag "#{slitp.id}[checkuncoiler][istube]"%></td>
   </tr>
     <%sno += 1%>

@@ -27,18 +27,18 @@
 
 <% for slittingproduction in @slittingproductions %>
   <tr class="<%=cycle("bg1", "bg2")%>">
-    <td><%=h slittingproduction.rawmaterial.name %></td>
-    <td><%=h slittingproduction.slitting_coil_no %></td>
-    <td><%=h slittingproduction.shift %></td>
+    <td><%=h slittingproduction.rawmaterial.name rescue "-" %></td>
+    <td><%=h slittingproduction.slitting_coil_no rescue "-" %></td>
+    <td><%=h slittingproduction.shift rescue "-" %></td>
     <td><%=h Employee.getname(slittingproduction.operator_id) rescue "-" %></td>
-    <td><%=h slittingproduction.input_weight %></td>
-    <td><%=h slittingproduction.width %></td>
-    <td><%=h slittingproduction.thickness %></td>
-    <td><%=h slittingproduction.grade %></td>
-    <td><%=h slittingproduction.type %></td>
-    <td><%=h slittingproduction.width_slitting %></td>
+    <td><%=h slittingproduction.input_weight rescue "-" %></td>
+    <td><%=h slittingproduction.width rescue "-" %></td>
+    <td><%=h slittingproduction.thickness rescue "-" %></td>
+    <td><%=h slittingproduction.grade rescue "-" %></td>
+    <td><%=h slittingproduction.type rescue "-" %></td>
+    <td><%=h slittingproduction.width_slitting rescue "-" %></td>
     <td><%=h slittingproduction.status==1?'Slitting WIP':'TubeMil WIP' %></td>
-    <td><%=h slittingproduction.remarks %></td>
+    <td><%=h slittingproduction.remarks rescue "-" %></td>
     <td>
       <div class="fr" style="float:left;">
           <%=  link_to(image_tag('/images/livia_portal/icon_edit.gif',{:alt =>"Edit", :title=>"Edit", :border => 0, :hspace => "0"}),  edit_slittingproduction_path(slittingproduction))%>

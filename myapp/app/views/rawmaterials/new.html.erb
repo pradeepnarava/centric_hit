@@ -21,7 +21,7 @@
         <tr>
           <td valign="top" align="center">
             <div style="padding-left:100px;">
-              <table width="50%" border="0" cellspacing="0" cellpadding="2">
+              <table width="75%" border="0" cellspacing="0" cellpadding="2">
                   <tr>
                   <td class="textBlack11Height10L" align="right" style="float:right;"><%= f.label "Supplier" %><span class="text_red">*</span></td>
                   <td><%=f.collection_select( :address_id, @addresses,:id,:company_name,{:include_blank => "--- Select ---"})%></td>

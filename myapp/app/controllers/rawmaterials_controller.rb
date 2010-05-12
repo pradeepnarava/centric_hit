@@ -44,19 +44,24 @@ class RawmaterialsController < ApplicationController
   # POST /rawmaterials
   # POST /rawmaterials.xml
   def create
-    @rawmaterial = Rawmaterial.new(params[:rawmaterial])
+    data = params[:rawmaterial]
+    @rawmaterial = Rawmaterial.new(data)
     @addresses=Address.all
     @rawmaterialcategory = RawmaterialCategory.all
-    respond_to do |format|
-      if @rawmaterial.save
-        flash[:notice] = 'Rawmaterial was successfully created.'
-        format.html { redirect_to(:controller=>'suppliers',:action=>'new') }
-        format.xml  { render :xml => @rawmaterial, :status => :created, :location => @rawmaterial }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @rawmaterial.errors, :status => :unprocessable_entity }
+#    unless data[:address_id].blank?
+      respond_to do |format|
+        if @rawmaterial.save
+          flash[:notice] = 'Rawmaterial was successfully created.'
+          format.html { redirect_to(:controller=>'suppliers',:action=>'new') }
+          format.xml  { render :xml => @rawmaterial, :status => :created, :location => @rawmaterial }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @rawmaterial.errors, :status => :unprocessable_entity }
+        end
       end
-    end
+#    else
+#      flash[:error] = 'Please Fill All the mandatory fields.'
+#    end
   end
 
   # PUT /rawmaterials/1
