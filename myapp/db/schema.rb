@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100508170131) do
+ActiveRecord::Schema.define(:version => 20100512165126) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company_name"
@@ -201,8 +201,8 @@ ActiveRecord::Schema.define(:version => 20100508170131) do
     t.string   "to"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "customer_order_id"
     t.integer  "customer_id"
+    t.integer  "serialize_id"
   end
 
   create_table "departments", :force => true do |t|
@@ -405,18 +405,14 @@ ActiveRecord::Schema.define(:version => 20100508170131) do
   create_table "specifications", :force => true do |t|
     t.string   "specification_name"
     t.string   "grade"
-    t.decimal  "per_c"
-    t.decimal  "per_mn"
-    t.decimal  "per_s"
-    t.decimal  "per_p"
-    t.decimal  "per_si"
-    t.decimal  "per_al"
-    t.decimal  "per_ni"
-    t.decimal  "per_cr"
-    t.decimal  "ys"
-    t.decimal  "ts"
-    t.decimal  "el"
-    t.decimal  "hardness"
+    t.decimal  "per_c",              :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "per_mn",             :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "per_s",              :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "per_p",              :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "per_si",             :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "per_al",             :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "per_ni",             :precision => 12, :scale => 3, :default => 0.0
+    t.decimal  "per_cr",             :precision => 12, :scale => 3, :default => 0.0
     t.string   "od_width"
     t.string   "id_height"
     t.string   "thick"
@@ -431,6 +427,10 @@ ActiveRecord::Schema.define(:version => 20100508170131) do
     t.string   "twist"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ys"
+    t.string   "ts"
+    t.string   "el"
+    t.string   "hardness"
   end
 
   create_table "stoppages", :force => true do |t|
