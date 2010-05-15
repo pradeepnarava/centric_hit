@@ -36,7 +36,7 @@
             <p>
               <label>Type</label>
              
-              <%= select_tag("#{"serialize"}[mat_type]",options_for_select([ 'E','S','R']),{:onchange => "change_tubesize(this.value);"}) %>
+              <%= select_tag("#{"serialize"}[mat_type]","<option value=''/>--Select--" +options_for_select([ 'E','S','R']),{:onchange => "change_tubesize(this.value);"}) %>
             </p>
               </td>
               <td>
@@ -92,16 +92,13 @@
                   <p>
               <%= f.label :grade %>
               <%= f.text_field :grade%>
-            </p><p>
-<label>End Condition</label>
-              <%= f.text_area :end_condition,:rows=>5,:cols=>20%>
             </p>
         </td>
       </tr>
     </table> 
       <br class="clear"/>  <div class="txtC" id="submit_div" >
             <%= f.submit "Update" , :class=>'button submit_buttons'%>
-            <%=link_to 'Cancel',rawmaterial_categories_path, :class=>'button submit_buttons cancelbutton' %>
+            <%=link_to 'Cancel',serializes_path, :class=>'button submit_buttons cancelbutton' %>
           </div>
      
     </div>  
