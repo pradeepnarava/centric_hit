@@ -4,7 +4,7 @@
 <%= render :partial=>'layouts/reports_left_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">Slitting Report</div>
+    <div class="titleHead">Slitting Plan Report</div>
     <div class="formMain2">
       <%form_for "report", :url => {:action => :slitting_show_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
       <div class="gridTable" style="font-size:11px;">
@@ -13,10 +13,7 @@
               <tr>
                 <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
                     <tr>
-                      <td width="8%" align="left">RawMaterial</td>
-                      <td width="16%" align="left">
-                         <%=f.collection_select(:rawmaterial_id, @raw,:id,:name,{:selected=>params[:report][:rawmaterial_id]},{:include_blank => "---Select---"})%>
-                      </td>
+                      <td width="18%" align="left">Select Period of Slitting Plan</td>
                       <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{:selected=>params[:report][:dates]},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
                       <% if params[:report][:dates] == "5"
                          style="display:block"
@@ -55,27 +52,22 @@
   <thead>
    <th>Date</th>
   <th>Mother Coil No</th>
-  <th>Mother Coil Width</th>
+ <!-- <th>Mother Coil Width</th>
   <th>Mother Coil Weight</th>
-  <th>Thickness</th>
+  <th>Thickness</th> !-->
   <th>Slit Width</th>
   <th>Slit Weight</th>
   <th>Number Of Slits</th>
   <th>Process Coil Weight</th>
   <th>Scrap</th>
+  <th>View Plan</th>
 </thead>
 <tbody>
   <%@slitting_value.each do |obj|%>
   <tr>
     <td><%=obj.created_at.to_date.strftime('%d-%m-%Y') if obj.slit_width%>
       </td>
-      <td><%=@raw_material.name if @raw_material%>
-      </td>
-       <td><%=@raw_material.coil_weight if @raw_material.coil_weight%>
-      </td>
-       <td><%=@raw_material.width if @raw_material.width%>
-      </td>
-       <td><%=@raw_material.thickness if @raw_material.thickness%>
+      <td><%=obj.rawmaterial.name rescue "-"%>
       </td>
       <td><%=obj.slit_width if obj.slit_width%>
       </td>
@@ -87,6 +79,7 @@
       </td>
       <td><%=obj.scrap if obj.scrap%>
       </td>
+      <td><%= link_to("Preview", "#") %></td>
   </tr>
   <%end%>
 </tbody>

@@ -7,35 +7,43 @@ class ReportsController < ApplicationController
     conditions_hash = {:status => params[:report][:status]}
     conditions_hash = conditions_hash.merge({:date_start => start_date,:date_end =>end_date}) if start_date!='' && end_date!=''
     search='status=:status'
-    search += " AND created_at Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    search += " AND STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
     @rawmaterial = Rawmaterial.find(:all, :conditions => [search,conditions_hash])
   end
 
   def slitting_rpt
-   @raw=Rawmaterial.find :all
+   #@raw=Rawmaterial.find :all
   end
   def slitting_show_rpt
-    @raw=Rawmaterial.find :all
-    @raw_material=Rawmaterial.find_by_id(params[:report][:rawmaterial_id])
+    #@raw=Rawmaterial.find :all
+    #@raw_material=Rawmaterial.find_by_id(params[:report][:rawmaterial_id])
     start_date,end_date= duration_dates(params[:report][:dates],params[:start_date],params[:end_date])
-    conditions_hash = {:rawmaterial_id => params[:report][:rawmaterial_id]}
-    conditions_hash = conditions_hash.merge({:date_start => start_date,:date_end =>end_date}) if start_date!='' && end_date!=''
-    search='rawmaterial_id=:rawmaterial_id'
-    search += " AND created_at Between :date_start AND :date_end" if start_date!='' && end_date!=''
-    @slitting_value = Slitting.find(:all, :conditions => [search,conditions_hash])
+    #conditions_hash = {:rawmaterial_id => params[:report][:rawmaterial_id]}
+    conditions_hash = {:date_start => start_date,:date_end =>end_date} if start_date!='' && end_date!=''
+    #search='rawmaterial_id=:rawmaterial_id'
+    search = "STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    if params[:report][:dates].blank?
+      @slitting_value = Slitting.find(:all,:group => "rawmaterial_id")
+    else
+      @slitting_value = Slitting.find(:all, :conditions => [search,conditions_hash],:group => "rawmaterial_id")
+    end
   end
   def slitting_production_rpt
-   @raw=Rawmaterial.find :all
+   #@raw=Rawmaterial.find :all
   end
   def slitting_production_show_rpt
-    @raw=Rawmaterial.find :all
-    @raw_material=Rawmaterial.find_by_id(params[:report][:rawmaterial_id])
+    #@raw=Rawmaterial.find :all
+    #@raw_material=Rawmaterial.find_by_id(params[:report][:rawmaterial_id])
     start_date,end_date= duration_dates(params[:report][:dates],params[:start_date],params[:end_date])
-    conditions_hash = {:rawmaterial_id => params[:report][:rawmaterial_id]}
-    conditions_hash = conditions_hash.merge({:date_start => start_date,:date_end =>end_date}) if start_date!='' && end_date!=''
-    search='rawmaterial_id=:rawmaterial_id'
-    search += " AND created_at Between :date_start AND :date_end" if start_date!='' && end_date!=''
-    @slitting_value = Slittingproduction.find(:all, :conditions => [search,conditions_hash])
+    #conditions_hash = {:rawmaterial_id => params[:report][:rawmaterial_id]}
+    conditions_hash = {:date_start => start_date,:date_end =>end_date} if start_date!='' && end_date!=''
+    #search='rawmaterial_id=:rawmaterial_id'
+    search = "STR_TO_DATE(production_date,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    if params[:report][:dates].blank?
+      @slitting_value = Slittingproduction.find(:all, :group => 'production_date')
+    else
+      @slitting_value = Slittingproduction.find(:all, :conditions => [search,conditions_hash], :group => 'production_date')
+    end
   end
   def uncol_rpt
    @slitting_pro=Slittingproduction.find :all
@@ -47,7 +55,7 @@ class ReportsController < ApplicationController
     conditions_hash = {:slittingproduction_id => params[:report][:slittingproduction_id]}
     conditions_hash = conditions_hash.merge({:date_start => start_date,:date_end =>end_date}) if start_date!='' && end_date!=''
     search='slittingproduction_id=:slittingproduction_id'
-    search += " AND created_at Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    search += " AND STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
     @uncoiler_value = UncoilerReport.find(:all, :conditions => [search,conditions_hash])
   end
 
