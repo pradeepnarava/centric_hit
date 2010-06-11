@@ -58,7 +58,14 @@ class ReportsController < ApplicationController
     search += " AND STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
     @uncoiler_value = UncoilerReport.find(:all, :conditions => [search,conditions_hash])
   end
+  
+  def taxinvoice_rpt
+    render :layout=>false;
+  end
 
+  def delivery_rpt
+    render :layout=>false;
+  end
 
   def duration_dates(parameters,start_date,end_date)
     if parameters == "1months"
