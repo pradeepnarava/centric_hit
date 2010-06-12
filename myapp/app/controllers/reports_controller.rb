@@ -28,9 +28,20 @@ class ReportsController < ApplicationController
       @slitting_value = Slitting.find(:all, :conditions => [search,conditions_hash],:group => "rawmaterial_id")
     end
   end
+  def slitting_show
+    scrap=0
+    @scrap=[]
+   @slitting_value = Slitting.find(:all,:conditions => ["rawmaterial_id=#{params[:id]}"])
+   @slitting_value.each do |obj|
+     scrap=scrap + obj.scrap.to_i
+   end
+   @scrap[0]=scrap
+   render :layout=>false;
+  end
   def slitting_production_rpt
    #@raw=Rawmaterial.find :all
   end
+  
   def slitting_production_show_rpt
     #@raw=Rawmaterial.find :all
     #@raw_material=Rawmaterial.find_by_id(params[:report][:rawmaterial_id])

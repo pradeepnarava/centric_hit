@@ -79,7 +79,7 @@
       </td>
       <td><%=obj.scrap if obj.scrap%>
       </td>
-      <td><%= link_to("Preview", "#") %></td>
+      <td><%= link_to("Preview", "/reports/slitting_show?id=#{obj.rawmaterial_id}") %></td>
   </tr>
   <%end%>
 </tbody>
