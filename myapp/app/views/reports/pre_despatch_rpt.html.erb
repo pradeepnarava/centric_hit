@@ -4,19 +4,22 @@
 <%= render :partial=>'layouts/reports_left_bar' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">Uncoiler Report</div>
+    <div class="titleHead">Pre-despatch TC Report</div>
     <div class="formMain2">
-      <%form_for "report", :url => {:action => :uncoiler_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
+      <%form_for "report", :url => {:action => :pre_despatch_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
       <div class="gridTable" style="font-size:11px;">
           <table width="100%" align="center" cellpadding="0" cellspacing="0" class="" cellpading="0">
             <tbody>
               <tr>
                 <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
                     <tr>
-                      <td width="18%" align="left">Slitting Coil No</td>
-                      <td width="16%" align="left">
-                         <%=f.collection_select(:slittingproduction_id, @slitting_pro,:id,:slitting_coil_no,{:include_blank => "---Select---"})%>
+                      <td width="20%" align="left">Select Customer</td>
+                      <td align="left" style="width:100px;">
+                        <%=f.collection_select(:customer_id, @customer,:customer_id,:customer_name,{:selected=>params[:report][:customer_id]},{:include_blank => "---Select---"})%>
                       </td>
+                    </tr>                  
+                    <tr>
+                      <td width="20%" align="left">Select TC Period</td>
                       <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
                         <td style="display:none;" id="date_div">
                           <table width="100%" id="" style="font-size:100%"  cellpadding="0" cellspacing="0">
@@ -37,9 +40,39 @@
                     </tr>
                   </table></td>
               </tr>
+              <tr><td rawspan="7">&nbsp;</td></tr>
               <tr>
                 <td colspan="7" align="right">
-                   &nbsp;
+                  <table cellpadding="0" cellspacing="0" width="100%" border="1" id="print_section">
+                    <thead>
+                    <th>Date</th>
+                    <th>TC No</th>
+                    <th>Customer</th>
+                    <th>Specification</th>  
+                    <th>Inspected By</th>  
+                    <th>Approved By</th>
+                    <th>View Detail</th>
+                  </thead>
+                  <tbody>
+                    <%@predespatch.each do |obj|%>
+                    <tr>
+                      <td><%=obj.tc_date.to_date.strftime('%d-%m-%Y') if obj%>
+                        </td>
+                        <td><%=obj.test_certificate_no rescue "-"%>
+                        </td>
+                        <td><%=obj.customer.name%>
+                        </td>
+                        <td><%=obj.specification_id%>
+                        </td>
+                        <td><%=Employee.getname(obj.inspected_id) if obj.inspected_id%>
+                        </td>                          
+                        <td><%=Employee.getname(obj.employee_id) if obj.employee_id%>
+                        </td>      
+                        <td><%= link_to "Preview", "/reports/pre_despatch_view" %> </td>
+                    </tr>
+                    <%end%>
+                  </tbody>
+                  </table>                   
                 </td>
               </tr>
             </tbody>

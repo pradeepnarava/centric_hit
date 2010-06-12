@@ -58,7 +58,8 @@ class ReportsController < ApplicationController
     search += " AND STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
     @uncoiler_value = UncoilerReport.find(:all, :conditions => [search,conditions_hash])
   end
-  
+
+
   def taxinvoice_rpt
     render :layout=>false;
   end
@@ -66,7 +67,26 @@ class ReportsController < ApplicationController
   def delivery_rpt
     render :layout=>false;
   end
-
+  
+  def pre_despatch
+    @customer = Predespatchtc.find(:all,:group => 'customer_id')
+  end
+  
+  def pre_despatch_rpt
+    @customer = Predespatchtc.find(:all,:group => 'customer_id')
+    start_date,end_date= duration_dates(params[:report][:dates],params[:start_date],params[:end_date])
+    conditions_hash = {:customer_id => params[:report][:customer_id]}
+    conditions_hash = {:date_start => start_date,:date_end =>end_date} if start_date!='' && end_date!=''
+    search = 'customer_id = :customer_id'
+    search += " AND STR_TO_DATE(tc_date,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    @predespatch = Predespatchtc.find(:all, :conditions => [search,conditions_hash])
+    
+  end
+  
+  def pre_despatch_view
+    @predespatchtc = Predespatchtc.find(1)
+  end
+  
   def duration_dates(parameters,start_date,end_date)
     if parameters == "1months"
       start_date=Date.today.months_ago(1).beginning_of_month

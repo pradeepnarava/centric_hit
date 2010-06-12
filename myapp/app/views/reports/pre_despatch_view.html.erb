@@ -1,13 +1,7 @@
-<script type="text/javascript">
-    livia_datepicker();
-</script>
-<%= render :partial=>'layouts/delivery' %>
 <div id="center-column">
   <div class="gridDiv">
-    <div class="titleHead">Predespatchtc</div>
+
     <div class="formMain" id="pre_disp">
-      <% form_for(@predespatchtc) do |f| %>
-        <%= f.error_messages %>
         <table width="100%" cellpadding="3" cellspacing="3" border="1">
           <tr><td align="center" colspan="4">
               <div style="font-size:15px;"><b>Pre-Despatch Inspection Cum Test Certification</b></div>
@@ -17,13 +11,13 @@
               <label> Test certificate no </label>
             </td>
             <td>
-              <%= f.text_field :test_certificate_no %>
+              <%= @predespatchtc.test_certificate_no %>
             </td>
             <td>
-              <%= f.label :tc_date %>
+              <label> Date</label>
             </td>
             <td>
-              <%= f.text_field :tc_date, :class=>'dateTextBox date_picker'%>
+              <%= @predespatchtc.tc_date%>
             </td>
           
           </tr>
@@ -32,30 +26,30 @@
               <label> Invoice no </label>
             </td>
             <td>
-              <%=f.collection_select( :taxinvoice_id, Taxinvoice.all,:id,:invoice_no,{:include_blank => "----------Select----------"})%>
+              <%=  Taxinvoice.find(@predespatchtc.taxinvoice_id).invoice_no if @predespatchtc.taxinvoice_id %>
             </td>
             <td>
-              <%= f.label :lot_no %>
+              <label>Lot No</label>
             </td>
             <td>
-             <%=f.collection_select( :tube_mill_performance_report_id, @tube_mill,:id,:lot_no,{:include_blank => "---Select---"},{:onchange => "predespatch_lot(this.value);"})%>
+             <%= @predespatchtc.tube_mill_performance_report.lot_no %>
             </td>
           
           </tr>
           <tr>
           
             <td >
-              <%= f.label "Customers Name" %>
+              <label>Customer Name</label>
             </td>
             <td >
-              <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
+              <%= @predespatchtc.customer_name %>
             </td>
 
             <td >
-              <%= f.label "Specification" %>
+              <label>Specification</label>
             </td>
             <td colspan="3">
-              <%=f.collection_select( :specification_id, @specification,:id,:specification_name,{:include_blank => "----------Select----------"},{:onchange => "specification_to_predespatch(this.value);"})%>
+              <%= @predespatchtc.specification.specification_name %>
             </td>
           </tr>
         </table>
@@ -100,29 +94,29 @@
               <table cellpadding="0" cellspacing="0" width="100%" border="1">
                 <tr>
                   <td>
-                    <%= f.text_field :od %>
+                    <%= @predespatchtc.od %>
                   </td>
                   <td>
-                    <%= f.text_field :thickness %>
+                    <%= @predespatchtc.thickness %>
                   </td>
                   <td>
-                    <%= f.text_field :length %>
+                    <%= @predespatchtc.length %>
                   </td>
                 </tr>
               </table>
             </td>
             <td>
-              <%= f.text_field :quantity %>
+              <%= @predespatchtc.quantity %>
             </td>
           
             <td>
-              <%= f.text_field :grade %>
+              <%= @predespatchtc.grade %>
             </td>
             <td>
-              <b> <%= f.text_field :fin_condition %></b>
+              <b> <%= @predespatchtc.fin_condition %></b>
             </td>
             <td>
-              <%= f.text_field :uann_ann %>
+              <%= @predespatchtc.uann_ann %>
             </td>
           </tr>
         </table>
@@ -174,28 +168,28 @@
                       Spacified(Max.)
                     </td>
                     <td>
-                      <%= f.text_field :c_spec %>
+                      <%= @predespatchtc.c_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :mn_spec %>
+                      <%= @predespatchtc.mn_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :s_spec %>
+                      <%= @predespatchtc.s_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :p_spec %>
+                      <%= @predespatchtc.p_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :si_spec %>
+                      <%= @predespatchtc.si_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :al_spec %>
+                      <%= @predespatchtc.al_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :ni_spec %>
+                      <%= @predespatchtc.ni_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :cr_spec %>
+                      <%= @predespatchtc.cr_spec %>
                     </td>
                   </tr>
                   <tr>
@@ -203,28 +197,28 @@
                       Observed
                     </td>
                     <td>
-                      <%= f.text_field :c_obs  %>
+                      <%= @predespatchtc.c_obs  %>
                     </td>
                     <td>
-                      <%= f.text_field :mn_obs  %>
+                      <%= @predespatchtc.mn_obs  %>
                     </td>
                     <td>
-                      <%= f.text_field :s_obs  %>
+                      <%= @predespatchtc.s_obs  %>
                     </td>
                     <td>
-                      <%= f.text_field :p_obs  %>
+                      <%= @predespatchtc.p_obs  %>
                     </td>
                     <td>
-                      <%= f.text_field :si_obs  %>
+                      <%= @predespatchtc.si_obs  %>
                     </td>
                     <td>
-                      <%= f.text_field :al_obs  %>
+                      <%= @predespatchtc.al_obs  %>
                     </td>
                     <td>
-                      <%= f.text_field :ni_obs  %>
+                      <%= @predespatchtc.ni_obs  %>
                     </td>
                     <td>
-                      <%= f.text_field :cr_obs  %>
+                      <%= @predespatchtc.cr_obs  %>
                     </td>
                   
                   </tr>
@@ -255,31 +249,31 @@
                 <tbody>
                   <tr>
                     <td>
-                      <%= f.text_field :ys_spec %>
+                      <%= @predespatchtc.ys_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :ts_spec %>
+                      <%= @predespatchtc.ts_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :el_spec %>
+                      <%= @predespatchtc.el_spec %>
                     </td>
                     <td>
-                      <%= f.text_field :gl_hardness_spec %>
+                      <%= @predespatchtc.gl_hardness_spec %>
                     </td>
                   
                   </tr>
                   <tr>
                     <td>
-                      <%= f.text_field :ys_obs %>
+                      <%= @predespatchtc.ys_obs %>
                     </td>
                     <td>
-                      <%= f.text_field :ts_obs %>
+                      <%= @predespatchtc.ts_obs %>
                     </td>
                     <td>
-                      <%= f.text_field :el_obs %>
+                      <%= @predespatchtc.el_obs %>
                     </td>
                     <td>
-                      <%= f.text_field :el_hardness_obs %>
+                      <%= @predespatchtc.el_hardness_obs %>
                     </td>
                   </tr>
                 </tbody>
@@ -323,16 +317,16 @@
                   Spacified(Max.)
                 </td>
                 <td>
-                 <%= f.text_field :od_spec %>
+                 <%= @predespatchtc.od_spec %>
                 </td>
                 <td>
-                <%= f.text_field :id_spec %>
+                <%= @predespatchtc.id_spec %>
                 </td>
                 <td>
-                  <%= f.text_field :thick_spec %>
+                  <%= @predespatchtc.thick_spec %>
                 </td>
                 <td>
-                  <%= f.text_field :length_spec %>
+                  <%= @predespatchtc.length_spec %>
                 </td>
               </tr>
               <tr>
@@ -340,16 +334,16 @@
                   Observed
                 </td>
                 <td>
-                 <%= f.text_field :od_obs %>
+                 <%= @predespatchtc.od_obs %>
                 </td>
                 <td>
-                <%= f.text_field :id_obs %>
+                <%= @predespatchtc.id_obs %>
                 </td>
                 <td>
-                  <%= f.text_field :thick_obs %>
+                  <%= @predespatchtc.thick_obs %>
                 </td>
                 <td>
-                  <%= f.text_field :length_obs %>
+                  <%= @predespatchtc.length_obs %>
                 </td>
               </tr>
               <tr>
@@ -379,16 +373,16 @@
                   Specified
                 </td>
                 <td>
-                   <%= f.text_field :flaring_spec %>
+                   <%= @predespatchtc.flaring_spec %>
                 </td>
                 <td>
-                  <%= f.text_field :flattening_spec %>
+                  <%= @predespatchtc.flattening_spec %>
                 </td>
                 <td>
-                  <%= f.text_field :bending_spec %>
+                  <%= @predespatchtc.bending_spec %>
                 </td>
                 <td>
-                  <%= f.text_field :crushing_spec %>
+                  <%= @predespatchtc.crushing_spec %>
                 </td>
               </tr>
               <tr>
@@ -396,16 +390,16 @@
                    Observed
                 </td>
                 <td>
-                   <%= f.text_field :flaring_obs %>
+                   <%= @predespatchtc.flaring_obs %>
                 </td>
                 <td>
-                  <%= f.text_field :flattening_obs %>
+                  <%= @predespatchtc.flattening_obs %>
                 </td>
                 <td>
-                  <%= f.text_field :bending_obs %>
+                  <%= @predespatchtc.bending_obs %>
                 </td>
                 <td>
-                  <%= f.text_field :crushing_obs %>
+                  <%= @predespatchtc.crushing_obs %>
                 </td>
               </tr>
             </tbody>
@@ -418,7 +412,7 @@
               Scratch Mark
             </td>
             <td>
-              <%= f.text_field :scratch_mark %>
+              <%= @predespatchtc.scratch_mark %>
             </td>
           </tr>
           <tr>
@@ -426,7 +420,7 @@
               Roll/Pickup Mark
             </td>
             <td>
-              <%= f.text_field :roll_pick_up %>
+              <%= @predespatchtc.roll_pick_up %>
             </td>
           </tr>
            <tr>
@@ -434,7 +428,7 @@
               Pits/Dents
             </td>
             <td>
-             <%= f.text_field :pits_dents %>
+             <%= @predespatchtc.pits_dents %>
             </td>
           </tr>
           <tr>
@@ -442,7 +436,7 @@
               Bend
             </td>
             <td>
-              <%= f.text_field :bend %>
+              <%= @predespatchtc.bend %>
             </td>
           </tr>
            <tr>
@@ -450,7 +444,7 @@
               Corner Radius
             </td>
             <td>
-              <%= f.text_field :corner_radius %>
+              <%= @predespatchtc.corner_radius %>
             </td>
           </tr>
           <tr>
@@ -458,7 +452,7 @@
               Squareness
             </td>
             <td>
-              <%= f.text_field :squareness %>
+              <%= @predespatchtc.squareness %>
             </td>
           </tr>
            <tr>
@@ -466,7 +460,7 @@
               Twist
             </td>
             <td>
-              <%= f.text_field :twist %>
+              <%= @predespatchtc.twist %>
             </td>
           </tr>
         </table>
@@ -485,7 +479,7 @@
             Coil No.
           </td>
           <td>
-            <%= f.text_field :rawmaterial_id %>
+               <%= @predespatchtc.rawmaterial_id %>
           </td>
         </tr>
         <tr>
@@ -498,22 +492,21 @@
             Inspected By.
           </td>
           <td style="padding-top:50px;" align="center" width="25%">
-            <%=f.collection_select(:inspected_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%>
+            <%= Employee.getname(@predespatchtc.inspected_id) if @predespatchtc.inspected_id%>
           </td>
           <td style="padding-top:50px;" align="center" width="25%">
             Aproved By.
           </td>
           <td style="padding-top:50px;" align="center" width="25%">
-            <%=f.collection_select(:employee_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%>
+            <%= Employee.getname(@predespatchtc.employee_id) if @predespatchtc.employee_id%>
           </td>
         </tr>
   </table>  
           <br class="clear"/>
           <div class="txtC" id="submit_div">
-            <%= f.submit "Create" , :class=>'button submit_buttons'%>
+            Print Button
           </div>
           <br class="clear"/>
         </div>
-      <% end %>
     </div>
 </div>

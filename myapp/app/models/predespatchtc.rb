@@ -4,4 +4,8 @@ class Predespatchtc < ActiveRecord::Base
   belongs_to:tube_mill_performance_report
   #belongs_to:taxinvoice
   belongs_to:specification
+  
+  def customer_name
+    self.customer.name
+  end
 end

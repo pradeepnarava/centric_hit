@@ -13,5 +13,8 @@
           <li class ='<%=(controller.controller_name.eql?('reports') && ['uncol_rpt','uncoiler_rpt'].include?(controller.action_name))? 'active' : ''%>'>
           <span><span><%=link_to("Uncoiler Report", '/reports/uncol_rpt')%></span></span>
           </li>
+          <li class ='<%=(controller.controller_name.eql?('reports') && ['pre_despatch','pre_despatch_rpt'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Pre-despatch TC", '/reports/pre_despatch')%></span></span>
+          </li>          
         </ul>
 </div>
