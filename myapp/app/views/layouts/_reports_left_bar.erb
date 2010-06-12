@@ -15,6 +15,12 @@
           </li>
           <li class ='<%=(controller.controller_name.eql?('reports') && ['pre_despatch','pre_despatch_rpt'].include?(controller.action_name))? 'active' : ''%>'>
           <span><span><%=link_to("Pre-despatch TC", '/reports/pre_despatch')%></span></span>
-          </li>          
+          </li>       
+	  <li class ='<%=(controller.controller_name.eql?('reports') && ['taxinvoice_new'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Tax Invoice Report", '/reports/taxinvoice_new')%></span></span>
+          </li>
+          <li class ='<%=(controller.controller_name.eql?('reports') && ['delivery'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Delivery Challan Report", '/reports/delivery')%></span></span>
+          </li>   
         </ul>
 </div>

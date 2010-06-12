@@ -61,11 +61,24 @@ class ReportsController < ApplicationController
 
 
   def taxinvoice_rpt
+    @tax_invoice=Taxinvoice.find_by_id(params[:report][:taxinvoice_id])
+    @delivery=Deliverychallan.find(:all ,:conditions=>["delivery_challan_no=#{@tax_invoice.deliverychallan_id}"])
     render :layout=>false;
   end
 
+  def delivery
+    @delivery=Deliverychallan.find :all
+  end
+  
   def delivery_rpt
+    @delivery_all=Deliverychallan.find :all
+    @delivery=Deliverychallan.find_by_id(params[:report][:deliverychallan_id])
+    @address=Taxinvoice.find_by_deliverychallan_id(params[:report][:deliverychallan_id])
     render :layout=>false;
+  end
+  
+  def taxinvoice_new
+    @tax_invoice=Taxinvoice.find :all
   end
   
   def pre_despatch

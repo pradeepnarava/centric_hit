@@ -1,0 +1,52 @@
+  <script type="text/javascript">
+  livia_datepicker();
+  </script>
+<%= render :partial=>'layouts/reports_left_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Tax Invoice Report</div>
+    <div class="formMain2">
+      <%form_for "report", :url => {:action => :taxinvoice_rpt,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
+      <div class="gridTable" style="font-size:11px;">
+          <table width="100%" align="center" cellpadding="0" cellspacing="0" class="" cellpading="0">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
+                    <tr>
+                      <td width="18%" align="left">TaxInvoice No</td>
+                      <td width="16%" align="left">
+                         <%=f.collection_select(:taxinvoice_id, @tax_invoice,:id,:invoice_no,{:include_blank => "---Select---"})%>
+                      </td>
+                      <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
+                        <td style="display:none;" id="date_div">
+                          <table width="100%" id="" style="font-size:100%"  cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><div style="display:none;"><input type="checkbox" name="date_checked" id="date_checked" value="1">
+                                </div>
+                              </td>
+                              <td style="width:60px;" align="right">Start Date&nbsp;</td>
+                              <td  align="left"><input type="text" id="parameters_0" name="start_date" style="width:60px;"  readonly="true" class="dateTextBox date_picker" value=""></td>
+                              <td style="width:60px;" align="right">End Date&nbsp;</td>
+                              <td  align="left"> <input type="text" id="parameters_1" name="end_date"  style="width:60px;" readonly="true" class="dateTextBox date_picker" value=""></td>
+                            </tr>
+                          </table>
+                        </td>
+                      <td width="25%">
+                        <input id="com_notes_entries[3]_submit" class="button" style="font-size: 11px;" type="submit" value="Run Report" name="commit"/>
+                      </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td colspan="7" align="right">
+                   &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      <%end%>
+    </div>
+  </div>
+</div><br class="clear"/>

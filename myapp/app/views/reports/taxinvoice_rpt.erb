@@ -9210,21 +9210,17 @@
 </tr>
 <tr height=34 style='height:23.3pt'>
 <td class=xl206 colspan=2 rowspan=3>Name & Address of Buyor :- </td>
-<td class=xl208 colspan=9 rowspan=3>M/s Vishwadeep Pressparts Pvt. Ltd.
- Plant - I , A – 163, H - Block, 
- MIDC , Pimpri,
- Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
-Mob. - 9764997859 </td>
+<td class=xl208 colspan=9 rowspan=3><%=@tax_invoice.name_and_adress_of_buyor%></td>
 <td class=xl211 colspan=7 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Date of preparation of Invoice:-</td>
-<td class=xl214 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>19.04.2010</td>
+<td class=xl214 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.date_of_preparation_invoice.to_date%></td>
 </tr>
 <tr height=27 style='height:18.8pt'>
 <td class=xl221 colspan=7 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Time of Invoice:-</td>
 <td class=xl214 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>20.20 Hrs.</td>
 </tr>
-<tr height=50 style='height:34.5pt'>
+<tr height=50 style='height:34.5pt'><%=@tax_invoice.date_of_preparation_invoice.to_date%>
 <td class=xl221 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>In Words :-</td>
-<td class=xl226 colspan=5 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>Twenty twenty Hrs.</td>
+<td class=xl226 colspan=5 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.in_words if @tax_invoice.in_words%></td>
 </tr>
 <tr height=19 style='height:12.8pt'>
 <td class=xl229 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>ECC No. </td>
@@ -9236,25 +9232,21 @@ Mob. - 9764997859 </td>
 </tr>
 <tr height=33 style='height:22.5pt'>
 <td class=xl216 colspan=2 rowspan=3>Name & Address of Consignee :- </td>
-<td class=xl238 colspan=9 rowspan=3>M/s Vishwadeep Pressparts Pvt. Ltd.
- Plant - I , A – 163, H - Block, 
- MIDC , Pimpri,
- Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
-Mob. - 9764997859 </td>
+<td class=xl238 colspan=9 rowspan=3><%=@tax_invoice.name_and_adress_of_consignee%></td>
 <td class=xl233 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Invoice No.:- </td>
-<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.invoice_no%></td>
 <td class=xl236>Date :-</td>
-<td class=xl242>19.04.2010</td>
+<td class=xl242><%=@tax_invoice.date_invoice_no.to_date%></td>
 </tr>
 <tr height=33 style='height:22.5pt'>
 <td class=xl233 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Challan No.:-</td>
-<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.challan_no if @tax_invoice.challan_no%></td>
 <td class=xl236>Date :-</td>
-<td class=xl242>19.04.2010</td>
+<td class=xl242><%=@tax_invoice.date_challan_no.to_date%></td>
 </tr>
 <tr height=43 style='height:30.0pt'>
 <td class=xl252 colspan=4 rowspan=1>Vehicle No:- </td>
-<td class=xl254 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'>MH -12- DT- 9190</td>
+<td class=xl254 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'><%=@tax_invoice.vehicle_no if @tax_invoice.vehicle_no%></td>
 <td class=xl257>L.R. No.:- </td>
 <td class=xl258>-</td>
 </tr>

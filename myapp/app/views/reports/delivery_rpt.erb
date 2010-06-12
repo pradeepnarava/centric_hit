@@ -18,7 +18,9 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T- 24, MIDC, <br/>
     Taloja(Dsit :- Raigad) - 410208</b>
     </td>
-    <td colspan="2" width="50%"> <img src="logo.png" width="140" height="70" /></td>
+    <td colspan="2" width="50%">
+      <%= image_tag '/images/logo.png',:height=>"55", :width=>"210",:alt=>"",:title=>"" %>
+    </td>
   </tr><tr>
     <td align="center" style="font-size:14px" colspan="4">DELIVERY CHALLAN</td>
   </tr>
@@ -27,19 +29,19 @@
     <td colspan="2" style="font-weight:bolder;font-size:13px">To:-</td>
   </tr>
   <tr>
-    <td colspan="2">From address</td>
-    <td colspan="2">To address</td>
+    <td colspan="2"><%=@address.name_and_adress_of_buyor%></td>
+    <td colspan="2"><%=@address.name_and_adress_of_consignee%></td>
   </tr>
   <tr>
     <td>Delevery Challan No:-</td>    
-    <td>challan no</td>
+    <td><%=@delivery.delivery_challan_no%></td>
     <td >Date:-</td>
     <td>give the date</td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>
     <td >Vehicle No:-</td>
-    <td>Number</td>
+    <td><%=@delivery.vehicle_no%></td>
   </tr>
   <tr>
     <td colspan="4">&nbsp;</td>
@@ -56,15 +58,19 @@
     <th scope="col">Qty.<br/>(Mtrs)</th>
     <th scope="col">Remarks</th>
   </tr>
+  <%i=1%>
+  <%for item in @delivery_all%>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><%=i%></td>
+    <td><%=item.od%></td>
+    <td><%=item.thickness%></td>
+    <td><%=item.length%></td>
+    <td><%=item.quantity_pcs%></td>
+    <td><%=item.quantity_mtrs%></td>
+    <td><%=item.remark if item.remark%></td>
+     <% i += 1 %>
   </tr>
+  <%end%>
 </table>
 
     </td>
@@ -73,10 +79,10 @@
     <td colspan="4">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="4" align="center">VAT TIN :- (number) w.e.f 31.05.2010</td>
+    <td colspan="4" align="center">VAT TIN :- (<%=@delivery.vat_tin if @delivery.vat_tin%>) w.e.f <%=@delivery.created_at.to_date%></td>
   </tr>   
   <tr>
-    <td colspan="4" align="center">CST TIN :- (number) w.e.f 31.05.2010</td>
+    <td colspan="4" align="center">CST TIN :- (<%=@delivery.cst_tin if @delivery.cst_tin%>) w.e.f  <%=@delivery.created_at.to_date%></td>
   </tr>  
   <tr>
     <td colspan="2">&nbsp;</td>
