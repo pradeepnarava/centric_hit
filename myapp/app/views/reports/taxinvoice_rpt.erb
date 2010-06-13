@@ -9210,9 +9210,9 @@
 </tr>
 <tr height=34 style='height:23.3pt'>
 <td class=xl206 colspan=2 rowspan=3>Name & Address of Buyor :- </td>
-<td class=xl208 colspan=9 rowspan=3><%=@tax_invoice.name_and_adress_of_buyor%></td>
+<td class=xl208 colspan=9 rowspan=3><%=@tax_invoice[0].name_and_adress_of_buyor%></td>
 <td class=xl211 colspan=7 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Date of preparation of Invoice:-</td>
-<td class=xl214 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.date_of_preparation_invoice.to_date%></td>
+<td class=xl214 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%=@tax_invoice[0].date_of_preparation_invoice.to_date%></td>
 </tr>
 <tr height=27 style='height:18.8pt'>
 <td class=xl221 colspan=7 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Time of Invoice:-</td>
@@ -9220,7 +9220,7 @@
 </tr>
 <tr height=50 style='height:34.5pt'>
 <td class=xl221 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>In Words :-</td>
-<td class=xl226 colspan=5 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.in_words if @tax_invoice.in_words%></td>
+<td class=xl226 colspan=5 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%=@tax_invoice[0].in_words if @tax_invoice[0].in_words%></td>
 </tr>
 <tr height=19 style='height:12.8pt'>
 <td class=xl229 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>ECC No. </td>
@@ -9232,21 +9232,21 @@
 </tr>
 <tr height=33 style='height:22.5pt'>
 <td class=xl216 colspan=2 rowspan=3>Name & Address of Consignee :- </td>
-<td class=xl238 colspan=9 rowspan=3><%=@tax_invoice.name_and_adress_of_consignee%></td>
+<td class=xl238 colspan=9 rowspan=3><%=@tax_invoice[0].name_and_adress_of_consignee%></td>
 <td class=xl233 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Invoice No.:- </td>
-<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.invoice_no%></td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%=@tax_invoice[0].invoice_no%></td>
 <td class=xl236>Date :-</td>
-<td class=xl242><%=@tax_invoice.date_invoice_no.to_date%></td>
+<td class=xl242><%=@tax_invoice[0].date_invoice_no.to_date%></td>
 </tr>
 <tr height=33 style='height:22.5pt'>
 <td class=xl233 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Challan No.:-</td>
-<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%=@tax_invoice.challan_no if @tax_invoice.challan_no%></td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%=@tax_invoice[0].challan_no if @tax_invoice[0].challan_no%></td>
 <td class=xl236>Date :-</td>
-<td class=xl242><%=@tax_invoice.date_challan_no.to_date%></td>
+<td class=xl242><%=@tax_invoice[0].date_challan_no.to_date%></td>
 </tr>
 <tr height=43 style='height:30.0pt'>
 <td class=xl252 colspan=4 rowspan=1>Vehicle No:- </td>
-<td class=xl254 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'><%=@tax_invoice.vehicle_no if @tax_invoice.vehicle_no%></td>
+<td class=xl254 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'><%=@tax_invoice[0].vehicle_no if @tax_invoice[0].vehicle_no%></td>
 <td class=xl257>L.R. No.:- </td>
 <td class=xl258>-</td>
 </tr>
@@ -9279,163 +9279,31 @@
 <td class=xl278>MM</td>
 <td class=xl278>Mtrs.</td>
 </tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl285>1</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>25X25</td>
-<td class=xl286>1.20</td>
-<td class=xl287>0.692</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl289>&nbsp;</td>
-<td class=xl290>1175</td>
-<td class=xl291>813.10</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>39.47</td>
-<td class=xl292 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl294 colspan=1 rowspan=8 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'>10%</td>
-<td class=xl295>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>32093</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl298>2</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>25X25</td>
-<td class=xl286>1.20</td>
-<td class=xl287>0.743</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl299>&nbsp;</td>
-<td class=xl290>450</td>
-<td class=xl291>334.35</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>39.47</td>
-<td class=xl300 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl303>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>13197</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl304>3</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>25X25</td>
-<td class=xl286>1.20</td>
-<td class=xl287>0.324</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl305>&nbsp;</td>
-<td class=xl290>2577</td>
-<td class=xl291>834.95</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>39.47</td>
-<td class=xl300 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl303>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>32955</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl304>4</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>25X25</td>
-<td class=xl286>1.20</td>
-<td class=xl287>0.441</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl305>&nbsp;</td>
-<td class=xl290>1020</td>
-<td class=xl291>449.82</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>39.47</td>
-<td class=xl300 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl303>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>17754</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl304>5</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>25X25</td>
-<td class=xl286>1.20</td>
-<td class=xl287>0.390</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl305>&nbsp;</td>
-<td class=xl290>2674</td>
-<td class=xl291>1042.86</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>39.47</td>
-<td class=xl300 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl303>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>41162</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl304>6</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>-</td>
-<td class=xl286>-</td>
-<td class=xl287>-</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl306>&nbsp;</td>
-<td class=xl290>-</td>
-<td class=xl291>-</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>-</td>
-<td class=xl300 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl303>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl298>7</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>-</td>
-<td class=xl286>-</td>
-<td class=xl287>-</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl289>&nbsp;</td>
-<td class=xl290>-</td>
-<td class=xl291>-</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>-</td>
-<td class=xl300 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl303>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl307>8</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>-</td>
-<td class=xl286>-</td>
-<td class=xl287>-</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl308>&nbsp;</td>
-<td class=xl290>-</td>
-<td class=xl291>-</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>-</td>
-<td class=xl309 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
-<td class=xl312>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl307>9</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>-</td>
-<td class=xl286>-</td>
-<td class=xl287>-</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl308>&nbsp;</td>
-<td class=xl290>-</td>
-<td class=xl291>-</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>-</td>
-<td class=xl309 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
-<td class=xl313>&nbsp;</td>
-<td class=xl312>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
-</tr>
-<tr height=24 style='height:16.5pt'>
-<td class=xl307>10</td>
-<td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>-</td>
-<td class=xl286>-</td>
-<td class=xl287>-</td>
-<td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
-<td class=xl308>&nbsp;</td>
-<td class=xl290>-</td>
-<td class=xl291>-</td>
-<td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
-<td class=xl291>-</td>
-<td class=xl309 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
-<td class=xl313>&nbsp;</td>
-<td class=xl312>&nbsp;</td>
-<td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
-</tr>
+<%i=1%>
+<%@tax_invoice.each do |obj|%>
+  <tr height=24 style='height:16.5pt'>
+    <td class=xl285><%=i%></td>
+    <td class=xl286 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%= obj.od if obj.od%></td>
+    <td class=xl286><%= obj.thickness if obj.thickness%></td>
+    <td class=xl287><%= obj.length if obj.length%></td>
+    <td class=xl288 colspan=2 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
+    <td class=xl289>&nbsp;</td>
+    <td class=xl290><%= obj.pieces if obj.pieces%></td>
+    <td class=xl291><%= obj.meters if obj.meters%></td>
+    <td class=xl290 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>-</td>
+    <td class=xl291><%= obj.rs_mtrs if obj.rs_mtrs%></td>
+    <td class=xl292 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>&nbsp;</td>
+    <td class=xl294 colspan=1 rowspan=8 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid windowtext;'><%= obj.rate_of_duty if obj.rate_of_duty%></td>
+    <td class=xl295>&nbsp;</td>
+    <td class=xl296 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%= obj.amount if obj.amount%></td>
+  </tr>
+  <%i = i+ 1%>
+<%end%>
+
 <tr height=24 style='height:16.5pt'>
 <td class=xl314 colspan=12 rowspan=1>Payment of Excise Duty Payable under Rule 8 of C.Ex. Rules-2002</td>
 <td class=xl316 colspan=7 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>TOTAL ( Rs. )</td>
-<td class=xl318 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>137161</td>
+<td class=xl318 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'><%=@tax_invoice[0].total_all%></td>
 </tr>
 <tr height=20 style='height:13.5pt'>
 <td class=xl320 colspan=4 rowspan=2 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Excise Duty Payable Rs. :-</td>
@@ -9445,7 +9313,7 @@
 </tr>
 <tr height=25 style='height:17.3pt'>
 <td class=xl329 colspan=7 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>TOTAL  (Rs.)</td>
-<td class=xl331 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>137161</td>
+<td class=xl331 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'><%=@tax_invoice[0].total_all%></td>
 </tr>
 <tr height=20 style='height:13.5pt'>
 <td class=xl327 colspan=4 rowspan=2 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Ed. Cess Payable (P) Rs. :- </td>

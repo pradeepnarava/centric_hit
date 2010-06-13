@@ -4,4 +4,8 @@ class Taxinvoice < ActiveRecord::Base
   belongs_to:customer
   belongs_to:deliverychallan
   validates_presence_of:deliverychallan_id
+  
+  def customer_name
+    self.customer.name
+  end
 end

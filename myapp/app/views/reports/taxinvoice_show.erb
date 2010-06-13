@@ -1,0 +1,96 @@
+  <script type="text/javascript">
+  livia_datepicker();
+  </script>
+<%= render :partial=>'layouts/reports_left_bar' %>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Tax Invoice Report</div>
+    <div class="formMain2">
+      <%form_for "report", :url => {:action => :taxinvoice_show,:format => 'html'} ,:html => {:onsubmit => 'return validate_date()'} do |f| %>
+      <div class="gridTable" style="font-size:11px;">
+          <table width="100%" align="center" cellpadding="0" cellspacing="0" class="" cellpading="0">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
+                    <tr>
+                      <td width="20%" align="left">Select Customer</td>
+                      <td align="left" style="width:100px;">
+                        <%=f.collection_select(:customer_id, @customer,:customer_id,:customer_name,{:selected=>params[:report][:customer_id]},{:include_blank => "---Select---"})%>
+                      </td>
+                      <td width="18%" align="left">Select Period of Taxinvoice</td>
+                      <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{:selected=>params[:report][:dates]},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
+                      <% if params[:report][:dates] == "5"
+                         style="display:block"
+                           else
+                         style="display:none"
+                       end %>
+                      <td style=<%=style%> id="date_div">
+                          <table width="100%" id="" style="font-size:100%"  cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><div style="display:none;"><input type="checkbox" name="date_checked" id="date_checked" value="1">
+                                </div>
+                              </td>
+                              <td style="width:60px;" align="right">Start Date&nbsp;</td>
+                              <td  align="left"><input type="text" id="parameters_0" name="start_date" style="width:60px;"  readonly="true" class="dateTextBox date_picker"value=<%=params[:start_date]%> ></td>
+                              <td style="width:60px;" align="right">End Date&nbsp;</td>
+                              <td  align="left"> <input type="text" id="parameters_1" name="end_date"  style="width:60px;" readonly="true" class="dateTextBox date_picker" value=<%=params[:end_date]%> ></td>
+                            </tr>
+                          </table>
+                        </td>
+                      <td width="25%">
+                        <input id="com_notes_entries[3]_submit" class="button" style="font-size: 11px;" type="submit" value="Run Report" name="commit"/>
+                      </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                  <td colspan="7" align="right">
+                    <a onclick="print_section('slitting_rpt');" style="cursor: pointer; cursor: hand;">
+            <%= image_tag '/images/print-icon.png',:height=>"38", :width=>"38",:alt=>"",:title=>"" %>
+            </a>
+                  </td>
+                </tr>
+              <tr>
+                <td colspan="7" align="right">
+                  <table cellpadding="0" cellspacing="0" width="100%" border="1" id="slitting_rpt">
+  <thead>
+   <th>Date</th>
+  <th>Coil No</th>
+ <!-- <th>Mother Coil Width</th>
+  <th>Mother Coil Weight</th>
+  <th>Thickness</th> !-->
+  <th>InVoice NO</th>
+  <th>From Address</th>
+  <th>Shiping Address</th>
+  <th>Vehicle No</th>
+  <th>View Plan</th>
+</thead>
+<tbody>
+  <%@taxinvoice_value.each do |obj|%>
+  <tr>
+    <td><%=obj.date_invoice_no.to_date.strftime('%d-%m-%Y')%>
+      </td>
+      <td><%=obj.rawmaterial.name rescue "-"%>
+      </td>
+      <td><%=obj.invoice_no if obj.invoice_no%>
+      </td>
+      <td><%=obj.name_and_adress_of_buyor if obj.name_and_adress_of_buyor%>
+      </td>
+      <td><%=obj.name_and_adress_of_consignee if obj.name_and_adress_of_consignee%>
+      </td>
+      <td><%=obj.vehicle_no if obj.vehicle_no%>
+      </td>
+      <td><%= link_to("Preview", "/reports/taxinvoice_rpt?inovice_id=#{obj.invoice_no}") %></td>
+  </tr>
+  <%end%>
+</tbody>
+</table></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      <%end%>
+    </div>
+  </div>
+</div><br class="clear"/>

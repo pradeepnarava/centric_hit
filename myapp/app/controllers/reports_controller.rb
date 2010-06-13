@@ -70,13 +70,6 @@ class ReportsController < ApplicationController
     @uncoiler_value = UncoilerReport.find(:all, :conditions => [search,conditions_hash])
   end
 
-
-  def taxinvoice_rpt
-    @tax_invoice=Taxinvoice.find_by_id(params[:report][:taxinvoice_id])
-    @delivery=Deliverychallan.find(:all ,:conditions=>["delivery_challan_no=#{@tax_invoice.deliverychallan_id}"])
-    render :layout=>false;
-  end
-
   def delivery
     @delivery=Deliverychallan.find :all
   end
@@ -89,7 +82,24 @@ class ReportsController < ApplicationController
   end
   
   def taxinvoice_new
-    @tax_invoice=Taxinvoice.find :all
+    @customer = Taxinvoice.find(:all,:group => 'customer_id')
+  end
+  
+  def taxinvoice_show
+    
+    @customer = Taxinvoice.find(:all,:group => 'customer_id')
+    start_date,end_date= duration_dates(params[:report][:dates],params[:start_date],params[:end_date])
+    conditions_hash = {:customer_id => params[:report][:customer_id]}
+    conditions_hash = {:date_start => start_date,:date_end =>end_date} if start_date!='' && end_date!=''
+    search = 'customer_id = :customer_id'
+    search += " AND STR_TO_DATE(tc_date,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    @taxinvoice_value = Taxinvoice.find(:all, :conditions => [search,conditions_hash])
+    
+  end
+  
+  def taxinvoice_rpt
+    @tax_invoice = Taxinvoice.find(:all,:conditions=>["invoice_no=#{params[:invoice_id].to_i}"],:group => 'invoice_no')
+    render :layout=>false;
   end
   
   def pre_despatch
