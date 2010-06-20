@@ -2,7 +2,7 @@
         <h3>Stock</h3>
         <ul class="nav">
           <li class ='<%=controller.controller_name.eql?('rawmaterials') && ['index','new','edit'].include?(controller.action_name) ? 'active' : ''%>'>
-          <span><span><%=link_to("Raw Materials", rawmaterials_path)%></span></span>
+          <span><span><%=link_to("Raw Materials Receipt", rawmaterials_path)%></span></span>
           </li>
           <li class ='<%=controller.controller_name.eql?('rawmaterials') &&  controller.action_name.eql?('wide_coil')? 'active' : ''%>'>
           <span><span><%=link_to("Wide Coils", "/wide_coil")%></span></span>

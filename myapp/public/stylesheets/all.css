@@ -192,21 +192,22 @@ ul.nav li.last {background:none;}
         font-size:11px;
 	float:left;
 	width:940px;
-	border-left:2px solid #f70;
 	padding:0 0 0 9px;
 	margin:0 0 4px 0;
 	}
 /* text page header */
 .top-bar h1 {
-	font:16px/17px verdana,sans-serif;
+	float:middle;
+        font:16px/17px verdana,sans-serif;
 	color:#43729F;
 	margin:0 0 4px 0;
+        padding-left:350px;
 	}
 /* orange button */
 .top-bar a.button {
-	float:right;
+	float:left;
 	display:block;
-	width:75px;
+	width:72px;
 	height:35px;
 	text-align:center;
 	color:#fff;
