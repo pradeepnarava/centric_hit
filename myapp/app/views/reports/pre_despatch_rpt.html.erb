@@ -68,7 +68,7 @@
                         </td>                          
                         <td><%=Employee.getname(obj.employee_id) if obj.employee_id%>
                         </td>      
-                        <td><%= link_to "Preview", "/reports/pre_despatch_view" %> </td>
+                        <td><%= link_to "Preview", "/reports/pre_despatch_view?id=#{obj.id}" %> </td>
                     </tr>
                     <%end%>
                   </tbody>

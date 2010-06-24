@@ -1,7 +1,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>INVOICE PRINTING</title>
+<title>TAX-INVOICE PRINTING</title>
+<style type="text/css">
+	@media print {
+		input#btnPrint {
+		display: none;
+		}
+	}
+</style>
 <style>
 .xl00 {
 	padding:0px 2px;
@@ -9142,6 +9149,7 @@
 </style>
 </head>
 <body>
+  <input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />
 <div style='padding:5px;'>
 <table border=0 cellpadding=1 cellspacing=0 style='border-collapse:collapse; table-layout:auto;'>
 <col width=6 style='width:4pt'>
@@ -9307,7 +9315,7 @@
 </tr>
 <tr height=20 style='height:13.5pt'>
 <td class=xl320 colspan=4 rowspan=2 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Excise Duty Payable Rs. :-</td>
-<td class=xl322 colspan=8 rowspan=2 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Thirteen thousand seven hundred and sixteen only.</td>
+<td class=xl322 colspan=8 rowspan=2 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'><%=@tax_invoice[0].in_words rescue "-"%></td>
 <td class=xl323 colspan=7 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>Packing  &  Forwarding ( Rs. )</td>
 <td class=xl325 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
 </tr>
@@ -9408,9 +9416,1171 @@
 <tr height=11 style='height:7.5pt'>
 <td class=xl423 colspan=22 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.5pt solid windowtext;'>&nbsp;</td>
 </tr>
-
+<tr height=10 style='height:6.8pt'>
+<td class=xl426 colspan=22 rowspan=1>&nbsp;</td>
+<td class=xl427>&nbsp;</td>
+</tr>
+<tr height=6 style='height:3.8pt'>
+<td class=xl56 colspan=23 rowspan=1 style='border-right:1.5pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
+<tr height=27 style='height:18.8pt'>
+<td class=xl56 colspan=1 rowspan=52>&nbsp;</td>
+<td class=xl428 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TAX INVOICE      </td>
+<td class=xl430 colspan=1 rowspan=17 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl431 colspan=9 rowspan=2>DUPLICATE                                                                                For TRANSPORTER ( MODVT COPY)</td>
+<td class=xl433 colspan=1 rowspan=53 style='border-right:1.5pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
+<tr height=15 style='height:10.5pt'>
+<td class=xl434 colspan=11 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'> Invoice for removal of Excisable goods from Factory or Warehouse on payment of duty (Rule 11 of Central Excise Cenvat Rules - 2002)</td>
+</tr>
+<tr height=13 style='height:9.0pt'>
+<td class=xl439 colspan=9 rowspan=3>For - Centric Steel Limited                            ________________________________________________________________________________________      Authorised Signatory                                                                                                     </td>
+</tr>
+<tr height=13 style='height:9.0pt'>
+<td class=xl441 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Licencee :- </td>
+</tr>
+<tr height=51 style='height:35.3pt'>
+<td class=xl444 colspan=4 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl446 colspan=7 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Centric Steel Limited                                                                 T - 24, MIDC,                                                                             Taloja ( Dist:- Raigad) -  410-208</td>
+</tr>
+<tr height=13 style='height:9.0pt'>
+<td class=xl187 colspan=9 rowspan=1>Range:- Office of the Assistant Commissioner of Central Excise </td>
+</tr>
+<tr height=14 style='height:9.8pt'>
+<td class=xl193 colspan=9 rowspan=1>Range :- Taloja - VI</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl449 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name of Excisable Goods :-  MS ERW STEEL TUBES</td>
+<td class=xl193 colspan=9 rowspan=1>Commissionorate :- Belapur C.G.O. Complex,CBD Belapur,Navi Mumbai.</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl449 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Chapter Heading / Sub Heading No:-     73069011</td>
+<td class=xl201 colspan=9 rowspan=1>ECC No.:- AABCB3566CXM001</td>
+</tr>
+<tr height=15 style='height:10.5pt'>
+<td class=xl451 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>PAN No:- </td>
+<td class=xl193 colspan=9 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>Notification no. :- 006/2010 dtd. 27.02.2010</td>
+</tr>
+<tr height=36 style='height:24.8pt'>
+<td class=xl453 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Buyor :- </td>
+<td class=xl455 colspan=9 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>M/s Vishwadeep Pressparts Pvt. Ltd.
+ Plant - I , A – 163, H - Block, 
+ MIDC , Pimpri,
+ Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
+Mob. - 9764997859 </td>
+<td class=xl456 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date of preparation of Invoice:-</td>
+<td class=xl459 colspan=2 rowspan=1>19.04.2010</td>
+</tr>
+<tr height=34 style='height:23.3pt'>
+<td class=xl461 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Time of Invoice:-</td>
+<td class=xl459 colspan=2 rowspan=1>20.20 Hrs.</td>
+</tr>
+<tr height=40 style='height:27.8pt'>
+<td class=xl461 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>In Words :-</td>
+<td class=xl464 colspan=5 rowspan=1>Twenty twenty Hrs.</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl449 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>ECC No. </td>
+<td class=xl467 colspan=9 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl468 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>PO No.</td>
+<td class=xl471 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl472>Date :-</td>
+<td class=xl473>-</td>
+</tr>
+<tr height=33 style='height:22.5pt'>
+<td class=xl453 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Consignee :- </td>
+<td class=xl474 colspan=9 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>M/s Vishwadeep Pressparts Pvt. Ltd.
+ Plant - I , A – 163, H - Block, 
+ MIDC , Pimpri,
+ Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
+Mob. - 9764997859 </td>
+<td class=xl477 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid Gray;'>Invoice No.:- </td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl472>Date :-</td>
+<td class=xl480>19.04.2010</td>
+</tr>
+<tr height=33 style='height:22.5pt'>
+<td class=xl477 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid Gray;'>Challan No.:-</td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl472>Date :-</td>
+<td class=xl480>19.04.2010</td>
+</tr>
+<tr height=45 style='height:31.5pt'>
+<td class=xl477 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Vehicle No:- </td>
+<td class=xl488 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>MH -12- DT- 9190</td>
+<td class=xl489>L.R. No.:- </td>
+<td class=xl490>-</td>
+</tr>
+<tr height=8 style='height:5.3pt'>
+<td class=xl444 colspan=21 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl492 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>S.  No. </td>
+<td class=xl493 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Variety of Goods (Size)</td>
+<td class=xl435 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>No. & Discription of Packets</td>
+<td class=xl435 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Average Content per Pack.</td>
+<td class=xl494 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Qty.</td>
+<td class=xl495 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Selling Rate</td>
+<td class=xl435 colspan=3 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Assessable Tariff Value</td>
+<td class=xl496 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rate of Duty %</td>
+<td class=xl496 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Duty Payable  Rs.</td>
+<td class=xl497 colspan=2 rowspan=3>Amount                Rs.</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl499 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>OD</td>
+<td class=xl499>Thick.</td>
+<td class=xl499>Length </td>
+<td class=xl272 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid windowtext;'>Pcs.</td>
+<td class=xl272 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid windowtext;'>Mtrs.</td>
+<td class=xl494 colspan=3 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rs./ Pcs.</td>
+<td class=xl494 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rs./ Mtrs.</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl499 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>MM</td>
+<td class=xl499>MM</td>
+<td class=xl499>Mtrs.</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl501>1</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.692</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>1175</td>
+<td class=xl506>813.10</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl508 colspan=1 rowspan=8 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>10%</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>32093</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl501>2</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.743</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>450</td>
+<td class=xl506>334.35</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>13197</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl512>3</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.324</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>2577</td>
+<td class=xl506>834.95</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl513 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>32955</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl512>4</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.441</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>1020</td>
+<td class=xl506>449.82</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl513 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>17754</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl512>5</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.390</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>2674</td>
+<td class=xl506>1042.86</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl513 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>41162</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl501>6</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl501>7</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl501>8</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl501>9</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl514>&nbsp;</td>
+<td class=xl515>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl501>10</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl504 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl504>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl502 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl514>&nbsp;</td>
+<td class=xl515>&nbsp;</td>
+<td class=xl510 colspan=2 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid Gray;'>-</td>
+</tr>
+<tr height=22 style='height:15.0pt'>
+<td class=xl516 colspan=12 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Payment of Excise Duty Payable under Rule 8 of C.Ex. Rules-2002</td>
+<td class=xl519 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TOTAL (Rs.)</td>
+<td class=xl522 colspan=2 rowspan=1>137161</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Excise Duty Payable Rs. :-</td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Thirteen thousand seven hundred and sixteen only.</td>
+<td class=xl526 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Packing  &  Forwarding  ( Rs.)</td>
+<td class=xl529 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl531 colspan=7 rowspan=1>TOTAL ( Rs. )</td>
+<td class=xl522 colspan=2 rowspan=1>137161</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Ed. Cess Payable (P) Rs. :- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Two hundred and seventy four only.</td>
+<td class=xl534 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>C.Excise Duty Payable @.</td>
+<td class=xl535> 10 %  Rs.</td>
+<td class=xl536 colspan=2 rowspan=1>13716</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl538 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>(P) Ed. Cess @ </td>
+<td class=xl539>  2 %  Rs.</td>
+<td class=xl536 colspan=2 rowspan=1>274</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Ed. Cess Payable (SAH) Rs.:- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>One hundred and thirty seven only.</td>
+<td class=xl538 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>(SAH) Ed. Cess @</td>
+<td class=xl539>  1 %  Rs.</td>
+<td class=xl536 colspan=2 rowspan=1>137</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl540 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TOTAL (Rs.)</td>
+<td class=xl522 colspan=2 rowspan=1>151288</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Invoice Value Rs. :- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>One lac fifty seven thousand three hundred and fourty only.</td>
+<td class=xl538 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>VAT / CST </td>
+<td class=xl541>  4 %  Rs.</td>
+<td class=xl536 colspan=2 rowspan=1>6052</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl519 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>GRAND TOTAL (Rs.) </td>
+<td class=xl522 colspan=2 rowspan=1>157340</td>
+</tr>
+<tr height=4 style='height:2.3pt'>
+<td class=xl444 colspan=21 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl542 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Sr. No. & Date of Debit Entry of Duty In</td>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>P.L.A. ENTRY No.:- </td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl471 colspan=1 rowspan=5 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl545 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>VAT TIN NO.- </td>
+<td class=xl369 colspan=5 rowspan=1>27860637929 V  w.e.f. 31.12.07</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>R.G. 23A Part-II ENTRY No. :-</td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl545 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>CST TIN NO.- </td>
+<td class=xl369 colspan=5 rowspan=1>27860637929 C  w.e.f. 31.12.07</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>R.G. 23C Part-II ENTRY No. :-</td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl548 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>DECL.No. </td>
+<td class=xl551 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date</td>
+<td class=xl551 colspan=3 rowspan=1>Progressive Total Rs.</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl553 colspan=5 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date & Time Of Removal of Goods :- </td>
+<td class=xl555 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>19.04.2010</td>
+<td class=xl555 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>22.30 Hrs.</td>
+<td class=xl473 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl471 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl471 colspan=3 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl558 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>In Words :-</td>
+<td class=xl471 colspan=8 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Twenty two thirty Hrs.</td>
+<td class=xl560 colspan=6 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Party's VAT TIN No. :-         ______ CST TIN No. :- </td>
+<td class=xl394 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl396 colspan=12 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>certified that theparticulars given above are true and correct and the amount indicated represents the price actually charged and there is no flow of debit entry/ additional consideration directly or indirectly from the buyor. Subjected to Mumbai Jurisdiction.</td>
+<td class=xl566 colspan=3 rowspan=1>-</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl567 colspan=9 rowspan=5>For - CENTRIC STEEL LIMITED _______________________________________________________________________________----------______________________________________________  (Authorised Signatory)</td>
+</tr>
+<tr height=23 style='height:15.8pt'>
+<td class=xl569 colspan=12 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Terms & Conditions :- Interest will be recovered a 24% p.a. on overdue paid bills. Claim of any nature whatsoever will lapse unless raised in writing 3 days from date of invoice. Goods once sold cannot be returned or exchanged.  We reserve ourselves the right to demand payment of this at any time before due date. Payment are to be made at our office by the payee cheque. Subject to Mumbai Jurisdiction.</td>
+</tr>
+<tr height=29 style='height:20.3pt'>
+</tr>
+<tr height=15 style='height:10.5pt'>
+<td class=xl572 colspan=10 rowspan=2>"I/we hereby certify that my/our registration certificate under the Maharastra Value Added Tax Act. 2002 is in force on the date on which the sale of the goods specified in this tax invoice is made by me/us and that the transaction of sale covered by this</td>
+<td class=xl414 colspan=2 rowspan=2 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>BC</td>
+</tr>
+<tr height=28 style='height:19.5pt'>
+</tr>
+<tr height=6 style='height:3.8pt'>
+<td class=xl56 colspan=22 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
+<tr height=10 style='height:6.8pt'>
+<td class=xl576 colspan=22 rowspan=1>&nbsp;</td>
+<td class=xl578>&nbsp;</td>
+</tr>
+<tr height=10 style='height:6.8pt'>
+<td class=xl579 colspan=22 rowspan=1>&nbsp;</td>
+<td class=xl581>&nbsp;</td>
+</tr>
+<tr height=9 style='height:6.0pt'>
+<td class=xl426 colspan=23 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl57 colspan=1 rowspan=52>&nbsp;</td>
+<td class=xl583 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TAX INVOICE      </td>
+<td class=xl436 colspan=1 rowspan=17 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl585 colspan=9 rowspan=2>TRIPLICATE                                                                                For ASSESSEE</td>
+<td class=xl57 colspan=1 rowspan=53 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
+<tr height=14 style='height:9.8pt'>
+<td class=xl434 colspan=11 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'> Invoice for removal of Excisable goods from Factory or Warehouse on payment of duty (Rule 11 of Central Excise Cenvat Rules - 2002)</td>
+</tr>
+<tr height=15 style='height:10.5pt'>
+<td class=xl439 colspan=9 rowspan=3>For - Centric Steel Limited                            ________________________________________________________________________________________      Authorised Signatory                                                                                                     </td>
+</tr>
+<tr height=13 style='height:9.0pt'>
+<td class=xl441 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Licencee :- </td>
+</tr>
+<tr height=51 style='height:35.3pt'>
+<td class=xl444 colspan=4 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl446 colspan=7 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Centric Steel Limited                                                                 T - 24, MIDC,                                                                             Taloja ( Dist:- Raigad) -  410-208</td>
+</tr>
+<tr height=13 style='height:9.0pt'>
+<td class=xl587 colspan=9 rowspan=1>Range:- Office of the Assistant Commissioner of Central Excise </td>
+</tr>
+<tr height=14 style='height:9.8pt'>
+<td class=xl587 colspan=9 rowspan=1>Range :- Taloja - VI</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl589 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name of Excisable Goods :-  MS ERW STEEL TUBES</td>
+<td class=xl590 colspan=9 rowspan=1>Commissionorate :- Belapur C.G.O. Complex,CBD Belapur,Navi Mumbai.</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl589 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Chapter Heading / Sub Heading No:-     73069011</td>
+<td class=xl592 colspan=9 rowspan=1>ECC No.:- AABCB3566CXM001</td>
+</tr>
+<tr height=15 style='height:10.5pt'>
+<td class=xl451 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>PAN No:- </td>
+<td class=xl193 colspan=9 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>Notification no. :- 006/2010 dtd. 27.02.2010</td>
+</tr>
+<tr height=35 style='height:24.0pt'>
+<td class=xl453 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Buyor :- </td>
+<td class=xl455 colspan=9 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>M/s Vishwadeep Pressparts Pvt. Ltd.
+ Plant - I , A – 163, H - Block, 
+ MIDC , Pimpri,
+ Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
+Mob. - 9764997859 </td>
+<td class=xl594 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date of preparation of Invoice:-</td>
+<td class=xl459 colspan=2 rowspan=1>19.04.2010</td>
+</tr>
+<tr height=30 style='height:21.0pt'>
+<td class=xl461 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Time of Invoice:-</td>
+<td class=xl459 colspan=2 rowspan=1>20.20 Hrs.</td>
+</tr>
+<tr height=45 style='height:31.5pt'>
+<td class=xl597 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>In Words :-</td>
+<td class=xl464 colspan=5 rowspan=1>Twenty twenty Hrs.</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl600 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>ECC No. </td>
+<td class=xl602 colspan=9 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl603 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>PO No.</td>
+<td class=xl471 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl472>Date :-</td>
+<td class=xl473>-</td>
+</tr>
+<tr height=37 style='height:25.5pt'>
+<td class=xl453 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Consignee :- </td>
+<td class=xl474 colspan=9 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>M/s Vishwadeep Pressparts Pvt. Ltd.
+ Plant - I , A – 163, H - Block, 
+ MIDC , Pimpri,
+ Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
+Mob. - 9764997859 </td>
+<td class=xl468 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Invoice No.:- </td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl472>Date :-</td>
+<td class=xl480>19.04.2010</td>
+</tr>
+<tr height=37 style='height:25.5pt'>
+<td class=xl468 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid Gray;'>Challan No.:-</td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl472>Date :-</td>
+<td class=xl480>19.04.2010</td>
+</tr>
+<tr height=37 style='height:25.5pt'>
+<td class=xl468 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Vehicle No:- </td>
+<td class=xl488 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>MH -12- DT- 9190</td>
+<td class=xl489>L.R. No.:- </td>
+<td class=xl607>-</td>
+</tr>
+<tr height=5 style='height:3.0pt'>
+<td class=xl444 colspan=21 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl492 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>S.  No. </td>
+<td class=xl493 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Variety of Goods (Size)</td>
+<td class=xl435 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>No. & Discription of Packets</td>
+<td class=xl435 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Average Content per Pack.</td>
+<td class=xl494 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Qty.</td>
+<td class=xl495 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Selling Rate</td>
+<td class=xl435 colspan=3 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Assessable Tariff Value</td>
+<td class=xl496 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rate of Duty %</td>
+<td class=xl496 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Duty Payable  Rs.</td>
+<td class=xl497 colspan=2 rowspan=3>Amount                Rs.</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl499 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>OD</td>
+<td class=xl499>Thick.</td>
+<td class=xl499>Length </td>
+<td class=xl272 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid windowtext;'>Pcs.</td>
+<td class=xl272 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid windowtext;'>Mtrs.</td>
+<td class=xl494 colspan=3 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rs./ Pcs.</td>
+<td class=xl494 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rs./ Mtrs.</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl499 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>MM</td>
+<td class=xl499>MM</td>
+<td class=xl499>Mtrs.</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>1</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl609>1.20</td>
+<td class=xl610>0.692</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>1175</td>
+<td class=xl613>813.10</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl616 colspan=1 rowspan=8 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>10%</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>32093</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>2</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl609>1.20</td>
+<td class=xl610>0.743</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>450</td>
+<td class=xl613>334.35</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>13197</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl618>3</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl609>1.20</td>
+<td class=xl610>0.324</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>2577</td>
+<td class=xl613>834.95</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>32955</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl618>4</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl609>1.20</td>
+<td class=xl610>0.441</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>1020</td>
+<td class=xl613>449.82</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>17754</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl618>5</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl609>1.20</td>
+<td class=xl610>0.390</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>2674</td>
+<td class=xl613>1042.86</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>41162</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>6</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl609>-</td>
+<td class=xl610>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>-</td>
+<td class=xl613>-</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>7</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl609>-</td>
+<td class=xl610>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>-</td>
+<td class=xl613>-</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>8</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl609>-</td>
+<td class=xl610>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>-</td>
+<td class=xl613>-</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>9</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl609>-</td>
+<td class=xl610>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>-</td>
+<td class=xl613>-</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl514>&nbsp;</td>
+<td class=xl515>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>10</td>
+<td class=xl609 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl609>-</td>
+<td class=xl610>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl611>&nbsp;</td>
+<td class=xl612>-</td>
+<td class=xl613>-</td>
+<td class=xl614 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl514>&nbsp;</td>
+<td class=xl515>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl619 colspan=12 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Payment of Excise Duty Payable under Rule 8 of C.Ex. Rules-2002</td>
+<td class=xl622 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TOTAL ( Rs.)</td>
+<td class=xl522 colspan=2 rowspan=1>137161</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Excise Duty Payable Rs. :-</td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Thirteen thousand seven hundred and sixteen only.</td>
+<td class=xl625 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Packing  &  Forwarding  ( Rs.)</td>
+<td class=xl529 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl628 colspan=7 rowspan=1>TOTAL (Rs.)</td>
+<td class=xl522 colspan=2 rowspan=1>137161</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Ed. Cess Payable (P) Rs. :- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Two hundred and seventy four only.</td>
+<td class=xl631 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>C.Excise Duty Payable @.</td>
+<td class=xl632> 10 %  Rs.</td>
+<td class=xl633 colspan=2 rowspan=1>13716</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl635 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>(P) Ed. Cess @ </td>
+<td class=xl636>  2 %  Rs.</td>
+<td class=xl633 colspan=2 rowspan=1>274</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Ed. Cess Payable (SAH) Rs.:- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>One hundred and thirty seven only.</td>
+<td class=xl637 colspan=6 rowspan=1>(SAH) Ed. Cess @</td>
+<td class=xl638>  1 %  Rs.</td>
+<td class=xl633 colspan=2 rowspan=1>137</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl639 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TOTAL   (Rs.)</td>
+<td class=xl522 colspan=2 rowspan=1>151288</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Invoice Value Rs. :- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>One lac fifty seven thousand three hundred and fourty only.</td>
+<td class=xl625 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>VAT / CST </td>
+<td class=xl642>  4 %  Rs.</td>
+<td class=xl643 colspan=2 rowspan=1>6052</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl644 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>GRAND TOTAL (Rs.) </td>
+<td class=xl522 colspan=2 rowspan=1>157340</td>
+</tr>
+<tr height=4 style='height:2.3pt'>
+<td class=xl444 colspan=21 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl542 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Sr. No. & Date of Debit Entry of Duty In</td>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>P.L.A. ENTRY No.:- </td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl471 colspan=1 rowspan=5 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl647 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>VAT TIN NO.- </td>
+<td class=xl369 colspan=5 rowspan=1>27860637929 V  w.e.f. 31.12.07</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>R.G. 23A Part-II ENTRY No. :-</td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl647 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>CST TIN NO.- </td>
+<td class=xl369 colspan=5 rowspan=1>27860637929 C  w.e.f. 31.12.07</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>R.G. 23C Part-II ENTRY No. :-</td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl552 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>DECL.No. </td>
+<td class=xl551 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date</td>
+<td class=xl551 colspan=3 rowspan=1>Progressive Total Rs.</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl651 colspan=5 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date & Time Of Removal of Goods :- </td>
+<td class=xl555 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>19.04.2010</td>
+<td class=xl555 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>22.30 Hrs.</td>
+<td class=xl473 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl471 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl471 colspan=3 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl558 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>In Words :-</td>
+<td class=xl471 colspan=8 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Twenty two thirty Hrs.</td>
+<td class=xl560 colspan=6 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Party's VAT TIN No. :-         ______ CST TIN No. :- </td>
+<td class=xl394 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl396 colspan=12 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>certified that theparticulars given above are true and correct and the amount indicated represents the price actually charged and there is no flow of debit entry/ additional consideration directly or indirectly from the buyor. Subjected to Mumbai Jurisdiction.</td>
+<td class=xl566 colspan=3 rowspan=1>-</td>
+</tr>
+<tr height=23 style='height:15.8pt'>
+<td class=xl567 colspan=9 rowspan=5>For - CENTRIC STEEL LIMITED _____________________________________________________________________________----------______________________________________________    (Authorised Signatory)</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl396 colspan=12 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Terms & Conditions :- Interest will be recovered a 24% p.a. on overdue paid bills. Claim of any nature whatsoever will lapse unless raised in writing 3 days from date of invoice. Goods once sold cannot be returned or exchanged.  We reserve ourselves the right to demand payment of this at any time before due date. Payment are to be made at our office by the payee cheque. Subject to Mumbai Jurisdiction.</td>
+</tr>
+<tr height=26 style='height:18.0pt'>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl652 colspan=10 rowspan=2>"I/we hereby certify that my/our registration certificate under the Maharastra Value Added Tax Act. 2002 is in force on the date on which the sale of the goods specified in this tax invoice is made by me/us and that the transaction of sale covered by this</td>
+<td class=xl414 colspan=2 rowspan=2 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>BC</td>
+</tr>
+<tr height=21 style='height:14.3pt'>
+</tr>
+<tr height=6 style='height:3.8pt'>
+<td class=xl57 colspan=22 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
+<tr height=11 style='height:7.5pt'>
+<td class=xl02 colspan=22 rowspan=1>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr height=11 style='height:7.5pt'>
+<td class=xl654 colspan=23 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=7 style='height:4.5pt'>
+<td class=xl57 colspan=23 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
+<tr height=30 style='height:21.0pt'>
+<td class=xl57 colspan=1 rowspan=52>&nbsp;</td>
+<td class=xl428 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TAX INVOICE      </td>
+<td class=xl430 colspan=1 rowspan=17 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl655 colspan=9 rowspan=2>EXTRA COPY</td>
+<td class=xl57 colspan=1 rowspan=53 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
+<tr height=12 style='height:8.3pt'>
+<td class=xl434 colspan=11 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'> Invoice for removal of Excisable goods from Factory or Warehouse on payment of duty (Rule 11 of Central Excise Cenvat Rules - 2002)</td>
+</tr>
+<tr height=15 style='height:10.5pt'>
+<td class=xl658 colspan=9 rowspan=3>For - Centric Steel Limited                            ________________________________________________________________________________________      Authorised Signatory                                                                                                     </td>
+</tr>
+<tr height=13 style='height:9.0pt'>
+<td class=xl441 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Licencee :- </td>
+</tr>
+<tr height=48 style='height:33.0pt'>
+<td class=xl444 colspan=4 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl446 colspan=7 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Centric Steel Limited                                                                 T - 24, MIDC,                                                                             Taloja ( Dist:- Raigad) -  410-208</td>
+</tr>
+<tr height=13 style='height:9.0pt'>
+<td class=xl587 colspan=9 rowspan=1>Range:- Office of the Assistant Commissioner of Central Excise </td>
+</tr>
+<tr height=14 style='height:9.8pt'>
+<td class=xl587 colspan=9 rowspan=1>Range :- Taloja - VI</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl449 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name of Excisable Goods :-  MS ERW STEEL TUBES</td>
+<td class=xl590 colspan=9 rowspan=1>Commissionorate :- Belapur C.G.O. Complex,CBD Belapur,Navi Mumbai.</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl449 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Chapter Heading / Sub Heading No:-     73069011</td>
+<td class=xl592 colspan=9 rowspan=1>ECC No.:- AABCB3566CXM001</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl451 colspan=11 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>PAN No:- </td>
+<td class=xl193 colspan=9 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>Notification no. :- 006/2010 dtd. 27.02.2010</td>
+</tr>
+<tr height=33 style='height:22.5pt'>
+<td class=xl664 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Buyor :- </td>
+<td class=xl455 colspan=9 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>M/s Vishwadeep Pressparts Pvt. Ltd.
+ Plant - I , A – 163, H - Block, 
+ MIDC , Pimpri,
+ Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
+Mob. - 9764997859 </td>
+<td class=xl594 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date of preparation of Invoice:-</td>
+<td class=xl459 colspan=2 rowspan=1>19.04.2010</td>
+</tr>
+<tr height=29 style='height:20.3pt'>
+<td class=xl461 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Time of Invoice:-</td>
+<td class=xl459 colspan=2 rowspan=1>20.20 Hrs.</td>
+</tr>
+<tr height=48 style='height:33.0pt'>
+<td class=xl597 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>In Words :-</td>
+<td class=xl464 colspan=5 rowspan=1>Twenty twenty Hrs.</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl452 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>ECC No. </td>
+<td class=xl666 colspan=9 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl468 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>PO No.</td>
+<td class=xl471 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl472>Date :-</td>
+<td class=xl607>-</td>
+</tr>
+<tr height=29 style='height:20.3pt'>
+<td class=xl664 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Name & Address of Consignee :- </td>
+<td class=xl474 colspan=9 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>M/s Vishwadeep Pressparts Pvt. Ltd.
+ Plant - I , A – 163, H - Block, 
+ MIDC , Pimpri,
+ Pune – 411018                                                                                                      Tel. - (020) 27469217, 27481945 
+Mob. - 9764997859 </td>
+<td class=xl468 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Invoice No.:- </td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl472>Date :-</td>
+<td class=xl667>19.04.2010</td>
+</tr>
+<tr height=30 style='height:21.0pt'>
+<td class=xl468 colspan=4 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid Gray;'>Challan No.:-</td>
+<td class=xl241 colspan=3 rowspan=1 style='border-right:1.0pt solid #969696; border-bottom:1.0pt solid #969696;'>037</td>
+<td class=xl472>Date :-</td>
+<td class=xl667>19.04.2010</td>
+</tr>
+<tr height=52 style='height:36.0pt'>
+<td class=xl477 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Vehicle No:- </td>
+<td class=xl488 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>MH -12- DT- 9190</td>
+<td class=xl489>L.R. No.:- </td>
+<td class=xl607>-</td>
+</tr>
+<tr height=5 style='height:3.0pt'>
+<td class=xl444 colspan=21 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl492 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>S.  No. </td>
+<td class=xl493 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Variety of Goods (Size)</td>
+<td class=xl435 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>No. & Discription of Packets</td>
+<td class=xl435 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Average Content per Pack.</td>
+<td class=xl494 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Qty.</td>
+<td class=xl495 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Selling Rate</td>
+<td class=xl435 colspan=3 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Assessable Tariff Value</td>
+<td class=xl496 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rate of Duty %</td>
+<td class=xl496 colspan=1 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Total Duty Payable  Rs.</td>
+<td class=xl497 colspan=2 rowspan=3>Amount                Rs.</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl668 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>OD</td>
+<td class=xl668>Thick.</td>
+<td class=xl668>Length </td>
+<td class=xl272 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid windowtext;'>Pcs.</td>
+<td class=xl272 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid windowtext;'>Mtrs.</td>
+<td class=xl494 colspan=3 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rs./ Pcs.</td>
+<td class=xl494 colspan=1 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Rs./ Mtrs.</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl668 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>MM</td>
+<td class=xl668>MM</td>
+<td class=xl668>Mtrs.</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>1</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.692</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>1175</td>
+<td class=xl506>813.10</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl508 colspan=1 rowspan=8 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>10%</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>32093</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>2</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.743</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>450</td>
+<td class=xl506>334.35</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>13197</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl618>3</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.324</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>2577</td>
+<td class=xl506>834.95</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>32955</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl618>4</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.441</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>1020</td>
+<td class=xl506>449.82</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>17754</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl618>5</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>25X25</td>
+<td class=xl502>1.20</td>
+<td class=xl503>0.390</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>2674</td>
+<td class=xl506>1042.86</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>39.47</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>41162</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>6</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>7</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>8</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>9</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl514>&nbsp;</td>
+<td class=xl515>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl608>10</td>
+<td class=xl502 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl503>-</td>
+<td class=xl507 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl509>&nbsp;</td>
+<td class=xl505>-</td>
+<td class=xl506>-</td>
+<td class=xl615 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>-</td>
+<td class=xl502>-</td>
+<td class=xl507 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl514>&nbsp;</td>
+<td class=xl515>&nbsp;</td>
+<td class=xl617 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=24 style='height:16.5pt'>
+<td class=xl516 colspan=12 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Payment of Excise Duty Payable under Rule 8 of C.Ex. Rules-2002</td>
+<td class=xl644 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TOTAL Rs.</td>
+<td class=xl522 colspan=2 rowspan=1>137161</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Excise Duty Payable Rs. :-</td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Thirteen thousand seven hundred and sixteen only.</td>
+<td class=xl669 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Packing  &  Forwarding   Rs.</td>
+<td class=xl643 colspan=2 rowspan=1>-</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl628 colspan=7 rowspan=1>TOTAL ( Rs.)</td>
+<td class=xl672 colspan=2 rowspan=1>137161</td>
+</tr>
+<tr height=22 style='height:15.0pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Ed. Cess Payable (P) Rs. :- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Two hundred and seventy four only.</td>
+<td class=xl631 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>C.Excise Duty Payable @.</td>
+<td class=xl632> 10 %  Rs.</td>
+<td class=xl674 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>13716</td>
+</tr>
+<tr height=22 style='height:15.0pt'>
+<td class=xl635 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>(P) Ed. Cess @ </td>
+<td class=xl636>  2 %  Rs.</td>
+<td class=xl674 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>274</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Ed. Cess Payable (SAH) Rs.:- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>One hundred and thirty seven only.</td>
+<td class=xl635 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>(SAH) Ed. Cess @</td>
+<td class=xl636>  1 %  Rs.</td>
+<td class=xl674 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>137</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl676 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>TOTAL   (Rs.)</td>
+<td class=xl677 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>151288</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl524 colspan=4 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Invoice Value Rs. :- </td>
+<td class=xl455 colspan=8 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>One lac fifty seven thousand three hundred and fourty only.</td>
+<td class=xl635 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>VAT / CST </td>
+<td class=xl642>  4 %  Rs.</td>
+<td class=xl643 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>6052</td>
+</tr>
+<tr height=25 style='height:17.3pt'>
+<td class=xl622 colspan=7 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>GRAND TOTAL (Rs.) </td>
+<td class=xl680 colspan=2 rowspan=1>157340</td>
+</tr>
+<tr height=4 style='height:2.3pt'>
+<td class=xl444 colspan=21 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl542 colspan=2 rowspan=3 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Sr. No. & Date of Debit Entry of Duty In</td>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>P.L.A. ENTRY No.:- </td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl471 colspan=1 rowspan=5 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl647 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>VAT TIN NO.- </td>
+<td class=xl488 colspan=5 rowspan=1>27860637929 V  w.e.f. 31.12.07</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>R.G. 23A Part-II ENTRY No. :-</td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl647 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>CST TIN NO.- </td>
+<td class=xl683 colspan=5 rowspan=1>27860637929 C  w.e.f. 31.12.07</td>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl543 colspan=6 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>R.G. 23C Part-II ENTRY No. :-</td>
+<td class=xl544 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Dt.</td>
+<td class=xl552 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>DECL.No. </td>
+<td class=xl551 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date</td>
+<td class=xl551 colspan=3 rowspan=1>Progressive Total Rs.</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl685 colspan=5 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Date & Time Of Removal of Goods :- </td>
+<td class=xl686 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>19.04.2010</td>
+<td class=xl686 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>22.30 Hrs.</td>
+<td class=xl473 colspan=4 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl471 colspan=2 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>&nbsp;</td>
+<td class=xl471 colspan=3 rowspan=1>&nbsp;</td>
+</tr>
+<tr height=18 style='height:12.0pt'>
+<td class=xl558 colspan=3 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>In Words :-</td>
+<td class=xl687 colspan=8 rowspan=1 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Twenty two thirty Hrs.</td>
+<td class=xl688 colspan=6 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Party's VAT TIN No. :-         ______ CST TIN No. :- </td>
+<td class=xl394 colspan=3 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid #969696;'>-</td>
+</tr>
+<tr height=20 style='height:13.5pt'>
+<td class=xl396 colspan=12 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>certified that theparticulars given above are true and correct and the amount indicated represents the price actually charged and there is no flow of debit entry/ additional consideration directly or indirectly from the buyor. Subjected to Mumbai Jurisdiction.</td>
+<td class=xl566 colspan=3 rowspan=1>-</td>
+</tr>
+<tr height=19 style='height:12.8pt'>
+<td class=xl567 colspan=9 rowspan=5>For - CENTRIC STEEL LIMITED _________________________________________________________________________________----------______________________________________________(Authorised Signatory)</td>
+</tr>
+<tr height=23 style='height:15.8pt'>
+<td class=xl396 colspan=12 rowspan=2 style='border-right:1.0pt solid Gray; border-bottom:1.0pt solid Gray;'>Terms & Conditions :- Interest will be recovered a 24% p.a. on overdue paid bills. Claim of any nature whatsoever will lapse unless raised in writing 3 days from date of invoice. Goods once sold cannot be returned or exchanged.  We reserve ourselves the right to demand payment of this at any time before due date. Payment are to be made at our office by the payee cheque. Subject to Mumbai Jurisdiction.</td>
+</tr>
+<tr height=27 style='height:18.8pt'>
+</tr>
+<tr height=17 style='height:11.3pt'>
+<td class=xl652 colspan=10 rowspan=2>"I/we hereby certify that my/our registration certificate under the Maharastra Value Added Tax Act. 2002 is in force on the date on which the sale of the goods specified in this tax invoice is made by me/us and that the transaction of sale covered by this</td>
+<td class=xl414 colspan=2 rowspan=2 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>BC</td>
+</tr>
+<tr height=22 style='height:15.0pt'>
+</tr>
+<tr height=6 style='height:3.8pt'>
+<td class=xl57 colspan=22 rowspan=1 style='border-right:1.0pt solid windowtext; border-bottom:1.0pt solid windowtext;'>&nbsp;</td>
+</tr>
 </table>
 </div>
+<input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />
 </body>
 </html>
 

@@ -31,6 +31,10 @@
                   <td><%=f.collection_select( :rawmaterial_category_id, @rawmaterialcategory,:id,:name,{:include_blank => "--- Select ---"})%></td>
                 </tr>
                 <tr>
+                  <td class="textBlack11Height10L"><%= f.label "Supplier Invoice No" %></td>
+                  <td><%= f.text_field :invoice_no %></td>
+                </tr>         
+                <tr>
                   <td class="textBlack11Height10L"><%= f.label "Coil Number" %><span class="text_red">*</span></td>
                   <td><%= f.text_field :name %></td>
                 </tr>                

@@ -24,7 +24,10 @@ class CustomersController < ApplicationController
   # GET /customers/new
   # GET /customers/new.xml
   def new
+    totalcustomer = Customer.find(:all).size + 1
+    customer_code = "CSLC-"+totalcustomer.to_s
     @customer = Customer.new
+    @customer.customer_code = customer_code
 
     respond_to do |format|
       format.html # new.html.erb

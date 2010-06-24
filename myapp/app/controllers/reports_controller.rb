@@ -78,7 +78,7 @@ class ReportsController < ApplicationController
     @delivery_all=Deliverychallan.find :all
     @delivery=Deliverychallan.find_by_id(params[:report][:deliverychallan_id])
     @address=Taxinvoice.find_by_deliverychallan_id(params[:report][:deliverychallan_id])
-    render :layout=>false;
+    render :layout=>false
   end
   
   def taxinvoice_new
@@ -118,7 +118,8 @@ class ReportsController < ApplicationController
   end
   
   def pre_despatch_view
-    @predespatchtc = Predespatchtc.find(1)
+    @predespatchtc = Predespatchtc.find(params[:id])
+    render :layout=>false
   end
   
   def duration_dates(parameters,start_date,end_date)

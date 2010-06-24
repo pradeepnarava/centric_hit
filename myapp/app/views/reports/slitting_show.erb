@@ -2,6 +2,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Slitting Report</title>
+<style type="text/css">
+	@media print {
+		input#btnPrint {
+		display: none;
+		}
+	}
+</style>
 <style>
 .xl00 {
 	padding:0px 2px;
@@ -2162,6 +2169,7 @@
 <%end%>
 </table>
 </div>
+<input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />
 </body>
 </html>
 

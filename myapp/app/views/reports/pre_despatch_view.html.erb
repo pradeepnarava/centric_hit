@@ -1,3 +1,10 @@
+<style type="text/css">
+	@media print {
+		input#btnPrint {
+		display: none;
+		}
+	}
+</style>
 <div id="center-column">
   <div class="gridDiv">
 
@@ -504,7 +511,7 @@
   </table>  
           <br class="clear"/>
           <div class="txtC" id="submit_div">
-            Print Button
+            <input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />
           </div>
           <br class="clear"/>
         </div>
