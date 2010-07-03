@@ -36,15 +36,19 @@ class ReportsController < ApplicationController
      scrap=scrap + obj.scrap.to_i
    end
    @scrap[0]=scrap
-   render :layout=>false;
+   render :layout=>false
   end
   def slitting_production_rpt
    #@raw=Rawmaterial.find :all
   end
   
+  def slitting_production_show
+    @slitting_prod=Slittingproduction.find(params[:id])
+    @slitting_prod_details=Slittingproduction.find(:all,:conditions=>["rawmaterial_id=#{params[:raw_id]}"])
+    render :layout=>false
+  end
+  
   def slitting_production_show_rpt
-    #@raw=Rawmaterial.find :all
-    #@raw_material=Rawmaterial.find_by_id(params[:report][:rawmaterial_id])
     start_date,end_date= duration_dates(params[:report][:dates],params[:start_date],params[:end_date])
     #conditions_hash = {:rawmaterial_id => params[:report][:rawmaterial_id]}
     conditions_hash = {:date_start => start_date,:date_end =>end_date} if start_date!='' && end_date!=''

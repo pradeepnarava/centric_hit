@@ -1,0 +1,97 @@
+<title>Slitting Production Report</title>
+<style type="text/css">
+	@media print {
+		input#btnPrint {
+		display: none;
+		}
+	}
+</style>
+<input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />
+<br/>
+<table width="100%" border="1">
+  <tr>
+    <td align="center" colspan="2">
+      <b style="font-size:18px;">
+        Slitting Production Report
+      </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:220px">
+      <b>Date:-</b>&nbsp;<%=@slitting_prod.production_date if @slitting_prod.production_date%>
+    </td>  
+    <td><b>Shift:-</b>&nbsp;<%=@slitting_prod.shift rescue "-"%></td>
+    
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Operator Name:-</b>&nbsp;<%=h Employee.getname(@slitting_prod.operator_id) rescue "-" %>
+    </td>
+  </tr>
+</table>
+<br/>
+<table cellpadding="0" cellspacing="0" width="100%" border="1">
+  <tr>
+    <td colspan="8" align="center">
+      <b style="font-size:14px;"> Mother Coil Detail</b>
+    </td>
+    <td colspan="7" align="center">
+      <b style="font-size:14px;">Slitting Setting Detail</b>
+    </td>
+  </tr>
+  <tr>
+    <td>S.No</td>
+    <td>CSL Coil No.</td>
+    <td>Source</td>
+    <td>Input Wt.</td>
+    <td>Width</td>
+    <td>Thick</td>
+    <td>Grade</td>
+    <td>Type</td>
+    <td>Width</td>
+    <td>No.of Slits</td>
+    <td>Slit Coil Wt.</td>
+    <td>Slit Wt.</td>
+    <td>Scrap Wt.</td>
+    <td>Slit Coil No.</td>
+    <td>Remarks</td>
+  </tr>
+  <%i=1%>
+  <%@slitting_prod_details.each do |obj|%>
+  <tr>
+    <td><%=i%></td>
+    <td><%=obj.rawmaterial.name rescue "-"%></td>
+    <td>&nbsp;</td>
+    <td><%=obj.input_weight rescue "-"%></td>
+    <td><%=obj.width rescue "-"%></td>
+    <td><%=obj.thickness rescue "-"%></td>
+    <td><%=obj.grade rescue "-"%></td>
+    <td><%=obj.type rescue "-"%></td>
+    <td><%=obj.width_slitting rescue "-"%></td>
+    <td>&nbsp;</td>
+    <td><%=obj.slit_coil_weigth rescue "-"%></td>
+    <td><%=obj.slit_weight rescue "-"%></td>
+    <td><%=obj.scrap_weight rescue "-"%></td>
+    <td><%=obj.slitting_coil_no rescue "-"%></td>
+    <td><%=obj.remarks rescue "-"%></td>
+    <%i=i+1%>
+  </tr>
+  <%end%>
+</table>
+<br/>
+<br/>
+<table width="100%" cellpadding="0" cellspacing="0" style="padding-left:20px;">
+  <tr>
+    <td>
+      Production Supervisor
+    </td>
+    <td>
+      Quality Supervisor
+    </td>
+    <td>
+      Authorised Signature
+    </td>
+  </tr>
+</table>
+<br/>
+<input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />

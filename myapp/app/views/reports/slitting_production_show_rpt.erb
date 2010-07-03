@@ -83,7 +83,7 @@
       </td>
       <td><%=obj.scrap_weight if obj.scrap_weight%>
       </td>
-      <td><%= link_to "Preview", "#" %> </td>
+      <td><%= link_to("Preview", "/reports/slitting_production_show?id=#{obj.id}&raw_id=#{obj.rawmaterial_id}") %> </td>
   </tr>
   <%end%>
 </tbody>
