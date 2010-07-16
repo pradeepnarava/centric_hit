@@ -122,6 +122,57 @@ function total_mtr_pcs(row){
     jQuery("#"+row+"_customer_order_rate_pcs").val(Number(i*mtonnes*length).toFixed(3));
 }
 
+/*calculate qty per pices and MT also their weight on behalf of meters*/
+function total_qty_pcs_mt_and_weights(row){
+    var quantity  = jQuery("#"+row+"_customer_order_quantity_mtr").val();
+    var length= jQuery("#"+row+"_customer_order_h_length").val();
+    var od  = jQuery("#"+row+"_customer_order_h_od").val();
+    var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
+
+    var qty_pc  = quantity/length;
+    jQuery("#"+row+"_customer_order_quantity_pcs").val(Number(qty_pc));
+    
+    var qty_mt = ((od-thikness)*thikness*0.0246615*length)*qty_pc/1000;
+    jQuery("#"+row+"_customer_order_quantity_mt").val(Number(qty_mt).toFixed(3));
+    
+    /*weight also need to calculate*/
+
+}
+
+/*calculate qty per meters and MT also their weight on behalf of pices*/
+function total_qty_mt_mtr_and_weights(row){
+    var quantity  = jQuery("#"+row+"_customer_order_quantity_pcs").val();
+    var length= jQuery("#"+row+"_customer_order_h_length").val();
+    var od  = jQuery("#"+row+"_customer_order_h_od").val();
+    var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
+
+    var qty_mtr  = quantity*length;
+    jQuery("#"+row+"_customer_order_quantity_mtr").val(Number(qty_mtr).toFixed(3));
+    
+    var qty_mt = ((od-thikness)*thikness*0.0246615*length)*quantity/1000;
+    jQuery("#"+row+"_customer_order_quantity_mt").val(Number(qty_mt).toFixed(3));
+    
+    /*weight also need to calculate*/
+
+}
+
+
+/*calculate qty per meters and pices also their weight on behalf of MT*/
+function total_qty_pcs_mtr_and_weights(row){
+    var quantity  = jQuery("#"+row+"_customer_order_quantity_mt").val();
+    var length= jQuery("#"+row+"_customer_order_h_length").val();
+    var od  = jQuery("#"+row+"_customer_order_h_od").val();
+    var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
+
+    var qty_mtr  = quantity*length;
+    jQuery("#"+row+"_customer_order_quantity_mtr").val(Number(qty_mtr).toFixed(3));
+    
+    var qty_pc = ((od-thikness)*thikness*0.0246615*length)*qty_pc/1000;
+    jQuery("#"+row+"_customer_order_quantity_pcs").val(Number(qty_mt).toFixed(3));
+    
+    /*weight also need to calculate*/
+
+}
 
 function total_weight(row){
     var quantity  = jQuery("#"+row+"_customer_order_quantity").val();

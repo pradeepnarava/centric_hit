@@ -2,15 +2,13 @@
 <%unless @serials.size<1%>             
   <table class="formOrdertable">
     <tr>
-      <td>S.No</td>
-      <td>Serial</td>
-      <td>Tube Size</td>
-      <td>Rate/meter</td>
-      <td>Rate/pieces</td>
-      <td>Rate/M.T.</td>
-      <td>Qty/Pcs M.T.</td>
-      <td>Total Weight</td>
-      <td>Total Amount</td>
+      <th>S.No</th>
+      <th>Serial</th>
+      <th>Tube Size</th>
+      <th>Rate</th>
+      <th>Quantity</th>
+      <th>Total Weight</th>
+      <th>Total Amount</th>
       
     </tr>
     <%for customerorder in 1..@serials.size%>
@@ -18,13 +16,36 @@
         <td><%=customerorder%></td>
         <td><%=collection_select("#{customerorder}[customer_order]",:serialize_id, @serials,:id,:name,{:include_blank => "---Select---"},{:onchange => "serialdetail(this.value,#{customerorder});"})%></td>
         <td><%= text_field_tag "#{customerorder}[customer_order][tube_size]" %></td>
-        <td><%= text_field_tag "#{customerorder}[customer_order][rate_mtr]",nil,:onblur => "total_pcs_mts(#{customerorder});" %></td>
-        <td><%= text_field_tag "#{customerorder}[customer_order][rate_pcs]",nil,:onblur => "total_mtr_mts(#{customerorder});" %></td>
-        <td><%= text_field_tag "#{customerorder}[customer_order][rate_mt]",nil,:onblur => "total_mtr_pcs(#{customerorder});" %></td>
-        <td><%= text_field_tag "#{customerorder}[customer_order][quantity]",nil,:onblur => "total_weight(#{customerorder});" %></td>
-        <td><%= text_field_tag "#{customerorder}[customer_order][total_weight]" ,nil,:onblur => "total_amount(#{customerorder});"%></td>
-        <td><%= text_field_tag "#{customerorder}[customer_order][total_amount]" %></td
-         <td><%= hidden_field_tag "#{customerorder}[customer_order][balance]" %></td>
+        <td>
+          <table>
+            <tr><td>Meter</td><td><%= text_field_tag "#{customerorder}[customer_order][rate_mtr]",nil,:onblur => "total_pcs_mts(#{customerorder});" %></td></tr>
+            <tr><td>PCs</td><td><%= text_field_tag "#{customerorder}[customer_order][rate_pcs]",nil,:onblur => "total_mtr_mts(#{customerorder});" %></td></tr>
+            <tr><td>MT</td><td><%= text_field_tag "#{customerorder}[customer_order][rate_mt]",nil,:onblur => "total_mtr_pcs(#{customerorder});" %></td></tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr><td>Meter</td><td><%= text_field_tag "#{customerorder}[customer_order][quantity_mtr]",nil,:onblur => "total_qty_pcs_mt_and_weights(#{customerorder});" %></td></tr>
+            <tr><td>PCs</td><td><%= text_field_tag "#{customerorder}[customer_order][quantity_pcs]",nil,:onblur => "total_qty_mt_mtr_and_weights(#{customerorder});" %></td></tr>
+            <tr><td>MT</td><td><%= text_field_tag "#{customerorder}[customer_order][quantity_mt]",nil,:onblur => "total_qty_pcs_mtr_and_weights(#{customerorder});" %></td></tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr><td>Meter</td><td><%= text_field_tag "#{customerorder}[customer_order][total_weight]" ,nil,:onblur => "total_amount(#{customerorder});"%></td></tr>
+            <tr><td>PCs</td><td><%= text_field_tag "#{customerorder}[customer_order][rate_pcs]",nil,:onblur => "total_mtr_mts(#{customerorder});" %></td></tr>
+            <tr><td>MT</td><td><%= text_field_tag "#{customerorder}[customer_order][rate_mt]",nil,:onblur => "total_mtr_pcs(#{customerorder});" %></td></tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr><td>Meter</td><td><%= text_field_tag "#{customerorder}[customer_order][total_amount]" %></td</tr>
+            <tr><td>PCs</td><td><%= text_field_tag "#{customerorder}[customer_order][rate_pcs]",nil,:onblur => "total_mtr_mts(#{customerorder});" %></td></tr>
+            <tr><td>MT</td><td><%= text_field_tag "#{customerorder}[customer_order][rate_mt]",nil,:onblur => "total_mtr_pcs(#{customerorder});" %></td></tr>
+          </table>
+        </td>        
+        
+        <td><%= hidden_field_tag "#{customerorder}[customer_order][balance]" %></td>
         <td><%= hidden_field_tag "#{customerorder}[customer_order_h][od]" %></td>
         <td><%= hidden_field_tag "#{customerorder}[customer_order_h][length]" %></td>
         <td><%= hidden_field_tag "#{customerorder}[customer_order_h][thikness]" %></td>
