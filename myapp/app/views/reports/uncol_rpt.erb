@@ -13,11 +13,8 @@
               <tr>
                 <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
                     <tr>
-                      <td width="18%" align="left">Slitting Coil No</td>
-                      <td width="16%" align="left">
-                         <%=f.collection_select(:slittingproduction_id, @slitting_pro,:id,:slitting_coil_no,{:include_blank => "---Select---"})%>
-                      </td>
-                      <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
+                     
+                      <td align="left" style="width:100px;"><%=select("report","dates",[["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
                         <td style="display:none;" id="date_div">
                           <table width="100%" id="" style="font-size:100%"  cellpadding="0" cellspacing="0">
                             <tr>

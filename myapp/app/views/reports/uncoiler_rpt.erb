@@ -13,11 +13,8 @@
               <tr>
                 <td align="left" valign="top" style="padding:0 0 0 5px;"><table width="96%" border="0" cellpadding="3" cellspacing="0" class="grayBox" style="font-size:100%;">
                     <tr>
-                      <td width="8%" align="left">Slitting Coil No</td>
-                      <td width="16%" align="left">
-                         <%=f.collection_select(:slittingproduction_id, @slitting_pro,:id,:slitting_coil_no,{:selected=>params[:report][:slittingproduction_id]},{:include_blank => "---Select---"})%>
-                      </td>
-                      <td align="left" style="width:100px;"><%=select("report","dates",[["All",""],["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{:selected=>params[:report][:dates]},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
+                      
+                      <td align="left" style="width:100px;"><%=select("report","dates",[["Last 3 Months","3months"],["Last 6 Months","6months"],["Last 9 Months","9months"],["Last 12 Months","12months"],["Date range","5"]],{:selected=>params[:report][:dates]},{:onClick=>"db_date_change();",:style => "width:130px"})%></td>
                       <% if params[:report][:dates] == "5"
                          style="display:block"
                            else
@@ -59,12 +56,9 @@
                 <th>Tube OD</th>
                 <th>Width</th>
                 <th>Thickness</th>
-                <th>Grade</th>
-                <th>Type</th>
                 <th>Actual Wt</th>
                 <th>Actual Thickness</th>
-                <th>Actual Grade</th>
-                <th>Actual Type</th>
+                <th>View Detail</th>
               </thead>
               <tbody>
                 <%@uncoiler_value.each do |obj|%>
@@ -75,7 +69,8 @@
                     </td>
                      <td><%=obj.shift if obj.shift%>
                     </td>
-                     <td><%=obj.operator_name if obj.operator_name%>
+                     <td>
+                        <%=Employee.getname(obj.operator_id) if obj.operator_id%>
                     </td>
                      <td><%=obj.tube_od if obj.tube_od%>
                     </td>
@@ -83,19 +78,15 @@
                     </td>
                     <td><%=obj.thickness if obj.thickness%>
                     </td>
-                    <td><%=obj.grade if obj.grade%>
-                    </td>
-                    <td><%=obj.type if obj.type%>
-                    </td>
-                    <td><%=obj.width_actual if obj.width_actual%>
+                     <td><%=obj.width_actual if obj.width_actual%>
                     </td>
                     <td><%=obj.thickness_actual if obj.thickness_actual%>
                     </td>
-                    <td><%=obj.grade_actual if obj.grade_actual%>
-                    </td>
-                    <td><%=obj.type_actual if obj.type_actual%>
-                    </td>
-                </tr>
+                   <td>
+                        <%= link_to("Preview", "/reports/uncoiler_show?id=#{obj.id}&created_date=#{obj.date.to_s}") %> 
+                   </td>
+
+                     </tr>
                 <%end%>
               </tbody>
               </table></td>

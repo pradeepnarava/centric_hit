@@ -61,17 +61,29 @@ class ReportsController < ApplicationController
     end
   end
   def uncol_rpt
+    @coils = Slittingproduction.all.collect { |sl| sl.rawmaterial}.uniq
    @slitting_pro=Slittingproduction.find :all
   end
   def uncoiler_rpt
     @slitting_pro=Slittingproduction.find :all
     @slitting_prooduction=Slittingproduction.find_by_id(params[:report][:slittingproduction_id])
     start_date,end_date= duration_dates(params[:report][:dates],params[:start_date],params[:end_date])
-    conditions_hash = {:slittingproduction_id => params[:report][:slittingproduction_id]}
-    conditions_hash = conditions_hash.merge({:date_start => start_date,:date_end =>end_date}) if start_date!='' && end_date!=''
-    search='slittingproduction_id=:slittingproduction_id'
-    search += " AND STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
-    @uncoiler_value = UncoilerReport.find(:all, :conditions => [search,conditions_hash])
+    conditions_hash = {:date_start => start_date,:date_end =>end_date} if start_date!='' && end_date!=''
+    search = "STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    @uncoiler_value = UncoilerReport.find(:all, :conditions => [search,conditions_hash], :group => 'date')
+    #@uncoiler_value.each do  |obj|
+      #obj.slittingproduction.group_by(&:raw)
+    #end
+  end
+  
+  def uncoiler_show
+    @uncoiler=UncoilerReport.find(params[:id])
+#    @uncoiler_details=UncoilerReport.find(:all,:conditions=>"STR_TO_DATE(date,'%Y-%m-%d')=#{params[:created_date].to_date})
+    @uncoiler_details=UncoilerReport.all
+    @uncoiler_details.select do |obj|
+      obj.created_at == params[:created_date].to_date
+    end
+    render :layout=>false
   end
 
   def delivery
