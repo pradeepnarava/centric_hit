@@ -57,7 +57,7 @@
                  <tr>
                     <td class="textBlack11Height10L"><%= f.label :dateofreciept %><span class="text_red">*</span></td>
                       <td>
-                        <%= f.text_field :dateofreciept, :class=>'dateTextBox date_picker'%></td>
+                        <%= text_field_tag 'rawmaterial[dateofreciept]', @rawmaterial.dateofreciept.strftime("%m/%d/%y"), :class=>'dateTextBox date_picker'%></td>
                  </tr>
               </table>
             </div>
