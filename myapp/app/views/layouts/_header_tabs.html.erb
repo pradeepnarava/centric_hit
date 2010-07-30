@@ -2,13 +2,13 @@
   <%if current_user.role?:admin%>
   <li class ='<%=['employees','departments','roles','users','centricsteels'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("HRM",employees_path)%></span></span></li>
   <%end%>
-  <li class ='<%=['rawmaterials','rawmaterial_categories'].include? (controller.controller_name) || ['wide_coil','slit_coil','tube_stock'].include?(controller.action_name) ? 'active' : ''%>'><span><span><%=link_to("Stock", rawmaterials_path)%></span></span></li>
-  <li class ='<%=['customer_orders','salesplans'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Order", customer_orders_path)%></span></span></li>
   <li class ='<%=['customers','serializes','specifications'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Customer",customers_path)%></span></span></li>
-  <li class ='<%=['clients'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Client Enquiry",clients_path)%></span></span></li>
-  <li class ='<%=['slittings','slittingproductions','uncoiler_reports','tube_mill_performance_reports','tube_mill_stoppage_reports'].include? (controller.controller_name) && !['slit_coil','tube_stock'].include?(controller.action_name) ? 'active' : ''%>'><span><span><%=link_to("Process", slittings_path)%></span></span></li>
+  <li class ='<%=['clients'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Customer Enquiry",clients_path)%></span></span></li>
+  <li class ='<%=['customer_orders','salesplans'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Order", customer_orders_path)%></span></span></li>
+  <li class ='<%=['rawmaterials','rawmaterial_categories'].include? (controller.controller_name) || ['wide_coil','slit_coil','tube_stock'].include?(controller.action_name) ? 'active' : ''%>'><span><span><%=link_to("Stock", rawmaterials_path)%></span></span></li>
   <li class ='<%=['suppliers','addresses'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Suppliers TC",suppliers_path)%></span></span></li>
-  <li class ='<%=['reports'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Reports",'/reports/raw_rpt')%></span></span></li>
+  <li class ='<%=['slittings','slittingproductions','uncoiler_reports','tube_mill_performance_reports','tube_mill_stoppage_reports'].include? (controller.controller_name) && !['slit_coil','tube_stock'].include?(controller.action_name) ? 'active' : ''%>'><span><span><%=link_to("Process", slittings_path)%></span></span></li>
   <li class ='<%=['deliverychallans','taxinvoices','predespatchtcs'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Delivery",deliverychallans_path)%></span></span></li>
+  <li class ='<%=['reports'].include? (controller.controller_name) ? 'active' : ''%>'><span><span><%=link_to("Reports",'/reports/raw_rpt')%></span></span></li>
 </ul>
 

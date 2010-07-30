@@ -30,6 +30,7 @@ class Ability
     cannot :manage, Centricsteel
   end
   
+  
   def operator
     can :manage, :all
     cannot :manage, Role
