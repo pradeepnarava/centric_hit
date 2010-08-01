@@ -133,6 +133,18 @@ class ReportsController < ApplicationController
     
   end
   
+  def tube_mill_performance_rpt
+    start_date,end_date= duration_dates(params[:report][:dates],params[:start_date],params[:end_date])
+    conditions_hash = {:date_start => start_date,:date_end =>end_date} if start_date!='' && end_date!=''
+    search = "STR_TO_DATE(created_at,'%Y-%m-%d') Between :date_start AND :date_end" if start_date!='' && end_date!=''
+    @tube_mill_performance_reports = TubeMillPerformanceReport.find(:all, :conditions => [search,conditions_hash])
+  end
+  
+  def tubemill_show
+    @tube_mill_performance_report = TubeMillPerformanceReport.find(params[:id])
+    render :layout=>false;
+  end
+  
   def pre_despatch_view
     @predespatchtc = Predespatchtc.find(params[:id])
     render :layout=>false

@@ -1,0 +1,173 @@
+<title>Slitting Production Report</title>
+<style type="text/css">
+	@media print {
+		input#btnPrint {
+		display: none;
+		}
+	}
+</style>
+<input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />
+<br/>
+<table width="100%" border="1">
+  <tr>
+    <td align="center" colspan="2">
+      <b style="font-size:18px;">
+        Tube Mill Performance Report
+      </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:220px">
+      <b>Date:-</b>&nbsp;<%=@tube_mill_performance_report.date.to_date.strftime('%d-%m-%Y') if @tube_mill_performance_report.date%>
+    </td>  
+    <td><b>Shift:-</b>&nbsp;<%=@tube_mill_performance_report.shift rescue "-"%></td>
+    
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Operator Name:-</b>&nbsp;<%=h Employee.getname(@tube_mill_performance_report.operator_id) rescue "-" %>
+    &nbsp;&nbsp;&nbsp;
+      <b>Inspector Name:-</b>&nbsp;<%=h Employee.getname(@tube_mill_performance_report.inspector_id) rescue "-" %>
+    </td>
+  </tr>
+</table>
+<br/> 
+<table width="100%" cellpadding="0" cellspacing="0" border="1">
+  <tr>
+    <td width="33%"></td>
+    <td colspan="11" align="center">
+      <b>Rejection Details</b>
+    </td>
+    <td width="8%"></td>
+  </tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%" border="1">
+  <tr>
+    <th>Parameters</th>
+    <th  width="11%">Standard</th>
+    <th>Open</th>
+    <th>Joint</th>
+    <th>Tool mark</th>
+    <th>Roll mark</th>
+    <th>Pick up</th>
+    <th>Scratch</th>
+    <th>Weak weld</th>
+    <th>Bend</th>
+    <th>Nf c</th>
+    <th>Bend</th>
+    <th>Remarks</th>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <table cellpadding="1" width="100%" border="1 ">
+        <tr>
+          <td class="border_td">
+            Lot no
+          </td>
+          <td class="border_td">
+             <%=h @tube_mill_performance_report.lot_no %>
+          </td>
+        </tr>
+        <tr>
+          <td class="border_td">
+            Customer
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.customer.name rescue "-"%></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+            No of Tubes
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.no_of_tube rescue "-"%></td>
+        </tr>        
+        <tr>
+          <td class="border_td">
+           Od width
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.od_width %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Id height
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.id_height %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Thickness
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.thickness %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Length
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.length %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Id fin height
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.id_fin_height %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+           Drifting
+          </td>
+           <td class="border_td"><%=h @tube_mill_performance_report.drifting %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Flattening
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.flattening %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Specification
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.specification %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Rm grade
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.rm_grade %></td>
+        </tr>
+         <tr>
+          <td class="border_td">
+          Slitting production coil no
+          </td>
+            <td class="border_td"><%=h @tube_mill_performance_report.slittingproduction.slitting_coil_no  if @tube_mill_performance_report.slittingproduction%></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Spl requirement
+          </td>
+             <td class="border_td"><%=h @tube_mill_performance_report.spl_requirement %></td>
+        </tr>
+        <tr>
+          <td class="border_td">
+          Signature
+          </td>
+              <td class="border_td"></td>
+        </tr>
+       
+      </table>
+          </td>
+    <td><%=h @tube_mill_performance_report.open %></td>
+    <td><%=h @tube_mill_performance_report.joint %></td>
+    <td><%=h @tube_mill_performance_report.tool_mark %></td>
+    <td><%=h @tube_mill_performance_report.roll_mark %></td>
+    <td><%=h @tube_mill_performance_report.pick_up %></td>
+    <td><%=h @tube_mill_performance_report.scratch %></td>
+    <td><%=h @tube_mill_performance_report.weak_weld %></td>
+    <td><%=h @tube_mill_performance_report.bend %></td>
+    <td><%=h @tube_mill_performance_report.nf_c %></td>
+    <td><%=h @tube_mill_performance_report.remarks %></td>
+    <td></td>
+  </tr>
+</table>
+<input type="button" id="btnPrint" onclick="window.print();" value="Print Page" />
+<br/>

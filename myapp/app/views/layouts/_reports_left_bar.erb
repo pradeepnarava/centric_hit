@@ -21,6 +21,9 @@
           </li>
           <li class ='<%=(controller.controller_name.eql?('reports') && ['delivery'].include?(controller.action_name))? 'active' : ''%>'>
           <span><span><%=link_to("Delivery Challan Report", '/reports/delivery')%></span></span>
-          </li>   
+          </li>  
+          <li class ='<%=(controller.controller_name.eql?('reports') && ['tube_mill_performace_rpt'].include?(controller.action_name))? 'active' : ''%>'>
+          <span><span><%=link_to("Tube Mill Performance Report", '/reports/tube_mill_performace_rpt')%></span></span>
+          </li>  
         </ul>
 </div>
