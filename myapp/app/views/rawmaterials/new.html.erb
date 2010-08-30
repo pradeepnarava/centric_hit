@@ -24,7 +24,8 @@
               <table width="50%" border="0" cellspacing="0" cellpadding="2">
                   <tr>
                   <td class="textBlack11Height10L"><%= f.label "Supplier" %><span class="text_red">*</span></td>
-                  <td><%=f.collection_select( :address_id, @addresses,:id,:company_name,{:include_blank => "--- Select ---"})%></td>
+                  <td><%=f.collection_select( :address_id, @addresses,:id,:company_name,{:include_blank => "--- Select ---"})%> <span style="font-size:11px; padding-left:12px;"><%=link_to "Create New",new_supplier_path%></span></td>
+                  
                 </tr>
                 <tr>
                   <td class="textBlack11Height10L"><%= f.label "Rawmaterial Category" %><span class="text_red">*</span></td>
