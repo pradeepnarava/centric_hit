@@ -129,8 +129,8 @@ function total_qty_pcs_mt_and_weights(row){
     var od  = jQuery("#"+row+"_customer_order_h_od").val();
     var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
 
-    var qty_pc  = quantity/length;
-    jQuery("#"+row+"_customer_order_qty_pcs").val(Number(qty_pc));
+    var qty_pc  = Number(quantity).toFixed(3)/length;
+    jQuery("#"+row+"_customer_order_qty_pcs").val(Number(qty_pc).toFixed(0));
     
     var qty_mt = ((od-thikness)*thikness*0.0246615*length)*qty_pc/1000;
     jQuery("#"+row+"_customer_order_qty_mt").val(Number(qty_mt).toFixed(3));
@@ -147,7 +147,7 @@ function total_qty_mt_mtr_and_weights(row){
     var od  = jQuery("#"+row+"_customer_order_h_od").val();
     var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
 
-    var qty_mtr  = quantity*length;
+    var qty_mtr  = Number(quantity).toFixed(3)*length;
     jQuery("#"+row+"_customer_order_qty_mtr").val(Number(qty_mtr).toFixed(3));
     
     var qty_mt = ((od-thikness)*thikness*0.0246615*length)*quantity/1000;
@@ -162,14 +162,15 @@ function total_qty_mt_mtr_and_weights(row){
 /*calculate qty per meters and pices also their weight on behalf of MT*/
 function total_qty_pcs_mtr_and_weights(row){
     var quantity  = jQuery("#"+row+"_customer_order_qty_mt").val();
-    var length= jQuery("#"+row+"_customer_order_h_length").val();
+    var length = jQuery("#"+row+"_customer_order_h_length").val();
     var od  = jQuery("#"+row+"_customer_order_h_od").val();
     var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
 
-    var qty_pc = quantity/((od-thikness)*thikness*0.0246615*length/1000);
-    jQuery("#"+row+"_customer_order_qty_pcs").val(Number(qty_pc).toFixed(3));
+    var qty_pc = Number(quantity).toFixed(3)/((od-thikness)*thikness*0.0246615*length/1000);
+
+    jQuery("#"+row+"_customer_order_qty_pcs").val(Number(qty_pc).toFixed(0));
     
-    var qty_mtr  = qty_pc*length;
+    var qty_mtr  = Number(qty_pc).toFixed(0)*Number(length).toFixed(3);
     jQuery("#"+row+"_customer_order_qty_mtr").val(Number(qty_mtr).toFixed(3));
     total_weight(row);
     /*weight also need to calculate*/
