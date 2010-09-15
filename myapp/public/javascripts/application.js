@@ -93,33 +93,34 @@ function total_price(row){
 function total_pcs_mts(row){    
     var length= jQuery("#"+row+"_customer_order_h_length").val();
     var od  = jQuery("#"+row+"_customer_order_h_od").val();
-    var mtr  = jQuery("#"+row+"_customer_order_rate_mtr").val();
+    var mtr  = Number(jQuery("#"+row+"_customer_order_rate_mtr").val()).toFixed(2);
     var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
     var i  = ((od-thikness)*thikness)/40549;  
-    jQuery("#"+row+"_customer_order_rate_pcs").val(Number(mtr*length).toFixed(3));
-    jQuery("#"+row+"_customer_order_rate_mt").val(Number(mtr/i).toFixed(3));
+    jQuery("#"+row+"_customer_order_rate_pcs").val(Number(mtr*length).toFixed(2));
+    jQuery("#"+row+"_customer_order_rate_mt").val(Number(mtr/i).toFixed(2));
     
 }
 
 function total_mtr_mts(row){    
-    var pcs  = jQuery("#"+row+"_customer_order_rate_pcs").val();
+    var pcs  = Number(jQuery("#"+row+"_customer_order_rate_pcs").val()).toFixed(2);
     var length= jQuery("#"+row+"_customer_order_h_length").val();
     var od  = jQuery("#"+row+"_customer_order_h_od").val();
     var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
     var i  = ((od-thikness)*thikness)/40549;
-    jQuery("#"+row+"_customer_order_rate_mt").val(Number(pcs/(length*i)).toFixed(3));
-    jQuery("#"+row+"_customer_order_rate_mtr").val(Number(pcs/length).toFixed(3));
+    jQuery("#"+row+"_customer_order_rate_mt").val(Number(pcs/(length*i)).toFixed(2));
+    jQuery("#"+row+"_customer_order_rate_mtr").val(Number(pcs/length).toFixed(2));
 }
 
 
 function total_mtr_pcs(row){    
-    var mtonnes  = jQuery("#"+row+"_customer_order_rate_mt").val();
+    var mtonnes  = Number(jQuery("#"+row+"_customer_order_rate_mt").val()).toFixed(2);
     var length= jQuery("#"+row+"_customer_order_h_length").val();
     var od  = jQuery("#"+row+"_customer_order_h_od").val();
     var thikness  = jQuery("#"+row+"_customer_order_h_thikness").val();
     var i  = ((od-thikness)*thikness)/40549;
-    jQuery("#"+row+"_customer_order_rate_mtr").val(Number(((od-thikness)*thikness*0.2465*mtonnes)/10000).toFixed(3));
-    jQuery("#"+row+"_customer_order_rate_pcs").val(Number(i*mtonnes*length).toFixed(3));
+    //jQuery("#"+row+"_customer_order_rate_mtr").val(Number(((od-thikness)*thikness*0.2465*mtonnes)/10000).toFixed(2));
+    jQuery("#"+row+"_customer_order_rate_mtr").val(Number(i*mtonnes).toFixed(2));
+    jQuery("#"+row+"_customer_order_rate_pcs").val(Number(i*mtonnes*length).toFixed(2));
 }
 
 /*calculate qty per pices and MT also their weight on behalf of meters*/
@@ -135,7 +136,8 @@ function total_qty_pcs_mt_and_weights(row){
     var qty_mt = ((od-thikness)*thikness*0.0246615*length)*qty_pc/1000;
     jQuery("#"+row+"_customer_order_qty_mt").val(Number(qty_mt).toFixed(3));
     
-    total_weight(row);
+    //total_weight(row);
+    total_amount(row);
     /*weight also need to calculate*/
 
 }
@@ -153,7 +155,8 @@ function total_qty_mt_mtr_and_weights(row){
     var qty_mt = ((od-thikness)*thikness*0.0246615*length)*quantity/1000;
     jQuery("#"+row+"_customer_order_qty_mt").val(Number(qty_mt).toFixed(3));
     
-    total_weight(row);
+    //total_weight(row);
+    total_amount(row);
     /*weight also need to calculate*/
 
 }
@@ -172,7 +175,8 @@ function total_qty_pcs_mtr_and_weights(row){
     
     var qty_mtr  = Number(qty_pc).toFixed(0)*Number(length).toFixed(3);
     jQuery("#"+row+"_customer_order_qty_mtr").val(Number(qty_mtr).toFixed(3));
-    total_weight(row);
+    //total_weight(row);
+    total_amount(row);
     /*weight also need to calculate*/
 
 }
@@ -197,10 +201,12 @@ function total_amount(row){
 
     var qty_mt  = jQuery("#"+row+"_customer_order_qty_mt").val();
     var rate_mt= jQuery("#"+row+"_customer_order_rate_mt").val();    
+    var quantity  = jQuery("#"+row+"_customer_order_qty_mtr").val();
 
     //jQuery("#"+row+"_customer_order_total_amount_mtr").val(Number(qty_mtr*rate_mtr).toFixed(3));
     //jQuery("#"+row+"_customer_order_total_amount_pcs").val(Number(qty_pcs*rate_pcs).toFixed(3));
-    jQuery("#"+row+"_customer_order_total_amount").val(Number(qty_mt*rate_mt).toFixed(3));
+    jQuery("#"+row+"_customer_order_total_amount").val(Number(qty_mt*rate_mt).toFixed(2));
+    jQuery("#"+row+"_customer_order_balance").val(quantity);
 }
 
 function total_cal_od(){

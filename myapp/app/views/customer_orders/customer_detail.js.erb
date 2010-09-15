@@ -1,4 +1,4 @@
 jQuery('#customer_order_h_vat_no').val("<%=@customer.vat_no%>");
-jQuery('#customer_order_office_address').val("<%=escape_javascript(@customer.address)%>");
+jQuery('#customer_order_office_address').val("<%=escape_javascript(@customer.address+", "+@customer.city)%>");
 jQuery('#customer_order_h_ecc_no').val("<%=@customer.ecc_no%>");
 jQuery('#detail').html("<%=escape_javascript(render(:partial => 'detail'))%>");
