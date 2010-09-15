@@ -3,74 +3,53 @@
 <div id="center-column">
   <div class="gridDiv">
     <div class="titleHead">Editing Salesplan</div>
-    <div class="formMain">
+    <div class="formOrder">
       <% form_for(@salesplan) do |f| %>
         <%= f.error_messages %>
         <div>
           <!--BOX 1-->
-          <div class="mt5">
-          </div>
-          <div class="fl w48" style="width: 48%;" >
-            <div>
-
-              <p>
-                <%= f.label "Customer Name"%>
-                <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"})%>
-              </p>
-              <p>
-                <%= f.label :serialize_id %>
-                <%=f.collection_select( :serialize_id, Serialize.all,:id,:name,{:include_blank => "----------Select----------"},{:onchange => "salesplan_customer_order(this.value);"})%>
-
-              </p>
-              <p>
-                <%= f.label :od %>
-                <%= f.text_field :od %>
-              </p>
-
-              <p>
-                <%= f.label :length %>
-                <%= f.text_field :length %>
-              </p>
-              <p>
-                <%= f.label :thikness %>
-                <%= f.text_field :thikness %>
-              </p>
-            </div>
-          </div>
-          <div style="width: 52%;" class="fr">
-            <div>
-              <p>
-                <%= f.label :order_quantity %>
-                       <td><%= f.text_field:order_quantity %></td>
-
-              </p>
-              <p>
-                <%= f.label :order_wt %>
-                <%= f.text_field :order_wt %>
-              </p>
-
-              <p>
-                <%= f.label :stock_quantity %>
-
-               <td><%= text_field_tag "salesplan[stock_quantity]",nil,:onblur => "cal_bal_quantity();" %></td>
-              </p>
-              <p>
-                <%= f.label :stock_wt %>
-               <td><%= text_field_tag "salesplan[stock_wt]",nil,:onblur => "cal_bal_wt();" %></td>
-
-              </p>
-
-              <p>
-                <%= f.label :balance_wt %>
-                <%= f.text_field :balance_wt %>
-              </p>
-              <p>
-                <%= f.label :balance_quantity %>
-                <%= f.text_field :balance_quantity %>
-              </p>
-
-            </div>
-          </div>
+          <table cellspacing="5" cellpadding="5">
+            <tr>
+              <td><%= f.label "Customer Name"%></td>
+              <td><%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "---Select---"})%></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><%= f.label :serialize_id %></td>
+              <td><%=f.collection_select( :serialize_id, Serialize.all,:id,:name,{:include_blank => "---Select---"},{:onchange => "salesplan_customer_order(this.value);"})%></td>
+            </tr>
+            <tr>
+              <td><%= f.label :od %></td>
+              <td><%= f.text_field :od %></td>
+              <td><%= f.label :length %></td>
+              <td><%= f.text_field :length %></td>
+              <td><%= f.label :thikness %></td>
+              <td><%= f.text_field :thikness %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :order_quantity %></td>
+              <td><%= f.text_field:order_quantity %></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><%= f.label :order_wt %></td>
+              <td><%= f.text_field :order_wt %></td>              
+            </tr>
+            <tr>
+              <td><%= f.label :stock_quantity %></td>
+              <td><%= text_field_tag "salesplan[stock_quantity]",nil,:onblur => "cal_bal_quantity();" %></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><%= f.label :stock_wt %></td>
+              <td><%= text_field_tag "salesplan[stock_wt]",nil,:onblur => "cal_bal_wt();" %></td>              
+            </tr>
+            <tr>
+              <td><%= f.label :balance_quantity %></td>
+              <td><%= f.text_field :balance_quantity %></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><%= f.label :balance_wt %></td>
+              <td><%= f.text_field :balance_wt %></td>              
+            </tr>
+          </table>
            <div id="detail"></div>
           <br class="clear"/>
           <div class="txtC" id="submit_div">

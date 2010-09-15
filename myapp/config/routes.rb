@@ -37,6 +37,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'report/slitting_rpt', :controller => 'reports', :action => 'slitting_rpt'
   map.connect 'report/slitting_production_rpt', :controller => 'reports', :action => 'slitting_production_rpt'
   map.connect 'report/uncoil_rpt', :controller => 'reports', :action => 'uncol_rpt'
+  map.connect 'report/taxinvoice_new', :controller => 'reports', :action => 'taxinvoice_new'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

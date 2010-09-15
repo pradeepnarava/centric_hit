@@ -1,65 +1,46 @@
 <%= render :partial=>'layouts/delivery' %>
-<h1>Editing deliverychallan</h1>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Editing Deliverychallan</div>
+    <div class="formMain">
 
-<% form_for(@deliverychallan) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :delivery_challan_no %><br />
-    <%= f.text_field :delivery_challan_no %>
-  </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </p>
-  <p>
-    <%= f.label :vehicle_no %><br />
-    <%= f.text_field :vehicle_no %>
-  </p>
-  <p>
-    <%= f.label :od %><br />
-    <%= f.text_field :od %>
-  </p>
-  <p>
-    <%= f.label :length %><br />
-    <%= f.text_field :length %>
-  </p>
-  <p>
-    <%= f.label :thickness %><br />
-    <%= f.text_field :thickness %>
-  </p>
-  <p>
-    <%= f.label :quantity_pcs %><br />
-    <%= f.text_field :quantity_pcs %>
-  </p>
-  <p>
-    <%= f.label :quantity_mtrs %><br />
-    <%= f.text_field :quantity_mtrs %>
-  </p>
-  <p>
-    <%= f.label :remark %><br />
-    <%= f.text_field :remark %>
-  </p>
-  <p>
-    <%= f.label :vat_tin %><br />
-    <%= f.text_field :vat_tin %>
-  </p>
-  <p>
-    <%= f.label :cst_tin %><br />
-    <%= f.text_field :cst_tin %>
-  </p>
-  <p>
-    <%= f.label :from %><br />
-    <%= f.text_field :from %>
-  </p>
-  <p>
-    <%= f.label :to %><br />
-    <%= f.text_field :to %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @deliverychallan %> |
-<%= link_to 'Back', deliverychallans_path %>
+      <% form_for(@deliverychallan) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <div class="mt5">
+          </div>
+          <div class="fl w48" style="width: 52%;" >
+            <div>
+              <p>
+                <%= f.label "Customer" %>
+                <%= f.collection_select(:customer_id, Customer.all, :id, :name, {:include_blank => 'Please select'},{:onchange => "customer_po(this.value);"})%>
+              </p>
+              <p><%= f.label :delivery_challan_no %>
+                <%= f.text_field :delivery_challan_no,:size => 15 %></p>
+              <p><%= f.label :vehicle_no %>
+                <%= f.text_field :vehicle_no,:size => 15 %></p>
+              <p><%= f.label :remark %>
+                <%= f.text_field :remark,:size => 15 %></p>
+            
+              <p><%= f.label :date %>
+                <%= f.date_select :date%></p>
+              <p>
+              
+            </div>
+          </div>
+          <br class="clear"/>
+          <br class="clear"/>
+          <br class="clear"/>
+          <div id="detail"></div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Update" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',deliverychallans_path, :class=>'button submit_buttons cancelbutton' %>
+          </div>
+          <br class="clear"/>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

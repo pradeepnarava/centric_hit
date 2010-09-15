@@ -1,21 +1,33 @@
 <%= render :partial=>'layouts/process_leftside_bar' %>
-<h1>Editing stoppage</h1>
+<div id="center-column">
+  <div class="gridDiv">
+    <div class="titleHead">Editing Stoppage</div>
+    <div class="formOrder">
+      <% form_for(@stoppage) do |f| %>
+        <%= f.error_messages %>
+        <div>
+          <!--BOX 1-->
+          <table>
+            <tr>
+              <td><label>Name:</label></td>
+              <td><%=f.text_field "name"%></td>
+              <td><label>Type:</label></td>
+              <td> <%= f.select(:type_stop,Stoppage::STOPAGE_TYPE ,{:include_blank => "--- Select ---"}) %></td>
+            </tr>
+          </table>
+          <br class="clear"/>
+          <div id="detail"></div>
+          <br class="clear"/>
+          <div class="txtC" id="submit_div">
+            <%= f.submit "Update" , :class=>'button submit_buttons'%>
+            <%=link_to 'Cancel',stoppages_path,{ :class=>'button submit_buttons cancelbutton' }%>
+          </div>
+          <br class="clear"/>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% form_for(@stoppage) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
 
-<%= link_to 'Show', @stoppage %> |
-<%= link_to 'Back', stoppages_path %>

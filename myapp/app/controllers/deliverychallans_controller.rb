@@ -90,7 +90,7 @@ class DeliverychallansController < ApplicationController
     respond_to do |format|
       if @deliverychallan.update_attributes(params[:deliverychallan])
         flash[:notice] = 'Deliverychallan was successfully updated.'
-        format.html { redirect_to(@deliverychallan) }
+        format.html { redirect_to(deliverychallans_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

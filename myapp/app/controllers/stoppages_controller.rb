@@ -35,6 +35,7 @@ class StoppagesController < ApplicationController
   # GET /stoppages/1/edit
   def edit
     @stoppage = Stoppage.find(params[:id])
+    
   end
 
   # POST /stoppages
@@ -62,7 +63,7 @@ class StoppagesController < ApplicationController
     respond_to do |format|
       if @stoppage.update_attributes(params[:stoppage])
         flash[:notice] = 'Stoppage was successfully updated.'
-        format.html { redirect_to(@stoppage) }
+        format.html { redirect_to(stoppages_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

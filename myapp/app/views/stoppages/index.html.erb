@@ -1,6 +1,3 @@
-
-
-
 <%= render :partial=>'layouts/process_leftside_bar' %>
 <div id="center-column">
 <div class="top-bar">
@@ -21,10 +18,10 @@
   <tr class="<%=cycle("bg1", "bg2")%>">
     <td><%=h stoppage.name %></td>
     <td>
-      <%if stoppage.type_stop==1%>Operational<%end%>
-<%if stoppage.type_stop== 2%> Mechanical<%end%>
-<%if stoppage.type_stop== 3%> Electrical<%end%>
-  <%if stoppage.type_stop== 4%> Others<%end%>
+      <%if stoppage.type_stop==0%>Operational<%end%>
+<%if stoppage.type_stop== 1%> Mechanical<%end%>
+<%if stoppage.type_stop== 2%> Electrical<%end%>
+  <%if stoppage.type_stop== 3%> Others<%end%>
     </td>
 
 
