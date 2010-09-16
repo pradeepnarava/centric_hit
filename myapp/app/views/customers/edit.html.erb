@@ -24,12 +24,11 @@
               <td><%= f.text_field :email ,:size => 20%></td>
             </tr>
             <tr>
-              <td><%= f.label :street %></td>
-              <td><%= f.text_field :street ,:size => 20%></td>
               <td><%= f.label :address %></td>
-              <td><%= f.text_area :address ,:rows => 5, :cols => 18%></td>
+              <td><%= f.text_area :address ,:rows => 5, :cols => 20%></td>
               <td><%= f.label :city %></td>
               <td><%= f.text_field :city ,:size => 20%></td>
+              <td colspan="2">&nbsp;</td>
             </tr>
             <tr>
               <td><%= f.label :state %></td>
@@ -52,16 +51,16 @@
               <td><%= f.text_field :ifc_no ,:size => 20%></td>
               <td><%= f.label :dgft_code %></td>
               <td><%= f.text_field :dgft_code ,:size => 20%></td>
-              <td><%= f.label :ecc_no%></td>
-              <td><%= f.text_field :ecc_no ,:size => 20%></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
             </tr>  
             <tr>
               <td><label>Octroi</label></td>
               <td><%= f.select("octra", {"Exclusive" => "Exclusive", "Inclusive" => "Inclusive"}) %></td>
               <td><label>Excise Duty</label></td>
               <td><%= f.select("excise_duty", { "Inclusive" => "Inclusive", "Extra as Applicable" => "Extra as Applicable"}) %></td>
-              <td><%= f.label :excise_registration_no %></td>
-              <td><%= f.text_field :excise_registration_no ,:size => 20%></td>
+              <td><label>Excise Registration/ Ecc No</label></td>
+              <td><%= f.text_field :ecc_no ,:size => 20%></td>
             </tr>
             <tr>
               <td><%= f.label :service_tax_reg %></td>

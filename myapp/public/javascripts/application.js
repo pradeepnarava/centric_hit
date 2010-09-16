@@ -373,14 +373,21 @@ function get_totalwt(row){
 }
 
 function get_scrap(){
- var cwth = jQuery("#coil_width").val();
- var totalwt = 0;
- for (i=1;i<10;i++){
-     var nslit = jQuery("#"+i+"_slitting_no_of_slits").val();
-     var swdth = jQuery("#"+i+"_slitting_slit_width").val();
-     totalwt = totalwt + (Number(swdth) * Number(nslit));
- }
- jQuery("#slitting_scrap").val(Number(cwth-totalwt).toFixed(3));
+// var cwth = jQuery("#coil_width").val();
+// var totalwt = 0;
+// for (i=1;i<10;i++){
+//     var nslit = jQuery("#"+i+"_slitting_no_of_slits").val();
+//     var swdth = jQuery("#"+i+"_slitting_slit_width").val();
+//     totalwt = totalwt + (Number(swdth) * Number(nslit));
+// }
+// jQuery("#slitting_scrap").val(Number(cwth-totalwt).toFixed(3));
+
+    var cwt = jQuery("#slitting_process_coil_wt").val();
+    var totalwt = 0;
+    for(i=1;i<10;i++){
+        totalwt = Number(jQuery("#"+i+"_slitting_total_weight").val()) + totalwt;
+    }
+    jQuery("#slitting_scrap").val(Number(cwt-totalwt).toFixed(3));
 }
 function livia_datepicker(){
     jQuery(function() {
