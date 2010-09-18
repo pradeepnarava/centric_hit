@@ -40,6 +40,7 @@ class TaxinvoicesController < ApplicationController
   
   def deliverydetail
     @delivery_challan=Deliverychallan.find_all_by_customer_id(params[:id])
+    @customer = Customer.find(params[:id])
   end
 
   def deliverychallan_detail

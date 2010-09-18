@@ -14,7 +14,7 @@
               <p>
                 <%= f.label "Customer name" %>
               
-                <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "----------Select----------"},{:onchange => "deliverydetail(this.value);"})%>
+                <%=f.collection_select( :customer_id, Customer.all,:id,:name,{:include_blank => "---Select---"},{:onchange => "deliverydetail(this.value);"})%>
             </p></td><td>
               <p>
                 <label>Date-prep-invoice </label>
@@ -56,7 +56,7 @@
                 <%= f.text_field :lr_no %>
             </p> </td><td>
               <p>
-                <label>Name/adress-buyer </label>
+                <label>Name/adress- buyer </label>
                 <%= f.text_area :name_and_adress_of_buyor,:rows=>5 %>
             </p></td><td>
               <p>

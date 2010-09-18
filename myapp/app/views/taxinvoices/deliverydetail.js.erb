@@ -1,1 +1,2 @@
 jQuery('#detail').html("<%=escape_javascript(render(:partial => 'delivery_details'))%>");
+jQuery("#taxinvoice_name_and_adress_of_buyor").val("<%=@customer.address.to_s + ", "+@customer.city.to_s %>");
