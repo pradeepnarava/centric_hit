@@ -10,45 +10,45 @@
       <%= f.error_messages %>
       <div>
         <!--BOX 1-->
-            <table>
+            <table width="80%">
               <tr>
                 <td><label>Date</label></td>
                 <td><%= f.text_field :date ,:size => 12,  :class=>'dateTextBox date_picker'%></td>
                 <td><label>Shift</label></td>
                 <td><%= f.text_field :shift,:size => 8 %></td>
                 <td><label>Operator Name</label></td>
-                <td><%=f.collection_select(:operator_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%></td>                     
+                <td><%=f.collection_select(:operator_id, @employees,:id,:full_name,{:include_blank => "---Select---"},{:style => "width:120px;"})%></td>                     
                 <td><label>Inspector Name</label></td>
-                <td><%=f.collection_select(:inspector_id, @employees,:id,:full_name,{:include_blank => "---Select---"})%></td>                                        
+                <td><%=f.collection_select(:inspector_id, @employees,:id,:full_name,{:include_blank => "---Select---"},{:style => "width:120px;"})%></td>                                        
               </tr>
-            </table>
-            <table width="60%">
               <tr>
+                <td colspan="4">&nbsp;</td>
                 <td><label>Customer</label></td>
-                <td><%=f.collection_select( :customer_id, @customers,:id,:name,{:include_blank => "---Select---"})%></td>
+                <td><%=f.collection_select( :customer_id, @customers,:id,:name,{:include_blank => "---Select---"},{:style => "width:120px;"})%></td>
                 <td><label>Slit Coil No</label></td>
-                <td><%=f.collection_select( :slittingproduction_id, @slittingproductions,:id,:slitting_coil_no,{:include_blank => "---Select---"})%></td>
+                <td><%=f.collection_select( :slittingproduction_id, @slittingproductions,:id,:slitting_coil_no,{:include_blank => "---Select---"},{:style => "width:120px;"})%></td>
               </tr>              
-            </table>      
-            <br class="clear"/>
-            <table width="90%">
+              <tr><td colspan="8">&nbsp;</td></tr>
               <tr>
                 <td><label>OD/Width</label></td>
-                <td><%= f.text_field :od_width, :size=>"15"  %></td>
+                <td><%= f.text_field :od_width, :size=>"8"  %></td>
                 <td><label>ID/Height</label></td>
-                <td><%= f.text_field :id_height, :size=>"15" %></td>
+                <td><%= f.text_field :id_height, :size=>"8" %></td>
                 <td><label>Tick.</label></td>
-                <td><%= f.text_field :thickness, :size=>"15" %></td>                     
+                <td><%= f.text_field :thickness, :size=>"8" %></td>                     
                 <td><label>Length</label></td>
-                <td><%= f.text_field :length, :size=>"15" %></td>                                        
+                <td><%= f.text_field :length, :size=>"8" %></td>                                        
               </tr>              
             </table>
+            <br class="clear"/>
             <table>
               <tr>
-                <td><label>Prime Lot No.</label></td>
-                <td><%= f.text_field :lot_no %></td>
-                <td><label>No. of Tubes</label></td>
-                <td><%= f.text_field :no_of_tube %></td> 
+                <th>Prime Lot No.</th>
+                <th>No. of Tubes</th>
+              </tr>              
+              <tr>
+                <td><%= f.text_field :lot_no , :size=>"15"%></td>
+                <td><%= f.text_field :no_of_tube, :size=>"15" %></td> 
               </tr>              
             </table>
             <p>Rejection Details</p>
@@ -66,16 +66,16 @@
                 <td><label>Remarks</label></td>
               </tr>              
               <tr>
-                <td><%= f.text_field :open,:size=>"8" %></td>
-                <td><%= f.text_field :joint,:size=>"8"  %></td>
-                <td><%= f.text_field :tool_mark,:size=>"8"  %></td>  
-                <td><%= f.text_field :roll_mark,:size=>"8"  %></td>  
-                <td><%= f.text_field :pick_up,:size=>"8"  %></td>  
-                <td><%= f.text_field :scratch,:size=>"8"  %></td>  
-                <td><%= f.text_field :weak_weld,:size=>"8"  %></td>  
-                <td><%= f.text_field :bend,:size=>"8"  %></td>  
-                <td><%= f.text_field :nf_c,:size=>"8"  %></td> 
-                <td><%= f.text_field :remarks %></td>                 
+                <td><%= f.text_field :open,:size=>"5" %></td>
+                <td><%= f.text_field :joint,:size=>"5"  %></td>
+                <td><%= f.text_field :tool_mark,:size=>"5"  %></td>  
+                <td><%= f.text_field :roll_mark,:size=>"5"  %></td>  
+                <td><%= f.text_field :pick_up,:size=>"5"  %></td>  
+                <td><%= f.text_field :scratch,:size=>"5"  %></td>  
+                <td><%= f.text_field :weak_weld,:size=>"5"  %></td>  
+                <td><%= f.text_field :bend,:size=>"5"  %></td>  
+                <td><%= f.text_field :nf_c,:size=>"5"  %></td> 
+                <td><%= f.text_field :remarks ,:size=>"25"%></td>            
               </tr>                            
             </table>
 

@@ -45,17 +45,29 @@ class TubeMillPerformanceReportsController < ApplicationController
   # POST /tube_mill_performance_reports
   # POST /tube_mill_performance_reports.xml
   def create
-    @tube_mill_performance_report = TubeMillPerformanceReport.new(params[:tube_mill_performance_report])
-        @tube_mill_performance_report.status=1
-    respond_to do |format|
-      if @tube_mill_performance_report.save
-
-        @slitting_status=Slittingproduction.find(params[:tube_mill_performance_report][:slittingproduction_id])
-        @slitting_status.update_attribute('status',3)
+    data = params
+    @errorflag = false
+    for row in 1..4
+      if data["#{row}"][:lot_no].present?
+        @tube_mill_performance_report = TubeMillPerformanceReport.new(params[:tube_mill_performance_report])
+        @tube_mill_performance_report.status = 1
+        @tube_mill_performance_report.lot_no = data["#{row}"][:lot_no]
+        @tube_mill_performance_report.no_of_tube = data["#{row}"][:no_of_tube]
+        if @tube_mill_performance_report.save
+          @errorflag = false
+        else  
+          @errorflag = true
+        end
+      end
+    end
         
-        @rawmaterail_status=Rawmaterial.find(@slitting_status.rawmaterial_id)
-        @rawmaterail_status.update_attribute('status',3)
-        flash[:notice] = 'TubeMillPerformanceReport was successfully created.'
+    respond_to do |format|
+      if !@errorflag
+        @slitting_status = Slittingproduction.find(data[:tube_mill_performance_report][:slittingproduction_id])
+        @slitting_status.update_attribute('status',3)
+        @rawmaterail_status = Rawmaterial.find(@slitting_status.rawmaterial_id)
+        @rawmaterail_status.update_attribute('status',3)      
+        flash[:notice] = 'TubeMill Entry was successfully created.'
         format.html { redirect_to(tube_mill_performance_reports_path) }
         format.xml  { render :xml => @tube_mill_performance_report, :status => :created, :location => @tube_mill_performance_report }
       else
@@ -63,6 +75,7 @@ class TubeMillPerformanceReportsController < ApplicationController
         format.xml  { render :xml => @tube_mill_performance_report.errors, :status => :unprocessable_entity }
       end
     end
+    
   end
 
   # PUT /tube_mill_performance_reports/1
@@ -72,7 +85,7 @@ class TubeMillPerformanceReportsController < ApplicationController
 
     respond_to do |format|
       if @tube_mill_performance_report.update_attributes(params[:tube_mill_performance_report])
-        flash[:notice] = 'TubeMillPerformanceReport was successfully updated.'
+        flash[:notice] = 'TubeMill Entry Report was successfully updated.'
         format.html { redirect_to(tube_mill_performance_reports_url) }
         format.xml  { head :ok }
       else
