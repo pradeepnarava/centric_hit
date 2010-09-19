@@ -32,6 +32,38 @@
           <br class="clear"/>
           <br class="clear"/>
           <br class="clear"/>
+          
+                
+  <%unless @customer_po.size<1%>
+              <table class="formOrdertable" border="1" style="margin-left:4%;">
+                <tr>
+                  <td style="font-size:11px;">S.No</td>
+                  <td style="font-size:11px;">Customer Order PO</td>   
+                  <td style="font-size:11px;">OD</td>
+                  <td style="font-size:11px;">Length</td>
+                  <td style="font-size:11px;">Thickness</td>
+                  <td style="font-size:11px;">Quantity Pcs</td>
+                  <td style="font-size:11px;">Quantity Meters</td>        
+                </tr>
+                <%for customerorder in 1..@customer_po.size%>
+                  <tr>
+                    <td style="font-size:11px;"><%=customerorder%></td>
+                    <td><%=collection_select("#{customerorder}[deliverychallan]",:serialize_id, @serial,:id,:name,{},{:onselect => "customerserial(this.value,#{customerorder});"})%></td>
+                    <td><%= text_field_tag "#{customerorder}[deliverychallan][od]" %></td>
+                    <td><%= text_field_tag "#{customerorder}[deliverychallan][length]" %></td>
+                    <td><%= text_field_tag "#{customerorder}[deliverychallan][thickness]"%></td>
+                    <td><%= text_field_tag "#{customerorder}[deliverychallan][quantity_pcs]" %></td>
+                    <td><%= text_field_tag "#{customerorder}[deliverychallan][quantity_mtrs]" %></td>
+                  </tr>
+                  <script type="text/javascript">
+                      select=jQuery("#1_deliverychallan_serialize_id option:selected").val();
+                      customerserial(select,select);
+                  </script>
+                <%end%>
+              </table>
+            <%else%>
+              No Purchase Orders, Please Create Purchase Order First.
+            <%end%>
           <div id="detail"></div>
           <br class="clear"/>
           <div class="txtC" id="submit_div">

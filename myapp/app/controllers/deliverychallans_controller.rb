@@ -35,6 +35,8 @@ class DeliverychallansController < ApplicationController
   # GET /deliverychallans/1/edit
   def edit
     @deliverychallan = Deliverychallan.find(params[:id])
+    @customer_po=CustomerOrder.find(:all,:conditions=>['customer_id=? and status=?',@deliverychallan.customer.id,3])
+    @serial=@customer_po.collect{|f| f.serialize}
   end
 
   def serial_detail_delivery
