@@ -37,6 +37,7 @@ class SlittingsController < ApplicationController
   def edit
     @slitting = Slitting.find(params[:id])
     @coils = Rawmaterial.find(:all, :conditions => ["status < 2"])
+    @slitting_all = Slitting.find(:all,:conditions=>["rawmaterial_id=?",@slitting.rawmaterial_id])
   end
 
   # POST /slittings

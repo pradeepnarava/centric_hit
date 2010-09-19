@@ -501,3 +501,32 @@ function common_flash_message(){
     });
   });
 }
+
+function get_slitwt_on_edit(){
+ var pcwt  = jQuery("#slitting_process_coil_wt").val();
+ var swth  = jQuery("#slitting_slit_width").val();
+ var cwth  = jQuery("#coil_width").val();
+ jQuery("#slitting_slit_weight").val(Number((pcwt/cwth)*swth).toFixed(3));
+}
+
+function get_totalwt_on_edit(){
+ var swt  = jQuery("#slitting_slit_weight").val();
+ var slt  = jQuery("#slitting_no_of_slits").val();
+ jQuery("#slitting_total_weight").val(Number(swt*slt).toFixed(3));
+}
+
+function get_scrap_on_edit(){
+// var cwth = jQuery("#coil_width").val();
+// var totalwt = 0;
+// for (i=1;i<10;i++){
+//     var nslit = jQuery("#"+i+"_slitting_no_of_slits").val();
+//     var swdth = jQuery("#"+i+"_slitting_slit_width").val();
+//     totalwt = totalwt + (Number(swdth) * Number(nslit));
+// }
+// jQuery("#slitting_scrap").val(Number(cwth-totalwt).toFixed(3));
+
+    var cwt = jQuery("#slitting_process_coil_wt").val();
+    var totalwt = 0;
+        totalwt = Number(jQuery("#slitting_total_weight").val()) + totalwt;
+    jQuery("#slitting_scrap").val(Number(cwt-totalwt).toFixed(3));
+}
